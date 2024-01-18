@@ -8,6 +8,7 @@ import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.common.Tags;
 
 import java.util.function.Consumer;
 
@@ -207,40 +208,62 @@ public class CircuitRecipes {
 
         // Vacuum Tube
         VanillaRecipeHelper.addShapedRecipe(provider, "vacuum_tube", VACUUM_TUBE.asStack(),
-                "PTP", "WWW",
-                'P', new UnificationEntry(bolt, Steel),
+                "WWW","LTL", "PBP",
+                'P', new UnificationEntry(rod, Steel),
+                'B', new UnificationEntry(bolt, RedAlloy),
                 'T', GLASS_TUBE.asStack(),
-                'W', new UnificationEntry(wireGtSingle, Copper));
+                'W', new UnificationEntry(wireGtSingle, Copper),
+                'L', new UnificationEntry(wireFine, Copper));
 
         ASSEMBLER_RECIPES.recipeBuilder("vacuum_tube_plain")
-                .inputItems(GLASS_TUBE)
-                .inputItems(bolt, Steel)
-                .inputItems(wireGtSingle, Copper, 2)
-                .circuitMeta(1)
+                .inputItems(GLASS_TUBE,2)
+                .inputItems(rod, Steel,4)
+                .inputItems(wireGtSingle, Copper, 4)
+                .inputFluids(Redstone.getFluid(144))
+                .circuitMeta(5)
                 .outputItems(VACUUM_TUBE, 2)
-                .duration(120).EUt(VA[ULV]).save(provider);
+                .duration(160).EUt(VA[ULV]).save(provider);
 
         ASSEMBLER_RECIPES.recipeBuilder("vacuum_tube_red_alloy")
-                .inputItems(GLASS_TUBE)
-                .inputItems(bolt, Steel)
-                .inputItems(wireGtSingle, Copper, 2)
-                .inputFluids(RedAlloy.getFluid(18))
-                .outputItems(VACUUM_TUBE, 3)
-                .duration(40).EUt(VA[ULV]).save(provider);
+                .inputItems(GLASS_TUBE,4)
+                .inputItems(rod, Steel,4)
+                .inputItems(wireGtSingle, Copper, 4)
+                .inputFluids(RedAlloy.getFluid(72))
+                .outputItems(VACUUM_TUBE, 4)
+                .circuitMeta(5)
+                .duration(160).EUt(VA[ULV]).save(provider);
 
         ASSEMBLER_RECIPES.recipeBuilder("vacuum_tube_red_alloy_annealed")
-                .inputItems(GLASS_TUBE)
-                .inputItems(bolt, Steel)
-                .inputItems(wireGtSingle, AnnealedCopper, 2)
-                .inputFluids(RedAlloy.getFluid(18))
-                .outputItems(VACUUM_TUBE, 4)
-                .duration(40).EUt(VA[ULV]).save(provider);
+        .inputItems(GLASS_TUBE,4)
+        .inputItems(rod, Steel,4)
+        .inputItems(wireGtSingle, AnnealedCopper, 4)
+        .inputFluids(RedAlloy.getFluid(72))
+        .outputItems(VACUUM_TUBE, 8)
+        .circuitMeta(5)
+                .duration(160).EUt(VA[ULV]).save(provider);
+        ASSEMBLER_RECIPES.recipeBuilder("vacuum_tube_red_alloy_enhanced")
+                .inputItems(GLASS_TUBE,4)
+                .inputItems(rod, Steel,4)
+                .inputItems(wireGtSingle, Copper, 4)
+                .inputFluids(RedstoneAlloy.getFluid(72))
+                .outputItems(VACUUM_TUBE, 8)
+                .circuitMeta(5)
+                .duration(160).EUt(VA[ULV]).save(provider);
+
+        ASSEMBLER_RECIPES.recipeBuilder("vacuum_tube_red_alloy_annealed_enhanced")
+        .inputItems(GLASS_TUBE,4)
+        .inputItems(rod, Steel,4)
+        .inputItems(wireGtSingle, AnnealedCopper, 4)
+        .inputFluids(RedstoneAlloy.getFluid(72))
+        .outputItems(VACUUM_TUBE, 16)
+        .circuitMeta(5)
+                .duration(160).EUt(VA[ULV]).save(provider);
 
         ALLOY_SMELTER_RECIPES.recipeBuilder("alloy_smelt_glass_tube")
                 .inputItems(dust, Glass)
                 .notConsumable(SHAPE_MOLD_BALL)
                 .outputItems(GLASS_TUBE)
-                .duration(160).EUt(16).save(provider);
+                .duration(120).EUt(16).save(provider);
 
         FLUID_SOLIDFICATION_RECIPES.recipeBuilder("solidify_glass_tube")
                 .inputFluids(Glass.getFluid(L))
@@ -252,92 +275,68 @@ public class CircuitRecipes {
                 .inputItems(dust, Glass)
                 .notConsumable(SHAPE_MOLD_BALL)
                 .outputItems(GLASS_TUBE)
-                .duration(80).EUt(VA[ULV]).save(provider);
+                .duration(120).EUt(VA[LV]).save(provider);
 
         // Resistor
-        VanillaRecipeHelper.addShapedRecipe(provider, "resistor_wire", RESISTOR.asStack(2),
+        VanillaRecipeHelper.addShapedRecipe(provider, "resistor_wire", RESISTOR.asStack(1),
                 "SPS", "WCW", " P ",
-                'P', new ItemStack(Items.PAPER),
+                'P', new UnificationEntry(wireFine, Copper),
                 'S', STICKY_RESIN.asStack(),
                 'W', new UnificationEntry(wireGtSingle, Copper),
                 'C', new UnificationEntry(dust, Coal));
 
-        VanillaRecipeHelper.addShapedRecipe(provider, "resistor_wire_fine", RESISTOR.asStack(2),
+        VanillaRecipeHelper.addShapedRecipe(provider, "resistor_wire_s", RESISTOR.asStack(1),
                 "SPS", "WCW", " P ",
-                'P', new ItemStack(Items.PAPER),
-                'S', STICKY_RESIN.asStack(),
-                'W', new UnificationEntry(wireFine, Copper),
+                'P', new UnificationEntry(wireFine, Copper),
+                'S', Tags.Items.SLIMEBALLS,
+                'W', new UnificationEntry(wireGtSingle, Copper),
                 'C', new UnificationEntry(dust, Coal));
 
-        VanillaRecipeHelper.addShapedRecipe(provider, "resistor_wire_charcoal", RESISTOR.asStack(2),
+        VanillaRecipeHelper.addShapedRecipe(provider, "resistor_wire_charcoal", RESISTOR.asStack(1),
                 "SPS", "WCW", " P ",
-                'P', new ItemStack(Items.PAPER),
+                'P', new UnificationEntry(wireFine, Copper),
                 'S', STICKY_RESIN.asStack(),
                 'W', new UnificationEntry(wireGtSingle, Copper),
                 'C', new UnificationEntry(dust, Charcoal));
 
-        VanillaRecipeHelper.addShapedRecipe(provider, "resistor_wire_fine_charcoal", RESISTOR.asStack(2),
+        VanillaRecipeHelper.addShapedRecipe(provider, "resistor_wire_s_charcoal", RESISTOR.asStack(1),
                 "SPS", "WCW", " P ",
-                'P', new ItemStack(Items.PAPER),
-                'S', STICKY_RESIN.asStack(),
-                'W', new UnificationEntry(wireFine, Copper),
+                'P', new UnificationEntry(wireFine, Copper),
+                'S', Tags.Items.SLIMEBALLS,
+                'W', new UnificationEntry(wireGtSingle, Copper),
                 'C', new UnificationEntry(dust, Charcoal));
 
-        VanillaRecipeHelper.addShapedRecipe(provider, "resistor_wire_carbon", RESISTOR.asStack(2),
+        VanillaRecipeHelper.addShapedRecipe(provider, "resistor_wire_carbon", RESISTOR.asStack(1),
                 "SPS", "WCW", " P ",
-                'P', new ItemStack(Items.PAPER),
+                'P', new UnificationEntry(wireFine, Copper),
                 'S', STICKY_RESIN.asStack(),
                 'W', new UnificationEntry(wireGtSingle, Copper),
                 'C', new UnificationEntry(dust, Carbon));
 
-        VanillaRecipeHelper.addShapedRecipe(provider, "resistor_wire_fine_carbon", RESISTOR.asStack(2),
+        VanillaRecipeHelper.addShapedRecipe(provider, "resistor_wire_s_carbon", RESISTOR.asStack(1),
                 "SPS", "WCW", " P ",
-                'P', new ItemStack(Items.PAPER),
-                'S', STICKY_RESIN.asStack(),
-                'W', new UnificationEntry(wireFine, Copper),
+                'P', new UnificationEntry(wireFine, Copper),
+                'S', Tags.Items.SLIMEBALLS,
+                'W', new UnificationEntry(wireGtSingle, Copper),
                 'C', new UnificationEntry(dust, Carbon));
 
-        ASSEMBLER_RECIPES.recipeBuilder("resistor_coal")
-                .inputItems(dust, Coal)
-                .inputItems(wireFine, Copper, 4)
-                .outputItems(RESISTOR, 2)
-                .inputFluids(Glue.getFluid(100))
-                .duration(160).EUt(6).save(provider);
-
-        ASSEMBLER_RECIPES.recipeBuilder("resistor_charcoal")
-                .inputItems(dust, Charcoal)
-                .inputItems(wireFine, Copper, 4)
-                .outputItems(RESISTOR, 2)
-                .inputFluids(Glue.getFluid(100))
-                .duration(160).EUt(6).save(provider);
-
-        ASSEMBLER_RECIPES.recipeBuilder("resistor_carbon")
+        ASSEMBLER_RECIPES.recipeBuilder("resistor")
                 .inputItems(dust, Carbon)
                 .inputItems(wireFine, Copper, 4)
-                .outputItems(RESISTOR, 2)
-                .inputFluids(Glue.getFluid(100))
-                .duration(160).EUt(6).save(provider);
-
-        ASSEMBLER_RECIPES.recipeBuilder("resistor_coal_annealed")
-                .inputItems(dust, Coal)
-                .inputItems(wireFine, AnnealedCopper, 4)
+                .inputItems(wireGtSingle, Copper, 4)
                 .outputItems(RESISTOR, 4)
-                .inputFluids(Glue.getFluid(100))
-                .duration(160).EUt(6).save(provider);
+                .inputFluids(Glue.getFluid(288))
+                .circuitMeta(3)
+                .duration(320).EUt(VHA[LV]).save(provider);
 
-        ASSEMBLER_RECIPES.recipeBuilder("resistor_charcoal_annealed")
-                .inputItems(dust, Charcoal)
-                .inputItems(wireFine, AnnealedCopper, 4)
-                .outputItems(RESISTOR, 4)
-                .inputFluids(Glue.getFluid(100))
-                .duration(160).EUt(6).save(provider);
-
-        ASSEMBLER_RECIPES.recipeBuilder("resistor_carbon_annealed")
+        ASSEMBLER_RECIPES.recipeBuilder("resistor_annealed")
                 .inputItems(dust, Carbon)
                 .inputItems(wireFine, AnnealedCopper, 4)
-                .outputItems(RESISTOR, 4)
-                .inputFluids(Glue.getFluid(100))
-                .duration(160).EUt(6).save(provider);
+                .inputItems(wireGtSingle, AnnealedCopper, 4)
+                .outputItems(RESISTOR, 8)
+                .inputFluids(Glue.getFluid(288))
+                .circuitMeta(5)
+                .duration(320).EUt(VHA[LV]).save(provider);
 
         // Capacitor
         ASSEMBLER_RECIPES.recipeBuilder("capacitor")
@@ -345,14 +344,22 @@ public class CircuitRecipes {
                 .inputItems(foil, Aluminium, 2)
                 .inputFluids(Polyethylene.getFluid(L))
                 .outputItems(CAPACITOR, 8)
+                .circuitMeta(3)
+                .duration(320).EUt(VA[MV]).save(provider);
+                ASSEMBLER_RECIPES.recipeBuilder("capacitor")
+                .inputItems(foil, Polyethylene)
+                .inputItems(foil, Tantalum, 2)
+                .inputFluids(Polyethylene.getFluid(L))
+                .outputItems(CAPACITOR, 8)
+                .circuitMeta(3)
                 .duration(320).EUt(VA[MV]).save(provider);
 
         // Transistor
         ASSEMBLER_RECIPES.recipeBuilder("transistor")
-                .inputItems(plate, Silicon)
-                .inputItems(wireFine, Tin, 6)
+                .inputItems(plate, SiliconSolarGrade)
+                .inputItems(wireFine, Tin, 8)
                 .inputFluids(Polyethylene.getFluid(L))
-                .outputItems(TRANSISTOR, 8)
+                .outputItems(TRANSISTOR, 6)
                 .duration(160).EUt(VA[MV]).save(provider);
 
         // Diode
@@ -360,35 +367,35 @@ public class CircuitRecipes {
                 .inputItems(wireFine, Copper, 4)
                 .inputItems(dustSmall, GalliumArsenide)
                 .inputFluids(Glass.getFluid(L))
-                .outputItems(DIODE)
-                .duration(400).EUt(VA[LV]).save(provider);
+                .outputItems(DIODE,2)
+                .duration(600).EUt(VA[LV]).save(provider);
 
         ASSEMBLER_RECIPES.recipeBuilder("diode_glass_annealed")
                 .inputItems(wireFine, AnnealedCopper, 4)
                 .inputItems(dustSmall, GalliumArsenide)
                 .inputFluids(Glass.getFluid(L))
-                .outputItems(DIODE, 2)
-                .duration(400).EUt(VA[LV]).save(provider);
+                .outputItems(DIODE, 4)
+                .duration(600).EUt(VA[LV]).save(provider);
 
         ASSEMBLER_RECIPES.recipeBuilder("diode_polyethylene")
                 .inputItems(wireFine, Copper, 4)
                 .inputItems(dustSmall, GalliumArsenide)
                 .inputFluids(Polyethylene.getFluid(L))
-                .outputItems(DIODE, 2)
-                .duration(400).EUt(VA[LV]).save(provider);
+                .outputItems(DIODE, 4)
+                .duration(600).EUt(VA[LV]).save(provider);
 
         ASSEMBLER_RECIPES.recipeBuilder("diode_polyethylene_wafer")
                 .inputItems(wireFine, Copper, 4)
                 .inputItems(SILICON_WAFER)
                 .inputFluids(Polyethylene.getFluid(L))
                 .outputItems(DIODE, 2)
-                .duration(400).EUt(VA[LV]).save(provider);
+                .duration(200).EUt(VA[LV]).save(provider);
 
         ASSEMBLER_RECIPES.recipeBuilder("diode_polyethylene_annealed")
                 .inputItems(wireFine, AnnealedCopper, 4)
                 .inputItems(dustSmall, GalliumArsenide)
                 .inputFluids(Polyethylene.getFluid(L))
-                .outputItems(DIODE, 4)
+                .outputItems(DIODE, 8)
                 .duration(400).EUt(VA[LV]).save(provider);
 
         ASSEMBLER_RECIPES.recipeBuilder("diode_polyethylene_annealed_wafer")
@@ -398,34 +405,47 @@ public class CircuitRecipes {
                 .outputItems(DIODE, 4)
                 .duration(400).EUt(VA[LV]).save(provider);
 
+                ASSEMBLER_RECIPES.recipeBuilder("diode_polyethylene_ta")
+                .inputItems(wireFine, Tantalum, 4)
+                .inputItems(dustSmall, GalliumArsenide)
+                .inputFluids(Polyethylene.getFluid(L))
+                .outputItems(DIODE, 16)
+                .duration(400).EUt(VA[LV]).save(provider);
+
+        ASSEMBLER_RECIPES.recipeBuilder("diode_polyethylene_ta_wafer")
+                .inputItems(wireFine, Tantalum, 4)
+                .inputItems(SILICON_WAFER)
+                .inputFluids(Polyethylene.getFluid(L))
+                .outputItems(DIODE, 8)
+                .duration(400).EUt(VA[LV]).save(provider);
         // Inductor
         ASSEMBLER_RECIPES.recipeBuilder("inductor")
                 .inputItems(ring, Steel)
                 .inputItems(wireFine, Copper, 2)
                 .inputFluids(Polyethylene.getFluid(L / 4))
                 .outputItems(INDUCTOR, 2)
-                .duration(320).EUt(VA[MV]).save(provider);
+                .duration(320).EUt(VA[LV]).save(provider);
 
         ASSEMBLER_RECIPES.recipeBuilder("inductor_annealed")
                 .inputItems(ring, Steel)
                 .inputItems(wireFine, AnnealedCopper, 2)
                 .inputFluids(Polyethylene.getFluid(L / 4))
                 .outputItems(INDUCTOR, 4)
-                .duration(320).EUt(VA[MV]).save(provider);
+                .duration(320).EUt(VHA[MV]).save(provider);
 
         ASSEMBLER_RECIPES.recipeBuilder("inductor_nzf")
                 .inputItems(ring, NickelZincFerrite)
                 .inputItems(wireFine, Copper, 2)
                 .inputFluids(Polyethylene.getFluid(L / 4))
                 .outputItems(INDUCTOR, 4)
-                .duration(320).EUt(VA[MV]).save(provider);
+                .duration(320).EUt(VA[LV]).save(provider);
 
         ASSEMBLER_RECIPES.recipeBuilder("inductor_nzf_annealed")
                 .inputItems(ring, NickelZincFerrite)
                 .inputItems(wireFine, AnnealedCopper, 2)
                 .inputFluids(Polyethylene.getFluid(L / 4))
                 .outputItems(INDUCTOR, 8)
-                .duration(320).EUt(VA[MV]).save(provider);
+                .duration(320).EUt(VHA[MV]).save(provider);
 
         // SMD Resistor
         ASSEMBLER_RECIPES.recipeBuilder("smd_resistor_electrum")

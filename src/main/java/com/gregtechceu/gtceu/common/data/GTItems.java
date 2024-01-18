@@ -1155,6 +1155,11 @@ public class GTItems {
     public static ItemEntry<Item> EMITTER_LuV= REGISTRATE.item("luv_emitter", Item::new).lang("LuV Emitter").onRegister(compassNodeExist(GTCompassSections.COMPONENTS, "emitter")).register();
     public static ItemEntry<Item> EMITTER_ZPM= REGISTRATE.item("zpm_emitter", Item::new).lang("ZPM Emitter").onRegister(compassNodeExist(GTCompassSections.COMPONENTS, "emitter")).register();
     public static ItemEntry<Item> EMITTER_UV= REGISTRATE.item("uv_emitter", Item::new).lang("UV Emitter").onRegister(compassNodeExist(GTCompassSections.COMPONENTS, "emitter")).register();
+    public static ItemEntry<Item> EMITTER_UHV= REGISTRATE.item("uhv_emitter", Item::new).lang("UHV Emitter").onRegister(compassNodeExist(GTCompassSections.COMPONENTS, "emitter")).register();
+    public static ItemEntry<Item> EMITTER_UEV= REGISTRATE.item("uev_emitter", Item::new).lang("UEV Emitter").onRegister(compassNodeExist(GTCompassSections.COMPONENTS, "emitter")).register();
+    public static ItemEntry<Item> EMITTER_UIV= REGISTRATE.item("uiv_emitter", Item::new).lang("UIV Emitter").onRegister(compassNodeExist(GTCompassSections.COMPONENTS, "emitter")).register();
+    public static ItemEntry<Item> EMITTER_UXV= REGISTRATE.item("uxv_emitter", Item::new).lang("UXV Emitter").onRegister(compassNodeExist(GTCompassSections.COMPONENTS, "emitter")).register();
+    public static ItemEntry<Item> EMITTER_OpV= REGISTRATE.item("opv_emitter", Item::new).lang("OpV Emitter").onRegister(compassNodeExist(GTCompassSections.COMPONENTS, "emitter")).register();
 
     public static ItemEntry<Item> SENSOR_LV= REGISTRATE.item("lv_sensor", Item::new).lang("LV Sensor").onRegister(compassNodeExist(GTCompassSections.COMPONENTS, "sensor")).register();
     public static ItemEntry<Item> SENSOR_MV= REGISTRATE.item("mv_sensor", Item::new).lang("MV Sensor").onRegister(compassNodeExist(GTCompassSections.COMPONENTS, "sensor")).register();
@@ -1317,6 +1322,36 @@ public class GTItems {
     public static ItemEntry<Item> WETWARE_PROCESSOR_ASSEMBLY_ZPM = REGISTRATE.item("wetware_processor_assembly", Item::new).lang("Wetware Processor Assembly").tag(CustomTags.ZPM_CIRCUITS).onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
     public static ItemEntry<Item> WETWARE_SUPER_COMPUTER_UV = REGISTRATE.item("wetware_processor_computer", Item::new).lang("Wetware Processor Supercomputer").tag(CustomTags.UV_CIRCUITS).onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
     public static ItemEntry<Item> WETWARE_MAINFRAME_UHV = REGISTRATE.item("wetware_processor_mainframe", Item::new).lang("Wetware Processor Mainframe").tag(CustomTags.UHV_CIRCUITS).onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
+    
+    // T8: Bio
+    public static ItemEntry<Item> Bio_PROCESSOR_ZPM = REGISTRATE.item("bio_processor", Item::new).lang("Bio Processor").tag(CustomTags.ZPM_CIRCUITS).onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
+    public static ItemEntry<Item> Bio_PROCESSOR_ASSEMBLY_UV = REGISTRATE.item("bio_processor_assembly", Item::new).lang("Bio Processor Assembly").tag(CustomTags.UV_CIRCUITS).onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
+    public static ItemEntry<Item> Bio_SUPER_COMPUTER_UHV = REGISTRATE.item("bio_processor_computer", Item::new).lang("Bio Processor Supercomputer").tag(CustomTags.UHV_CIRCUITS).onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
+    public static ItemEntry<Item> Bio_MAINFRAME_UEV = REGISTRATE.item("bio_processor_mainframe", Item::new).lang("Bio Processor Mainframe").tag(CustomTags.UEV_CIRCUITS).onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
+
+    // T8: Optical
+    public static ItemEntry<Item> Optical_PROCESSOR_UV =         REGISTRATE.item("optical_processor", Item::new)          .lang("Optical Processor")              .tag(CustomTags.UV_CIRCUITS).onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
+    public static ItemEntry<Item> Optical_PROCESSOR_ASSEMBLY_UHV = REGISTRATE.item("optical_processor_assembly", Item::new) .lang("Optical Processor Assembly")     .tag(CustomTags.UHV_CIRCUITS).onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
+    public static ItemEntry<Item> Optical_SUPER_COMPUTER_UEV =    REGISTRATE.item("optical_processor_computer", Item::new) .lang("Optical Processor Supercomputer").tag(CustomTags.UEV_CIRCUITS) .onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
+    public static ItemEntry<Item> Optical_MAINFRAME_UIV =         REGISTRATE.item("optical_processor_mainframe", Item::new).lang("Optical Processor Mainframe")    .tag(CustomTags.UIV_CIRCUITS).onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
+
+    // T9: Exotic
+    public static ItemEntry<Item> Exotic_PROCESSOR_UHV =          REGISTRATE.item("cosmic_processor", Item::new)          .lang("Cosmic Processor")              .tag(CustomTags.UHV_CIRCUITS).onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
+    public static ItemEntry<Item> Exotic_PROCESSOR_ASSEMBLY_UEV =REGISTRATE.item("cosmic_processor_assembly", Item::new) .lang("Cosmic Processor Assembly")     .tag(CustomTags.UEV_CIRCUITS).onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
+    public static ItemEntry<Item> Exotic_SUPER_COMPUTER_UIV =    REGISTRATE.item("cosmic_processor_computer", Item::new) .lang("Cosmic Processor Supercomputer").tag(CustomTags.UIV_CIRCUITS) .onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
+    public static ItemEntry<Item> Exotic_MAINFRAME_UXV =         REGISTRATE.item("cosmic_processor_mainframe", Item::new).lang("Cosmic Processor Mainframe")    .tag(CustomTags.UXV_CIRCUITS).onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
+
+    // T10: Cosmic
+    public static ItemEntry<Item> Cosmic_PROCESSOR_UEV =           REGISTRATE.item("Exotic_processor", Item::new)          .lang("Exotic Processor")              .tag(CustomTags.UEV_CIRCUITS).onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
+    public static ItemEntry<Item> Cosmic_PROCESSOR_ASSEMBLY_UIV = REGISTRATE.item("Exotic_processor_assembly", Item::new) .lang("Exotic Processor Assembly")     .tag(CustomTags.UIV_CIRCUITS).onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
+    public static ItemEntry<Item> Cosmic_SUPER_COMPUTER_UXV =     REGISTRATE.item("Exotic_processor_computer", Item::new) .lang("Exotic Processor Supercomputer").tag(CustomTags.UXV_CIRCUITS) .onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
+    public static ItemEntry<Item> Cosmic_MAINFRAME_OpV =          REGISTRATE.item("Exotic_processor_mainframe", Item::new).lang("Exotic Processor Mainframe")    .tag(CustomTags.OpV_CIRCUITS).onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
+    
+    // T11: Transcendent
+    public static ItemEntry<Item> Transcendent_PROCESSOR_UEV =          REGISTRATE.item("Transcendent_processor", Item::new)          .lang("Transcendent Processor")              .tag(CustomTags.UIV_CIRCUITS).onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
+    public static ItemEntry<Item> Transcendent_PROCESSOR_ASSEMBLY_UIV = REGISTRATE.item("Transcendent_processor_assembly", Item::new) .lang("Transcendent Processor Assembly")     .tag(CustomTags.UXV_CIRCUITS).onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
+    public static ItemEntry<Item> Transcendent_SUPER_COMPUTER_UXV =     REGISTRATE.item("Transcendent_processor_computer", Item::new) .lang("Transcendent Processor Supercomputer").tag(CustomTags.OpV_CIRCUITS) .onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
+    public static ItemEntry<Item> Transcendent_MAINFRAME_OpV =          REGISTRATE.item("Transcendent_processor_mainframe", Item::new).lang("Transcendent Processor Mainframe")    .tag(CustomTags.MAX_CIRCUITS).onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
 
     public static ItemEntry<Item> COMPONENT_GRINDER_DIAMOND = REGISTRATE.item("diamond_grinding_head", Item::new).lang("Diamond Grinding Head").onRegister(materialInfo(new ItemMaterialInfo(new MaterialStack(GTMaterials.Steel, GTValues.M * 8), new MaterialStack(GTMaterials.Diamond, GTValues.M * 5)))).onRegister(compassNode(GTCompassSections.MISC)).register();
     public static ItemEntry<Item> COMPONENT_GRINDER_TUNGSTEN = REGISTRATE.item("tungsten_grinding_head", Item::new).lang("Tungsten Grinding Head").onRegister(materialInfo(new ItemMaterialInfo(new MaterialStack(GTMaterials.Tungsten, GTValues.M * 4), new MaterialStack(GTMaterials.VanadiumSteel, GTValues.M * 8), new MaterialStack(GTMaterials.Diamond, GTValues.M)))).onRegister(compassNode(GTCompassSections.MISC)).register();

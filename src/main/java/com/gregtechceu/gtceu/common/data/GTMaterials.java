@@ -695,6 +695,7 @@ public class GTMaterials {
     public static Material EnrichedNaquadahSulfate;
     public static Material NaquadriaSulfate;
     public static Material Pyrochlore;
+    public static Material SiliconSolarGrade;
 
     /**
      * Organic chemistry
@@ -991,6 +992,7 @@ public class GTMaterials {
      * Fourth Degree Materials
      */
     public static Material RedAlloy;
+    public static Material RedstoneAlloy;
     public static Material BlueAlloy;
     public static Material BasalticMineralSand;
     public static Material HSSE;
