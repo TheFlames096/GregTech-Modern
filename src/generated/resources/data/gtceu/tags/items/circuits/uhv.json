@@ -1,5 +1,8 @@
 {
   "values": [
-    "gtceu:wetware_processor_mainframe"
+    "gtceu:wetware_processor_mainframe",
+    "gtceu:bio_processor_computer",
+    "gtceu:optical_processor_assembly",
+    "gtceu:exotic_processor"
   ]
 }

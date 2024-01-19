@@ -139,16 +139,20 @@ public class GTElements {
     public static final Element Mc = createAndRegister(115, 173, -1, null, "Moscovium", "Mc", false);
     public static final Element Lv = createAndRegister(116, 177, -1, null, "Livermorium", "Lv", false);
     public static final Element Ts = createAndRegister(117, 177, -1, null, "Tennessine", "Ts", false);
-    public static final Element Og = createAndRegister(118, 176, -1, null, "Oganesson", "Og", false);
-    public static final Element Tr = createAndRegister(119, 178, -1, null, "Tritanium", "Tr", false);
+    public static final Element Og = createAndRegister(118, 176, -1, null, "Oganesson", "Og", true);
+    public static final Element Og2 = createAndRegister(118, 174, -1, null, "MetastableOganesson", "Og*", true);
+    public static final Element Tr = createAndRegister(119, 178, -1, null, "Tiberium", "Tr", false);
+    public static final Element Tn = createAndRegister(126, 197, -1, null, "Tritanium", "Tn", false);
     public static final Element Dr = createAndRegister(120, 180, -1, null, "Duranium", "Dr", false);
     public static final Element Ke = createAndRegister(125, 198, -1, null, "Trinium", "Ke", false);
     public static final Element Nq = createAndRegister(174, 352, 140, null, "Naquadah", "Nq", true);
     public static final Element Nq1 = createAndRegister(174, 354, 140, null, "NaquadahEnriched", "Nq+", true);
     public static final Element Nq2 = createAndRegister(174, 348, 140, null, "Naquadria", "*Nq*", true);
+    public static final Element Nq3 = createAndRegister(174, 346, 140, null, "ExtremelyUnstableNaquadah", "Nq"+(char)9734, true);
     public static final Element Nt = createAndRegister(0, 1000, -1, null, "Neutronium", "Nt", false);
     public static final Element Sp = createAndRegister(1, 0, -1, null, "Space", "Sp", false);
     public static final Element Ma = createAndRegister(1, 0, -1, null, "Magic", "Ma", false);
+    public static final Element Sh = createAndRegister(1, 0, -1, null, "Shirabon", "Sh"+(char)9191, false);
 
     public static Element createAndRegister(long protons, long neutrons, long halfLifeSeconds, String decayTo, String name, String symbol, boolean isIsotope) {
         Element element = new Element(protons, neutrons, halfLifeSeconds, decayTo, name, symbol, isIsotope);

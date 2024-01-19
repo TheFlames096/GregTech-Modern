@@ -485,16 +485,6 @@ public class GTMaterials {
     public static Material Zinc;
     public static Material Zirconium;
 
-    /**
-     * Fantasy Elements
-     */
-    public static Material Naquadah;
-    public static Material NaquadahEnriched;
-    public static Material Naquadria;
-    public static Material Neutronium;
-    public static Material Tritanium;
-    public static Material Duranium;
-    public static Material Trinium;
 
     /**
      * First Degree Compounds
@@ -669,15 +659,6 @@ public class GTMaterials {
     public static Material DistilledWater;
     public static Material SodiumPotassium;
     public static Material SamariumMagnetic;
-    public static Material ManganesePhosphide;
-    public static Material MagnesiumDiboride;
-    public static Material MercuryBariumCalciumCuprate;
-    public static Material UraniumTriplatinum;
-    public static Material SamariumIronArsenicOxide;
-    public static Material IndiumTinBariumTitaniumCuprate;
-    public static Material UraniumRhodiumDinaquadide;
-    public static Material EnrichedNaquadahTriniumEuropiumDuranide;
-    public static Material RutheniumTriniumAmericiumNeutronate;
     public static Material PlatinumRaw;
     public static Material InertMetalMixture;
     public static Material RhodiumSulfate;
@@ -1040,4 +1021,34 @@ public class GTMaterials {
     public static Material SuperconductorUEV;
     public static Material SuperconductorUIV;
     public static Material SuperconductorUXV;
+
+    /**
+     * Fantasy Elements
+     */
+    public static Material Naquadah;
+    public static Material NaquadahEnriched;
+    public static Material Naquadria;
+    public static Material Neutronium;
+    public static Material Tritanium;
+    public static Material Duranium;
+    public static Material Trinium;
+    public static Material Tiberium;
+
+    /**
+     * GoodGenerator Materials
+     */
+    public static Material Shirabon;
+    public static Material MetastableOganesson;
+    public static Material ExtremelyUnstableNaquadah;
+
+    /**
+     * GT++ Materials
+     */
+    public static Material Runite;
+    public static Material AdvancedNitinol;
+    public static Material Hypogen;
+    public static Material ChromaticGlass;
+    public static Material CelestialTungsten;
+    public static Material AstralTitanium;
+    public static Material DragonBlood;
 }

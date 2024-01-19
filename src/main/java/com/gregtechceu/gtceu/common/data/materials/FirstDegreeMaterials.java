@@ -1248,98 +1248,6 @@ public class FirstDegreeMaterials {
                 .buildAndRegister();
         Samarium.getProperty(PropertyKey.INGOT).setMagneticMaterial(SamariumMagnetic);
 
-        ManganesePhosphide = new Material.Builder(GTCEu.id("manganese_phosphide"))
-                .ingot()
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1368))
-                .color(0xE1B454).secondaryColor(0x223033).iconSet(METALLIC)
-                .flags(DECOMPOSITION_BY_ELECTROLYZING)
-                .components(Manganese, 1, Phosphorus, 1)
-                .cableProperties(GTValues.V[GTValues.LV], 2, 0, true, 78)
-                .blastTemp(1200, GasTier.LOW)
-                .buildAndRegister();
-
-        MagnesiumDiboride = new Material.Builder(GTCEu.id("magnesium_diboride"))
-                .ingot()
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1103))
-                .color(0x603c1a).secondaryColor(0x423e39).iconSet(METALLIC)
-                .flags(DECOMPOSITION_BY_ELECTROLYZING)
-                .components(Magnesium, 1, Boron, 2)
-                .cableProperties(GTValues.V[MV], 4, 0, true, 78)
-                .blastTemp(2500, GasTier.LOW, GTValues.VA[HV], 1000)
-                .buildAndRegister();
-
-        MercuryBariumCalciumCuprate = new Material.Builder(GTCEu.id("mercury_barium_calcium_cuprate"))
-                .ingot()
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1075))
-                .color(0x777777).secondaryColor(0x3f2e2e).iconSet(SHINY)
-                .flags(DECOMPOSITION_BY_ELECTROLYZING)
-                .components(Mercury, 1, Barium, 2, Calcium, 2, Copper, 3, Oxygen, 8)
-                .cableProperties(GTValues.V[HV], 4, 0, true, 78)
-                .blastTemp(3300, GasTier.LOW, GTValues.VA[HV], 1500)
-                .buildAndRegister();
-
-        UraniumTriplatinum = new Material.Builder(GTCEu.id("uranium_triplatinum"))
-                .ingot()
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1882))
-                .color(0x457045).secondaryColor(0x66ff00).iconSet(RADIOACTIVE)
-                .flags(DECOMPOSITION_BY_CENTRIFUGING)
-                .components(Uranium238, 1, Platinum, 3)
-                .cableProperties(GTValues.V[GTValues.EV], 6, 0, true, 30)
-                .blastTemp(4400, GasTier.MID, GTValues.VA[GTValues.EV], 1000)
-                .buildAndRegister()
-                .setFormula("UPt3", true);
-
-        SamariumIronArsenicOxide = new Material.Builder(GTCEu.id("samarium_iron_arsenic_oxide"))
-                .ingot()
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1347))
-                .color(0x850e85).secondaryColor(0x332f33).iconSet(SHINY)
-                .flags(DECOMPOSITION_BY_CENTRIFUGING)
-                .components(Samarium, 1, Iron, 1, Arsenic, 1, Oxygen, 1)
-                .cableProperties(GTValues.V[GTValues.IV], 6, 0, true, 30)
-                .blastTemp(5200, GasTier.MID, GTValues.VA[GTValues.EV], 1500)
-                .buildAndRegister();
-
-        IndiumTinBariumTitaniumCuprate = new Material.Builder(GTCEu.id("indium_tin_barium_titanium_cuprate"))
-                .ingot()
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1012))
-                .color(0x686760).secondaryColor(0x673300).iconSet(METALLIC)
-                .flags(DECOMPOSITION_BY_ELECTROLYZING, GENERATE_FINE_WIRE)
-                .components(Indium, 4, Tin, 2, Barium, 2, Titanium, 1, Copper, 7, Oxygen, 14)
-                .cableProperties(GTValues.V[GTValues.LuV], 8, 0, true, 5)
-                .blastTemp(6000, GasTier.HIGH, GTValues.VA[GTValues.IV], 1000)
-                .buildAndRegister();
-
-        UraniumRhodiumDinaquadide = new Material.Builder(GTCEu.id("uranium_rhodium_dinaquadide"))
-                .ingot()
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(3410))
-                .color(0x232020).secondaryColor(0xff009c).iconSet(RADIOACTIVE)
-                .flags(DECOMPOSITION_BY_CENTRIFUGING, GENERATE_FINE_WIRE)
-                .components(Uranium238, 1, Rhodium, 1, Naquadah, 2)
-                .cableProperties(GTValues.V[GTValues.ZPM], 8, 0, true, 5)
-                .blastTemp(9000, GasTier.HIGH, GTValues.VA[GTValues.IV], 1500)
-                .buildAndRegister()
-                .setFormula("URhNq2", true);
-
-        EnrichedNaquadahTriniumEuropiumDuranide = new Material.Builder(GTCEu.id("enriched_naquadah_trinium_europium_duranide"))
-                .ingot()
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(5930))
-                .color(0xc5c1a4).secondaryColor(0x2b0645).iconSet(METALLIC)
-                .flags(DECOMPOSITION_BY_CENTRIFUGING, GENERATE_FINE_WIRE)
-                .components(NaquadahEnriched, 4, Trinium, 3, Europium, 2, Duranium, 1)
-                .cableProperties(GTValues.V[GTValues.UV], 16, 0, true, 3)
-                .blastTemp(9900, GasTier.HIGH, GTValues.VA[GTValues.LuV], 1000)
-                .buildAndRegister();
-
-        RutheniumTriniumAmericiumNeutronate = new Material.Builder(GTCEu.id("ruthenium_trinium_americium_neutronate"))
-                .ingot()
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(23691))
-                .color(0x897b76).secondaryColor(0x00c0ff).iconSet(RADIOACTIVE)
-                .flags(DECOMPOSITION_BY_ELECTROLYZING)
-                .components(Ruthenium, 1, Trinium, 2, Americium, 1, Neutronium, 2, Oxygen, 8)
-                .cableProperties(GTValues.V[GTValues.UHV], 24, 0, true, 3)
-                .blastTemp(10800, GasTier.HIGHER)
-                .buildAndRegister();
-
         InertMetalMixture = new Material.Builder(GTCEu.id("inert_metal_mixture"))
                 .dust()
                 .color(0x2b0645).secondaryColor(0x6a1600).iconSet(METALLIC)
@@ -1457,8 +1365,8 @@ public class FirstDegreeMaterials {
         SiliconSolarGrade= new Material.Builder(GTCEu.id("siliconsolargrade"))
         .dust()
         .color(0xaaaab5).secondaryColor(0x10293b).iconSet(METALLIC)
-        .flags(GENERATE_PLATE)
-        .components(Silicon)
+        .flags(GENERATE_PLATE,DISABLE_DECOMPOSITION)
+        .components(Silicon,1)
         .buildAndRegister();
     }
 }
