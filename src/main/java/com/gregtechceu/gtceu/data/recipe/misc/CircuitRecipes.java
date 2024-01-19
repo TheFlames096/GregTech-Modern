@@ -418,6 +418,7 @@ public class CircuitRecipes {
                 .inputFluids(Polyethylene.getFluid(L))
                 .outputItems(DIODE, 8)
                 .duration(400).EUt(VA[LV]).save(provider);
+
         // Inductor
         ASSEMBLER_RECIPES.recipeBuilder("inductor")
                 .inputItems(ring, Steel)
@@ -453,22 +454,23 @@ public class CircuitRecipes {
                 .inputItems(wireFine, Electrum, 4)
                 .inputFluids(Polyethylene.getFluid(L * 2))
                 .outputItems(SMD_RESISTOR, 16)
-                .duration(160).EUt(VA[HV]).save(provider);
+                .duration(320).EUt(VA[HV]).save(provider);
 
         ASSEMBLER_RECIPES.recipeBuilder("smd_resistor_tantalum")
                 .inputItems(dust, Carbon)
                 .inputItems(wireFine, Tantalum, 4)
                 .inputFluids(Polyethylene.getFluid(L * 2))
                 .outputItems(SMD_RESISTOR, 32)
-                .duration(160).EUt(VA[HV]).save(provider);
+                .duration(320).EUt(VA[HV]).save(provider);
 
         // SMD Diode
         ASSEMBLER_RECIPES.recipeBuilder("smd_diode")
                 .inputItems(dust, GalliumArsenide)
-                .inputItems(wireFine, Platinum, 8)
-                .inputFluids(Polyethylene.getFluid(L * 2))
-                .outputItems(SMD_DIODE, 32)
-                .duration(200).EUt(VA[HV]).save(provider);
+                .inputItems(wireFine, Platinum, 16)
+                .inputFluids(Polyethylene.getFluid(L * 4))
+                .outputItems(SMD_DIODE, 64)
+                .circuitMeta(3)
+                .duration(1200).EUt(VA[MV]).save(provider);
 
         // SMD Transistor
         ASSEMBLER_RECIPES.recipeBuilder("smd_transistor_annealed_copper")

@@ -91,6 +91,7 @@ public class GTMaterials {
          */
         HigherDegreeMaterials.register();
 
+        TieredMaterials.register();
         /*
          * Register info for cyclical references
          */
@@ -1014,5 +1015,29 @@ public class GTMaterials {
     public static Material TitaniumTungstenCarbide;
     public static Material HastelloyC276;
 
-
+    /**
+     * Superconductor Materials
+     */
+    public static Material SuperconductorBaseMV;
+    public static Material SuperconductorBaseHV;
+    public static Material SuperconductorBaseEV;
+    public static Material SuperconductorBaseIV;
+    public static Material SuperconductorBaseLuV;
+    public static Material SuperconductorBaseZPM;
+    public static Material SuperconductorBaseUV;
+    public static Material SuperconductorBaseUHV;
+    public static Material SuperconductorBaseUEV;
+    public static Material SuperconductorBaseUIV;
+    public static Material SuperconductorBaseUXV;
+    public static Material SuperconductorMV;
+    public static Material SuperconductorHV;
+    public static Material SuperconductorEV;
+    public static Material SuperconductorIV;
+    public static Material SuperconductorLuV;
+    public static Material SuperconductorZPM;
+    public static Material SuperconductorUV;
+    public static Material SuperconductorUHV;
+    public static Material SuperconductorUEV;
+    public static Material SuperconductorUIV;
+    public static Material SuperconductorUXV;
 }

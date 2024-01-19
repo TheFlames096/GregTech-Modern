@@ -171,26 +171,50 @@ public class MaterialRecipeHandler {
                 .outputItems(output)
                 .blastFurnaceTemp(blastTemp)
                 .EUt(EUt);
-
+                if(gasTier==BlastProperty.GasTier.LOWEST || gasTier==BlastProperty.GasTier.LOW)
+            blastBuilder.copy("blast_" + material.getName())
+                    .circuitMeta(1)
+                    .duration((int)(duration*1.1))
+                    .save(provider);
         if (gasTier != null) {
             FluidIngredient gas = CraftingComponent.EBF_GASES.get(gasTier).copy();
 
-            blastBuilder.copy("blast_" + material.getName())
-                    .circuitMeta(1)
-                    .duration(duration)
+            if(gasTier==BlastProperty.GasTier.LOWEST)
+            blastBuilder.copy("blast_" + material.getName() + "_gas0")
+                    .circuitMeta(11)
+                    .inputFluids(CraftingComponent.EBF_GASES.get(BlastProperty.GasTier.LOWEST).copy())
+                    .duration((int) (duration))
                     .save(provider);
-
-            blastBuilder.copy("blast_" + material.getName() + "_gas")
-                    .circuitMeta(2)
-                    .inputFluids(gas)
-                    .duration((int) (duration * 0.67))
+            else
+            blastBuilder.copy("blast_" + material.getName() + "_gas0")
+                    .circuitMeta(11)
+                    .inputFluids(CraftingComponent.EBF_GASES.get(BlastProperty.GasTier.LOW).copy())
+                    .duration((int) (duration))
                     .save(provider);
-        } else {
-            blastBuilder.duration(duration);
-            if (material == Silicon) {
-                blastBuilder.circuitMeta(1);
-            }
-            blastBuilder.save(provider);
+            blastBuilder.copy("blast_" + material.getName() + "_gas1")
+                    .inputFluids(CraftingComponent.EBF_GASES.get(BlastProperty.GasTier.MID).copy())
+                    .duration((int) (duration * 8.0/9.0))
+                    .save(provider);
+            blastBuilder.copy("blast_" + material.getName() + "_gas2")
+                    .inputFluids(CraftingComponent.EBF_GASES.get(BlastProperty.GasTier.HIGH).copy())
+                    .duration((int) (duration * 7.0/9.0))
+                    .save(provider);
+            blastBuilder.copy("blast_" + material.getName() + "_gas3")
+                            .inputFluids(CraftingComponent.EBF_GASES.get(BlastProperty.GasTier.HIGHER).copy())
+                            .duration((int) (duration * 2.0/3.0))
+                            .save(provider);
+            blastBuilder.copy("blast_" + material.getName() + "_gas4")
+                                    .inputFluids(CraftingComponent.EBF_GASES.get(BlastProperty.GasTier.HIGHEST).copy())
+                                    .duration((int) (duration *5.0/9.0))
+                                    .save(provider);
+            blastBuilder.copy("blast_" + material.getName() + "_gas5")
+                                            .inputFluids(CraftingComponent.EBF_GASES.get(BlastProperty.GasTier.ULTRA).copy())
+                                            .duration((int) (duration * 4.0/9.0))
+                                            .save(provider);
+            blastBuilder.copy("blast_" + material.getName() + "_gas6")
+                                            .inputFluids(CraftingComponent.EBF_GASES.get(BlastProperty.GasTier.EXOTIC).copy())
+                                            .duration((int) (duration * 3.0/9.0))
+                                            .save(provider);
         }
 
         // Add Vacuum Freezer recipe if required.

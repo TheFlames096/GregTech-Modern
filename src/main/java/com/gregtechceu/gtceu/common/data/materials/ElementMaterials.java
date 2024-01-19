@@ -536,7 +536,7 @@ public class ElementMaterials {
                 .buildAndRegister();
 
         Oganesson = new Material.Builder(GTCEu.id("oganesson"))
-                .color(0x443936).secondaryColor(0xff1dbd).iconSet(RADIOACTIVE)
+                .color(0x443936).secondaryColor(0xff1dbd).iconSet(RADIOACTIVE).gas()
                 .element(GTElements.Og)
                 .buildAndRegister();
 

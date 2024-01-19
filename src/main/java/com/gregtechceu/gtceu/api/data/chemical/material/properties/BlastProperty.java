@@ -109,7 +109,10 @@ public class BlastProperty implements IMaterialProperty<BlastProperty> {
         LOW, MID, HIGH,
 
         // Tiers reserved for addons
-        HIGHER, HIGHEST;
+        HIGHER, HIGHEST,
+
+        // Extra Tiers 
+        LOWEST,ULTRA , EXOTIC;
 
         public static final GasTier[] VALUES = values();
     }

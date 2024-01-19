@@ -1454,7 +1454,7 @@ public class FirstDegreeMaterials {
                 .components(Calcium, 2, Niobium, 2, Oxygen, 7)
                 .buildAndRegister();
 
-        SiliconSolarGrade= new Material.Builder(GTCEu.id("pyrochlore"))
+        SiliconSolarGrade= new Material.Builder(GTCEu.id("siliconsolargrade"))
         .dust()
         .color(0xaaaab5).secondaryColor(0x10293b).iconSet(METALLIC)
         .flags(GENERATE_PLATE)
