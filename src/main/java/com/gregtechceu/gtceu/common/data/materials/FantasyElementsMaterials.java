@@ -96,5 +96,106 @@ public class FantasyElementsMaterials {
                 .flags(GENERATE_PLATE,GENERATE_ROD,GENERATE_LONG_ROD,GENERATE_LENS,GENERATE_FOIL)
                 .element(GTElements.Tr)
                 .buildAndRegister();
+
+        //GoodGenerator
+        Orundum = new Material.Builder(GTCEu.id("orundum"))
+                .gem(11)
+                .color(0xcd2626).secondaryColor(0xcd2626).iconSet(SHINY)
+                .flags(GENERATE_PLATE,GENERATE_ROD,GENERATE_LONG_ROD,GENERATE_LENS,GENERATE_FOIL)
+                .element(GTElements.Or)
+                .buildAndRegister();
+
+        Shirabon = new Material.Builder(GTCEu.id("shirabon"))
+                .ingot(26)
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(13000))
+                .color( 0xe0156d).secondaryColor(0xe0156d).iconSet(SHINY)
+                .appendFlags(EXT2_METAL, GENERATE_FRAME, GENERATE_RING, GENERATE_SMALL_GEAR, GENERATE_ROUND, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_GEAR)
+                .element(GTElements.Sh)
+                .blastTemp(13000, GasTier.MID, GTValues.VA[GTValues.UIV], 6000)
+                .rotorStats(20.0f, 6.0f, 10240)
+                .buildAndRegister();
+
+        MetastableOganesson = new Material.Builder(GTCEu.id("metastableoganesson"))
+                .ingot(24)
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(11000))
+                .color( 0x14397f).secondaryColor(0x14397f).iconSet(SHINY)
+                .appendFlags(EXT2_METAL, GENERATE_FRAME, GENERATE_RING, GENERATE_SMALL_GEAR, GENERATE_ROUND, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_GEAR)
+                .element(GTElements.Sh)
+                .blastTemp(12000, GasTier.LOW, GTValues.VA[GTValues.UEV], 6000)
+                .rotorStats(20.0f, 6.0f, 10240)
+                .buildAndRegister();
+                
+        //GT++
+        Runite = new Material.Builder(GTCEu.id("runtie"))
+                .plasma()
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(11000))
+                .color( 0x3cc8be).secondaryColor(0x3cc8be).iconSet(FINE)
+                .element(GTElements.Runite)
+                .buildAndRegister();
+
+        DragonBlood = new Material.Builder(GTCEu.id("dragonblood"))
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(10000))
+                .color( 0xdc2814).secondaryColor(0xdc2814).iconSet(SHINY)
+                .element(GTElements.DragonBlood)
+                .buildAndRegister();
+        
+        Rhugnor = new Material.Builder(GTCEu.id("rhugnor"))
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(11000))
+                .color( 0x3cc8be).secondaryColor(0x3cc8be).iconSet(RADIOACTIVE)
+                .element(GTElements.Rhugnor)
+                .buildAndRegister();
+
+        Hypogen = new Material.Builder(GTCEu.id("hypogen"))
+                .ingot(5)
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(11530))
+                .color( 0xdc784b).secondaryColor(0xdc784b).iconSet(RADIOACTIVE)
+                .element(GTElements.Hypogen)
+                .appendFlags(EXT2_METAL, GENERATE_FRAME, GENERATE_RING, GENERATE_ROUND, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .blastTemp(11530, GasTier.LOW, GTValues.VA[GTValues.UIV], 12000)
+                .buildAndRegister();
+        
+        EnergyCrystal = new Material.Builder(GTCEu.id("energycrystal"))
+                .ingot(4)
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(4935))
+                .color(0xe4ff00).secondaryColor(0xe4ff00).iconSet(METALLIC)
+                .element(GTElements.EnergyCrystal)
+                .appendFlags(EXT2_METAL, GENERATE_FRAME, GENERATE_RING, GENERATE_ROUND, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .blastTemp(4935, GasTier.LOW, GTValues.VA[GTValues.EV], 1000)
+                .buildAndRegister();
+     
+        AdvancedNitinol = new Material.Builder(GTCEu.id("advacednitinol"))
+        .ingot(4)
+        .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(8675))
+        .color(0xdca0f0).secondaryColor(0xdca0f0).iconSet(RADIOACTIVE)
+        .element(GTElements.AdvancedNitinol)
+        .appendFlags(EXT2_METAL)
+        .blastTemp(8675, GasTier.LOW, GTValues.VA[GTValues.UV], 12000)
+        .buildAndRegister();
+
+        ChromaticGlass = new Material.Builder(GTCEu.id("chromaticglass"))
+        .ingot(4)
+        .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(9475))
+        .color(0xffffff).secondaryColor(0xffffff).iconSet(SHINY)
+        .element(GTElements.ChromaticGlass)
+        .appendFlags(EXT2_METAL)
+        .buildAndRegister();
+
+        CelestialTungsten = new Material.Builder(GTCEu.id("celestialtungsten"))
+        .ingot(4)
+        .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(10470))
+        .color(0xdca0f0).secondaryColor(0xdca0f0).iconSet(METALLIC)
+        .element(GTElements.CelestialTungsten)
+        .appendFlags(EXT2_METAL)
+        .blastTemp(10470, GasTier.LOW, GTValues.VA[GTValues.UEV], 12000)
+        .buildAndRegister();
+
+        AstralTitanium = new Material.Builder(GTCEu.id("astraltitanium"))
+        .ingot(4)
+        .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(9715))
+        .color(0x323232).secondaryColor(0x323232).iconSet(METALLIC)
+        .element(GTElements.AstralTitanium)
+        .appendFlags(EXT2_METAL)
+        .blastTemp(9715, GasTier.LOW, GTValues.VA[GTValues.UHV], 11000)
+        .buildAndRegister();
     }
 }

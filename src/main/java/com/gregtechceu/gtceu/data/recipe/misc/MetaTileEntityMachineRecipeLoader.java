@@ -136,7 +136,7 @@ public class MetaTileEntityMachineRecipeLoader {
                 .inputItems(spring, Europium, 4)
                 .inputItems(ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT, 2)
                 .inputItems(CustomTags.UHV_CIRCUITS)
-                .inputItems(wireGtDouble, RutheniumTriniumAmericiumNeutronate, 2)
+                .inputItems(wireGtDouble, SuperconductorUHV, 2)
                 .inputFluids(SodiumPotassium.getFluid(12000))
                 .inputFluids(SolderingAlloy.getFluid(5760))
                 .outputItems(ENERGY_OUTPUT_HATCH[UHV])
@@ -250,7 +250,7 @@ public class MetaTileEntityMachineRecipeLoader {
                 .inputItems(cableGtSingle, Europium, 4)
                 .inputItems(ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT, 2)
                 .inputItems(CustomTags.UHV_CIRCUITS)
-                .inputItems(wireGtDouble, RutheniumTriniumAmericiumNeutronate, 2)
+                .inputItems(wireGtDouble, SuperconductorUHV, 2)
                 .inputFluids(SodiumPotassium.getFluid(12000))
                 .inputFluids(SolderingAlloy.getFluid(5760))
                 .outputItems(ENERGY_INPUT_HATCH[UHV])
@@ -409,7 +409,7 @@ public class MetaTileEntityMachineRecipeLoader {
         ASSEMBLER_RECIPES.recipeBuilder("energy_hatch_4a_uhv")
                 .inputItems(ENERGY_INPUT_HATCH[UHV], 2)
                 .inputItems(ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT)
-                .inputItems(wireGtDouble, RutheniumTriniumAmericiumNeutronate)
+                .inputItems(wireGtDouble, SuperconductorUHV)
                 .inputItems(wireGtQuadruple, Europium, 2)
                 .outputItems(ENERGY_INPUT_HATCH_4A[UHV])
                 .duration(100).EUt(VA[UV]).save(provider);
@@ -452,7 +452,7 @@ public class MetaTileEntityMachineRecipeLoader {
         ASSEMBLER_RECIPES.recipeBuilder("energy_hatch_16a_uv")
                 .inputItems(ENERGY_INPUT_HATCH_4A[UV], 2)
                 .inputItems(ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT, 2)
-                .inputItems(wireGtDouble, RutheniumTriniumAmericiumNeutronate)
+                .inputItems(wireGtDouble, SuperconductorUHV)
                 .inputItems(wireGtOctal, Europium, 2)
                 .outputItems(ENERGY_INPUT_HATCH_16A[UV])
                 .duration(200).EUt(VA[UV]).save(provider);
@@ -498,7 +498,7 @@ public class MetaTileEntityMachineRecipeLoader {
         ASSEMBLER_RECIPES.recipeBuilder("substation_energy_hatch_uv")
                 .inputItems(ENERGY_INPUT_HATCH_16A[UV], 2)
                 .inputItems(ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT, 4)
-                .inputItems(wireGtQuadruple, RutheniumTriniumAmericiumNeutronate)
+                .inputItems(wireGtQuadruple, SuperconductorUHV)
                 .inputItems(wireGtHex, Europium, 2)
                 .outputItems(SUBSTATION_ENERGY_INPUT_HATCH[UV])
                 .duration(400).EUt(VA[UV]).save(provider);
@@ -553,7 +553,7 @@ public class MetaTileEntityMachineRecipeLoader {
         ASSEMBLER_RECIPES.recipeBuilder("dynamo_hatch_4a_uhv")
                 .inputItems(ENERGY_OUTPUT_HATCH[UHV], 2)
                 .inputItems(ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT)
-                .inputItems(wireGtDouble, RutheniumTriniumAmericiumNeutronate)
+                .inputItems(wireGtDouble, SuperconductorUHV)
                 .inputItems(wireGtQuadruple, Europium, 2)
                 .outputItems(ENERGY_OUTPUT_HATCH_4A[UHV])
                 .duration(100).EUt(VA[UV]).save(provider);
@@ -599,7 +599,7 @@ public class MetaTileEntityMachineRecipeLoader {
         ASSEMBLER_RECIPES.recipeBuilder("dynamo_hatch_16a_uv")
                 .inputItems(ENERGY_OUTPUT_HATCH_4A[UHV], 2)
                 .inputItems(ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT, 2)
-                .inputItems(wireGtDouble, RutheniumTriniumAmericiumNeutronate)
+                .inputItems(wireGtDouble, SuperconductorUHV)
                 .inputItems(wireGtOctal, Europium, 2)
                 .outputItems(ENERGY_OUTPUT_HATCH_16A[UV])
                 .duration(200).EUt(VA[UV]).save(provider);
@@ -645,7 +645,7 @@ public class MetaTileEntityMachineRecipeLoader {
         ASSEMBLER_RECIPES.recipeBuilder("substation_dynamo_hatch_uv")
                 .inputItems(ENERGY_OUTPUT_HATCH_16A[UV], 2)
                 .inputItems(ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT, 4)
-                .inputItems(wireGtQuadruple, RutheniumTriniumAmericiumNeutronate)
+                .inputItems(wireGtQuadruple, SuperconductorUHV)
                 .inputItems(wireGtHex, Europium, 2)
                 .outputItems(SUBSTATION_ENERGY_OUTPUT_HATCH[UV])
                 .duration(400).EUt(VA[UV]).save(provider);

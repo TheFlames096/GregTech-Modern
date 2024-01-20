@@ -1466,7 +1466,7 @@ public class CircuitRecipes {
                 .inputItems(ADVANCED_SMD_INDUCTOR, 32)
                 .inputItems(foil, Polybenzimidazole, 64)
                 .inputItems(RANDOM_ACCESS_MEMORY, 32)
-                .inputItems(wireGtDouble, EnrichedNaquadahTriniumEuropiumDuranide, 16)
+                .inputItems(wireGtDouble, SuperconductorBaseUHV, 16)
                 .inputItems(plate, Europium, 8)
                 .inputFluids(SolderingAlloy.getFluid(L * 20))
                 .inputFluids(Polybenzimidazole.getFluid(L * 8))

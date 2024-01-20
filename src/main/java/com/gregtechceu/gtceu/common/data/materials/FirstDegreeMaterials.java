@@ -1363,10 +1363,10 @@ public class FirstDegreeMaterials {
                 .buildAndRegister();
 
         SiliconSolarGrade= new Material.Builder(GTCEu.id("siliconsolargrade"))
-        .dust()
-        .color(0xaaaab5).secondaryColor(0x10293b).iconSet(METALLIC)
-        .flags(GENERATE_PLATE,DISABLE_DECOMPOSITION)
-        .components(Silicon,1)
-        .buildAndRegister();
+                .dust()
+                .color(0xaaaab5).secondaryColor(0x10293b).iconSet(METALLIC)
+                .flags(GENERATE_PLATE,DISABLE_DECOMPOSITION)
+                .components(Silicon,1)
+                .buildAndRegister();
     }
 }

@@ -32,7 +32,7 @@ public class ComputerRecipes {
         ASSEMBLER_RECIPES.recipeBuilder("active_transformer")
                 .inputItems(POWER_TRANSFORMER[LuV])
                 .inputItems(CustomTags.LuV_CIRCUITS, 2)
-                .inputItems(wireGtSingle, IndiumTinBariumTitaniumCuprate, 8)
+                .inputItems(wireGtSingle, SuperconductorLuV, 8)
                 .inputItems(ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT, 2)
                 .inputFluids(PCBCoolant.getFluid(1000))
                 .outputItems(ACTIVE_TRANSFORMER)

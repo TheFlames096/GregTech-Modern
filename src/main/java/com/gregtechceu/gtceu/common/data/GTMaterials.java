@@ -1040,15 +1040,18 @@ public class GTMaterials {
     public static Material Shirabon;
     public static Material MetastableOganesson;
     public static Material ExtremelyUnstableNaquadah;
+    public static Material Orundum;
 
     /**
      * GT++ Materials
      */
     public static Material Runite;
-    public static Material AdvancedNitinol;
+    public static Material DragonBlood;
+    public static Material EnergyCrystal;
+    public static Material Rhugnor;
     public static Material Hypogen;
+    public static Material AdvancedNitinol;
     public static Material ChromaticGlass;
     public static Material CelestialTungsten;
     public static Material AstralTitanium;
-    public static Material DragonBlood;
 }

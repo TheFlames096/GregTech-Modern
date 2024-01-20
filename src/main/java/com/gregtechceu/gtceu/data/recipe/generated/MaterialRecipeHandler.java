@@ -177,7 +177,6 @@ public class MaterialRecipeHandler {
                     .duration((int)(duration*1.1))
                     .save(provider);
         if (gasTier != null) {
-            FluidIngredient gas = CraftingComponent.EBF_GASES.get(gasTier).copy();
 
             if(gasTier==BlastProperty.GasTier.LOWEST)
             blastBuilder.copy("blast_" + material.getName() + "_gas0")
@@ -192,26 +191,32 @@ public class MaterialRecipeHandler {
                     .duration((int) (duration))
                     .save(provider);
             blastBuilder.copy("blast_" + material.getName() + "_gas1")
+                    .circuitMeta(11)
                     .inputFluids(CraftingComponent.EBF_GASES.get(BlastProperty.GasTier.MID).copy())
                     .duration((int) (duration * 8.0/9.0))
                     .save(provider);
             blastBuilder.copy("blast_" + material.getName() + "_gas2")
+            .circuitMeta(11)
                     .inputFluids(CraftingComponent.EBF_GASES.get(BlastProperty.GasTier.HIGH).copy())
                     .duration((int) (duration * 7.0/9.0))
                     .save(provider);
             blastBuilder.copy("blast_" + material.getName() + "_gas3")
+            .circuitMeta(11)
                             .inputFluids(CraftingComponent.EBF_GASES.get(BlastProperty.GasTier.HIGHER).copy())
                             .duration((int) (duration * 2.0/3.0))
                             .save(provider);
             blastBuilder.copy("blast_" + material.getName() + "_gas4")
+            .circuitMeta(11)
                                     .inputFluids(CraftingComponent.EBF_GASES.get(BlastProperty.GasTier.HIGHEST).copy())
                                     .duration((int) (duration *5.0/9.0))
                                     .save(provider);
             blastBuilder.copy("blast_" + material.getName() + "_gas5")
+            .circuitMeta(11)
                                             .inputFluids(CraftingComponent.EBF_GASES.get(BlastProperty.GasTier.ULTRA).copy())
                                             .duration((int) (duration * 4.0/9.0))
                                             .save(provider);
             blastBuilder.copy("blast_" + material.getName() + "_gas6")
+            .circuitMeta(11)
                                             .inputFluids(CraftingComponent.EBF_GASES.get(BlastProperty.GasTier.EXOTIC).copy())
                                             .duration((int) (duration * 3.0/9.0))
                                             .save(provider);

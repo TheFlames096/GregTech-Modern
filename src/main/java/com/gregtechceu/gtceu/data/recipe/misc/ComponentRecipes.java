@@ -624,93 +624,93 @@ public class ComponentRecipes {
                 .duration(600).EUt(100000).save(provider);
 
 
+//TODO fieldGenerator recipe
+        // //Field Generators Start ---------------------------------------------------------------------------------------
+        // VanillaRecipeHelper.addShapedRecipe(provider, true, "field_generator_lv", FIELD_GENERATOR_LV.asStack(), "WPW", "XGX", "WPW", 'W', new UnificationEntry(wireGtQuadruple, ManganesePhosphide), 'P', new UnificationEntry(plate, Steel), 'G', new UnificationEntry(gem, EnderPearl), 'X', CustomTags.LV_CIRCUITS);
+        // VanillaRecipeHelper.addShapedRecipe(provider, true, "field_generator_mv", FIELD_GENERATOR_MV.asStack(), "WPW", "XGX", "WPW", 'W', new UnificationEntry(wireGtQuadruple, MagnesiumDiboride), 'P', new UnificationEntry(plate, Aluminium), 'G', new UnificationEntry(gem, EnderEye), 'X', CustomTags.MV_CIRCUITS);
+        // VanillaRecipeHelper.addShapedRecipe(provider, true, "field_generator_hv", FIELD_GENERATOR_HV.asStack(), "WPW", "XGX", "WPW", 'W', new UnificationEntry(wireGtQuadruple, MercuryBariumCalciumCuprate), 'P', new UnificationEntry(plate, StainlessSteel), 'G', QUANTUM_EYE.asStack(), 'X', CustomTags.HV_CIRCUITS);
+        // VanillaRecipeHelper.addShapedRecipe(provider, true, "field_generator_ev", FIELD_GENERATOR_EV.asStack(), "WPW", "XGX", "WPW", 'W', new UnificationEntry(wireGtQuadruple, UraniumTriplatinum), 'P', new UnificationEntry(plateDouble, Titanium), 'G', new UnificationEntry(gem, NetherStar), 'X', CustomTags.EV_CIRCUITS);
+        // VanillaRecipeHelper.addShapedRecipe(provider, true, "field_generator_iv", FIELD_GENERATOR_IV.asStack(), "WPW", "XGX", "WPW", 'W', new UnificationEntry(wireGtQuadruple, SamariumIronArsenicOxide), 'P', new UnificationEntry(plateDouble, TungstenSteel), 'G', QUANTUM_STAR.asStack(), 'X', CustomTags.IV_CIRCUITS);
 
-        //Field Generators Start ---------------------------------------------------------------------------------------
-        VanillaRecipeHelper.addShapedRecipe(provider, true, "field_generator_lv", FIELD_GENERATOR_LV.asStack(), "WPW", "XGX", "WPW", 'W', new UnificationEntry(wireGtQuadruple, ManganesePhosphide), 'P', new UnificationEntry(plate, Steel), 'G', new UnificationEntry(gem, EnderPearl), 'X', CustomTags.LV_CIRCUITS);
-        VanillaRecipeHelper.addShapedRecipe(provider, true, "field_generator_mv", FIELD_GENERATOR_MV.asStack(), "WPW", "XGX", "WPW", 'W', new UnificationEntry(wireGtQuadruple, MagnesiumDiboride), 'P', new UnificationEntry(plate, Aluminium), 'G', new UnificationEntry(gem, EnderEye), 'X', CustomTags.MV_CIRCUITS);
-        VanillaRecipeHelper.addShapedRecipe(provider, true, "field_generator_hv", FIELD_GENERATOR_HV.asStack(), "WPW", "XGX", "WPW", 'W', new UnificationEntry(wireGtQuadruple, MercuryBariumCalciumCuprate), 'P', new UnificationEntry(plate, StainlessSteel), 'G', QUANTUM_EYE.asStack(), 'X', CustomTags.HV_CIRCUITS);
-        VanillaRecipeHelper.addShapedRecipe(provider, true, "field_generator_ev", FIELD_GENERATOR_EV.asStack(), "WPW", "XGX", "WPW", 'W', new UnificationEntry(wireGtQuadruple, UraniumTriplatinum), 'P', new UnificationEntry(plateDouble, Titanium), 'G', new UnificationEntry(gem, NetherStar), 'X', CustomTags.EV_CIRCUITS);
-        VanillaRecipeHelper.addShapedRecipe(provider, true, "field_generator_iv", FIELD_GENERATOR_IV.asStack(), "WPW", "XGX", "WPW", 'W', new UnificationEntry(wireGtQuadruple, SamariumIronArsenicOxide), 'P', new UnificationEntry(plateDouble, TungstenSteel), 'G', QUANTUM_STAR.asStack(), 'X', CustomTags.IV_CIRCUITS);
+        // ASSEMBLER_RECIPES.recipeBuilder("field_generator_lv")
+        //         .inputItems(gem, EnderPearl)
+        //         .inputItems(plate, Steel, 2)
+        //         .inputItems(CustomTags.LV_CIRCUITS, 2)
+        //         .inputItems(wireGtQuadruple, ManganesePhosphide, 4)
+        //         .outputItems(FIELD_GENERATOR_LV)
+        //         .duration(100).EUt(VA[LV]).save(provider);
 
-        ASSEMBLER_RECIPES.recipeBuilder("field_generator_lv")
-                .inputItems(gem, EnderPearl)
-                .inputItems(plate, Steel, 2)
-                .inputItems(CustomTags.LV_CIRCUITS, 2)
-                .inputItems(wireGtQuadruple, ManganesePhosphide, 4)
-                .outputItems(FIELD_GENERATOR_LV)
-                .duration(100).EUt(VA[LV]).save(provider);
+        // ASSEMBLER_RECIPES.recipeBuilder("field_generator_mv")
+        //         .inputItems(gem, EnderEye)
+        //         .inputItems(plate, Aluminium, 2)
+        //         .inputItems(CustomTags.MV_CIRCUITS, 2)
+        //         .inputItems(wireGtQuadruple, MagnesiumDiboride, 4)
+        //         .outputItems(FIELD_GENERATOR_MV)
+        //         .duration(100).EUt(VA[LV]).save(provider);
 
-        ASSEMBLER_RECIPES.recipeBuilder("field_generator_mv")
-                .inputItems(gem, EnderEye)
-                .inputItems(plate, Aluminium, 2)
-                .inputItems(CustomTags.MV_CIRCUITS, 2)
-                .inputItems(wireGtQuadruple, MagnesiumDiboride, 4)
-                .outputItems(FIELD_GENERATOR_MV)
-                .duration(100).EUt(VA[LV]).save(provider);
+        // ASSEMBLER_RECIPES.recipeBuilder("field_generator_hv")
+        //         .inputItems(QUANTUM_EYE)
+        //         .inputItems(plate, StainlessSteel, 2)
+        //         .inputItems(CustomTags.HV_CIRCUITS, 2)
+        //         .inputItems(wireGtQuadruple, MercuryBariumCalciumCuprate, 4)
+        //         .outputItems(FIELD_GENERATOR_HV)
+        //         .duration(100).EUt(VA[LV]).save(provider);
 
-        ASSEMBLER_RECIPES.recipeBuilder("field_generator_hv")
-                .inputItems(QUANTUM_EYE)
-                .inputItems(plate, StainlessSteel, 2)
-                .inputItems(CustomTags.HV_CIRCUITS, 2)
-                .inputItems(wireGtQuadruple, MercuryBariumCalciumCuprate, 4)
-                .outputItems(FIELD_GENERATOR_HV)
-                .duration(100).EUt(VA[LV]).save(provider);
+        // ASSEMBLER_RECIPES.recipeBuilder("field_generator_ev")
+        //         .inputItems(gem, NetherStar)
+        //         .inputItems(plateDouble, Titanium, 2)
+        //         .inputItems(CustomTags.EV_CIRCUITS, 2)
+        //         .inputItems(wireGtQuadruple, UraniumTriplatinum, 4)
+        //         .outputItems(FIELD_GENERATOR_EV)
+        //         .duration(100).EUt(VA[LV]).save(provider);
 
-        ASSEMBLER_RECIPES.recipeBuilder("field_generator_ev")
-                .inputItems(gem, NetherStar)
-                .inputItems(plateDouble, Titanium, 2)
-                .inputItems(CustomTags.EV_CIRCUITS, 2)
-                .inputItems(wireGtQuadruple, UraniumTriplatinum, 4)
-                .outputItems(FIELD_GENERATOR_EV)
-                .duration(100).EUt(VA[LV]).save(provider);
+        // ASSEMBLER_RECIPES.recipeBuilder("field_generator_iv")
+        //         .inputItems(QUANTUM_STAR)
+        //         .inputItems(plateDouble, TungstenSteel, 2)
+        //         .inputItems(CustomTags.IV_CIRCUITS, 2)
+        //         .inputItems(wireGtQuadruple, SamariumIronArsenicOxide, 4)
+        //         .outputItems(FIELD_GENERATOR_IV)
+        //         .duration(100).EUt(VA[LV]).save(provider);
 
-        ASSEMBLER_RECIPES.recipeBuilder("field_generator_iv")
-                .inputItems(QUANTUM_STAR)
-                .inputItems(plateDouble, TungstenSteel, 2)
-                .inputItems(CustomTags.IV_CIRCUITS, 2)
-                .inputItems(wireGtQuadruple, SamariumIronArsenicOxide, 4)
-                .outputItems(FIELD_GENERATOR_IV)
-                .duration(100).EUt(VA[LV]).save(provider);
+        // ASSEMBLY_LINE_RECIPES.recipeBuilder("field_generator_luv")
+        //         .inputItems(frameGt, HSSS)
+        //         .inputItems(plate, HSSS, 6)
+        //         .inputItems(QUANTUM_STAR)
+        //         .inputItems(EMITTER_LuV, 2)
+        //         .inputItems(CustomTags.LuV_CIRCUITS, 2)
+        //         .inputItems(wireFine, IndiumTinBariumTitaniumCuprate, 64)
+        //         .inputItems(wireFine, IndiumTinBariumTitaniumCuprate, 64)
+        //         .inputItems(cableGtSingle, NiobiumTitanium, 4)
+        //         .inputFluids(SolderingAlloy.getFluid(L * 4))
+        //         .outputItems(FIELD_GENERATOR_LuV)
+        //         .duration(600).EUt(6000).save(provider);
 
-        ASSEMBLY_LINE_RECIPES.recipeBuilder("field_generator_luv")
-                .inputItems(frameGt, HSSS)
-                .inputItems(plate, HSSS, 6)
-                .inputItems(QUANTUM_STAR)
-                .inputItems(EMITTER_LuV, 2)
-                .inputItems(CustomTags.LuV_CIRCUITS, 2)
-                .inputItems(wireFine, IndiumTinBariumTitaniumCuprate, 64)
-                .inputItems(wireFine, IndiumTinBariumTitaniumCuprate, 64)
-                .inputItems(cableGtSingle, NiobiumTitanium, 4)
-                .inputFluids(SolderingAlloy.getFluid(L * 4))
-                .outputItems(FIELD_GENERATOR_LuV)
-                .duration(600).EUt(6000).save(provider);
+        // ASSEMBLY_LINE_RECIPES.recipeBuilder("field_generator_zpm")
+        //         .inputItems(frameGt, NaquadahAlloy)
+        //         .inputItems(plate, NaquadahAlloy, 6)
+        //         .inputItems(QUANTUM_STAR)
+        //         .inputItems(EMITTER_ZPM, 2)
+        //         .inputItems(CustomTags.ZPM_CIRCUITS, 2)
+        //         .inputItems(wireFine, UraniumRhodiumDinaquadide, 64)
+        //         .inputItems(wireFine, UraniumRhodiumDinaquadide, 64)
+        //         .inputItems(cableGtSingle, VanadiumGallium, 4)
+        //         .inputFluids(SolderingAlloy.getFluid(L * 8))
+        //         .outputItems(FIELD_GENERATOR_ZPM)
+        //         .duration(600).EUt(24000).save(provider);
 
-        ASSEMBLY_LINE_RECIPES.recipeBuilder("field_generator_zpm")
-                .inputItems(frameGt, NaquadahAlloy)
-                .inputItems(plate, NaquadahAlloy, 6)
-                .inputItems(QUANTUM_STAR)
-                .inputItems(EMITTER_ZPM, 2)
-                .inputItems(CustomTags.ZPM_CIRCUITS, 2)
-                .inputItems(wireFine, UraniumRhodiumDinaquadide, 64)
-                .inputItems(wireFine, UraniumRhodiumDinaquadide, 64)
-                .inputItems(cableGtSingle, VanadiumGallium, 4)
-                .inputFluids(SolderingAlloy.getFluid(L * 8))
-                .outputItems(FIELD_GENERATOR_ZPM)
-                .duration(600).EUt(24000).save(provider);
-
-        ASSEMBLY_LINE_RECIPES.recipeBuilder("field_generator_uv")
-                .inputItems(frameGt, Tritanium)
-                .inputItems(plate, Tritanium, 6)
-                .inputItems(GRAVI_STAR)
-                .inputItems(EMITTER_UV, 2)
-                .inputItems(CustomTags.UV_CIRCUITS, 2)
-                .inputItems(wireFine, EnrichedNaquadahTriniumEuropiumDuranide, 64)
-                .inputItems(wireFine, EnrichedNaquadahTriniumEuropiumDuranide, 64)
-                .inputItems(cableGtSingle, YttriumBariumCuprate, 4)
-                .inputFluids(SolderingAlloy.getFluid(L * 12))
-                .inputFluids(Naquadria.getFluid(L * 4))
-                .outputItems(FIELD_GENERATOR_UV)
-                .duration(600).EUt(100000).save(provider);
+        // ASSEMBLY_LINE_RECIPES.recipeBuilder("field_generator_uv")
+        //         .inputItems(frameGt, Tritanium)
+        //         .inputItems(plate, Tritanium, 6)
+        //         .inputItems(GRAVI_STAR)
+        //         .inputItems(EMITTER_UV, 2)
+        //         .inputItems(CustomTags.UV_CIRCUITS, 2)
+        //         .inputItems(wireFine, EnrichedNaquadahTriniumEuropiumDuranide, 64)
+        //         .inputItems(wireFine, EnrichedNaquadahTriniumEuropiumDuranide, 64)
+        //         .inputItems(cableGtSingle, YttriumBariumCuprate, 4)
+        //         .inputFluids(SolderingAlloy.getFluid(L * 12))
+        //         .inputFluids(Naquadria.getFluid(L * 4))
+        //         .outputItems(FIELD_GENERATOR_UV)
+        //         .duration(600).EUt(100000).save(provider);
 
 
 

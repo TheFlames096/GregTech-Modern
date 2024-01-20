@@ -152,7 +152,17 @@ public class GTElements {
     public static final Element Nt = createAndRegister(0, 1000, -1, null, "Neutronium", "Nt", false);
     public static final Element Sp = createAndRegister(1, 0, -1, null, "Space", "Sp", false);
     public static final Element Ma = createAndRegister(1, 0, -1, null, "Magic", "Ma", false);
-    public static final Element Sh = createAndRegister(1, 0, -1, null, "Shirabon", "Sh"+(char)9191, false);
+    public static final Element Sh = createAndRegister(500, 250, -1, null, "Shirabon", "Sh"+(char)9191, false);
+    public static final Element Or = createAndRegister(120, 180, -1, null, "Orundum", "Or", false);
+    public static final Element Runite = createAndRegister(73, 87, -1, null, "Runtie", "Rt*", false);
+    public static final Element DragonBlood = createAndRegister(96, 105, -1, null, "DragonBlood", "۞", false);
+    public static final Element Rhugnor = createAndRegister(184, 142, -1, null, "Rhugnor", "Fs⚶", false);
+    public static final Element Hypogen = createAndRegister(240, 251, -1, null, "Hypogen", "Hy⚶", false);
+    public static final Element EnergyCrystal = createAndRegister(90, 40, -1, null, "EnergyCrystal", "⬟ ⯂ ⬢ ⬣ ⯃ ⯄", false);
+    public static final Element AdvancedNitinol = createAndRegister(40, 51, -1, null, "AdvancedNitinol", "⚷⚙⚷ Ni4Ti6", false);
+    public static final Element ChromaticGlass = createAndRegister(40, 51, -1, null, "ChromaticGlass", "⌘☯𓍰 𓍱 𓍲 𓍳 𓍴 𓍵 𓍶 𓍷 𓍸 ☯⌘ ", false);
+    public static final Element CelestialTungsten = createAndRegister(160, 101, -1, null, "CelestialTungsten", "✦◆✦", false);
+    public static final Element AstralTitanium = createAndRegister(145, 133, -1, null, "AstralTitanium", "✧◇✧", false);
 
     public static Element createAndRegister(long protons, long neutrons, long halfLifeSeconds, String decayTo, String name, String symbol, boolean isIsotope) {
         Element element = new Element(protons, neutrons, halfLifeSeconds, decayTo, name, symbol, isIsotope);

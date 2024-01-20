@@ -402,7 +402,7 @@ public class BatteryRecipes {
                 .inputItems(ADVANCED_SMD_RESISTOR, 64)
                 .inputItems(ADVANCED_SMD_TRANSISTOR, 64)
                 .inputItems(ADVANCED_SMD_INDUCTOR, 64)
-                .inputItems(wireGtSingle, EnrichedNaquadahTriniumEuropiumDuranide, 64)
+                .inputItems(wireGtSingle, SuperconductorUV, 64)
                 .inputItems(bolt, Neutronium, 64)
                 .inputFluids(SolderingAlloy.getFluid(L * 40))
                 .inputFluids(Polybenzimidazole.getFluid(2304))
