@@ -19,11 +19,15 @@ import com.gregtechceu.gtceu.api.fluids.store.FluidStorageKeys;
 import com.gregtechceu.gtceu.common.data.materials.*;
 import com.gregtechceu.gtceu.data.recipe.misc.alloyblast.CustomAlloyBlastRecipeProducer;
 import com.gregtechceu.gtceu.integration.kjs.GTRegistryInfo;
+
+import twilightforest.init.TFBlocks;
+import twilightforest.init.TFItems;
+import appeng.items.materials.MaterialItem;
+
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.Nullable;
-
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -65,7 +69,7 @@ public class GTMaterials {
          * Ranges 1-249
          */
         ElementMaterials.register();
-
+        FantasyElementsMaterials.register();
         /*
          * Ranges 250-999
          */
@@ -90,7 +94,7 @@ public class GTMaterials {
          * Ranges 2500-2999
          */
         HigherDegreeMaterials.register();
-
+        CrossModMaterials.register();
         TieredMaterials.register();
         /*
          * Register info for cyclical references
@@ -323,6 +327,7 @@ public class GTMaterials {
 
         rod.modifyMaterialAmount(Blaze, 4);
         rod.modifyMaterialAmount(Bone, 5);
+
     }
 
     @Nullable
@@ -969,12 +974,13 @@ public class GTMaterials {
     public static Material Brick;
     public static Material Fireclay;
     public static Material Diorite;
+    public static Material Mithril;
+    public static Material AstralSilver;
 
     /**
      * Fourth Degree Materials
      */
     public static Material RedAlloy;
-    public static Material RedstoneAlloy;
     public static Material BlueAlloy;
     public static Material BasalticMineralSand;
     public static Material HSSE;
@@ -1033,18 +1039,31 @@ public class GTMaterials {
     public static Material Duranium;
     public static Material Trinium;
     public static Material Tiberium;
+    public static Material Sunnarium;
+    public static Material Magic;
+    public static Material Space;
 
-    /**
-     * GoodGenerator Materials
-     */
+    //UEV+ Materials
+    public static Material WhiteDwarfMatter;
+    public static Material BlackDwarfMatter;
+    public static Material Universium;
+    public static Material Eternity;
+    public static Material PrimordialMatter;
+    public static Material SpaceTime;
+    public static Material TranscendentMetal;
+    public static Material RawStellarMatter;
+    public static Material MagnetohydrodynamicallyConstrainedStarMatter;
+    
+    //GoodGenerator Materials
+    
     public static Material Shirabon;
     public static Material MetastableOganesson;
     public static Material ExtremelyUnstableNaquadah;
     public static Material Orundum;
 
-    /**
-     * GT++ Materials
-     */
+    
+    //GT++ Materials
+    
     public static Material Runite;
     public static Material DragonBlood;
     public static Material EnergyCrystal;
@@ -1054,4 +1073,50 @@ public class GTMaterials {
     public static Material ChromaticGlass;
     public static Material CelestialTungsten;
     public static Material AstralTitanium;
+
+    /** 
+     * Non-GT Mod Material
+     */
+    
+    // Avaritia
+    public static Material Infinity;
+    public static Material CosmicNeutronium;
+    public static Material InfinityCatalyst;
+
+    // Twilight Forest
+    public static Material Steeleaf;
+    public static Material Ironwood;
+    public static Material FieryIngot;
+    public static Material Knightmetal;
+
+    // Ender IO
+    public static Material RedstoneAlloy;
+    public static Material Soularium;
+    public static Material ConductiveIron;
+    public static Material ElectricalSteel;
+    public static Material EnergeticAlloy;
+    public static Material VibrantAlloy;
+    public static Material PulsatingIron;
+    public static Material DarkSteel;
+    public static Material EndSteel;
+    public static Material CrystallineAlloy;
+    public static Material MelodicAlloy;
+    public static Material StellarAlloy;
+    public static Material CrystallinePinkSlime;
+    public static Material EnergeticSilver;
+    public static Material VividAlloy;
+    public static Material Enderium;
+
+    // Galaxy Space
+    public static Material Ledox;
+    public static Material Quantium;
+    public static Material Mytryl;
+    public static Material BlackPlutonium;
+    public static Material CallistoIce;
+    public static Material Oriharukon;
+    public static Material MysteriousCrystal;
+
+    // Thaumcraft
+    public static Material Thaumium;
+    public static Material Voidmetal;
 }

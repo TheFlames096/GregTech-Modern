@@ -1,5 +1,8 @@
 package com.gregtechceu.gtceu.common;
 
+import static com.gregtechceu.gtceu.api.data.tag.TagPrefix.*;
+import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
+
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.GTCEuAPI;
@@ -36,6 +39,9 @@ import com.gregtechceu.gtceu.integration.top.forge.TheOneProbePluginImpl;
 import com.lowdragmc.lowdraglib.LDLib;
 import com.lowdragmc.lowdraglib.gui.factory.UIFactory;
 import com.tterrag.registrate.providers.ProviderType;
+
+import appeng.core.definitions.AEItems;
+import appeng.items.materials.MaterialItem;
 import dev.latvian.mods.kubejs.script.ScriptType;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.common.crafting.CraftingHelper;
@@ -48,6 +54,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLConstructModEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.javafmlmod.FMLModContainer;
+import twilightforest.init.TFItems;
 
 public class CommonProxy {
     private static final Object LOCK = new Object();
@@ -193,7 +200,25 @@ public class CommonProxy {
 
     @SubscribeEvent
     public void loadComplete(FMLLoadCompleteEvent e) {
+        
         e.enqueueWork(() -> {
+            if (LDLib.isModLoaded("twilightforest"))
+            {
+                GTCEu.LOGGER.info("TF found. Enabling integration...");
+                ingot.setIgnored(Ironwood,TFItems.IRONWOOD_INGOT.get());
+                ingot.setIgnored(Steeleaf,TFItems.STEELEAF_INGOT.get());
+                ingot.setIgnored(FieryIngot,TFItems.FIERY_INGOT.get());
+                ingot.setIgnored(Knightmetal,TFItems.KNIGHTMETAL_INGOT.get());
+                ring.setIgnored(Knightmetal,TFItems.KNIGHTMETAL_RING.get());
+                dust.setIgnored(Knightmetal,TFItems.ARMOR_SHARD_CLUSTER.get());
+                dustTiny.setIgnored(Knightmetal,TFItems.ARMOR_SHARD.get());
+            }
+            if(LDLib.isModLoaded("ae2"))
+            {
+                GTCEu.LOGGER.info("AE2 found. Enabling integration...");
+                gem.setIgnored(CertusQuartz,AEItems.CERTUS_QUARTZ_CRYSTAL);
+                dust.setIgnored(CertusQuartz, AEItems.CERTUS_QUARTZ_DUST);
+            }
             if (LDLib.isModLoaded(GTValues.MODID_TOP)) {
                 GTCEu.LOGGER.info("TheOneProbe found. Enabling integration...");
                 TheOneProbePluginImpl.init();

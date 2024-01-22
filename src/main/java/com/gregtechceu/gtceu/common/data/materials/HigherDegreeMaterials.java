@@ -103,14 +103,6 @@ public class HigherDegreeMaterials {
                 .cableProperties(GTValues.V[0], 1, 0)
                 .buildAndRegister();
                 
-        RedstoneAlloy = new Material.Builder(GTCEu.id("redstone_alloy"))
-                .ingot(0)
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1400))
-                .color(0xc55252).secondaryColor(0xC80000).iconSet(METALLIC)
-                .appendFlags(EXT_METAL, GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW)
-                .components(Redstone, 1, Silicon, 1,Coal,1)
-                .cableProperties(GTValues.V[1], 1, 0)
-                .buildAndRegister();
 
         BasalticMineralSand = new Material.Builder(GTCEu.id("basaltic_mineral_sand"))
                 .dust(1).ore()

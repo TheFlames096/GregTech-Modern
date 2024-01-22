@@ -381,9 +381,7 @@ public class ElementMaterials {
                 .buildAndRegister();
 
         Krypton = new Material.Builder(GTCEu.id("krypton"))
-                .fluid(FluidStorageKeys.GAS, new FluidBuilder()
-                        .customStill()
-                        .translation("gtceu.fluid.generic"))
+                .gas()
                 .color(0x80FF80)
                 .element(GTElements.Kr)
                 .buildAndRegister();

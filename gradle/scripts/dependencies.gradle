@@ -54,6 +54,9 @@ dependencies {
     // Jade
     modImplementation(forge.jade)
 
+    // twilightforest
+    modImplementation("teamtwilight:twilightforest:4.3.1893:universal")
+
     // AE2
     modImplementation(forge.ae2) { transitive = false }
 
