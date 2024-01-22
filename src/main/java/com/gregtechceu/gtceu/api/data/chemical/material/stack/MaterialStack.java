@@ -66,7 +66,7 @@ public record MaterialStack(Material material, long amount) {
         String string = "";
         if (material.getChemicalFormula().isEmpty()) {
             string += "?";
-        } else if (material.getMaterialComponents().size() > 1) {
+        } else if (material.getMaterialComponents().size() > 1 || !material.getChemicalFormula().matches("^[^a-z][a-z]?[^A-Za-z]?$")) {
             string += '(' + material.getChemicalFormula() + ')';
         } else {
             string += material.getChemicalFormula();

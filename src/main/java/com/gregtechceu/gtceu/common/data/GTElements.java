@@ -147,7 +147,7 @@ public class GTElements {
     public static final Element Ke = createAndRegister(125, 198, -1, null, "Trinium", "Ke", false);
     public static final Element Nq = createAndRegister(174, 352, 140, null, "Naquadah", "Nq", true);
     public static final Element Nq1 = createAndRegister(174, 354, 140, null, "NaquadahEnriched", "Nq+", true);
-    public static final Element Nq2 = createAndRegister(174, 348, 140, null, "Naquadria", "*Nq*", true);
+    public static final Element Nq2 = createAndRegister(174, 348, 140, null, "Naquadria", "Nq*", true);
     public static final Element Nq3 = createAndRegister(174, 346, 140, null, "ExtremelyUnstableNaquadah", "Nq"+(char)9734, true);
     public static final Element Nt = createAndRegister(0, 1000, -1, null, "Neutronium", "Nt", false);
     public static final Element Sp = createAndRegister(1, 0, -1, null, "Space", "Sp", false);
@@ -159,10 +159,14 @@ public class GTElements {
     public static final Element Rhugnor = createAndRegister(184, 142, -1, null, "Rhugnor", "Fs⚶", false);
     public static final Element Hypogen = createAndRegister(240, 251, -1, null, "Hypogen", "Hy⚶", false);
     public static final Element EnergyCrystal = createAndRegister(90, 40, -1, null, "EnergyCrystal", "⬟ ⯂ ⬢ ⬣ ⯃ ⯄", false);
-    public static final Element AdvancedNitinol = createAndRegister(40, 51, -1, null, "AdvancedNitinol", "⚷⚙⚷ Ni4Ti6", false);
+    public static final Element AdvancedNitinol = createAndRegister(40, 51, -1, null, "AdvancedNitinol", "⚷⚙⚷ Ni₄Ti₆", false);
     public static final Element ChromaticGlass = createAndRegister(40, 51, -1, null, "ChromaticGlass", "⌘☯ ☯⌘", false);
     public static final Element CelestialTungsten = createAndRegister(160, 101, -1, null, "CelestialTungsten", "✦◆✦", false);
     public static final Element AstralTitanium = createAndRegister(145, 133, -1, null, "AstralTitanium", "✧◇✧", false);
+    public static final Element Draconium = createAndRegister(111, 133, -1, null, "Draconium", "༒", true);
+    public static final Element AwakenedDraconium = createAndRegister(111, 133, -1, null, "AwakenedDraconium", "༒້", true);
+    public static final Element If = createAndRegister(1000,1000, -1, null, "InfinityCatalyst", "If", true);
+    public static final Element If2 = createAndRegister(1000, 1000, -1, null, "Infinity", "If*", true);
 
     public static Element createAndRegister(long protons, long neutrons, long halfLifeSeconds, String decayTo, String name, String symbol, boolean isIsotope) {
         Element element = new Element(protons, neutrons, halfLifeSeconds, decayTo, name, symbol, isIsotope);

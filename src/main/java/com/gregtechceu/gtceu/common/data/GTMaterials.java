@@ -1093,12 +1093,13 @@ public class GTMaterials {
     public static Material RedstoneAlloy;
     public static Material Soularium;
     public static Material ConductiveIron;
-    public static Material ElectricalSteel;
+    public static Material CopperAlloy;
     public static Material EnergeticAlloy;
     public static Material VibrantAlloy;
     public static Material PulsatingIron;
     public static Material DarkSteel;
     public static Material EndSteel;
+
     public static Material CrystallineAlloy;
     public static Material MelodicAlloy;
     public static Material StellarAlloy;
@@ -1119,4 +1120,8 @@ public class GTMaterials {
     // Thaumcraft
     public static Material Thaumium;
     public static Material Voidmetal;
+
+    // Draconic Evolution
+    public static Material Draconium;
+    public static Material AwakenedDraconium;
 }
