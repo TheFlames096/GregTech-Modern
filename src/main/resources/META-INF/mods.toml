@@ -28,15 +28,15 @@ ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.${mod_id}]]
-modId="twilightforest"
-mandatory=true
-versionRange="*"
-ordering="AFTER"
-side="BOTH"
+modId = "ldlib"
+mandatory = false
+versionRange = "[1.0,)"
+ordering = "AFTER"
+side = "BOTH"
 
 [[dependencies.${mod_id}]]
-modId="ae2"
-mandatory=true
-versionRange="*"
-ordering="AFTER"
-side="BOTH"
+modId = "kubejs"
+mandatory = false
+versionRange = "[${kjs_version},)"
+ordering = "AFTER"
+side = "BOTH"
