@@ -295,7 +295,7 @@ public class ElementMaterials {
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1337))
                 .ore()
                 .color(0xfdf55f).secondaryColor(0xf25833).iconSet(SHINY)
-                .appendFlags(EXT2_METAL, GENERATE_RING, MORTAR_GRINDABLE, EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FINE_WIRE, GENERATE_FOIL)
+                .appendFlags(EXT2_METAL, GENERATE_RING, MORTAR_GRINDABLE, EXCLUDE_BLOCK_CRAFTING_BY_HAND_RECIPES, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FINE_WIRE, GENERATE_FOIL, GENERATE_NANITES)
                 .element(GTElements.Au)
                 .cableProperties(GTValues.V[3], 3, 2)
                 .fluidPipeProperties(1671, 25, true, true, false, false)

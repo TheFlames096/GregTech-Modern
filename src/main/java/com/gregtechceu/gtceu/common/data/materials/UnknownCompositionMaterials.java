@@ -557,22 +557,22 @@ public class UnknownCompositionMaterials {
         PCBCoolant = new Material.Builder(GTCEu.id("pcb_coolant"))
                 .fluid().color(0xD5D69C).buildAndRegister();
 
-        Grade1PurifiedWater= new Material.Builder(GTCEu.id("grade1purifiedWater"))
+        Grade1PurifiedWater= new Material.Builder(GTCEu.id("grade_1_purifiedWater"))
                 .fluid().color(0x0000EE).buildAndRegister();
 
-        Grade2PurifiedWater = new Material.Builder(GTCEu.id("grade2purifiedWater"))
+        Grade2PurifiedWater = new Material.Builder(GTCEu.id("grade_2_purifiedWater"))
                 .fluid().color(0x0000EE).buildAndRegister();
-        Grade3PurifiedWater = new Material.Builder(GTCEu.id("grade3purifiedWater"))
+        Grade3PurifiedWater = new Material.Builder(GTCEu.id("grade_3_purifiedWater"))
                 .fluid().color(0x0000EE).buildAndRegister();
-        Grade4PurifiedWater = new Material.Builder(GTCEu.id("grade4purifiedWater"))
+        Grade4PurifiedWater = new Material.Builder(GTCEu.id("grade_4_purifiedWater"))
                 .fluid().color(0x0000EE).buildAndRegister();
-        Grade5PurifiedWater = new Material.Builder(GTCEu.id("grade5purifiedWater"))
+        Grade5PurifiedWater = new Material.Builder(GTCEu.id("grade_5_purifiedWater"))
                 .fluid().color(0x0000EE).buildAndRegister();
-        Grade6PurifiedWater = new Material.Builder(GTCEu.id("grade6purifiedWater"))
+        Grade6PurifiedWater = new Material.Builder(GTCEu.id("grade_6_purifiedWater"))
                 .fluid().color(0x0000EE).buildAndRegister();
-        Grade7PurifiedWater = new Material.Builder(GTCEu.id("grade7purifiedWater"))
+        Grade7PurifiedWater = new Material.Builder(GTCEu.id("grade_7_purifiedWater"))
                 .fluid().color(0x0000EE).buildAndRegister();
-        Grade8PurifiedWater = new Material.Builder(GTCEu.id("grade8purifiedWater"))
+        Grade8PurifiedWater = new Material.Builder(GTCEu.id("grade_8_purifiedWater"))
                 .fluid().color(0x0000EE).buildAndRegister();
     }
 }

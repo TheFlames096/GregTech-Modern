@@ -27,7 +27,8 @@ public class HigherDegreeMaterials {
         EnderEye = new Material.Builder(GTCEu.id("ender_eye"))
                 .gem(1)
                 .color(0xb5e45a).secondaryColor(0x001430).iconSet(SHINY)
-                .flags(GENERATE_PLATE, NO_SMASHING, NO_SMELTING, DECOMPOSITION_BY_CENTRIFUGING)
+                .components(EnderPearl, 1, Blaze, 1)
+                .flags(GENERATE_PLATE, NO_SMASHING, NO_SMELTING, DECOMPOSITION_BY_CENTRIFUGING,GENERATE_LENS)
                 .buildAndRegister();
 
         Diatomite = new Material.Builder(GTCEu.id("diatomite"))
@@ -94,43 +95,6 @@ public class HigherDegreeMaterials {
                 .blastTemp(4200, GasTier.MID, GTValues.VA[GTValues.EV], 1300)
                 .buildAndRegister();
 
-        RedAlloy = new Material.Builder(GTCEu.id("red_alloy"))
-                .ingot(0)
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1400))
-                .color(0xc55252).secondaryColor(0xC80000).iconSet(METALLIC)
-                .appendFlags(EXT_METAL, GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW, DISABLE_DECOMPOSITION)
-                .components(Copper, 1, Redstone, 4)
-                .cableProperties(GTValues.V[0], 1, 0)
-                .buildAndRegister();
-                
-
-        BasalticMineralSand = new Material.Builder(GTCEu.id("basaltic_mineral_sand"))
-                .dust(1).ore()
-                .color(0x5c5c5c).secondaryColor(0x283228).iconSet(SAND)
-                .components(Magnetite, 1, Basalt, 1)
-                .flags(BLAST_FURNACE_CALCITE_DOUBLE)
-                .buildAndRegister();
-
-        HSSE = new Material.Builder(GTCEu.id("hsse"))
-                .ingot(4).fluid()
-                .color(0x9d9cbe).secondaryColor(0x2b0350).iconSet(METALLIC)
-                .appendFlags(EXT2_METAL, GENERATE_FRAME, GENERATE_RING)
-                .components(HSSG, 6, Cobalt, 1, Manganese, 1, Silicon, 1)
-                .toolStats(ToolProperty.Builder.of(5.0F, 10.0F, 3072, 4)
-                        .attackSpeed(0.3F).enchantability(33).build())
-                .rotorStats(10.0f, 8.0f, 5120)
-                .blastTemp(5000, GasTier.HIGH, GTValues.VA[GTValues.EV], 1400)
-                .buildAndRegister();
-
-        HSSS = new Material.Builder(GTCEu.id("hsss"))
-                .ingot(4).fluid()
-                .color(0xae9abe).secondaryColor(0x66000e).iconSet(METALLIC)
-                .appendFlags(EXT2_METAL, GENERATE_SMALL_GEAR, GENERATE_RING, GENERATE_FRAME, GENERATE_ROTOR, GENERATE_ROUND, GENERATE_FOIL, GENERATE_GEAR)
-                .components(HSSG, 6, Iridium, 2, Osmium, 1)
-                .rotorStats(15.0f, 7.0f, 3000)
-                .blastTemp(5000, GasTier.HIGH, GTValues.VA[GTValues.EV], 1500)
-                .buildAndRegister();
-
         IridiumMetalResidue = new Material.Builder(GTCEu.id("iridium_metal_residue"))
                 .dust()
                 .color(0x5C5D68).secondaryColor(0x462941).iconSet(METALLIC)
@@ -167,13 +131,5 @@ public class HigherDegreeMaterials {
                 .components(Mirabilite, 2, Clay, 7)
                 .buildAndRegister();
 
-        BlueAlloy = new Material.Builder(GTCEu.id("blue_alloy"))
-                .ingot()
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1400))
-                .color(0x64B4FF).iconSet(METALLIC)
-                .flags(GENERATE_PLATE, GENERATE_BOLT_SCREW, DISABLE_DECOMPOSITION)
-                .components(Electrotine, 4, Silver, 1)
-                .cableProperties(GTValues.V[GTValues.HV], 2, 1)
-                .buildAndRegister();
     }
 }

@@ -186,7 +186,7 @@ public class GTRecipeTypes {
             .setSound(GTSoundEntries.COMPRESSOR);
 
 
-    public final static GTRecipeType CUTTER_RECIPES = register("cutter", ELECTRIC).setMaxIOSize(1, 2, 1, 0).setEUIO(IO.IN)
+    public final static GTRecipeType CUTTER_RECIPES = register("cutter", ELECTRIC).setMaxIOSize(1, 4, 1, 0).setEUIO(IO.IN)
             .setSlotOverlay(false, false, GuiTextures.SAWBLADE_OVERLAY)
             .setSlotOverlay(true, false, false, GuiTextures.CUTTER_OVERLAY)
             .setSlotOverlay(true, false, true, GuiTextures.DUST_OVERLAY)
@@ -273,7 +273,7 @@ public class GTRecipeTypes {
             .setSound(GTSoundEntries.COOLING);
 
 
-    public final static GTRecipeType FORGE_HAMMER_RECIPES = register("forge_hammer", ELECTRIC).setMaxIOSize(1, 1, 0, 0).setEUIO(IO.IN)
+    public final static GTRecipeType FORGE_HAMMER_RECIPES = register("forge_hammer", ELECTRIC).setMaxIOSize(2, 2, 2, 2).setEUIO(IO.IN)
             .setSlotOverlay(false, false, GuiTextures.HAMMER_OVERLAY)
             .setProgressBar(GuiTextures.PROGRESS_BAR_HAMMER, UP_TO_DOWN)
             .setSteamProgressBar(GuiTextures.PROGRESS_BAR_HAMMER_STEAM, UP_TO_DOWN)
@@ -321,14 +321,14 @@ public class GTRecipeTypes {
             .setSound(GTSoundEntries.ARC);
 
 
-    public final static GTRecipeType LASER_ENGRAVER_RECIPES = register("laser_engraver", ELECTRIC).setMaxIOSize(2, 1, 0, 0).setEUIO(IO.IN)
+    public final static GTRecipeType LASER_ENGRAVER_RECIPES = register("laser_engraver", ELECTRIC).setMaxIOSize(4, 1, 2, 2).setEUIO(IO.IN)
             .setSlotOverlay(false, false, true, GuiTextures.LENS_OVERLAY)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT)
             .setMaxTooltips(4)
             .setSound(GTSoundEntries.ELECTROLYZER);
 
 
-    public final static GTRecipeType SIFTER_RECIPES = register("sifter", ELECTRIC).setMaxIOSize(1, 6, 0, 0).setEUIO(IO.IN)
+    public final static GTRecipeType SIFTER_RECIPES = register("sifter", ELECTRIC).setMaxIOSize(1, 6, 1, 1).setEUIO(IO.IN)
             .setProgressBar(GuiTextures.PROGRESS_BAR_SIFT, UP_TO_DOWN)
             .setSound(new ExistingSoundEntry(SoundEvents.SAND_PLACE, SoundSource.BLOCKS));
 

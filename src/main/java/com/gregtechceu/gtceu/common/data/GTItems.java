@@ -1205,6 +1205,9 @@ public class GTItems {
     public static ItemEntry<Item> NAQUADAH_WAFER= REGISTRATE.item("naquadah_wafer", Item::new).lang("Naquadah-doped Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
     public static ItemEntry<Item> EUROPIUM_WAFER= REGISTRATE.item("europium_wafer", Item::new).lang("Europium-doped Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
     public static ItemEntry<Item> AMERICIUM_WAFER= REGISTRATE.item("americium_wafer", Item::new).lang("Americium-doped Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
+    public static ItemEntry<Item> PHOTONICALLY_PREPARED_WAFER= REGISTRATE.item("photonically_prepared_wafer", Item::new).lang("Photonically Prepared Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
+    public static ItemEntry<Item> PHOTONICALLY_ENRICHED_WAFER= REGISTRATE.item("photonically_enriched_wafer", Item::new).lang("Photonically Enriched Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
+    public static ItemEntry<Item> BIO_WAFER= REGISTRATE.item("bio_wafer", Item::new).lang("Living Bio Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
 
     public static ItemEntry<Item> CENTRAL_PROCESSING_UNIT_WAFER= REGISTRATE.item("cpu_wafer", Item::new).lang("CPU Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
     public static ItemEntry<Item> RANDOM_ACCESS_MEMORY_WAFER= REGISTRATE.item("ram_wafer", Item::new).lang("RAM Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
@@ -1214,14 +1217,20 @@ public class GTItems {
     public static ItemEntry<Item> SIMPLE_SYSTEM_ON_CHIP_WAFER= REGISTRATE.item("simple_soc_wafer", Item::new).lang("Simple SoC Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
     public static ItemEntry<Item> SYSTEM_ON_CHIP_WAFER= REGISTRATE.item("soc_wafer", Item::new).lang("SoC Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
     public static ItemEntry<Item> ADVANCED_SYSTEM_ON_CHIP_WAFER= REGISTRATE.item("advanced_soc_wafer", Item::new).lang("ASoC Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
-    public static ItemEntry<Item> HIGHLY_ADVANCED_SOC_WAFER= REGISTRATE.item("highly_advanced_soc_wafer", Item::new).lang("HASoC Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
     public static ItemEntry<Item> NAND_MEMORY_CHIP_WAFER= REGISTRATE.item("nand_memory_wafer", Item::new).lang("NAND Memory Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
     public static ItemEntry<Item> NOR_MEMORY_CHIP_WAFER= REGISTRATE.item("nor_memory_wafer", Item::new).lang("NOR Memory Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
+
     public static ItemEntry<Item> ULTRA_LOW_POWER_INTEGRATED_CIRCUIT_WAFER= REGISTRATE.item("ulpic_wafer", Item::new).lang("ULPIC Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
     public static ItemEntry<Item> LOW_POWER_INTEGRATED_CIRCUIT_WAFER= REGISTRATE.item("lpic_wafer", Item::new).lang("LPIC Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
     public static ItemEntry<Item> POWER_INTEGRATED_CIRCUIT_WAFER= REGISTRATE.item("mpic_wafer", Item::new).lang("MPIC Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
     public static ItemEntry<Item> HIGH_POWER_INTEGRATED_CIRCUIT_WAFER= REGISTRATE.item("hpic_wafer", Item::new).lang("HPIC Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
     public static ItemEntry<Item> ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT_WAFER= REGISTRATE.item("uhpic_wafer", Item::new).lang("UHPIC Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
+    public static ItemEntry<Item> NANO_POWER_INTEGRATED_CIRCUIT_WAFER= REGISTRATE.item("npic_wafer", Item::new).lang("NPIC Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
+    public static ItemEntry<Item> PICO_POWER_INTEGRATED_CIRCUIT_WAFER= REGISTRATE.item("ppic_wafer", Item::new).lang("PPIC Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
+    public static ItemEntry<Item> QUANTUM_POWER_INTEGRATED_CIRCUIT_WAFER= REGISTRATE.item("qpic_wafer", Item::new).lang("QPIC Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
+
+    public static ItemEntry<Item> RAW_PICO_WAFER= REGISTRATE.item("raw_pico_wafer", Item::new).lang("Raw Pico Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
+    public static ItemEntry<Item> PICO_WAFER= REGISTRATE.item("raw_pico_wafer", Item::new).lang("Pico Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
 
     public static ItemEntry<Item> ENGRAVED_CRYSTAL_CHIP = REGISTRATE.item("engraved_crystal_chip", Item::new).lang("Engraved Crystal Chip").onRegister(compassNode(GTCompassSections.MISC)).register();
     public static ItemEntry<Item> ENGRAVED_LAPOTRON_CHIP = REGISTRATE.item("engraved_lapotron_crystal_chip", Item::new).lang("Engraved Lapotron Crystal Chip").onRegister(compassNode(GTCompassSections.MISC)).register();

@@ -42,7 +42,6 @@ public class PartsRecipeHandler {
         wireFine.executeHandler(PropertyKey.INGOT, (tagPrefix, material, property) -> processFineWire(tagPrefix, material, property, provider));
         foil.executeHandler(PropertyKey.INGOT, (tagPrefix, material, property) -> processFoil(tagPrefix, material, property, provider));
         lens.executeHandler(PropertyKey.GEM, (tagPrefix, material, property) -> processLens(tagPrefix, material, property, provider));
-        nanites.executeHandler(PropertyKey.DUST, (tagPrefix, material, property) -> processNanites(tagPrefix, material, property, provider));
 
         gear.executeHandler(PropertyKey.DUST, (tagPrefix, material, property) -> processGear(tagPrefix, material, property, provider));
         gearSmall.executeHandler(PropertyKey.DUST, (tagPrefix, material, property) -> processGear(tagPrefix, material, property, provider));

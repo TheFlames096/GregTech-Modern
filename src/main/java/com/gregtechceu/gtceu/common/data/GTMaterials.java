@@ -95,6 +95,7 @@ public class GTMaterials {
          */
         HigherDegreeMaterials.register();
         CrossModMaterials.register();
+        ForthDegreeMaterials.register();
         TieredMaterials.register();
         /*
          * Register info for cyclical references
@@ -544,6 +545,7 @@ public class GTMaterials {
     public static Material Phosphate;
     public static Material SterlingSilver;
     public static Material RoseGold;
+    public static Material InfusedGold;
     public static Material BlackBronze;
     public static Material BismuthBronze;
     public static Material Biotite;
@@ -982,8 +984,6 @@ public class GTMaterials {
     public static Material Brick;
     public static Material Fireclay;
     public static Material Diorite;
-    public static Material Mithril;
-    public static Material AstralSilver;
 
     /**
      * Fourth Degree Materials
@@ -993,6 +993,9 @@ public class GTMaterials {
     public static Material BasalticMineralSand;
     public static Material HSSE;
     public static Material HSSS;
+    public static Material FluxedElectrum;
+    public static Material Mithril;
+    public static Material AstralSilver;
 
     /**
      * GCyM Materials
@@ -1132,4 +1135,6 @@ public class GTMaterials {
     // Draconic Evolution
     public static Material Draconium;
     public static Material AwakenedDraconium;
+
+    
 }

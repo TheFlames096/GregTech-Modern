@@ -19,11 +19,20 @@ public class CrossModMaterials {
         RedstoneAlloy = new Material.Builder(GTCEu.id("redstone_alloy"))
                 .ingot(0)
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1200))
-                .color(0xc55252).iconSet(METALLIC)
+                .color(0xb53333).iconSet(METALLIC)
                 .appendFlags(EXT_METAL, GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW)
                 .components(Redstone, 1, Silicon, 1,Coal,1)
                 .cableProperties(GTValues.V[1], 1, 0)
-                .blastTemp(1200, GasTier.LOWEST, GTValues.VA[GTValues.LuV], 1600)
+                .blastTemp(1200, GasTier.LOWEST, GTValues.VA[GTValues.MV], 1600)
+                .buildAndRegister();
+
+        ConductiveIron = new Material.Builder(GTCEu.id("conductive_iron"))
+                .ingot(0)
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1200))
+                .color(0xd9b2ab).iconSet(METALLIC)
+                .appendFlags(EXT_METAL, GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW)
+                .components(RedstoneAlloy, 1, Iron, 1,Silver,1)
+                .blastTemp(1200, GasTier.LOWEST, GTValues.VA[GTValues.MV], 1600)
                 .buildAndRegister();
 
         //Thaumcraft
@@ -54,10 +63,10 @@ public class CrossModMaterials {
         .flags(GENERATE_PLATE)
         .buildAndRegister();
         
-        Knightmetal = new Material.Builder(GTCEu.id("knight_metal"))
+        Knightmetal = new Material.Builder(GTCEu.id("knightmetal"))
         .ingot()
         .color(0xF5F5DC).iconSet(METALLIC)
-        .flags(GENERATE_PLATE)
+        .flags(GENERATE_PLATE,GENERATE_ROD,GENERATE_RING)
         .buildAndRegister();;
 
         // Draconic Evolution
@@ -95,7 +104,7 @@ public class CrossModMaterials {
                 .components(Space,1,Neutronium,1)
                 .blastTemp(9900, GasTier.LOW, GTValues.VA[GTValues.ZPM], 12857)
                 .buildAndRegister();
-        InfinityCatalyst = new Material.Builder(GTCEu.id("infinitycatalyst"))
+        InfinityCatalyst = new Material.Builder(GTCEu.id("infinity_catalyst"))
                 .ingot()
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(9900))
                 .color(0xFFFFFF).iconSet(METALLIC)
@@ -103,21 +112,14 @@ public class CrossModMaterials {
                 .element(GTElements.If)
                 .blastTemp(10800, GasTier.LOW, GTValues.VA[GTValues.UV], 15428)
                 .buildAndRegister();
-        // They are here due to the needs of components
-        Mithril= new Material.Builder(GTCEu.id("mithril"))
-        .ingot()
-        .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(6600))
-        .color(0xFFF8DC).iconSet(METALLIC)
-        .flags(GENERATE_PLATE, DISABLE_DECOMPOSITION)
-        .components(Platinum, 2, Thaumium, 1)
-        .buildAndRegister();
-        
-        AstralSilver = new Material.Builder(GTCEu.id("astralsilver"))
-        .ingot()
-        .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1400))
-        .color(0xE6E6FA).iconSet(METALLIC)
-        .flags(GENERATE_PLATE, DECOMPOSITION_BY_CENTRIFUGING)
-        .components(Silver, 2, Thaumium, 1)
-        .buildAndRegister();
+
+        // Galaxy Space
+        MysteriousCrystal = new Material.Builder(GTCEu.id("mysterious_crystal"))
+                .gem()
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(9900))
+                .color(0x008B00).iconSet(DULL)
+                .flags(GENERATE_PLATE,GENERATE_LENS)
+                .buildAndRegister();
+
     }
 }

@@ -422,6 +422,14 @@ public class FirstDegreeMaterials {
                 .blastTemp(1600, GasTier.LOW, GTValues.VA[MV], 1000)
                 .buildAndRegister();
 
+        InfusedGold = new Material.Builder(GTCEu.id("infused_gold"))
+                .ingot()
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1000))
+                .color(0xffc83c).iconSet(SHINY)
+                .appendFlags(EXT_METAL)
+                .components(Gold, 1, Magic,1)
+                .buildAndRegister();
+
         BlackBronze = new Material.Builder(GTCEu.id("black_bronze"))
                 .ingot()
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1328))
@@ -1188,7 +1196,7 @@ public class FirstDegreeMaterials {
         EnderPearl = new Material.Builder(GTCEu.id("ender_pearl"))
                 .gem(1)
                 .color(0x8cf4e2).secondaryColor(0x032620).iconSet(SHINY)
-                .flags(NO_SMASHING, NO_SMELTING, GENERATE_PLATE)
+                .flags(NO_SMASHING, NO_SMELTING, GENERATE_PLATE,GENERATE_LENS)
                 .components(Beryllium, 1, Potassium, 4, Nitrogen, 5)
                 .buildAndRegister();
 

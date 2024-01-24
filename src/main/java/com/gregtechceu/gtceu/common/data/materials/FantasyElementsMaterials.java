@@ -188,7 +188,7 @@ public class FantasyElementsMaterials {
         .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(9475))
         .color(0xffffff).secondaryColor(0xffffff).iconSet(SHINY)
         .element(GTElements.ChromaticGlass)
-        .appendFlags(EXT2_METAL)
+        .appendFlags(EXT2_METAL,GENERATE_LENS)
         .buildAndRegister();
 
         CelestialTungsten = new Material.Builder(GTCEu.id("celestial_tungsten"))

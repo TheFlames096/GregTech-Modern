@@ -287,6 +287,9 @@ public class MaterialFlags {
             .requireProps(PropertyKey.DUST)
             .build();
 
+    public static final MaterialFlag GENERATE_SINGULARITY = new MaterialFlag.Builder("generate_singularity")
+            .requireProps(PropertyKey.DUST)
+            .build();
     /////////////////
     //     ORE     //
     /////////////////

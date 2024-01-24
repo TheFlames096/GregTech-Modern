@@ -2,6 +2,7 @@ package com.gregtechceu.gtceu.data.recipe.misc;
 
 import com.gregtechceu.gtceu.api.data.chemical.material.MarkerMaterials.Color;
 import com.gregtechceu.gtceu.api.data.chemical.material.stack.UnificationEntry;
+import com.gregtechceu.gtceu.api.fluids.store.FluidStorageKeys;
 import com.gregtechceu.gtceu.api.machine.multiblock.CleanroomType;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
@@ -64,13 +65,13 @@ public class CircuitRecipes {
 
         CHEMICAL_RECIPES.recipeBuilder("t5waterpurify")
                 .inputFluids(Grade4PurifiedWater.getFluid(1000))
-                .inputItems(dust,Zeolite,0)
+                .notConsumable(dust,Zeolite)
                 .outputFluids(Grade5PurifiedWater.getFluid(900))
                 .duration(5000).EUt(VA[UV]).save(provider);
 
         LASER_ENGRAVER_RECIPES.recipeBuilder("t6waterpurify")
                 .inputFluids(Grade5PurifiedWater.getFluid(1000))
-                .inputItems(lens,MysteriousCrystal,0)
+                .notConsumable(lens,MysteriousCrystal)
                 .outputFluids(Grade6PurifiedWater.getFluid(900))
                 .outputFluids(Steam.getFluid(8000))
                 .cleanroom(CleanroomType.CLEANROOM)
@@ -83,11 +84,12 @@ public class CircuitRecipes {
                 .outputFluids(Grade5PurifiedWater.getFluid(100))
                 .outputFluids(Ethanol.getFluid(50))
                 .duration(5000).EUt(VA[UHV]).save(provider);
+
         CHEMICAL_BATH_RECIPES.recipeBuilder("t8waterpurify")
                 .inputFluids(Grade7PurifiedWater.getFluid(1000))
-                .inputItems(nanites,Silver,0)
+                .notConsumable(nanites,Silver)
                 .outputFluids(Grade8PurifiedWater.getFluid(900))
-                .duration(5000).EUt(VA[UHV]).save(provider);
+                .duration(5000).EUt(VA[UEV]).save(provider);
         // Boules
         BLAST_RECIPES.recipeBuilder("silicon_boule")
                 .inputItems(dust, Silicon, 32)
@@ -135,7 +137,7 @@ public class CircuitRecipes {
 
         LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_optically_boule")
                 .inputItems(AMERICIUM_BOULE)
-                .inputItems(lens,MysteriousCrystal,0)
+                .notConsumable(lens,MysteriousCrystal)
                 .inputFluids(UUMatter.getFluid(16000))
                 .outputItems(OPTICALLY_BOULE, 1)
                 .cleanroom(CleanroomType.CLEANROOM)
@@ -179,22 +181,98 @@ public class CircuitRecipes {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .duration(3200).EUt(VA[IV]).save(provider);
 
+        CUTTER_RECIPES.recipeBuilder("cut_optical_boule_1")
+                .inputItems(OPTICALLY_BOULE)
+                .inputFluids(Grade1PurifiedWater.getFluid(1000))
+                .outputItems(PHOTONICALLY_PREPARED_WAFER, 2)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .duration(960).EUt(VA[UEV]).save(provider);
+
+        CUTTER_RECIPES.recipeBuilder("cut_optical_boule_2")
+                .inputItems(OPTICALLY_BOULE)
+                .inputFluids(Grade2PurifiedWater.getFluid(1000))
+                .outputItems(PHOTONICALLY_PREPARED_WAFER, 4)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .duration(920).EUt(VA[UEV]).save(provider);
+
+        CUTTER_RECIPES.recipeBuilder("cut_optical_boule_3")
+                .inputItems(OPTICALLY_BOULE)
+                .inputFluids(Grade3PurifiedWater.getFluid(1000))
+                .outputItems(PHOTONICALLY_PREPARED_WAFER, 6)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .duration(880).EUt(VA[UEV]).save(provider);
+
+        CUTTER_RECIPES.recipeBuilder("cut_optical_boule_4")
+                .inputItems(OPTICALLY_BOULE)
+                .inputFluids(Grade4PurifiedWater.getFluid(1000))
+                .outputItems(PHOTONICALLY_PREPARED_WAFER, 8)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .duration(840).EUt(VA[UEV]).save(provider);
+
+        CUTTER_RECIPES.recipeBuilder("cut_optical_boule_5")
+                .inputItems(OPTICALLY_BOULE)
+                .inputFluids(Grade5PurifiedWater.getFluid(1000))
+                .outputItems(PHOTONICALLY_PREPARED_WAFER, 10)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .duration(800).EUt(VA[UEV]).save(provider);
+
+        CUTTER_RECIPES.recipeBuilder("cut_optical_boule_6")
+                .inputItems(OPTICALLY_BOULE)
+                .inputFluids(Grade6PurifiedWater.getFluid(1000))
+                .outputItems(PHOTONICALLY_PREPARED_WAFER, 12)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .duration(760).EUt(VA[UEV]).save(provider);
+
+        CUTTER_RECIPES.recipeBuilder("cut_optical_boule_7")
+                .inputItems(OPTICALLY_BOULE)
+                .inputFluids(Grade7PurifiedWater.getFluid(1000))
+                .outputItems(PHOTONICALLY_PREPARED_WAFER, 14)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .duration(720).EUt(VA[UEV]).save(provider);
+
+        CUTTER_RECIPES.recipeBuilder("cut_optical_boule_8")
+                .inputItems(OPTICALLY_BOULE)
+                .inputFluids(Grade8PurifiedWater.getFluid(1000))
+                .outputItems(PHOTONICALLY_PREPARED_WAFER, 16)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .duration(680).EUt(VA[UEV]).save(provider);
+
+        // Advanced Wafer Processing
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_bio_wafer")
+                .inputItems(PHOTONICALLY_PREPARED_WAFER)
+                .inputItems(dust,Hypogen)
+                .inputFluids(SterileGrowthMedium.getFluid(8000))
+                .outputItems(BIO_WAFER)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .duration(1200).EUt(VA[UHV]).save(provider);
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder("enhance_photoically_wafer")
+                .inputItems(PHOTONICALLY_PREPARED_WAFER)
+                .inputItems(nanites,Gold)
+                .notConsumable(lens,ChromaticGlass)
+                .inputFluids(Oganesson.getFluid(4000))
+                .inputFluids(Tin.getFluid(FluidStorageKeys.PLASMA,1000))
+                .outputItems(PHOTONICALLY_ENRICHED_WAFER)
+                .outputFluids(Tin.getFluid(1000))
+                .cleanroom(CleanroomType.CLEANROOM)
+                .duration(200).EUt(VA[UEV]).save(provider);
 
         // Wafer engraving
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ilc_silicon").duration(900).EUt(VA[MV]).inputItems(SILICON_WAFER).notConsumable(lens, Color.Red).outputItems(INTEGRATED_LOGIC_CIRCUIT_WAFER).save(provider);
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ilc_phosphorus").duration(500).EUt(VA[HV]).inputItems(PHOSPHORUS_WAFER).notConsumable(lens, Color.Red).outputItems(INTEGRATED_LOGIC_CIRCUIT_WAFER, 4).cleanroom(CleanroomType.CLEANROOM).save(provider);
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ilc_naquadah").duration(200).EUt(VA[EV]).inputItems(NAQUADAH_WAFER).notConsumable(lens, Color.Red).outputItems(INTEGRATED_LOGIC_CIRCUIT_WAFER, 8).cleanroom(CleanroomType.CLEANROOM).save(provider);
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ilc_europium").duration(50).EUt(VA[IV]).inputItems(EUROPIUM_WAFER).notConsumable(lens, Color.Red).outputItems(INTEGRATED_LOGIC_CIRCUIT_WAFER, 16).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ilc_silicon").duration(1200).EUt(VA[MV]).inputItems(SILICON_WAFER).notConsumable(lens, Color.Red).outputItems(INTEGRATED_LOGIC_CIRCUIT_WAFER).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ilc_phosphorus").duration(900).EUt(VA[HV]).inputItems(PHOSPHORUS_WAFER).notConsumable(lens, Color.Red).outputItems(INTEGRATED_LOGIC_CIRCUIT_WAFER, 4).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ilc_naquadah").duration(600).EUt(VA[EV]).inputItems(NAQUADAH_WAFER).notConsumable(lens, Color.Red).outputItems(INTEGRATED_LOGIC_CIRCUIT_WAFER, 8).cleanroom(CleanroomType.CLEANROOM).save(provider);
 
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ram_silicon").duration(900).EUt(VA[MV]).inputItems(SILICON_WAFER).notConsumable(lens, Color.Green).outputItems(RANDOM_ACCESS_MEMORY_WAFER).save(provider);
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ram_phosphorus").duration(500).EUt(VA[HV]).inputItems(PHOSPHORUS_WAFER).notConsumable(lens, Color.Green).outputItems(RANDOM_ACCESS_MEMORY_WAFER, 4).cleanroom(CleanroomType.CLEANROOM).save(provider);
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ram_naquadah").duration(200).EUt(VA[EV]).inputItems(NAQUADAH_WAFER).notConsumable(lens, Color.Green).outputItems(RANDOM_ACCESS_MEMORY_WAFER, 8).cleanroom(CleanroomType.CLEANROOM).save(provider);
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ram_europium").duration(50).EUt(VA[IV]).inputItems(EUROPIUM_WAFER).notConsumable(lens, Color.Green).outputItems(RANDOM_ACCESS_MEMORY_WAFER, 16).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ram_silicon").duration(1200).EUt(VA[MV]).inputItems(SILICON_WAFER).notConsumable(lens, Color.Green).outputItems(RANDOM_ACCESS_MEMORY_WAFER).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ram_phosphorus").duration(900).EUt(VA[HV]).inputItems(PHOSPHORUS_WAFER).notConsumable(lens, Color.Green).outputItems(RANDOM_ACCESS_MEMORY_WAFER, 4).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ram_naquadah").duration(600).EUt(VA[EV]).inputItems(NAQUADAH_WAFER).notConsumable(lens, Color.Green).outputItems(RANDOM_ACCESS_MEMORY_WAFER, 8).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ram_europium").duration(300).EUt(VA[IV]).inputItems(EUROPIUM_WAFER).notConsumable(lens, Color.Green).outputItems(RANDOM_ACCESS_MEMORY_WAFER, 16).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ram_americium").duration(150).EUt(VA[LuV]).inputItems(AMERICIUM_WAFER).notConsumable(lens, Color.Green).outputItems(RANDOM_ACCESS_MEMORY_WAFER, 16).cleanroom(CleanroomType.CLEANROOM).save(provider);
 
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_cpu_silicon").duration(900).EUt(VA[MV]).inputItems(SILICON_WAFER).notConsumable(lens, Color.LightBlue).outputItems(CENTRAL_PROCESSING_UNIT_WAFER).save(provider);
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_cpu_phosphorus").duration(500).EUt(VA[HV]).inputItems(PHOSPHORUS_WAFER).notConsumable(lens, Color.LightBlue).outputItems(CENTRAL_PROCESSING_UNIT_WAFER, 4).cleanroom(CleanroomType.CLEANROOM).save(provider);
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_cpu_naquadah").duration(200).EUt(VA[EV]).inputItems(NAQUADAH_WAFER).notConsumable(lens, Color.LightBlue).outputItems(CENTRAL_PROCESSING_UNIT_WAFER, 8).cleanroom(CleanroomType.CLEANROOM).save(provider);
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_cpu_europium").duration(50).EUt(VA[IV]).inputItems(EUROPIUM_WAFER).notConsumable(lens, Color.LightBlue).outputItems(CENTRAL_PROCESSING_UNIT_WAFER, 16).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_cpu_silicon").duration(1200).EUt(VA[MV]).inputItems(SILICON_WAFER).notConsumable(lens, Color.LightBlue).outputItems(CENTRAL_PROCESSING_UNIT_WAFER).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_cpu_phosphorus").duration(900).EUt(VA[HV]).inputItems(PHOSPHORUS_WAFER).notConsumable(lens, Color.LightBlue).outputItems(CENTRAL_PROCESSING_UNIT_WAFER, 4).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_cpu_naquadah").duration(600).EUt(VA[EV]).inputItems(NAQUADAH_WAFER).notConsumable(lens, Color.LightBlue).outputItems(CENTRAL_PROCESSING_UNIT_WAFER, 8).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_cpu_europium").duration(300).EUt(VA[IV]).inputItems(EUROPIUM_WAFER).notConsumable(lens, Color.LightBlue).outputItems(CENTRAL_PROCESSING_UNIT_WAFER, 16).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_cpu_americium").duration(150).EUt(VA[LuV]).inputItems(AMERICIUM_WAFER).notConsumable(lens, Color.LightBlue).outputItems(CENTRAL_PROCESSING_UNIT_WAFER, 32).cleanroom(CleanroomType.CLEANROOM).save(provider);
 
         LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ulpic_silicon").duration(900).EUt(VA[MV]).inputItems(SILICON_WAFER).notConsumable(lens, Color.Blue).outputItems(ULTRA_LOW_POWER_INTEGRATED_CIRCUIT_WAFER).save(provider);
         LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ulpic_phosphorus").duration(500).EUt(VA[HV]).inputItems(PHOSPHORUS_WAFER).notConsumable(lens, Color.Blue).outputItems(ULTRA_LOW_POWER_INTEGRATED_CIRCUIT_WAFER, 4).cleanroom(CleanroomType.CLEANROOM).save(provider);
@@ -206,32 +284,36 @@ public class CircuitRecipes {
         LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_lpic_naquadah").duration(200).EUt(VA[EV]).inputItems(NAQUADAH_WAFER).notConsumable(lens, Color.Orange).outputItems(LOW_POWER_INTEGRATED_CIRCUIT_WAFER, 8).cleanroom(CleanroomType.CLEANROOM).save(provider);
         LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_lpic_europium").duration(50).EUt(VA[IV]).inputItems(EUROPIUM_WAFER).notConsumable(lens, Color.Orange).outputItems(LOW_POWER_INTEGRATED_CIRCUIT_WAFER, 16).cleanroom(CleanroomType.CLEANROOM).save(provider);
 
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ssoc_silicon").duration(900).EUt(VA[MV]).inputItems(SILICON_WAFER).notConsumable(lens, Color.Cyan).outputItems(SIMPLE_SYSTEM_ON_CHIP_WAFER).save(provider);
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ssoc_phosphorus").duration(500).EUt(VA[HV]).inputItems(PHOSPHORUS_WAFER).notConsumable(lens, Color.Cyan).outputItems(SIMPLE_SYSTEM_ON_CHIP_WAFER, 4).cleanroom(CleanroomType.CLEANROOM).save(provider);
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ssoc_naquadah").duration(200).EUt(VA[EV]).inputItems(NAQUADAH_WAFER).notConsumable(lens, Color.Cyan).outputItems(SIMPLE_SYSTEM_ON_CHIP_WAFER, 8).cleanroom(CleanroomType.CLEANROOM).save(provider);
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ssoc_europium").duration(50).EUt(VA[IV]).inputItems(EUROPIUM_WAFER).notConsumable(lens, Color.Cyan).outputItems(SIMPLE_SYSTEM_ON_CHIP_WAFER, 16).cleanroom(CleanroomType.CLEANROOM).save(provider);
-
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_nand_phosphorus").duration(900).EUt(VA[HV]).inputItems(PHOSPHORUS_WAFER).notConsumable(lens, Color.Gray).outputItems(NAND_MEMORY_CHIP_WAFER).cleanroom(CleanroomType.CLEANROOM).save(provider);
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_nand_naquadah").duration(500).EUt(VA[EV]).inputItems(NAQUADAH_WAFER).notConsumable(lens, Color.Gray).outputItems(NAND_MEMORY_CHIP_WAFER, 4).cleanroom(CleanroomType.CLEANROOM).save(provider);
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_nand_europium").duration(200).EUt(VA[IV]).inputItems(EUROPIUM_WAFER).notConsumable(lens, Color.Gray).outputItems(NAND_MEMORY_CHIP_WAFER, 8).cleanroom(CleanroomType.CLEANROOM).save(provider);
-
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_nor_phosphorus").duration(900).EUt(VA[HV]).inputItems(PHOSPHORUS_WAFER).notConsumable(lens, Color.Pink).outputItems(NOR_MEMORY_CHIP_WAFER).cleanroom(CleanroomType.CLEANROOM).save(provider);
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_nor_naquadah").duration(500).EUt(VA[EV]).inputItems(NAQUADAH_WAFER).notConsumable(lens, Color.Pink).outputItems(NOR_MEMORY_CHIP_WAFER, 4).cleanroom(CleanroomType.CLEANROOM).save(provider);
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_nor_europium").duration(200).EUt(VA[IV]).inputItems(EUROPIUM_WAFER).notConsumable(lens, Color.Pink).outputItems(NOR_MEMORY_CHIP_WAFER, 8).cleanroom(CleanroomType.CLEANROOM).save(provider);
-
         LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_pic_phosphorus").duration(900).EUt(VA[HV]).inputItems(PHOSPHORUS_WAFER).notConsumable(lens, Color.Brown).outputItems(POWER_INTEGRATED_CIRCUIT_WAFER).cleanroom(CleanroomType.CLEANROOM).save(provider);
         LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_pic_naquadah").duration(500).EUt(VA[EV]).inputItems(NAQUADAH_WAFER).notConsumable(lens, Color.Brown).outputItems(POWER_INTEGRATED_CIRCUIT_WAFER, 4).cleanroom(CleanroomType.CLEANROOM).save(provider);
         LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_pic_europium").duration(200).EUt(VA[IV]).inputItems(EUROPIUM_WAFER).notConsumable(lens, Color.Brown).outputItems(POWER_INTEGRATED_CIRCUIT_WAFER, 8).cleanroom(CleanroomType.CLEANROOM).save(provider);
 
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_soc_phosphorus").duration(900).EUt(VA[HV]).inputItems(PHOSPHORUS_WAFER).notConsumable(lens, Color.Yellow).outputItems(SYSTEM_ON_CHIP_WAFER).cleanroom(CleanroomType.CLEANROOM).save(provider);
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_soc_naquadah").duration(500).EUt(VA[EV]).inputItems(NAQUADAH_WAFER).notConsumable(lens, Color.Yellow).outputItems(SYSTEM_ON_CHIP_WAFER, 4).cleanroom(CleanroomType.CLEANROOM).save(provider);
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_soc_europium").duration(200).EUt(VA[IV]).inputItems(EUROPIUM_WAFER).notConsumable(lens, Color.Yellow).outputItems(SYSTEM_ON_CHIP_WAFER, 8).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ssoc_silicon").duration(300).EUt(VA[MV]).inputItems(SILICON_WAFER).notConsumable(lens, Color.Cyan).outputItems(SIMPLE_SYSTEM_ON_CHIP_WAFER).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ssoc_phosphorus").duration(300).EUt(VA[HV]).inputItems(PHOSPHORUS_WAFER).notConsumable(lens, Color.Cyan).outputItems(SIMPLE_SYSTEM_ON_CHIP_WAFER, 4).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ssoc_naquadah").duration(300).EUt(VA[EV]).inputItems(NAQUADAH_WAFER).notConsumable(lens, Color.Cyan).outputItems(SIMPLE_SYSTEM_ON_CHIP_WAFER, 16).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_ssoc_europium").duration(300).EUt(VA[IV]).inputItems(EUROPIUM_WAFER).notConsumable(lens, Color.Cyan).outputItems(SIMPLE_SYSTEM_ON_CHIP_WAFER, 64).cleanroom(CleanroomType.CLEANROOM).save(provider);
 
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_asoc_naquadah").duration(900).EUt(VA[EV]).inputItems(NAQUADAH_WAFER).notConsumable(lens, Color.Purple).outputItems(ADVANCED_SYSTEM_ON_CHIP_WAFER).cleanroom(CleanroomType.CLEANROOM).save(provider);
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_asoc_europium").duration(500).EUt(VA[IV]).inputItems(EUROPIUM_WAFER).notConsumable(lens, Color.Purple).outputItems(ADVANCED_SYSTEM_ON_CHIP_WAFER, 2).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_soc_naquadah").duration(900).EUt(VA[EV]).inputItems(NAQUADAH_WAFER).notConsumable(lens, Color.Yellow).outputItems(SYSTEM_ON_CHIP_WAFER, 2).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_soc_europium").duration(600).EUt(VA[IV]).inputItems(EUROPIUM_WAFER).notConsumable(lens, Color.Yellow).outputItems(SYSTEM_ON_CHIP_WAFER, 4).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_soc_americium").duration(300).EUt(VA[LuV]).inputItems(AMERICIUM_WAFER).notConsumable(lens, Color.Yellow).outputItems(SYSTEM_ON_CHIP_WAFER, 8).cleanroom(CleanroomType.CLEANROOM).save(provider);
 
-        // Can replace this with a Quantum Star/Eye Lens if desired
-        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_hasoc_europium").duration(900).EUt(VA[IV]).inputItems(EUROPIUM_WAFER).notConsumable(lens, Color.Black).outputItems(HIGHLY_ADVANCED_SOC_WAFER).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_asoc_naquadah").duration(1800).EUt(VA[EV]).inputItems(NAQUADAH_WAFER).notConsumable(lens, Color.Purple).outputItems(ADVANCED_SYSTEM_ON_CHIP_WAFER).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_asoc_europium").duration(1500).EUt(VA[IV]).inputItems(EUROPIUM_WAFER).notConsumable(lens, Color.Purple).outputItems(ADVANCED_SYSTEM_ON_CHIP_WAFER, 2).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_asoc_americium").duration(1200).EUt(VA[LuV]).inputItems(AMERICIUM_WAFER).notConsumable(lens, Color.Purple).outputItems(ADVANCED_SYSTEM_ON_CHIP_WAFER, 4).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_asoc_optical").duration(900).EUt(VA[ZPM]).inputItems(PHOTONICALLY_PREPARED_WAFER).notConsumable(lens, Color.Purple).outputItems(ADVANCED_SYSTEM_ON_CHIP_WAFER, 32).cleanroom(CleanroomType.CLEANROOM).save(provider);
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_nand_phosphorus").duration(900).EUt(VA[HV]).inputItems(PHOSPHORUS_WAFER).notConsumable(lens, EnderPearl).outputItems(NAND_MEMORY_CHIP_WAFER).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_nand_naquadah").duration(600).EUt(VA[EV]).inputItems(NAQUADAH_WAFER).notConsumable(lens,EnderPearl).outputItems(NAND_MEMORY_CHIP_WAFER, 4).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_nand_europium").duration(600).EUt(VA[IV]).inputItems(EUROPIUM_WAFER).notConsumable(lens, EnderPearl).outputItems(NAND_MEMORY_CHIP_WAFER, 8).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_nand_americium").duration(600).EUt(VA[LuV]).inputItems(AMERICIUM_WAFER).notConsumable(lens, EnderPearl).outputItems(NAND_MEMORY_CHIP_WAFER, 16).cleanroom(CleanroomType.CLEANROOM).save(provider);
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_nor_phosphorus").duration(900).EUt(VA[HV]).inputItems(PHOSPHORUS_WAFER).notConsumable(lens, EnderEye).outputItems(NOR_MEMORY_CHIP_WAFER).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_nor_naquadah").duration(600).EUt(VA[EV]).inputItems(NAQUADAH_WAFER).notConsumable(lens, EnderEye).outputItems(NOR_MEMORY_CHIP_WAFER, 4).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_nor_europium").duration(600).EUt(VA[IV]).inputItems(EUROPIUM_WAFER).notConsumable(lens, EnderEye).outputItems(NOR_MEMORY_CHIP_WAFER, 8).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_nor_americium").duration(600).EUt(VA[LuV]).inputItems(AMERICIUM_WAFER).notConsumable(lens, EnderEye).outputItems(NOR_MEMORY_CHIP_WAFER, 16).cleanroom(CleanroomType.CLEANROOM).save(provider);
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_pico_asoc").duration(6000).EUt(VA[UV]).inputItems(ADVANCED_SYSTEM_ON_CHIP_WAFER).notConsumable(lens, NetherStar).outputItems(RAW_PICO_WAFER).cleanroom(CleanroomType.CLEANROOM).save(provider);
+        LASER_ENGRAVER_RECIPES.recipeBuilder("engrave_pico_optical").duration(6000).EUt(VA[UHV]).inputItems(PHOTONICALLY_PREPARED_WAFER).notConsumable(lens, NetherStar).outputItems(RAW_PICO_WAFER, 16).cleanroom(CleanroomType.CLEANROOM).save(provider);
 
         // Wafer chemical refining recipes
         CHEMICAL_RECIPES.recipeBuilder("hpic_wafer")
@@ -275,7 +357,6 @@ public class CircuitRecipes {
                 .duration(1200).EUt(VA[EV]).save(provider);
 
         // Wafer cutting
-        CUTTER_RECIPES.recipeBuilder("cut_hasoc").duration(900).EUt(VA[IV]).inputItems(HIGHLY_ADVANCED_SOC_WAFER).outputItems(HIGHLY_ADVANCED_SOC, 6)/*.cleanroom(CleanroomType.CLEANROOM)*/.save(provider);
         CUTTER_RECIPES.recipeBuilder("cut_asoc").duration(900).EUt(VA[EV]).inputItems(ADVANCED_SYSTEM_ON_CHIP_WAFER).outputItems(ADVANCED_SYSTEM_ON_CHIP, 6)/*.cleanroom(CleanroomType.CLEANROOM)*/.save(provider);
         CUTTER_RECIPES.recipeBuilder("cut_soc").duration(900).EUt(VA[HV]).inputItems(SYSTEM_ON_CHIP_WAFER).outputItems(SYSTEM_ON_CHIP, 6)/*.cleanroom(CleanroomType.CLEANROOM)*/.save(provider);
         CUTTER_RECIPES.recipeBuilder("cut_ssoc").duration(900).EUt(64).inputItems(SIMPLE_SYSTEM_ON_CHIP_WAFER).outputItems(SIMPLE_SYSTEM_ON_CHIP, 6).save(provider);
