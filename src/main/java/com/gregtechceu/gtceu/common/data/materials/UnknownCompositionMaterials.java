@@ -310,7 +310,8 @@ public class UnknownCompositionMaterials {
         EnrichedBacterialSludge = new Material.Builder(GTCEu.id("enriched_bacterial_sludge"))
                 .fluid().color(0x7FFF00).buildAndRegister();
 
-        // free id: 1587
+        SeaweedBroth = new Material.Builder(GTCEu.id("seaweed_broth"))
+                .fluid().color(0x355E3B).buildAndRegister();
 
         Mutagen = new Material.Builder(GTCEu.id("mutagen"))
                 .fluid().color(0x00FF7F).buildAndRegister();

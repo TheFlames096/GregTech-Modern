@@ -512,5 +512,11 @@ public class MiscRecipeLoader {
             .inputItems(ring, Steel, 2)
             .outputItems(STEEL_MINECART_WHEELS)
             .duration(60).EUt(20).save(provider);
+
+        // Mutated Seeweed Extract
+        EXTRACTOR_RECIPES.recipeBuilder("mutated_seeweed_extract")
+            .inputItems(MUTATED_SEAWEED,64)
+            .outputItems(MUTATED_SEAWEED_EXTRACT)
+            .duration(3600).EUt(VA[UHV]).save(provider);
     }
 }

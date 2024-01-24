@@ -793,7 +793,7 @@ public class ElementMaterials {
 
         Tin = new Material.Builder(GTCEu.id("tin"))
                 .ingot(1)
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(505))
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(505)).plasma()
                 .ore()
                 .color(0xfafeff).secondaryColor(0x4e676c)
                 .appendFlags(EXT2_METAL, MORTAR_GRINDABLE, GENERATE_ROTOR, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FINE_WIRE)

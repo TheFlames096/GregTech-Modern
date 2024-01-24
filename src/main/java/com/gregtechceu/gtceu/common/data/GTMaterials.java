@@ -839,6 +839,7 @@ public class GTMaterials {
     public static Material Bacteria;
     public static Material BacterialSludge;
     public static Material EnrichedBacterialSludge;
+    public static Material SeaweedBroth;
     public static Material Mutagen;
     public static Material GelatinMixture;
     public static Material RawGasoline;
@@ -1097,7 +1098,7 @@ public class GTMaterials {
     // Twilight Forest
     public static Material Steeleaf;
     public static Material Ironwood;
-    public static Material FieryIngot;
+    public static Material Fiery;
     public static Material Knightmetal;
 
     // Ender IO

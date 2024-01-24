@@ -57,6 +57,7 @@ import net.minecraftforge.fml.javafmlmod.FMLModContainer;
 import net.minecraftforge.registries.ForgeDeferredRegistriesSetup;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegisterEvent;
+import twilightforest.init.TFBlocks;
 import twilightforest.init.TFItems;
 
 public class CommonProxy {
@@ -194,12 +195,16 @@ public class CommonProxy {
             {
                 GTCEu.LOGGER.info("TF found. Enabling integration...");
                 ingot.setIgnored(Ironwood,TFItems.IRONWOOD_INGOT.get());
+                block.setIgnored(Ironwood,TFBlocks.IRONWOOD_BLOCK.get());
                 ingot.setIgnored(Steeleaf,TFItems.STEELEAF_INGOT.get());
-                ingot.setIgnored(FieryIngot,TFItems.FIERY_INGOT.get());
+                block.setIgnored(Steeleaf,TFBlocks.STEELEAF_BLOCK.get());
+                ingot.setIgnored(Fiery,TFItems.FIERY_INGOT.get());
+                block.setIgnored(Fiery,TFBlocks.FIERY_BLOCK.get());
                 ingot.setIgnored(Knightmetal,TFItems.KNIGHTMETAL_INGOT.get());
                 ring.setIgnored(Knightmetal,TFItems.KNIGHTMETAL_RING.get());
                 dust.setIgnored(Knightmetal,TFItems.ARMOR_SHARD_CLUSTER.get());
                 dustTiny.setIgnored(Knightmetal,TFItems.ARMOR_SHARD.get());
+                block.setIgnored(Knightmetal,TFBlocks.KNIGHTMETAL_BLOCK.get());
             }
             if(LDLib.isModLoaded("ae2"))
             {

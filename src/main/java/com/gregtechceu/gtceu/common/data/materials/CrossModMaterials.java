@@ -26,7 +26,7 @@ public class CrossModMaterials {
                 .blastTemp(1200, GasTier.LOWEST, GTValues.VA[GTValues.MV], 1600)
                 .buildAndRegister();
 
-        ConductiveIron = new Material.Builder(GTCEu.id("conductive_iron"))
+        ConductiveIron = new Material.Builder(GTCEu.id("conductive_alloy"))
                 .ingot(0)
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1200))
                 .color(0xd9b2ab).iconSet(METALLIC)
@@ -57,7 +57,7 @@ public class CrossModMaterials {
         .flags(GENERATE_PLATE)
         .buildAndRegister();
 
-        FieryIngot = new Material.Builder(GTCEu.id("fiery_ingot"))
+        Fiery = new Material.Builder(GTCEu.id("fiery"))
         .ingot()
         .color(0x8B1A1A).iconSet(METALLIC)
         .flags(GENERATE_PLATE)
