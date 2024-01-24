@@ -23,6 +23,7 @@
     "gtceu:basalt_thorium_ore",
     "gtceu:basalt_tin_ore",
     "gtceu:basalt_naquadah_ore",
+    "gtceu:basalt_trinium_ore",
     "gtceu:basalt_almandine_ore",
     "gtceu:basalt_asbestos_ore",
     "gtceu:basalt_hematite_ore",
@@ -117,8 +118,8 @@
   ],
   "page": "gtceu:generation/basalt",
   "position": [
-    -250,
-    50
+    -100,
+    100
   ],
   "pre_nodes": [
     "gtceu:generation/ore"

@@ -1,0 +1,15 @@
+{
+  "button_texture": {
+    "type": "item",
+    "res": "gtceu:optical_processor_computer"
+  },
+  "items": [
+    "gtceu:optical_processor_computer"
+  ],
+  "page": "gtceu:circuits/optical_processor_computer",
+  "position": [
+    -300,
+    250
+  ],
+  "section": "gtceu:circuits"
+}

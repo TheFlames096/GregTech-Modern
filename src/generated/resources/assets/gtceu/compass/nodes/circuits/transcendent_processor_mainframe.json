@@ -1,0 +1,15 @@
+{
+  "button_texture": {
+    "type": "item",
+    "res": "gtceu:transcendent_processor_mainframe"
+  },
+  "items": [
+    "gtceu:transcendent_processor_mainframe"
+  ],
+  "page": "gtceu:circuits/transcendent_processor_mainframe",
+  "position": [
+    -50,
+    300
+  ],
+  "section": "gtceu:circuits"
+}

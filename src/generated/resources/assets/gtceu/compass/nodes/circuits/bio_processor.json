@@ -1,0 +1,15 @@
+{
+  "button_texture": {
+    "type": "item",
+    "res": "gtceu:bio_processor"
+  },
+  "items": [
+    "gtceu:bio_processor"
+  ],
+  "page": "gtceu:circuits/bio_processor",
+  "position": [
+    -200,
+    200
+  ],
+  "section": "gtceu:circuits"
+}

@@ -23,6 +23,7 @@
     "gtceu:thorium_ore",
     "gtceu:tin_ore",
     "gtceu:naquadah_ore",
+    "gtceu:trinium_ore",
     "gtceu:almandine_ore",
     "gtceu:asbestos_ore",
     "gtceu:hematite_ore",
@@ -117,8 +118,8 @@
   ],
   "page": "gtceu:generation/stone",
   "position": [
-    -250,
-    200
+    -50,
+    50
   ],
   "pre_nodes": [
     "gtceu:generation/ore"

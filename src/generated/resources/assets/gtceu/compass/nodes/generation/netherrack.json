@@ -23,6 +23,7 @@
     "gtceu:netherrack_thorium_ore",
     "gtceu:netherrack_tin_ore",
     "gtceu:netherrack_naquadah_ore",
+    "gtceu:netherrack_trinium_ore",
     "gtceu:netherrack_almandine_ore",
     "gtceu:netherrack_asbestos_ore",
     "gtceu:netherrack_hematite_ore",
@@ -117,7 +118,7 @@
   ],
   "page": "gtceu:generation/netherrack",
   "position": [
-    -100,
+    -150,
     100
   ],
   "pre_nodes": [

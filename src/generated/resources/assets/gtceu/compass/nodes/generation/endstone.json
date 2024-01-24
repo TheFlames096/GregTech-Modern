@@ -23,6 +23,7 @@
     "gtceu:endstone_thorium_ore",
     "gtceu:endstone_tin_ore",
     "gtceu:endstone_naquadah_ore",
+    "gtceu:endstone_trinium_ore",
     "gtceu:endstone_almandine_ore",
     "gtceu:endstone_asbestos_ore",
     "gtceu:endstone_hematite_ore",
@@ -118,7 +119,7 @@
   "page": "gtceu:generation/endstone",
   "position": [
     -200,
-    100
+    50
   ],
   "pre_nodes": [
     "gtceu:generation/ore"

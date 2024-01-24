@@ -23,6 +23,7 @@
     "gtceu:diorite_thorium_ore",
     "gtceu:diorite_tin_ore",
     "gtceu:diorite_naquadah_ore",
+    "gtceu:diorite_trinium_ore",
     "gtceu:diorite_almandine_ore",
     "gtceu:diorite_asbestos_ore",
     "gtceu:diorite_hematite_ore",
@@ -117,8 +118,8 @@
   ],
   "page": "gtceu:generation/diorite",
   "position": [
-    -50,
-    0
+    -200,
+    150
   ],
   "pre_nodes": [
     "gtceu:generation/ore"

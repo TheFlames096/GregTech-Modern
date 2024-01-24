@@ -1,0 +1,15 @@
+{
+  "button_texture": {
+    "type": "item",
+    "res": "gtceu:cosmic_processor_computer"
+  },
+  "items": [
+    "gtceu:cosmic_processor_computer"
+  ],
+  "page": "gtceu:circuits/cosmic_processor_computer",
+  "position": [
+    -300,
+    300
+  ],
+  "section": "gtceu:circuits"
+}

@@ -1,0 +1,15 @@
+{
+  "button_texture": {
+    "type": "item",
+    "res": "gtceu:bio_processor_computer"
+  },
+  "items": [
+    "gtceu:bio_processor_computer"
+  ],
+  "page": "gtceu:circuits/bio_processor_computer",
+  "position": [
+    -100,
+    200
+  ],
+  "section": "gtceu:circuits"
+}

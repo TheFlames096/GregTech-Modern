@@ -23,6 +23,7 @@
     "gtceu:sand_thorium_ore",
     "gtceu:sand_tin_ore",
     "gtceu:sand_naquadah_ore",
+    "gtceu:sand_trinium_ore",
     "gtceu:sand_almandine_ore",
     "gtceu:sand_asbestos_ore",
     "gtceu:sand_hematite_ore",
@@ -117,7 +118,7 @@
   ],
   "page": "gtceu:generation/sand",
   "position": [
-    -250,
+    -50,
     100
   ],
   "pre_nodes": [

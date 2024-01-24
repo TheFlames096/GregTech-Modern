@@ -1,0 +1,15 @@
+{
+  "button_texture": {
+    "type": "item",
+    "res": "gtceu:fluxed_electrum_singularity"
+  },
+  "items": [
+    "#forge:singularity"
+  ],
+  "page": "gtceu:materials/singularity",
+  "position": [
+    -150,
+    200
+  ],
+  "section": "gtceu:materials"
+}

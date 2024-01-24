@@ -6,23 +6,7 @@ architectury {
 static def isJetBrainsRuntime() {
     return System.getProperty('java.vm.vendor').contains('JetBrains')
 }
-
-def generatedResources = file("src/generated")
-
-sourceSets {
-    main {
-        resources.srcDir generatedResources
-    }
-}
-
 loom {
-    runs {
-        data {
-            data()
-            programArgs "--all", "--mod", mod_id
-            programArgs "--output", generatedResources.absolutePath
-        }
-    }
     silentMojangMappingsLicense()
 
     accessWidenerPath = file("src/main/resources/${mod_id}.accesswidener")

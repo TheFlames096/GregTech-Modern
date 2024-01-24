@@ -1,0 +1,15 @@
+{
+  "button_texture": {
+    "type": "item",
+    "res": "gtceu:gold_nanites"
+  },
+  "items": [
+    "#forge:nanites"
+  ],
+  "page": "gtceu:materials/nanites",
+  "position": [
+    -200,
+    50
+  ],
+  "section": "gtceu:materials"
+}

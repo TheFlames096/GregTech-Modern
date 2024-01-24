@@ -93,7 +93,7 @@ public class FantasyElementsMaterials {
         Tiberium = new Material.Builder(GTCEu.id("tiberium"))
                 .gem(7)
                 .color(0x3aff4f).secondaryColor(0x3aff4f).iconSet(SHINY)
-                .flags(GENERATE_PLATE,GENERATE_ROD,GENERATE_LONG_ROD,GENERATE_LENS,GENERATE_FOIL)
+                .flags(GENERATE_PLATE,GENERATE_ROD,GENERATE_LONG_ROD,GENERATE_LENS)
                 .element(GTElements.Tr)
                 .buildAndRegister();
 
@@ -112,7 +112,7 @@ public class FantasyElementsMaterials {
         Orundum = new Material.Builder(GTCEu.id("orundum"))
                 .gem(7)
                 .color(0xcd2626).secondaryColor(0xcd2626).iconSet(SHINY)
-                .flags(GENERATE_PLATE,GENERATE_ROD,GENERATE_LONG_ROD,GENERATE_LENS,GENERATE_FOIL)
+                .flags(GENERATE_PLATE,GENERATE_ROD,GENERATE_LONG_ROD,GENERATE_LENS)
                 .element(GTElements.Or)
                 .buildAndRegister();
 
@@ -184,7 +184,7 @@ public class FantasyElementsMaterials {
         .buildAndRegister();
 
         ChromaticGlass = new Material.Builder(GTCEu.id("chromatic_glass"))
-        .ingot(4)
+        .ingot(4).gem()
         .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(9475))
         .color(0xffffff).secondaryColor(0xffffff).iconSet(SHINY)
         .element(GTElements.ChromaticGlass)
