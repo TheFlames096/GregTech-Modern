@@ -1361,12 +1361,5 @@ public class FirstDegreeMaterials {
                 .flags()
                 .components(Calcium, 2, Niobium, 2, Oxygen, 7)
                 .buildAndRegister();
-
-        SiliconSolarGrade= new Material.Builder(GTCEu.id("siliconsolargrade"))
-                .dust()
-                .color(0xaaaab5).secondaryColor(0x10293b).iconSet(METALLIC)
-                .flags(GENERATE_PLATE,DISABLE_DECOMPOSITION)
-                .components(Silicon,1)
-                .buildAndRegister();
     }
 }

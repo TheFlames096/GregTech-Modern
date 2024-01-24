@@ -718,7 +718,7 @@ public class ElementMaterials {
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1235))
                 .ore()
                 .color(0xDCDCFF).secondaryColor(0x5a4705).iconSet(SHINY)
-                .appendFlags(EXT2_METAL, MORTAR_GRINDABLE, GENERATE_FINE_WIRE, GENERATE_RING)
+                .appendFlags(EXT2_METAL, MORTAR_GRINDABLE, GENERATE_FINE_WIRE, GENERATE_RING, GENERATE_NANITES)
                 .element(GTElements.Ag)
                 .cableProperties(GTValues.V[3], 1, 1)
                 .buildAndRegister();

@@ -682,7 +682,6 @@ public class GTMaterials {
     public static Material EnrichedNaquadahSulfate;
     public static Material NaquadriaSulfate;
     public static Material Pyrochlore;
-    public static Material SiliconSolarGrade;
 
     /**
      * Organic chemistry
@@ -898,6 +897,15 @@ public class GTMaterials {
     public static Material Lapotron;
     public static Material UUMatter;
     public static Material PCBCoolant;
+
+    public static Material Grade1PurifiedWater;
+    public static Material Grade2PurifiedWater;
+    public static Material Grade3PurifiedWater;
+    public static Material Grade4PurifiedWater;
+    public static Material Grade5PurifiedWater;
+    public static Material Grade6PurifiedWater;
+    public static Material Grade7PurifiedWater;
+    public static Material Grade8PurifiedWater;
 
     /**
      * Second Degree Compounds

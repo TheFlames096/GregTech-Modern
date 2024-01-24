@@ -1197,11 +1197,14 @@ public class GTItems {
     public static ItemEntry<Item> SILICON_BOULE= REGISTRATE.item("silicon_boule", Item::new).lang("Monocrystalline Silicon Boule").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "silicon_boule")).register();
     public static ItemEntry<Item> PHOSPHORUS_BOULE= REGISTRATE.item("phosphorus_boule", Item::new).lang("Phosphorus-doped Monocrystalline Silicon Boule").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "silicon_boule")).register();
     public static ItemEntry<Item> NAQUADAH_BOULE= REGISTRATE.item("naquadah_boule", Item::new).lang("Naquadah-doped Monocrystalline Silicon Boule").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "silicon_boule")).register();
-    public static ItemEntry<Item> NEUTRONIUM_BOULE= REGISTRATE.item("neutronium_boule", Item::new).lang("Neutronium-doped Monocrystalline Silicon Boule").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "silicon_boule")).register();
+    public static ItemEntry<Item> EUROPIUM_BOULE= REGISTRATE.item("europium_boule", Item::new).lang("Europium-doped Monocrystalline Silicon Boule").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "silicon_boule")).register();
+    public static ItemEntry<Item> AMERICIUM_BOULE= REGISTRATE.item("americium_boule", Item::new).lang("Americium-doped Monocrystalline Silicon Boule").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "silicon_boule")).register();
+    public static ItemEntry<Item> OPTICALLY_BOULE= REGISTRATE.item("optically_boule", Item::new).lang("Optically Enriched Crystalline Boule").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "silicon_boule")).register();
     public static ItemEntry<Item> SILICON_WAFER= REGISTRATE.item("silicon_wafer", Item::new).lang("Silicon Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
     public static ItemEntry<Item> PHOSPHORUS_WAFER= REGISTRATE.item("phosphorus_wafer", Item::new).lang("Phosphorus-doped Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
     public static ItemEntry<Item> NAQUADAH_WAFER= REGISTRATE.item("naquadah_wafer", Item::new).lang("Naquadah-doped Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
-    public static ItemEntry<Item> NEUTRONIUM_WAFER= REGISTRATE.item("neutronium_wafer", Item::new).lang("Neutronium-doped Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
+    public static ItemEntry<Item> EUROPIUM_WAFER= REGISTRATE.item("europium_wafer", Item::new).lang("Europium-doped Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
+    public static ItemEntry<Item> AMERICIUM_WAFER= REGISTRATE.item("americium_wafer", Item::new).lang("Americium-doped Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
 
     public static ItemEntry<Item> CENTRAL_PROCESSING_UNIT_WAFER= REGISTRATE.item("cpu_wafer", Item::new).lang("CPU Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();
     public static ItemEntry<Item> RANDOM_ACCESS_MEMORY_WAFER= REGISTRATE.item("ram_wafer", Item::new).lang("RAM Wafer").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "wafer")).register();

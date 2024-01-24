@@ -517,6 +517,15 @@ public class TagPrefix {
             .generateItem(true)
             .generationCondition(mat -> mat.hasFlag(MaterialFlags.GENERATE_LENS));
 
+    // High tier items
+    public static final TagPrefix nanites = new TagPrefix("nanites")
+            .defaultTagPath("nanites/%s")
+            .unformattedTagPath("nanites")
+            .materialIconType(MaterialIconType.nanites)
+            .unificationEnabled(false)
+            .generateItem(true)
+            .generationCondition(mat -> mat.hasFlag(MaterialFlags.GENERATE_NANITES));
+
     public static final TagPrefix dye = new TagPrefix("dye")
             .defaultTagPath("dyes/%s")
             .unformattedTagPath("dyes")

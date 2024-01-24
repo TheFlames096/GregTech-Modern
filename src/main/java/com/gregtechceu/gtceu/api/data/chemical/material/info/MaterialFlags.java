@@ -283,6 +283,10 @@ public class MaterialFlags {
             .requireProps(PropertyKey.GEM)
             .build();
 
+    public static final MaterialFlag GENERATE_NANITES = new MaterialFlag.Builder("generate_nanites")
+            .requireProps(PropertyKey.DUST)
+            .build();
+
     /////////////////
     //     ORE     //
     /////////////////

@@ -126,7 +126,7 @@ public class FantasyElementsMaterials {
                 .rotorStats(20.0f, 6.0f, 10240)
                 .buildAndRegister();
 
-        MetastableOganesson = new Material.Builder(GTCEu.id("metastableoganesson"))
+        MetastableOganesson = new Material.Builder(GTCEu.id("metastable_oganesson"))
                 .ingot(7)
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(11000))
                 .color( 0x14397f).secondaryColor(0x14397f).iconSet(SHINY)
@@ -165,7 +165,7 @@ public class FantasyElementsMaterials {
                 .blastTemp(11530, GasTier.LOW, GTValues.VA[GTValues.UIV], 12000)
                 .buildAndRegister();
         
-        EnergyCrystal = new Material.Builder(GTCEu.id("energycrystal"))
+        EnergyCrystal = new Material.Builder(GTCEu.id("energy_crystal"))
                 .ingot(4)
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(4935))
                 .color(0xe4ff00).secondaryColor(0xe4ff00).iconSet(METALLIC)
@@ -174,7 +174,7 @@ public class FantasyElementsMaterials {
                 .blastTemp(4935, GasTier.LOW, GTValues.VA[GTValues.EV], 1000)
                 .buildAndRegister();
      
-        AdvancedNitinol = new Material.Builder(GTCEu.id("advacednitinol"))
+        AdvancedNitinol = new Material.Builder(GTCEu.id("advaced_nitinol"))
         .ingot(4)
         .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(8675))
         .color(0xdca0f0).secondaryColor(0xdca0f0).iconSet(RADIOACTIVE)
@@ -183,7 +183,7 @@ public class FantasyElementsMaterials {
         .blastTemp(8675, GasTier.LOW, GTValues.VA[GTValues.UV], 12000)
         .buildAndRegister();
 
-        ChromaticGlass = new Material.Builder(GTCEu.id("chromaticglass"))
+        ChromaticGlass = new Material.Builder(GTCEu.id("chromatic_glass"))
         .ingot(4)
         .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(9475))
         .color(0xffffff).secondaryColor(0xffffff).iconSet(SHINY)
@@ -191,7 +191,7 @@ public class FantasyElementsMaterials {
         .appendFlags(EXT2_METAL)
         .buildAndRegister();
 
-        CelestialTungsten = new Material.Builder(GTCEu.id("celestialtungsten"))
+        CelestialTungsten = new Material.Builder(GTCEu.id("celestial_tungsten"))
         .ingot(4)
         .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(10470))
         .color(0x323232).secondaryColor(0xffffff).iconSet(METALLIC)
@@ -200,7 +200,7 @@ public class FantasyElementsMaterials {
         .blastTemp(10470, GasTier.LOW, GTValues.VA[GTValues.UEV], 12000)
         .buildAndRegister();
 
-        AstralTitanium = new Material.Builder(GTCEu.id("astraltitanium"))
+        AstralTitanium = new Material.Builder(GTCEu.id("astral_titanium"))
         .ingot(4)
         .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(9715))
         .color(0xdca0f0).secondaryColor(0xffffff).iconSet(METALLIC)

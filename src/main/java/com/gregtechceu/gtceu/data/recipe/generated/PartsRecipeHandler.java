@@ -42,6 +42,7 @@ public class PartsRecipeHandler {
         wireFine.executeHandler(PropertyKey.INGOT, (tagPrefix, material, property) -> processFineWire(tagPrefix, material, property, provider));
         foil.executeHandler(PropertyKey.INGOT, (tagPrefix, material, property) -> processFoil(tagPrefix, material, property, provider));
         lens.executeHandler(PropertyKey.GEM, (tagPrefix, material, property) -> processLens(tagPrefix, material, property, provider));
+        nanites.executeHandler(PropertyKey.DUST, (tagPrefix, material, property) -> processNanites(tagPrefix, material, property, provider));
 
         gear.executeHandler(PropertyKey.DUST, (tagPrefix, material, property) -> processGear(tagPrefix, material, property, provider));
         gearSmall.executeHandler(PropertyKey.DUST, (tagPrefix, material, property) -> processGear(tagPrefix, material, property, provider));
@@ -259,6 +260,11 @@ public class PartsRecipeHandler {
                     .outputItems(dust, material, 2)
                     .duration(2400).EUt(30).save(provider);
         }
+    }
+
+    public static void processNanites(TagPrefix nanitesPrefix, Material material, DustProperty property, Consumer<FinishedRecipe> provider) {
+        //No Universial Recipes
+        return;
     }
 
     public static void processPlate(TagPrefix platePrefix, Material material, DustProperty property, Consumer<FinishedRecipe> provider) {

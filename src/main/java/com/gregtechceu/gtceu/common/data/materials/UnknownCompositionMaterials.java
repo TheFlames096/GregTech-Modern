@@ -556,5 +556,23 @@ public class UnknownCompositionMaterials {
 
         PCBCoolant = new Material.Builder(GTCEu.id("pcb_coolant"))
                 .fluid().color(0xD5D69C).buildAndRegister();
+
+        Grade1PurifiedWater= new Material.Builder(GTCEu.id("grade1purifiedWater"))
+                .fluid().color(0x0000EE).buildAndRegister();
+
+        Grade2PurifiedWater = new Material.Builder(GTCEu.id("grade2purifiedWater"))
+                .fluid().color(0x0000EE).buildAndRegister();
+        Grade3PurifiedWater = new Material.Builder(GTCEu.id("grade3purifiedWater"))
+                .fluid().color(0x0000EE).buildAndRegister();
+        Grade4PurifiedWater = new Material.Builder(GTCEu.id("grade4purifiedWater"))
+                .fluid().color(0x0000EE).buildAndRegister();
+        Grade5PurifiedWater = new Material.Builder(GTCEu.id("grade5purifiedWater"))
+                .fluid().color(0x0000EE).buildAndRegister();
+        Grade6PurifiedWater = new Material.Builder(GTCEu.id("grade6purifiedWater"))
+                .fluid().color(0x0000EE).buildAndRegister();
+        Grade7PurifiedWater = new Material.Builder(GTCEu.id("grade7purifiedWater"))
+                .fluid().color(0x0000EE).buildAndRegister();
+        Grade8PurifiedWater = new Material.Builder(GTCEu.id("grade8purifiedWater"))
+                .fluid().color(0x0000EE).buildAndRegister();
     }
 }

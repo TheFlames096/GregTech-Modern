@@ -42,19 +42,19 @@ public class CrossModMaterials {
         .flags(GENERATE_PLATE)
         .buildAndRegister();
 
-        Ironwood = new Material.Builder(GTCEu.id("ironwood"))
+        Ironwood = new Material.Builder(GTCEu.id("iron_wood"))
         .ingot()
         .color(0x556B2F).iconSet(METALLIC)
         .flags(GENERATE_PLATE)
         .buildAndRegister();
 
-        FieryIngot = new Material.Builder(GTCEu.id("fieryingot"))
+        FieryIngot = new Material.Builder(GTCEu.id("fiery_ingot"))
         .ingot()
         .color(0x8B1A1A).iconSet(METALLIC)
         .flags(GENERATE_PLATE)
         .buildAndRegister();
         
-        Knightmetal = new Material.Builder(GTCEu.id("knightmetal"))
+        Knightmetal = new Material.Builder(GTCEu.id("knight_metal"))
         .ingot()
         .color(0xF5F5DC).iconSet(METALLIC)
         .flags(GENERATE_PLATE)
@@ -69,7 +69,7 @@ public class CrossModMaterials {
                 .element(GTElements.Draconium)
                 .blastTemp(7200, GasTier.MID, GTValues.VA[GTValues.LuV], 3600)
                 .buildAndRegister();
-        AwakenedDraconium = new Material.Builder(GTCEu.id("awakeneddraconium"))
+        AwakenedDraconium = new Material.Builder(GTCEu.id("awakened_draconium"))
                 .ingot()
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(9900))
                 .color(0xFF8C00).iconSet(SHINY)
