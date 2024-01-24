@@ -183,8 +183,7 @@ public class FantasyElementsMaterials {
         .blastTemp(8675, GasTier.LOW, GTValues.VA[GTValues.UV], 12000)
         .buildAndRegister();
 
-        ChromaticGlass = new Material.Builder(GTCEu.id("chromatic_glass"))
-        .ingot(4).gem()
+        ChromaticGlass = new Material.Builder(GTCEu.id("chromatic_glass")).gem()
         .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(9475))
         .color(0xffffff).secondaryColor(0xffffff).iconSet(SHINY)
         .element(GTElements.ChromaticGlass)

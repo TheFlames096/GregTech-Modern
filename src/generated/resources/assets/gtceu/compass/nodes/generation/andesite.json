@@ -118,8 +118,8 @@
   ],
   "page": "gtceu:generation/andesite",
   "position": [
-    -150,
-    150
+    -200,
+    100
   ],
   "pre_nodes": [
     "gtceu:generation/ore"
