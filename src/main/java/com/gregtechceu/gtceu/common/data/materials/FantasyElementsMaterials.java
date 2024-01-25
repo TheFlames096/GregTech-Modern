@@ -98,8 +98,8 @@ public class FantasyElementsMaterials {
                 .buildAndRegister();
 
         Sunnarium = new Material.Builder(GTCEu.id("sunnarium"))
-                .ingot(7)
-                .color(0x3aff4f).secondaryColor(0x3aff4f).iconSet(SHINY)
+                .ingot(7).fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(2500))
+                .color(0xff8533).iconSet(SHINY)
                 .flags(GENERATE_PLATE,GENERATE_ROD)
                 .buildAndRegister();
 
