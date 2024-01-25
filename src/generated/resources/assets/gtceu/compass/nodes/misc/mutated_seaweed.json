@@ -1,14 +1,14 @@
 {
   "button_texture": {
     "type": "item",
-    "res": "gtceu:purple_drink"
+    "res": "gtceu:mutated_seaweed"
   },
   "items": [
-    "gtceu:purple_drink"
+    "gtceu:mutated_seaweed"
   ],
-  "page": "gtceu:misc/purple_drink",
+  "page": "gtceu:misc/mutated_seaweed",
   "position": [
-    -150,
+    -400,
     200
   ],
   "section": "gtceu:misc"

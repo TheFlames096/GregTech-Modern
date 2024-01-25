@@ -1,15 +1,15 @@
 {
   "button_texture": {
     "type": "item",
-    "res": "gtceu:stem_cells"
+    "res": "gtceu:bio_cells"
   },
   "items": [
-    "gtceu:stem_cells"
+    "gtceu:bio_cells"
   ],
-  "page": "gtceu:misc/stem_cells",
+  "page": "gtceu:misc/bio_cells",
   "position": [
-    -150,
-    250
+    -300,
+    200
   ],
   "section": "gtceu:misc"
 }

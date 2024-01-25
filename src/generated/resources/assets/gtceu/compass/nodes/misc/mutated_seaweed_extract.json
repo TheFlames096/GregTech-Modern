@@ -1,0 +1,15 @@
+{
+  "button_texture": {
+    "type": "item",
+    "res": "gtceu:mutated_seaweed_extract"
+  },
+  "items": [
+    "gtceu:mutated_seaweed_extract"
+  ],
+  "page": "gtceu:misc/mutated_seaweed_extract",
+  "position": [
+    -350,
+    200
+  ],
+  "section": "gtceu:misc"
+}
