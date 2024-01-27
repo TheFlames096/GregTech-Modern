@@ -8,6 +8,8 @@ import com.gregtechceu.gtceu.api.fluids.attribute.FluidAttributes;
 import com.gregtechceu.gtceu.api.fluids.store.FluidStorageKeys;
 import com.gregtechceu.gtceu.api.item.tool.GTToolType;
 
+import static com.gregtechceu.gtceu.api.GTValues.UIV;
+import static com.gregtechceu.gtceu.api.GTValues.V;
 import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags.*;
 import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconSet.*;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
@@ -370,7 +372,7 @@ public class UnknownCompositionMaterials {
                 .buildAndRegister();
 
         NetherStar = new Material.Builder(GTCEu.id("nether_star"))
-                .gem(4)
+                .gem(4).cableProperties(V[UIV], 32, 1)
                 .color(0xfeffc6).secondaryColor(0x7fd7e2)
                 .iconSet(NETHERSTAR)
                 .flags(NO_SMASHING, NO_SMELTING, GENERATE_LENS)

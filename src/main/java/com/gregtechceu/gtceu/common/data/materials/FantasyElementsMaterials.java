@@ -3,6 +3,7 @@ package com.gregtechceu.gtceu.common.data.materials;
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
+import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconSet.Custom;
 import com.gregtechceu.gtceu.api.data.chemical.material.properties.BlastProperty.GasTier;
 import com.gregtechceu.gtceu.api.data.chemical.material.properties.ToolProperty;
 import com.gregtechceu.gtceu.api.fluids.FluidBuilder;
@@ -116,7 +117,7 @@ public class FantasyElementsMaterials {
 
         SpaceTime= new Material.Builder(GTCEu.id("spacetime"))
                 .ingot(7).fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(2500).customStill())
-                .color(0xffffff).iconSet(SHINY).cableProperties(GTValues.V[MAX], 0, 1000000,true)
+                .iconSet(Custom.SPACETIME).cableProperties(GTValues.V[MAX], 0, 1000000,true)
                 .fluidPipeProperties(2147483647,833320,true,true,true,true)
                 .appendFlags(EXT2_METAL)
                 .buildAndRegister();
