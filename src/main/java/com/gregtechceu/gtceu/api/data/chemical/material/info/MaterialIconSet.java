@@ -37,7 +37,10 @@ public class MaterialIconSet {
     public static final MaterialIconSet LAPIS = new MaterialIconSet("lapis", QUARTZ);
     public static final MaterialIconSet FLUID = new MaterialIconSet("fluid");
     public static final MaterialIconSet RADIOACTIVE = new MaterialIconSet("radioactive", METALLIC);
-
+    public class Custom
+    {
+        public static final MaterialIconSet SPACETIME = new MaterialIconSet("spacetime", null, true);
+    }
     // Implementation -----------------------------------------------------------------------------------------------
 
     private static int idCounter = 0;

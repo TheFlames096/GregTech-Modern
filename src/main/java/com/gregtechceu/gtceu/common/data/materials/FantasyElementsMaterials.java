@@ -103,9 +103,22 @@ public class FantasyElementsMaterials {
                 .flags(GENERATE_PLATE,GENERATE_ROD)
                 .buildAndRegister();
 
+        Bedrockium= new Material.Builder(GTCEu.id("bedrockium"))
+                .ingot().fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(2500))
+                .color(0xffffff).iconSet(SHINY).cableProperties(GTValues.V[UHV], 2, 32)
+                .flags(GENERATE_PLATE,GENERATE_ROD)
+                .buildAndRegister();
+
         Magic = new Material.Builder(GTCEu.id("magic")).element(GTElements.Ma)
                 .buildAndRegister();
         Space = new Material.Builder(GTCEu.id("space")).element(GTElements.Sp)
+                .buildAndRegister();
+
+        SpaceTime= new Material.Builder(GTCEu.id("spacetime"))
+                .ingot(7).fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(2500))
+                .color(0xffffff).iconSet(SHINY).cableProperties(GTValues.V[MAX], 0, 1000000,true)
+                .fluidPipeProperties(2147483647,833320,true,true,true,true)
+                .appendFlags(EXT2_METAL)
                 .buildAndRegister();
 
         //GoodGenerator

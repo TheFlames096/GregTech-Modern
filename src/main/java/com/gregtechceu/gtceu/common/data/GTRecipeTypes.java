@@ -273,11 +273,12 @@ public class GTRecipeTypes {
             .setSound(GTSoundEntries.COOLING);
 
 
-    public final static GTRecipeType FORGE_HAMMER_RECIPES = register("forge_hammer", ELECTRIC).setMaxIOSize(2, 2, 2, 2).setEUIO(IO.IN)
+    public final static GTRecipeType FORGE_HAMMER_RECIPES = register("forge_hammer", ELECTRIC).setMaxIOSize(1, 1, 0, 0).setEUIO(IO.IN)
             .setSlotOverlay(false, false, GuiTextures.HAMMER_OVERLAY)
             .setProgressBar(GuiTextures.PROGRESS_BAR_HAMMER, UP_TO_DOWN)
             .setSteamProgressBar(GuiTextures.PROGRESS_BAR_HAMMER_STEAM, UP_TO_DOWN)
-            .setSound(GTSoundEntries.FORGE_HAMMER);
+            .setSound(GTSoundEntries.FORGE_HAMMER)
+            .onRecipeBuild((recipeBuilder, provider) -> GTRecipeTypes.ADVANCED_FORGE_HAMMER_RECIPES.copyFrom(recipeBuilder).save(provider));;
 
 
     public final static GTRecipeType FORMING_PRESS_RECIPES = register("forming_press", ELECTRIC).setMaxIOSize(6, 1, 0, 0).setEUIO(IO.IN)
@@ -327,6 +328,11 @@ public class GTRecipeTypes {
             .setMaxTooltips(4)
             .setSound(GTSoundEntries.ELECTROLYZER);
 
+    public final static GTRecipeType ADVANCED_FORGE_HAMMER_RECIPES = register("advanced_forge_hammer", ELECTRIC).setMaxIOSize(1, 1, 2, 2).setEUIO(IO.IN)
+            .setSlotOverlay(false, false, true, GuiTextures.HAMMER_OVERLAY)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT)
+            .setMaxTooltips(4)
+            .setSound(GTSoundEntries.FORGE_HAMMER);
 
     public final static GTRecipeType SIFTER_RECIPES = register("sifter", ELECTRIC).setMaxIOSize(1, 6, 1, 1).setEUIO(IO.IN)
             .setProgressBar(GuiTextures.PROGRESS_BAR_SIFT, UP_TO_DOWN)
@@ -546,7 +552,7 @@ public class GTRecipeTypes {
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.ASSEMBLER);
 
-    public static final GTRecipeType LARGE_CHEMICAL_RECIPES = register("large_chemical_reactor", MULTIBLOCK).setMaxIOSize(3, 3, 5, 4).setEUIO(IO.IN)
+    public static final GTRecipeType LARGE_CHEMICAL_RECIPES = register("large_chemical_reactor", MULTIBLOCK).setMaxIOSize(6, 6, 6, 6).setEUIO(IO.IN)
             .prepareBuilder(recipeBuilder -> recipeBuilder.EUt(GTValues.VA[GTValues.LV]))
             .setSlotOverlay(false, false, false, GuiTextures.MOLECULAR_OVERLAY_1)
             .setSlotOverlay(false, false, true, GuiTextures.MOLECULAR_OVERLAY_2)

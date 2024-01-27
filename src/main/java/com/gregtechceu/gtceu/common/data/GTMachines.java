@@ -218,7 +218,8 @@ public class GTMachines {
     public final static MachineDefinition[] FERMENTER = registerSimpleMachines("fermenter", GTRecipeTypes.FERMENTING_RECIPES, hvCappedTankSizeFunction);
     public final static MachineDefinition[] FLUID_HEATER = registerSimpleMachines("fluid_heater", GTRecipeTypes.FLUID_HEATER_RECIPES, hvCappedTankSizeFunction);
     public final static MachineDefinition[] FLUID_SOLIDIFIER = registerSimpleMachines("fluid_solidifier", GTRecipeTypes.FLUID_SOLIDFICATION_RECIPES, hvCappedTankSizeFunction);
-    public final static MachineDefinition[] FORGE_HAMMER = registerSimpleMachines("forge_hammer", GTRecipeTypes.FORGE_HAMMER_RECIPES);
+    public final static MachineDefinition[] FORGE_HAMMER = registerSimpleMachines("forge_hammer", GTRecipeTypes.FORGE_HAMMER_RECIPES,largeTankSizeFunction,GTValues.tiersBetween(LV, UHV));
+    public final static MachineDefinition[] ADVANCED_FORGE_HAMMER = registerSimpleMachines("advanced_forge_hammer", GTRecipeTypes.ADVANCED_FORGE_HAMMER_RECIPES,largeTankSizeFunction,GTValues.tiersBetween(UEV, OpV));
     public final static MachineDefinition[] FORMING_PRESS = registerSimpleMachines("forming_press", GTRecipeTypes.FORMING_PRESS_RECIPES);
     public final static MachineDefinition[] LATHE = registerSimpleMachines("lathe", GTRecipeTypes.LATHE_RECIPES);
     public final static MachineDefinition[] MIXER = registerSimpleMachines("mixer", GTRecipeTypes.MIXER_RECIPES, hvCappedTankSizeFunction);

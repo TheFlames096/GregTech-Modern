@@ -1,0 +1,18 @@
+{
+  "button_texture": {
+    "type": "item",
+    "res": "gtceu:uev_advanced_forge_hammer"
+  },
+  "items": [
+    "gtceu:uev_advanced_forge_hammer",
+    "gtceu:uiv_advanced_forge_hammer",
+    "gtceu:uxv_advanced_forge_hammer",
+    "gtceu:opv_advanced_forge_hammer"
+  ],
+  "page": "gtceu:machines/advanced_forge_hammer",
+  "position": [
+    -50,
+    100
+  ],
+  "section": "gtceu:machines"
+}

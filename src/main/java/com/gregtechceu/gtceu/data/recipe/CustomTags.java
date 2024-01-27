@@ -54,6 +54,23 @@ public class CustomTags {
     public static final TagKey<Item> ZPM_BATTERIES = TagUtil.createModItemTag("batteries/zpm");
     public static final TagKey<Item> UV_BATTERIES = TagUtil.createModItemTag("batteries/uv");
     public static final TagKey<Item> UHV_BATTERIES = TagUtil.createModItemTag("batteries/uhv");
+    public static final TagKey<Item> UEV_BATTERIES = TagUtil.createModItemTag("batteries/uev");
+    public static final TagKey<Item> UIV_BATTERIES = TagUtil.createModItemTag("batteries/uiv");
+    public static final TagKey<Item> UXV_BATTERIES = TagUtil.createModItemTag("batteries/uxv");
+    public static final TagKey<Item> OpV_BATTERIES = TagUtil.createModItemTag("batteries/opv");
+    public static final TagKey<Item> MAX_BATTERIES = TagUtil.createModItemTag("batteries/max");
+
+    public static final TagKey<Item> EV_GLASS = TagUtil.createModItemTag("glass/ev");
+    public static final TagKey<Item> IV_GLASS = TagUtil.createModItemTag("glass/iv");
+    public static final TagKey<Item> LuV_GLASS = TagUtil.createModItemTag("glass/luv");
+    public static final TagKey<Item> ZPM_GLASS = TagUtil.createModItemTag("glass/zpm");
+    public static final TagKey<Item> UV_GLASS = TagUtil.createModItemTag("glass/uv");
+    public static final TagKey<Item> UHV_GLASS = TagUtil.createModItemTag("glass/uhv");
+    public static final TagKey<Item> UEV_GLASS = TagUtil.createModItemTag("glass/uev");
+    public static final TagKey<Item> UIV_GLASS = TagUtil.createModItemTag("glass/uiv");
+    public static final TagKey<Item> UXV_GLASS = TagUtil.createModItemTag("glass/uxv");
+    public static final TagKey<Item> OpV_GLASS = TagUtil.createModItemTag("glass/opv");
+    public static final TagKey<Item> MAX_GLASS = TagUtil.createModItemTag("glass/max");
 
 
     // Platform-dependent tags

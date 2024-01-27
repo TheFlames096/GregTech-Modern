@@ -1052,6 +1052,7 @@ public class GTMaterials {
     public static Material Trinium;
     public static Material Tiberium;
     public static Material Sunnarium;
+    public static Material Bedrockium;
     public static Material Magic;
     public static Material Space;
 

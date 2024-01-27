@@ -9,6 +9,7 @@ import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.redstone.Redstone;
 import net.minecraftforge.common.Tags;
 
 import java.util.function.Consumer;
@@ -373,7 +374,7 @@ public class CircuitRecipes {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .duration(1200).EUt(VA[EV]).save(provider);
 
-        CHEMICAL_RECIPES.recipeBuilder("pico_wafer")
+        LARGE_CHEMICAL_RECIPES.recipeBuilder("pico_wafer")
                 .inputItems(RAW_PICO_WAFER)
                 .inputItems(dust, MysteriousCrystal,2)
                 .inputItems(MUTATED_SEAWEED_EXTRACT)
@@ -403,14 +404,14 @@ public class CircuitRecipes {
         CUTTER_RECIPES.recipeBuilder("cut_ilc").duration(900).EUt(64).inputItems(INTEGRATED_LOGIC_CIRCUIT_WAFER).outputItems(INTEGRATED_LOGIC_CIRCUIT, 8).save(provider);
         CUTTER_RECIPES.recipeBuilder("cut_nano_cpu").duration(900).EUt(VA[HV]).inputItems(NANO_CENTRAL_PROCESSING_UNIT_WAFER).outputItems(NANO_CENTRAL_PROCESSING_UNIT, 8)/*.cleanroom(CleanroomType.CLEANROOM)*/.save(provider);
         CUTTER_RECIPES.recipeBuilder("cut_bio").duration(300).EUt(VA[UEV]).inputItems(BIO_WAFER).inputFluids(UUMatter.getFluid(8000)).outputItems(BIO_CHIP, 16).outputItems(BIO_CELLS,16)/*.cleanroom(CleanroomType.CLEANROOM)*/.save(provider);
-        FORGE_HAMMER_RECIPES.recipeBuilder("cut_optical_1").duration(200).EUt(VA[UEV]).inputItems(PHOTONICALLY_ENRICHED_WAFER).inputFluids(Grade1PurifiedWater.getFluid(100)).outputItems(OPTICAL_CHIP).save(provider);
-        FORGE_HAMMER_RECIPES.recipeBuilder("cut_optical_2").duration(200).EUt(VA[UEV]).inputItems(PHOTONICALLY_ENRICHED_WAFER).inputFluids(Grade2PurifiedWater.getFluid(100)).outputItems(OPTICAL_CHIP,2).save(provider);
-        FORGE_HAMMER_RECIPES.recipeBuilder("cut_optical_3").duration(200).EUt(VA[UEV]).inputItems(PHOTONICALLY_ENRICHED_WAFER).inputFluids(Grade3PurifiedWater.getFluid(100)).outputItems(OPTICAL_CHIP,3).save(provider);
-        FORGE_HAMMER_RECIPES.recipeBuilder("cut_optical_4").duration(200).EUt(VA[UEV]).inputItems(PHOTONICALLY_ENRICHED_WAFER).inputFluids(Grade4PurifiedWater.getFluid(100)).outputItems(OPTICAL_CHIP,4).save(provider);
-        FORGE_HAMMER_RECIPES.recipeBuilder("cut_optical_5").duration(200).EUt(VA[UEV]).inputItems(PHOTONICALLY_ENRICHED_WAFER).inputFluids(Grade5PurifiedWater.getFluid(100)).outputItems(OPTICAL_CHIP,5).save(provider);
-        FORGE_HAMMER_RECIPES.recipeBuilder("cut_optical_6").duration(200).EUt(VA[UEV]).inputItems(PHOTONICALLY_ENRICHED_WAFER).inputFluids(Grade6PurifiedWater.getFluid(100)).outputItems(OPTICAL_CHIP,6).save(provider);
-        FORGE_HAMMER_RECIPES.recipeBuilder("cut_optical_7").duration(200).EUt(VA[UEV]).inputItems(PHOTONICALLY_ENRICHED_WAFER).inputFluids(Grade7PurifiedWater.getFluid(100)).outputItems(OPTICAL_CHIP,7).save(provider);
-        FORGE_HAMMER_RECIPES.recipeBuilder("cut_optical_8").duration(200).EUt(VA[UEV]).inputItems(PHOTONICALLY_ENRICHED_WAFER).inputFluids(Grade8PurifiedWater.getFluid(100)).outputItems(OPTICAL_CHIP,8).save(provider);
+        ADVANCED_FORGE_HAMMER_RECIPES.recipeBuilder("cut_optical_1").duration(200).EUt(VA[UEV]).inputItems(PHOTONICALLY_ENRICHED_WAFER).inputFluids(Grade1PurifiedWater.getFluid(100)).outputItems(OPTICAL_CHIP).save(provider);
+        ADVANCED_FORGE_HAMMER_RECIPES.recipeBuilder("cut_optical_2").duration(200).EUt(VA[UEV]).inputItems(PHOTONICALLY_ENRICHED_WAFER).inputFluids(Grade2PurifiedWater.getFluid(100)).outputItems(OPTICAL_CHIP,2).save(provider);
+        ADVANCED_FORGE_HAMMER_RECIPES.recipeBuilder("cut_optical_3").duration(200).EUt(VA[UEV]).inputItems(PHOTONICALLY_ENRICHED_WAFER).inputFluids(Grade3PurifiedWater.getFluid(100)).outputItems(OPTICAL_CHIP,3).save(provider);
+        ADVANCED_FORGE_HAMMER_RECIPES.recipeBuilder("cut_optical_4").duration(200).EUt(VA[UEV]).inputItems(PHOTONICALLY_ENRICHED_WAFER).inputFluids(Grade4PurifiedWater.getFluid(100)).outputItems(OPTICAL_CHIP,4).save(provider);
+        ADVANCED_FORGE_HAMMER_RECIPES.recipeBuilder("cut_optical_5").duration(200).EUt(VA[UEV]).inputItems(PHOTONICALLY_ENRICHED_WAFER).inputFluids(Grade5PurifiedWater.getFluid(100)).outputItems(OPTICAL_CHIP,5).save(provider);
+        ADVANCED_FORGE_HAMMER_RECIPES.recipeBuilder("cut_optical_6").duration(200).EUt(VA[UEV]).inputItems(PHOTONICALLY_ENRICHED_WAFER).inputFluids(Grade6PurifiedWater.getFluid(100)).outputItems(OPTICAL_CHIP,6).save(provider);
+        ADVANCED_FORGE_HAMMER_RECIPES.recipeBuilder("cut_optical_7").duration(200).EUt(VA[UEV]).inputItems(PHOTONICALLY_ENRICHED_WAFER).inputFluids(Grade7PurifiedWater.getFluid(100)).outputItems(OPTICAL_CHIP,7).save(provider);
+        ADVANCED_FORGE_HAMMER_RECIPES.recipeBuilder("cut_optical_8").duration(200).EUt(VA[UEV]).inputItems(PHOTONICALLY_ENRICHED_WAFER).inputFluids(Grade8PurifiedWater.getFluid(100)).outputItems(OPTICAL_CHIP,8).save(provider);
         IMPLOSION_RECIPES.recipeBuilder("cut_optical_ex").duration(100).EUt(VA[OpV]).inputItems(PHOTONICALLY_ENRICHED_WAFER).inputItems(singularity,FluxedElectrum).outputItems(OPTICAL_CHIP,16).save(provider);
     }
 

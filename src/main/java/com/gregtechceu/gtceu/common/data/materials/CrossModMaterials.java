@@ -9,6 +9,7 @@ import com.gregtechceu.gtceu.api.fluids.store.FluidStorageKeys;
 import com.gregtechceu.gtceu.common.data.GTElements;
 
 import static com.gregtechceu.gtceu.common.data.GTMaterials.*;
+import static com.gregtechceu.gtceu.api.GTValues.*;
 import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags.*;
 import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconSet.*;
 
@@ -77,6 +78,7 @@ public class CrossModMaterials {
                 .appendFlags(STD_METAL, GENERATE_LONG_ROD, GENERATE_FINE_WIRE, GENERATE_SPRING, GENERATE_FOIL, GENERATE_FRAME)
                 .element(GTElements.Draconium)
                 .blastTemp(7200, GasTier.MID, GTValues.VA[GTValues.LuV], 3600)
+                .cableProperties(GTValues.V[UEV], 8, 4)
                 .buildAndRegister();
         AwakenedDraconium = new Material.Builder(GTCEu.id("awakened_draconium"))
                 .ingot()
@@ -85,6 +87,7 @@ public class CrossModMaterials {
                 .appendFlags(STD_METAL, GENERATE_LONG_ROD, GENERATE_FINE_WIRE, GENERATE_SPRING, GENERATE_FOIL, GENERATE_FRAME)
                 .element(GTElements.AwakenedDraconium)
                 .blastTemp(9900, GasTier.MID, GTValues.VA[GTValues.ZPM], 4500)
+                .cableProperties(GTValues.V[MAX], 1, 2)
                 .buildAndRegister();
 
         // Avaritia
@@ -95,6 +98,7 @@ public class CrossModMaterials {
                 .appendFlags(STD_METAL, GENERATE_LONG_ROD, GENERATE_FINE_WIRE, GENERATE_SPRING, GENERATE_FOIL, GENERATE_FRAME)
                 .element(GTElements.If2)
                 .blastTemp(10800, GasTier.LOW, GTValues.VA[GTValues.UHV], 32142)
+                .cableProperties(GTValues.V[MAX], 8192, 0,true)
                 .buildAndRegister();
         CosmicNeutronium = new Material.Builder(GTCEu.id("cosmicneutronium"))
                 .ingot()
@@ -121,5 +125,23 @@ public class CrossModMaterials {
                 .flags(GENERATE_PLATE,GENERATE_LENS)
                 .buildAndRegister();
 
+        BlackPlutonium = new Material.Builder(GTCEu.id("black_plutonium"))
+                .ingot()
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(9000))
+                .color(0x000000).iconSet(DULL)
+                .appendFlags(EXT2_METAL)
+                .cableProperties(GTValues.V[OpV], 1, 16)
+                .itemPipeProperties(4096, 8).blastTemp(9000, GasTier.LOWEST, GTValues.VA[GTValues.ZPM], 6000)
+                .components(Space,1,Plutonium241,1)
+                .buildAndRegister();
+        
+        Quantium= new Material.Builder(GTCEu.id("quantium"))
+                .ingot()
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(9000))
+                .color(0x000000).iconSet(DULL)
+                .appendFlags(EXT2_METAL).blastTemp(9000, GasTier.LOW, GTValues.VA[GTValues.ZPM], 4000)
+                .cableProperties(GTValues.V[UXV], 2, 4)
+                .itemPipeProperties(512, 32)
+                .buildAndRegister();
     }
 }
