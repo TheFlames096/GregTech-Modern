@@ -93,7 +93,7 @@ public class CrossModMaterials {
         // Avaritia
         Infinity = new Material.Builder(GTCEu.id("infinity"))
                 .ingot()
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(9900))
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(9900).customStill())
                 .color(0xFFFFFF).iconSet(SHINY)
                 .appendFlags(STD_METAL, GENERATE_LONG_ROD, GENERATE_FINE_WIRE, GENERATE_SPRING, GENERATE_FOIL, GENERATE_FRAME)
                 .element(GTElements.If2)

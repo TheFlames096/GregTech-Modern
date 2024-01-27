@@ -115,12 +115,17 @@ public class FantasyElementsMaterials {
                 .buildAndRegister();
 
         SpaceTime= new Material.Builder(GTCEu.id("spacetime"))
-                .ingot(7).fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(2500))
+                .ingot(7).fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(2500).customStill())
                 .color(0xffffff).iconSet(SHINY).cableProperties(GTValues.V[MAX], 0, 1000000,true)
                 .fluidPipeProperties(2147483647,833320,true,true,true,true)
                 .appendFlags(EXT2_METAL)
                 .buildAndRegister();
 
+        Eternity= new Material.Builder(GTCEu.id("eternity"))
+                .ingot(7).fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1).customStill())
+                .color(0xffffff).iconSet(SHINY)
+                .appendFlags(EXT2_METAL)
+                .buildAndRegister();
         //GoodGenerator
         Orundum = new Material.Builder(GTCEu.id("orundum"))
                 .gem(7)

@@ -37,10 +37,14 @@ public class MaterialIconSet {
     public static final MaterialIconSet LAPIS = new MaterialIconSet("lapis", QUARTZ);
     public static final MaterialIconSet FLUID = new MaterialIconSet("fluid");
     public static final MaterialIconSet RADIOACTIVE = new MaterialIconSet("radioactive", METALLIC);
-    public class Custom
+    static public class Custom
     {
-        public static final MaterialIconSet SPACETIME = new MaterialIconSet("spacetime", null, true);
+        public static final MaterialIconSet SPACETIME = new MaterialIconSet("spacetime");
+        public static final MaterialIconSet ETERNITY = new MaterialIconSet("eternity");
+        public static final MaterialIconSet MAGNETOHYDRODYNAMICALLYCONSTRAINEDSTARMATTER = new MaterialIconSet("magnetohydrodynamicallyconstrainedstarmatter");
+        public static final MaterialIconSet UNIVERSIUM = new MaterialIconSet("universium");
     }
+
     // Implementation -----------------------------------------------------------------------------------------------
 
     private static int idCounter = 0;
