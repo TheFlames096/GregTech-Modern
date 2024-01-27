@@ -684,7 +684,7 @@ public class ElementMaterials {
                 .ingot()
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1345))
                 .color(0xc5c5b3).secondaryColor(0x183e3f).iconSet(METALLIC)
-                .flags(GENERATE_LONG_ROD)
+                .flags(GENERATE_LONG_ROD,GENERATE_FINE_WIRE)
                 .element(GTElements.Sm)
                 .blastTemp(5400, GasTier.HIGH, GTValues.VA[GTValues.EV], 1500)
                 .buildAndRegister();

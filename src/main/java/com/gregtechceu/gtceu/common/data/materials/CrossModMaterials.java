@@ -100,7 +100,7 @@ public class CrossModMaterials {
                 .blastTemp(10800, GasTier.LOW, GTValues.VA[GTValues.UHV], 32142)
                 .cableProperties(GTValues.V[MAX], 8192, 0,true)
                 .buildAndRegister();
-        CosmicNeutronium = new Material.Builder(GTCEu.id("cosmicneutronium"))
+        CosmicNeutronium = new Material.Builder(GTCEu.id("cosmic_neutronium"))
                 .ingot()
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(9900))
                 .color(0x000000).iconSet(SHINY)

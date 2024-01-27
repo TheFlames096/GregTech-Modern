@@ -412,7 +412,7 @@ public class CircuitRecipes {
         ADVANCED_FORGE_HAMMER_RECIPES.recipeBuilder("cut_optical_6").duration(200).EUt(VA[UEV]).inputItems(PHOTONICALLY_ENRICHED_WAFER).inputFluids(Grade6PurifiedWater.getFluid(100)).outputItems(OPTICAL_CHIP,6).save(provider);
         ADVANCED_FORGE_HAMMER_RECIPES.recipeBuilder("cut_optical_7").duration(200).EUt(VA[UEV]).inputItems(PHOTONICALLY_ENRICHED_WAFER).inputFluids(Grade7PurifiedWater.getFluid(100)).outputItems(OPTICAL_CHIP,7).save(provider);
         ADVANCED_FORGE_HAMMER_RECIPES.recipeBuilder("cut_optical_8").duration(200).EUt(VA[UEV]).inputItems(PHOTONICALLY_ENRICHED_WAFER).inputFluids(Grade8PurifiedWater.getFluid(100)).outputItems(OPTICAL_CHIP,8).save(provider);
-        IMPLOSION_RECIPES.recipeBuilder("cut_optical_ex").duration(100).EUt(VA[OpV]).inputItems(PHOTONICALLY_ENRICHED_WAFER).inputItems(singularity,FluxedElectrum).outputItems(OPTICAL_CHIP,16).save(provider);
+        IMPLOSION_RECIPES.recipeBuilder("cut_optical_ex").duration(100).EUt(VA[UXV]).inputItems(PHOTONICALLY_ENRICHED_WAFER).inputItems(singularity,FluxedElectrum).outputItems(OPTICAL_CHIP,16).save(provider);
     }
 
     private static void componentRecipes(Consumer<FinishedRecipe> provider) {

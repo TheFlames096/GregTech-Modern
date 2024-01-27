@@ -68,9 +68,8 @@ public record MaterialIconType(String name) {
     public static final MaterialIconType spring = new MaterialIconType("spring");
     public static final MaterialIconType gear = new MaterialIconType("gear");
     public static final MaterialIconType foil = new MaterialIconType("foil");
-    //TODO:Nanites/Singularity
     public static final MaterialIconType nanites = new MaterialIconType("nanites");
-    public static final MaterialIconType singularity = ring;
+    public static final MaterialIconType singularity = new MaterialIconType("singularity");
 
     public static final MaterialIconType toolHeadSword = new MaterialIconType("toolHeadSword");
     public static final MaterialIconType toolHeadPickaxe = new MaterialIconType("toolHeadPickaxe");
