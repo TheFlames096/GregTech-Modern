@@ -16,6 +16,14 @@ import static com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIcon
 public class CrossModMaterials {
     public static void register()
     {
+        //Thaumcraft
+        Thaumium = new Material.Builder(GTCEu.id("thaumium"))
+                .ingot(0)
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(3405))
+                .color(0x9370DB).iconSet(METALLIC)
+                .appendFlags(EXT2_METAL, GENERATE_FINE_WIRE)
+                .components(Iron, 1, Magic,1)
+                .buildAndRegister();
         // EnderIO
         RedstoneAlloy = new Material.Builder(GTCEu.id("redstone_alloy"))
                 .ingot(0)
@@ -36,14 +44,17 @@ public class CrossModMaterials {
                 .blastTemp(1200, GasTier.LOWEST, GTValues.VA[GTValues.MV], 1600)
                 .buildAndRegister();
 
-        //Thaumcraft
-        Thaumium = new Material.Builder(GTCEu.id("thaumium"))
+        Enderium = new Material.Builder(GTCEu.id("enderium"))
                 .ingot(0)
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(3405))
-                .color(0x9370DB).iconSet(METALLIC)
-                .appendFlags(EXT2_METAL, GENERATE_FINE_WIRE)
-                .components(Iron, 1, Magic,1)
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1200))
+                .color(0xd9b2ab).iconSet(METALLIC)
+                .appendFlags(EXT_METAL, GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW)
+                .fluidPipeProperties(15000,6000,true,true,true,true)
+                .components(Tin, 4,Silver,2,Platinum,2,Thaumium,1,EnderPearl,1)
+                .blastTemp(1200, GasTier.LOWEST, GTValues.VA[GTValues.MV], 1600)
                 .buildAndRegister();
+
+
 
         //Twilight Forest
         Steeleaf = new Material.Builder(GTCEu.id("steeleaf"))
@@ -86,6 +97,7 @@ public class CrossModMaterials {
                 .color(0xFF8C00).iconSet(SHINY)
                 .appendFlags(STD_METAL, GENERATE_LONG_ROD, GENERATE_FINE_WIRE, GENERATE_SPRING, GENERATE_FOIL, GENERATE_FRAME)
                 .element(GTElements.AwakenedDraconium)
+                .fluidPipeProperties(10000000,150000,true,true,true,true)
                 .blastTemp(9900, GasTier.MID, GTValues.VA[GTValues.ZPM], 4500)
                 .cableProperties(GTValues.V[MAX], 1, 2)
                 .buildAndRegister();
@@ -97,6 +109,7 @@ public class CrossModMaterials {
                 .color(0xFFFFFF).iconSet(SHINY)
                 .appendFlags(STD_METAL, GENERATE_LONG_ROD, GENERATE_FINE_WIRE, GENERATE_SPRING, GENERATE_FOIL, GENERATE_FRAME)
                 .element(GTElements.If2)
+                .fluidPipeProperties(2147483647,200000,true,true,true,true)
                 .blastTemp(10800, GasTier.LOW, GTValues.VA[GTValues.UHV], 32142)
                 .cableProperties(GTValues.V[MAX], 8192, 0,true)
                 .buildAndRegister();
@@ -122,6 +135,7 @@ public class CrossModMaterials {
                 .gem()
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(9900))
                 .color(0x008B00).iconSet(DULL)
+                .fluidPipeProperties(1000000,80000,true,true,true,true)
                 .flags(GENERATE_PLATE,GENERATE_LENS)
                 .buildAndRegister();
 

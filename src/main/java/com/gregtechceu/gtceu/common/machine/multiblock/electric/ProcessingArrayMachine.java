@@ -27,6 +27,7 @@ import com.lowdragmc.lowdraglib.misc.ItemStackTransfer;
 import com.lowdragmc.lowdraglib.syncdata.annotation.DescSynced;
 import com.lowdragmc.lowdraglib.syncdata.annotation.Persisted;
 import com.lowdragmc.lowdraglib.syncdata.field.ManagedFieldHolder;
+
 import net.minecraft.ChatFormatting;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;
@@ -40,6 +41,9 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
+
+import static com.gregtechceu.gtceu.api.GTValues.V;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -139,6 +143,8 @@ public class ProcessingArrayMachine extends TieredWorkableElectricMultiblockMach
     protected void onMachineChanged() {
         recipeTypeCache = null;
         if (isFormed) {
+            if(getMachineDefinition()!=null)
+                setOverclockTier(getMachineDefinition().getTier());
             if (getRecipeLogic().getLastRecipe() != null) {
                 getRecipeLogic().markLastRecipeDirty();
             }
@@ -164,21 +170,21 @@ public class ProcessingArrayMachine extends TieredWorkableElectricMultiblockMach
         return definition == null ? 0 : definition.getTier();
     }
 
-    @Override
-    public int getOverclockTier() {
-        MachineDefinition machineDefinition = getMachineDefinition();
-        int machineTier = machineDefinition == null ? getDefinition().getTier() : Math.min(getDefinition().getTier(), machineDefinition.getTier());
-        return Math.min(machineTier, GTUtil.getTierByVoltage(getMaxVoltage()));
-    }
+    // @Override
+    // public int getOverclockTier() {
+    //     MachineDefinition machineDefinition = getMachineDefinition();
+    //     int machineTier = machineDefinition == null ? getDefinition().getTier() : Math.min(getDefinition().getTier(), machineDefinition.getTier());
+    //     return Math.min(machineTier, GTUtil.getTierByVoltage(getMaxVoltage()));
+    // }
 
     @Override
     public int getMinOverclockTier() {
-        return getOverclockTier();
+        return getTier()>9?getTier()-1:getTier();
     }
 
     @Override
     public int getMaxOverclockTier() {
-        return getOverclockTier();
+        return getTier();
     }
 
     @Override
@@ -192,9 +198,13 @@ public class ProcessingArrayMachine extends TieredWorkableElectricMultiblockMach
             if (RecipeHelper.getRecipeEUtTier(recipe) > processingArray.getTier())
                 return null;
 
-            int parallelLimit = Math.min(
-                processingArray.machineStorage.storage.getStackInSlot(0).getCount(),
-                (int) (processingArray.getMaxVoltage() / RecipeHelper.getInputEUt(recipe))
+            if(processingArray.getMaxVoltage() < V[processingArray.getOverclockTier()])
+                return null;
+
+            int parallelLimit = Math.min(processingArray.getOverclockTier()==processingArray.getTier()-1
+                    ?processingArray.machineStorage.storage.getStackInSlot(0).getCount()*4
+                    :processingArray.machineStorage.storage.getStackInSlot(0).getCount(),
+                (int) (processingArray.getMaxVoltage() / V[processingArray.getOverclockTier()])
             );
 
             if (parallelLimit <= 0)
@@ -233,6 +243,9 @@ public class ProcessingArrayMachine extends TieredWorkableElectricMultiblockMach
         super.addDisplayText(textList);
         if (isActive()) {
             textList.add(Component.translatable("gtceu.machine.machine_hatch.locked").withStyle(Style.EMPTY.withColor(ChatFormatting.RED)));
+        }
+        if (getMaxVoltage() < V[getTier()]){
+            textList.add(Component.translatable("gtceu.machine.machine_hatch.insufficient_energy").withStyle(Style.EMPTY.withColor(ChatFormatting.RED)));
         }
     }
 

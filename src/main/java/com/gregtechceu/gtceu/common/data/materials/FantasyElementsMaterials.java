@@ -109,6 +109,18 @@ public class FantasyElementsMaterials {
                 .color(0xffffff).iconSet(SHINY).cableProperties(GTValues.V[UHV], 2, 32)
                 .flags(GENERATE_PLATE,GENERATE_ROD)
                 .buildAndRegister();
+        
+        Tengam = new Material.Builder(GTCEu.id("tengam"))
+                .ingot().fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(2500))
+                .color(0x9AFF9A).iconSet(METALLIC)
+                .flags(GENERATE_PLATE,GENERATE_ROD,GENERATE_LONG_ROD)
+                .buildAndRegister();
+
+        AttunedTengam = new Material.Builder(GTCEu.id("attuned_tengam"))
+                .ingot()
+                .color(0x9AFF9A).iconSet(MAGNETIC)
+                .flags(GENERATE_PLATE,GENERATE_ROD,GENERATE_LONG_ROD)
+                .buildAndRegister();
 
         Magic = new Material.Builder(GTCEu.id("magic")).element(GTElements.Ma)
                 .buildAndRegister();
@@ -122,6 +134,18 @@ public class FantasyElementsMaterials {
                 .appendFlags(EXT2_METAL)
                 .buildAndRegister();
 
+        TranscendentMetal= new Material.Builder(GTCEu.id("transcendentmetal"))
+                .ingot(7).fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(2500).customStill())
+                .iconSet(SHINY)
+                .fluidPipeProperties(2147483647,733320,true,true,true,true)
+                .appendFlags(EXT2_METAL)
+                .buildAndRegister();
+        
+        MagnetohydrodynamicallyConstrainedStarMatter= new Material.Builder(GTCEu.id("magnetohydrodynamically_constrained_star_matter"))
+                .ingot(7).fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1).customStill())
+                .iconSet(SHINY)
+                .appendFlags(EXT2_METAL)
+                .buildAndRegister();
         Eternity= new Material.Builder(GTCEu.id("eternity"))
                 .ingot(7).fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1).customStill())
                 .color(0xffffff).iconSet(SHINY)
@@ -179,7 +203,7 @@ public class FantasyElementsMaterials {
                 .ingot(5)
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(11530))
                 .color( 0xdc784b).secondaryColor(0xdc784b).iconSet(RADIOACTIVE)
-                .element(GTElements.Hypogen)
+                .element(GTElements.Hypogen).cableProperties(V[UIV], 8, 0,true)
                 .appendFlags(EXT2_METAL, GENERATE_FRAME, GENERATE_RING, GENERATE_ROUND, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .blastTemp(11530, GasTier.LOW, GTValues.VA[GTValues.UIV], 12000)
                 .buildAndRegister();

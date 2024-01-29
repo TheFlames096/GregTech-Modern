@@ -1,15 +1,15 @@
 {
   "button_texture": {
     "type": "item",
-    "res": "gtceu:fertilizer"
+    "res": "gtceu:nuclear_star"
   },
   "items": [
-    "gtceu:fertilizer"
+    "gtceu:nuclear_star"
   ],
-  "page": "gtceu:misc/fertilizer",
+  "page": "gtceu:misc/nuclear_star",
   "position": [
-    -150,
-    300
+    -400,
+    200
   ],
   "section": "gtceu:misc"
 }

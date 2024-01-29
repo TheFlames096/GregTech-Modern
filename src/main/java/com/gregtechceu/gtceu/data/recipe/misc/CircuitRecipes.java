@@ -54,7 +54,7 @@ public class CircuitRecipes {
                 .outputFluids(Grade2PurifiedWater.getFluid(50))
                 .outputFluids(Grade1PurifiedWater.getFluid(100))
                 .outputFluids(Oil.getFluid(50))
-                .outputFluids(Ammonia.getFluid(100))
+                .outputFluids(Ammonia.getFluid(100)).disableDistilleryRecipes(true)
                 .duration(5000).EUt(VA[ZPM]).save(provider);
 
         LASER_ENGRAVER_RECIPES.recipeBuilder("t4waterpurify")
@@ -83,7 +83,7 @@ public class CircuitRecipes {
                 .outputFluids(Grade7PurifiedWater.getFluid(900))
                 .outputFluids(Grade6PurifiedWater.getFluid(50))
                 .outputFluids(Grade5PurifiedWater.getFluid(100))
-                .outputFluids(Ethanol.getFluid(50))
+                .outputFluids(Ethanol.getFluid(50)).disableDistilleryRecipes(true)
                 .duration(5000).EUt(VA[UHV]).save(provider);
 
         CHEMICAL_BATH_RECIPES.recipeBuilder("t8waterpurify")
@@ -847,26 +847,26 @@ public class CircuitRecipes {
                 .notConsumable(lens, Color.Lime)
                 .outputItems(CRYSTAL_CENTRAL_PROCESSING_UNIT)
                 .cleanroom(CleanroomType.CLEANROOM)
-                .duration(100).EUt(10000).save(provider);
+                .duration(600).EUt(10000).save(provider);
 
         LASER_ENGRAVER_RECIPES.recipeBuilder("crystal_soc")
                 .inputItems(CRYSTAL_CENTRAL_PROCESSING_UNIT)
                 .notConsumable(lens, Color.Blue)
                 .outputItems(CRYSTAL_SYSTEM_ON_CHIP)
                 .cleanroom(CleanroomType.CLEANROOM)
-                .duration(100).EUt(40000).save(provider);
+                .duration(600).EUt(40000).save(provider);
 
         AUTOCLAVE_RECIPES.recipeBuilder("raw_crystal_chip_emerald")
                 .inputItems(gemExquisite, Emerald)
                 .inputFluids(Europium.getFluid(L / 9))
-                .chancedOutput(RAW_CRYSTAL_CHIP.asStack(), 1000, 2000)
+                .chancedOutput(RAW_CRYSTAL_CHIP.asStack(), 1000, 0)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .duration(12000).EUt(320).save(provider);
 
         AUTOCLAVE_RECIPES.recipeBuilder("raw_crystal_chip_olivine")
                 .inputItems(gemExquisite, Olivine)
                 .inputFluids(Europium.getFluid(L / 9))
-                .chancedOutput(RAW_CRYSTAL_CHIP.asStack(), 1000, 2000)
+                .chancedOutput(RAW_CRYSTAL_CHIP.asStack(), 1000,0)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .duration(12000).EUt(320).save(provider);
 
@@ -885,14 +885,14 @@ public class CircuitRecipes {
         AUTOCLAVE_RECIPES.recipeBuilder("raw_crystal_chip_from_part_mutagen")
                 .inputItems(RAW_CRYSTAL_CHIP_PART)
                 .inputFluids(Mutagen.getFluid(250))
-                .chancedOutput(RAW_CRYSTAL_CHIP.asStack(), 8000, 250)
+                .chancedOutput(RAW_CRYSTAL_CHIP.asStack(), 8000,0)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .duration(12000).EUt(VA[HV]).save(provider);
 
         AUTOCLAVE_RECIPES.recipeBuilder("raw_crystal_chip_from_part_bacterial_sludge")
                 .inputItems(RAW_CRYSTAL_CHIP_PART)
                 .inputFluids(BacterialSludge.getFluid(250))
-                .chancedOutput(RAW_CRYSTAL_CHIP.asStack(), 8000, 250)
+                .chancedOutput(RAW_CRYSTAL_CHIP.asStack(), 6000,0)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .duration(12000).EUt(VA[HV]).save(provider);
 
@@ -930,6 +930,12 @@ public class CircuitRecipes {
                 .inputFluids(Neutronium.getFluid(L * 2))
                 .outputItems(GRAVI_STAR)
                 .duration(480).EUt(VA[IV]).save(provider);
+
+        AUTOCLAVE_RECIPES.recipeBuilder("nuclear_star")
+                .inputItems(GRAVI_STAR,16)
+                .inputFluids(Infinity.getFluid(L * 2))
+                .outputItems(NUCLEAR_STAR)
+                .duration(480).EUt(VA[UEV]).save(provider);
     }
 
     private static void boardRecipes(Consumer<FinishedRecipe> provider) {

@@ -484,6 +484,10 @@ public class GTRecipeBuilder {
         return addData("eu_to_start", eu);
     }
 
+    public GTRecipeBuilder glassTier(int tier) {
+        return addData("glass_tier", tier);
+    }
+
     //////////////////////////////////////
     //*******     CONDITIONS    ********//
     //////////////////////////////////////

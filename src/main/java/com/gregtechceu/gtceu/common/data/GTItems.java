@@ -1366,6 +1366,7 @@ public class GTItems {
     public static ItemEntry<Item> QUANTUM_EYE = REGISTRATE.item("quantum_eye", Item::new).lang("Quantum Eye").onRegister(compassNode(GTCompassSections.MISC)).register();
     public static ItemEntry<Item> QUANTUM_STAR = REGISTRATE.item("quantum_star", Item::new).lang("Quantum Star").onRegister(compassNode(GTCompassSections.MISC)).register();
     public static ItemEntry<Item> GRAVI_STAR = REGISTRATE.item("gravi_star", Item::new).lang("Gravi-Star").onRegister(compassNode(GTCompassSections.MISC)).register();
+    public static ItemEntry<Item> NUCLEAR_STAR = REGISTRATE.item("nuclear_star", Item::new).lang("Nuclear Star").onRegister(compassNode(GTCompassSections.MISC)).register();
     
     public static ItemEntry<Item> MUTATED_SEAWEED = REGISTRATE.item("mutated_seaweed", Item::new).lang("Mutated Seaweed").onRegister(compassNode(GTCompassSections.MISC)).register();
     public static ItemEntry<Item> MUTATED_SEAWEED_EXTRACT = REGISTRATE.item("mutated_seaweed_extract", Item::new).lang("Mutated Seaweed Extract").onRegister(compassNode(GTCompassSections.MISC)).register();

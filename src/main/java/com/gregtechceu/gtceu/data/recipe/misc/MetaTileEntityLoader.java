@@ -43,9 +43,13 @@ public class MetaTileEntityLoader {
         VanillaRecipeHelper.addShapedRecipe(provider, true, "casing_ev", GTBlocks.MACHINE_CASING_EV.asStack(), "PPP", "PwP", "PPP", 'P', new UnificationEntry(TagPrefix.plate, GTMaterials.Titanium));
         VanillaRecipeHelper.addShapedRecipe(provider, true, "casing_iv", GTBlocks.MACHINE_CASING_IV.asStack(), "PPP", "PwP", "PPP", 'P', new UnificationEntry(TagPrefix.plate, GTMaterials.TungstenSteel));
         VanillaRecipeHelper.addShapedRecipe(provider, true, "casing_luv", GTBlocks.MACHINE_CASING_LuV.asStack(), "PPP", "PwP", "PPP", 'P', new UnificationEntry(TagPrefix.plate, GTMaterials.RhodiumPlatedPalladium));
-        VanillaRecipeHelper.addShapedRecipe(provider, true, "casing_zpm", GTBlocks.MACHINE_CASING_ZPM.asStack(), "PPP", "PwP", "PPP", 'P', new UnificationEntry(TagPrefix.plate, GTMaterials.NaquadahAlloy));
-        VanillaRecipeHelper.addShapedRecipe(provider, true, "casing_uv", GTBlocks.MACHINE_CASING_UV.asStack(), "PPP", "PwP", "PPP", 'P', new UnificationEntry(TagPrefix.plate, GTMaterials.Darmstadtium));
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "casing_zpm", GTBlocks.MACHINE_CASING_ZPM.asStack(), "PPP", "PwP", "PPP", 'P', new UnificationEntry(TagPrefix.plate, GTMaterials.Iridium));
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "casing_uv", GTBlocks.MACHINE_CASING_UV.asStack(), "PPP", "PwP", "PPP", 'P', new UnificationEntry(TagPrefix.plate, GTMaterials.Osmium));
         VanillaRecipeHelper.addShapedRecipe(provider, true, "casing_uhv", GTBlocks.MACHINE_CASING_UHV.asStack(), "PPP", "PwP", "PPP", 'P', new UnificationEntry(TagPrefix.plate, GTMaterials.Neutronium));
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "casing_uev", GTBlocks.MACHINE_CASING_UHV.asStack(), "PPP", "PwP", "PPP", 'P', new UnificationEntry(TagPrefix.plate, GTMaterials.Bedrockium));
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "casing_uiv", GTBlocks.MACHINE_CASING_UHV.asStack(), "PPP", "PwP", "PPP", 'P', new UnificationEntry(TagPrefix.plate, GTMaterials.BlackPlutonium));
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "casing_uxv", GTBlocks.MACHINE_CASING_UHV.asStack(), "PPP", "PwP", "PPP", 'P', new UnificationEntry(TagPrefix.plate, GTMaterials.SpaceTime));
+        VanillaRecipeHelper.addShapedRecipe(provider, true, "casing_opv", GTBlocks.MACHINE_CASING_UHV.asStack(), "PPP", "PwP", "PPP", 'P', new UnificationEntry(TagPrefix.plate, GTMaterials.MagnetohydrodynamicallyConstrainedStarMatter));
 
         // If these recipes are changed, change the values in MaterialInfoLoader.java
         registerMachineRecipe(provider, false, GTMachines.HULL, "PLP", "CHC", 'P', HULL_PLATE, 'L', PLATE, 'C', CABLE, 'H', CASING);

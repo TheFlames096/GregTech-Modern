@@ -856,6 +856,7 @@ public class LangHandler {
         provider.add("gtceu.muffler.recovery_tooltip", "§bRecovery Chance: §f%d%%");
         provider.add("gtceu.machine.pump_hatch.tooltip", "Primitive Fluid Output for Water Pump");
         provider.add("gtceu.machine.machine_hatch.locked", "Machine Interface Locked");
+        provider.add("gtceu.machine.machine_hatch.insufficient_energy", "The machine is underpowered.");
         provider.add("gtceu.machine.machine_hatch.tooltip", "Specialized Access Bus that only holds valid items");
         provider.add("gtceu.machine.machine_hatch.processing_array", "When in the §eProcessing Array§7, only holds machines that work in the §eProcessing Array");
         provider.add("gtceu.machine.passthrough_hatch_item.tooltip", "Sends Items from one Side to the other");

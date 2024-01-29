@@ -80,7 +80,7 @@ public class ForthDegreeMaterials {
         FluxedElectrum = new Material.Builder(GTCEu.id("fluxed_electrum"))
                 .ingot()
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1400))
-                .color(0xffff78).iconSet(METALLIC)
+                .color(0xFFD700).secondaryColor(0xffff78).iconSet(METALLIC)
                 .appendFlags(EXT2_METAL,DECOMPOSITION_BY_CENTRIFUGING,GENERATE_SINGULARITY)
                 .cableProperties(GTValues.V[UV], 3, 1)
                 .itemPipeProperties(8192, 4)

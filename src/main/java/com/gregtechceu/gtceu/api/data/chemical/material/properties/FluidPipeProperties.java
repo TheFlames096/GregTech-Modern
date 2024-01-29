@@ -57,7 +57,7 @@ public class FluidPipeProperties implements IMaterialProperty<FluidPipePropertie
     @Override
     public void verifyProperty(MaterialProperties properties) {
         if (!properties.hasProperty(PropertyKey.WOOD)) {
-            properties.ensureSet(PropertyKey.INGOT, true);
+            properties.ensureSet(PropertyKey.DUST, true);
         }
 
         if (properties.hasProperty(PropertyKey.ITEM_PIPE)) {
