@@ -118,8 +118,8 @@
   ],
   "page": "gtceu:generation/tuff",
   "position": [
-    -100,
-    50
+    -200,
+    100
   ],
   "pre_nodes": [
     "gtceu:generation/ore"

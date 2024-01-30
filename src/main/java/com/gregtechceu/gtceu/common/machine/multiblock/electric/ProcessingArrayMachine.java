@@ -8,6 +8,7 @@ import com.gregtechceu.gtceu.api.item.MetaMachineItem;
 import com.gregtechceu.gtceu.api.machine.IMachineBlockEntity;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
+import com.gregtechceu.gtceu.api.machine.MultiblockMachineDefinition;
 import com.gregtechceu.gtceu.api.machine.feature.IMachineModifyDrops;
 import com.gregtechceu.gtceu.api.machine.multiblock.TieredWorkableElectricMultiblockMachine;
 import com.gregtechceu.gtceu.api.machine.trait.NotifiableItemStackHandler;
@@ -93,7 +94,7 @@ public class ProcessingArrayMachine extends TieredWorkableElectricMultiblockMach
     protected boolean isMachineStack(ItemStack itemStack) {
         if (itemStack.getItem() instanceof MetaMachineItem metaMachineItem) {
             var recipeTypes = metaMachineItem.getDefinition().getRecipeTypes();
-            if(recipeTypes == null){
+            if(recipeTypes == null || metaMachineItem.getDefinition() instanceof MultiblockMachineDefinition){
                 return false;
             }
             for(GTRecipeType type : recipeTypes){
@@ -145,6 +146,8 @@ public class ProcessingArrayMachine extends TieredWorkableElectricMultiblockMach
         if (isFormed) {
             if(getMachineDefinition()!=null)
                 setOverclockTier(getMachineDefinition().getTier());
+            else
+                setOverclockTier(0);
             if (getRecipeLogic().getLastRecipe() != null) {
                 getRecipeLogic().markLastRecipeDirty();
             }
@@ -195,7 +198,7 @@ public class ProcessingArrayMachine extends TieredWorkableElectricMultiblockMach
     @Nullable
     public static GTRecipe recipeModifier(MetaMachine machine, @Nonnull GTRecipe recipe) {
         if (machine instanceof ProcessingArrayMachine processingArray && processingArray.machineStorage.storage.getStackInSlot(0).getCount() > 0) {
-            if (RecipeHelper.getRecipeEUtTier(recipe) > processingArray.getTier())
+            if (RecipeHelper.getRecipeEUtTier(recipe) > processingArray.getOverclockTier())
                 return null;
 
             if(processingArray.getMaxVoltage() < V[processingArray.getOverclockTier()])
@@ -244,7 +247,7 @@ public class ProcessingArrayMachine extends TieredWorkableElectricMultiblockMach
         if (isActive()) {
             textList.add(Component.translatable("gtceu.machine.machine_hatch.locked").withStyle(Style.EMPTY.withColor(ChatFormatting.RED)));
         }
-        if (getMaxVoltage() < V[getTier()]){
+        if (getMaxVoltage() < V[getOverclockTier()]){
             textList.add(Component.translatable("gtceu.machine.machine_hatch.insufficient_energy").withStyle(Style.EMPTY.withColor(ChatFormatting.RED)));
         }
     }

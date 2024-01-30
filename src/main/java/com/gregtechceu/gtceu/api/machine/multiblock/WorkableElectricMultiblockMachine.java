@@ -3,9 +3,10 @@ package com.gregtechceu.gtceu.api.machine.multiblock;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.capability.IEnergyContainer;
 import com.gregtechceu.gtceu.api.capability.recipe.EURecipeCapability;
+import com.gregtechceu.gtceu.api.capability.recipe.FluidRecipeCapability;
+import com.gregtechceu.gtceu.api.capability.recipe.ItemRecipeCapability;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.capability.recipe.IRecipeHandler;
-import com.gregtechceu.gtceu.api.capability.recipe.RecipeCapability;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
 import com.gregtechceu.gtceu.api.gui.fancy.IFancyUIProvider;
 import com.gregtechceu.gtceu.api.gui.fancy.TooltipsPanel;
@@ -15,6 +16,7 @@ import com.gregtechceu.gtceu.api.machine.feature.IOverclockMachine;
 import com.gregtechceu.gtceu.api.machine.feature.ITieredMachine;
 import com.gregtechceu.gtceu.api.machine.feature.multiblock.IDisplayUIMachine;
 import com.gregtechceu.gtceu.api.machine.feature.multiblock.IMultiPart;
+import com.gregtechceu.gtceu.api.recipe.ingredient.FluidIngredient;
 import com.gregtechceu.gtceu.utils.GTUtil;
 import com.lowdragmc.lowdraglib.gui.modular.ModularUI;
 import com.lowdragmc.lowdraglib.gui.widget.*;
@@ -24,6 +26,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.HoverEvent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.crafting.Ingredient;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
@@ -63,6 +66,7 @@ public class WorkableElectricMultiblockMachine extends WorkableMultiblockMachine
         super.onPartUnload();
         maxHatchVoltage = -1;
     }
+
 
     //////////////////////////////////////
     //**********     GUI     ***********//
@@ -107,7 +111,22 @@ public class WorkableElectricMultiblockMachine extends WorkableMultiblockMachine
 //                if (this.recipeMapWorkable.getParallelLimit() != 1) {
 //                    textList.add(Component.translatable("gtceu.multiblock.parallel", this.recipeMapWorkable.getParallelLimit()));
 //                }
-                textList.add(Component.translatable("gtceu.multiblock.progress", currentProgress));
+                if(recipeLogic.getLastRecipe()!=null)
+                {
+                    for(var a : recipeLogic.getLastRecipe().getTickInputContents(EURecipeCapability.CAP))
+                        textList.add(Component.translatable("gtceu.multiblock.eu_usage",a.content.toString()));
+                    for(var a : recipeLogic.getLastRecipe().getOutputContents(ItemRecipeCapability.CAP))
+                        for(var b : ((Ingredient)a.content).getItems())
+                            textList.add(Component.translatable("gtceu.multiblock.item_output",b.getDisplayName().getString(),b.getCount()));
+                    for(var a : recipeLogic.getLastRecipe().getOutputContents(FluidRecipeCapability.CAP))
+                        for(var b : ((FluidIngredient)a.content).getStacks())
+                            textList.add(Component.translatable("gtceu.multiblock.fluid_output",b.getDisplayName().getString(),b.getAmount()));
+                }
+                if(recipeLogic.getMaxProgress()>20)
+                    textList.add(Component.translatable("gtceu.multiblock.progress", currentProgress,(int)(recipeLogic.getProgress()/20.0F),(int)(recipeLogic.getMaxProgress()/20.0F)));
+                else
+                    textList.add(Component.translatable("gtceu.multiblock.progress", currentProgress, String.format("%.2f",recipeLogic.getProgress()/20.0F).toString(),String.format("%.2f",recipeLogic.getMaxProgress()/20.0F).toString()));
+                
             } else {
                 textList.add(Component.translatable("gtceu.multiblock.idling"));
             }

@@ -1032,7 +1032,10 @@ public class LangHandler {
         provider.add("gtceu.multiblock.idling", "Idling.");
         provider.add("gtceu.multiblock.not_enough_energy", "WARNING: Machine needs more energy.");
         provider.add("gtceu.multiblock.waiting", "WARNING: Machine is waiting.");
-        provider.add("gtceu.multiblock.progress", "Progress: %s%%");
+        provider.add("gtceu.multiblock.progress", "Progress: %s%% (%ss/%ss)");
+        provider.add("gtceu.multiblock.eu_usage", "Current EU Usage: %sEU/t");
+        provider.add("gtceu.multiblock.item_output", "Outputting %s *%s");
+        provider.add("gtceu.multiblock.fluid_output", "Outputting %s %smB");
         provider.add("gtceu.multiblock.invalid_structure", "Invalid structure.");
         provider.add("gtceu.multiblock.invalid_structure.tooltip", "This block is a controller of the multiblock structure. For building help, see structure template in JEI.");
         provider.add("gtceu.multiblock.validation_failed", "Invalid amount of inputs/outputs.");
