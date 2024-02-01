@@ -103,7 +103,7 @@ public class ForthDegreeMaterials {
                 .components(Stellite100, 3, EnergyCrystal, 1, SiliconCarbide,1,Gallium,1,Americium,1,Palladium,1,Bismuth,1,Germanium,1)
                 .buildAndRegister();
 
-        EnrichedNaquadahAlloy = new Material.Builder(GTCEu.id("quantum"))
+        EnrichedNaquadahAlloy = new Material.Builder(GTCEu.id("enriched_naquadah_alloy"))
                 .ingot()
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(10775))
                 .colorAverage().iconSet(METALLIC)
