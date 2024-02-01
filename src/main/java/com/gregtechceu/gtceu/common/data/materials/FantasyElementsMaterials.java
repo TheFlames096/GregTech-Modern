@@ -187,6 +187,13 @@ public class FantasyElementsMaterials {
                 .element(GTElements.Runite)
                 .buildAndRegister();
 
+        Force = new Material.Builder(GTCEu.id("force"))
+                .plasma()
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(11000))
+                .color( 0xe4ff00).secondaryColor(0xe4ff00).iconSet(FINE)
+                .element(GTElements.Force)
+                .buildAndRegister();
+
         DragonBlood = new Material.Builder(GTCEu.id("dragonblood"))
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(10000))
                 .color( 0xdc2814).secondaryColor(0xdc2814).iconSet(SHINY)

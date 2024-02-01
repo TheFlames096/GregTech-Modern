@@ -1,6 +1,10 @@
 {
   "values": [
+    "gtceu:advanced_fusion_coil",
+    "gtceu:advanced_fusion_coil_ii",
     "gtceu:fusion_casing_mk2",
-    "gtceu:fusion_casing_mk3"
+    "gtceu:fusion_casing_mk3",
+    "gtceu:fusion_casing_mk4",
+    "gtceu:fusion_casing_mk5"
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "button_texture": {
+    "type": "item",
+    "res": "gtceu:sterilized_petri_dish"
+  },
+  "items": [
+    "gtceu:sterilized_petri_dish"
+  ],
+  "page": "gtceu:misc/sterilized_petri_dish",
+  "position": [
+    -400,
+    300
+  ],
+  "section": "gtceu:misc"
+}

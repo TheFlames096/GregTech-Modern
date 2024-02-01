@@ -52,6 +52,7 @@ public class GTRecipes {
         AssemblerRecipeLoader.init(consumer);
         AssemblyLineLoader.init(consumer);
         BatteryRecipes.init(consumer);
+        BacterialVatLoader.init(consumer);
 
         CircuitRecipes.init(consumer);
         ComponentRecipes.init(consumer);

@@ -119,7 +119,7 @@
   "page": "gtceu:generation/endstone",
   "position": [
     -50,
-    150
+    50
   ],
   "pre_nodes": [
     "gtceu:generation/ore"

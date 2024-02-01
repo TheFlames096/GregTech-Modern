@@ -86,5 +86,13 @@ public class ForthDegreeMaterials {
                 .itemPipeProperties(8192, 4)
                 .components(RoseGold, 2, InfusedGold, 1,AstralSilver,1,SterlingSilver,1,SolderingAlloy,1,RedSteel,1,BlueSteel,1,Naquadah,1)
                 .buildAndRegister();
+
+        Titansteel = new Material.Builder(GTCEu.id("titansteel"))
+                .ingot()
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(8525))
+                .colorAverage().iconSet(METALLIC)
+                .flags(GENERATE_PLATE, DECOMPOSITION_BY_CENTRIFUGING)
+                .components(EnergyCrystal, 1, TungstenCarbide, 7, Titanium,3)
+                .buildAndRegister();
     }
 }

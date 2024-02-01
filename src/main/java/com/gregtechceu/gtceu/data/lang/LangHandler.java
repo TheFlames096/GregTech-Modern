@@ -679,6 +679,7 @@ public class LangHandler {
         provider.add("metaitem.terminal.tooltip", "Sharp tools make good work");
         provider.add("metaitem.terminal.tooltip.creative", "§bCreative Mode");
         provider.add("metaitem.terminal.tooltip.hardware", "§aHardware: %d");
+        provider.add("gtceu.petri_dish.culture", "Contained Culture : §a%s");
         provider.add("metaitem.plugin.tooltips.1", "Plugins can be added to the screen for more functionality.");
         provider.add("metaitem.plugin.proxy.tooltips.1", "(Please adjust to proxy mode in the screen)");
         provider.add("metaitem.cover.digital.tooltip", "Connects machines over §fPower Cables§7 to the §fCentral Monitor§7 as §fCover§7.");
@@ -855,6 +856,9 @@ public class LangHandler {
         multiLang(provider, "gtceu.machine.muffler_hatch.tooltip", "Recovers waste from machines", "DO NOT OBSTRUCT THE OUTPUT!");
         provider.add("gtceu.muffler.recovery_tooltip", "§bRecovery Chance: §f%d%%");
         provider.add("gtceu.machine.pump_hatch.tooltip", "Primitive Fluid Output for Water Pump");
+        provider.add("gtceu.machine.culture", "Current Culture : %s");
+        provider.add("gtceu.machine.sievert", "Current Sievert : %d");
+        provider.add("gtceu.machine.max_parallel", "Max Parallel : %d");
         provider.add("gtceu.machine.machine_hatch.locked", "Machine Interface Locked");
         provider.add("gtceu.machine.machine_hatch.insufficient_energy", "The machine is underpowered.");
         provider.add("gtceu.machine.machine_hatch.tooltip", "Specialized Access Bus that only holds valid items");
@@ -918,6 +922,9 @@ public class LangHandler {
         provider.add("gtceu.recipe.cleanroom", "Requires %s");
         provider.add("gtceu.recipe.cleanroom.display_name", "Cleanroom");
         provider.add("gtceu.recipe.cleanroom_sterile.display_name", "Sterile Cleanroom");
+        provider.add("gtceu.recipe.petri_dish", "Required Culture : %s");
+        provider.add("gtceu.recipe.min_sievert", "Require Minimum Sievert : %d");
+        provider.add("gtceu.recipe.require_exactle_sievert", "Is Require Exactly Sievert : %s");
         provider.add("gtceu.fluid.click_to_fill", "§7Click with a Fluid Container to §bfill §7the tank (Shift-click for a full stack).");
         provider.add("gtceu.fluid.click_combined", "§7Click with a Fluid Container to §cempty §7or §bfill §7the tank (Shift-click for a full stack).");
         provider.add("gtceu.fluid.click_to_empty", "§7Click with a Fluid Container to §cempty §7the tank (Shift-click for a full stack).");

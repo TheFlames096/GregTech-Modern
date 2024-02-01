@@ -25,6 +25,7 @@ import com.gregtechceu.gtceu.api.data.tag.TagUtil;
 import com.gregtechceu.gtceu.api.gui.misc.ProspectorMode;
 import com.gregtechceu.gtceu.api.item.ComponentItem;
 import com.gregtechceu.gtceu.api.item.IGTTool;
+import com.gregtechceu.gtceu.api.item.PetriDishItem;
 import com.gregtechceu.gtceu.api.item.TagPrefixItem;
 import com.gregtechceu.gtceu.api.item.component.*;
 import com.gregtechceu.gtceu.api.item.tool.GTToolType;
@@ -37,6 +38,7 @@ import com.gregtechceu.gtceu.common.item.*;
 import com.gregtechceu.gtceu.config.ConfigHolder;
 import com.gregtechceu.gtceu.data.lang.LangHandler;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
+import com.gregtechceu.gtceu.data.recipe.misc.BacterialVatLoader;
 import com.gregtechceu.gtceu.utils.FormattingUtil;
 import com.gregtechceu.gtceu.utils.SupplierMemoizer;
 import com.lowdragmc.lowdraglib.LDLib;
@@ -1685,6 +1687,9 @@ public class GTItems {
     public static ItemEntry<Item> NEURO_PROCESSOR = REGISTRATE.item("neuro_processing_unit", Item::new).lang("Neuro Processing Unit").onRegister(compassNode(GTCompassSections.MISC)).register();
     public static ItemEntry<Item> STEM_CELLS = REGISTRATE.item("stem_cells", Item::new).onRegister(compassNode(GTCompassSections.MISC)).register();
     public static ItemEntry<Item> PETRI_DISH = REGISTRATE.item("petri_dish", Item::new).onRegister(compassNode(GTCompassSections.MISC)).register();
+    public static ItemEntry<Item> STERILIZED_PETRI_DISH = REGISTRATE.item("sterilized_petri_dish", Item::new).onRegister(compassNode(GTCompassSections.MISC)).register();
+
+    public static ItemEntry<PetriDishItem> PETRI_DISH_Saccharomyces_escherichia = REGISTRATE.item("petri_dish_saccharomyces_escherichia",PetriDishItem::new).lang("Petri Dish with a Culture").register();
 
     public static ItemEntry<ComponentItem> VOLTAGE_COIL_ULV = REGISTRATE.item("ulv_voltage_coil", ComponentItem::create).lang("Ultra Low Voltage Coil").onRegister(compassNodeExist(GTCompassSections.MISC, "coil")).onRegister(materialInfo(new ItemMaterialInfo(new MaterialStack(GTMaterials.Lead, GTValues.M * 2), new MaterialStack(GTMaterials.IronMagnetic, GTValues.M / 2)))).register();
     public static ItemEntry<ComponentItem> VOLTAGE_COIL_LV = REGISTRATE.item("lv_voltage_coil", ComponentItem::create).lang("Low Voltage Coil").onRegister(compassNodeExist(GTCompassSections.MISC, "coil")).onRegister(materialInfo(new ItemMaterialInfo(new MaterialStack(GTMaterials.Steel, GTValues.M * 2), new MaterialStack(GTMaterials.IronMagnetic, GTValues.M / 2)))).register();

@@ -1,0 +1,15 @@
+{
+  "button_texture": {
+    "type": "item",
+    "res": "gtceu:uev_fusion_reactor"
+  },
+  "items": [
+    "gtceu:uev_fusion_reactor"
+  ],
+  "page": "gtceu:luv/uev_fusion_reactor",
+  "position": [
+    -100,
+    50
+  ],
+  "section": "gtceu:luv"
+}

@@ -995,6 +995,7 @@ public class GTMaterials {
     public static Material HSSE;
     public static Material HSSS;
     public static Material FluxedElectrum;
+    public static Material Titansteel;
     public static Material Mithril;
     public static Material AstralSilver;
 
@@ -1080,6 +1081,7 @@ public class GTMaterials {
     //GT++ Materials
     
     public static Material Runite;
+    public static Material Force;
     public static Material DragonBlood;
     public static Material EnergyCrystal;
     public static Material Rhugnor;

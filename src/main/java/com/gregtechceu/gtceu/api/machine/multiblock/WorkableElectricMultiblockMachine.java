@@ -122,10 +122,7 @@ public class WorkableElectricMultiblockMachine extends WorkableMultiblockMachine
                         for(var b : ((FluidIngredient)a.content).getStacks())
                             textList.add(Component.translatable("gtceu.multiblock.fluid_output",b.getDisplayName().getString(),b.getAmount()));
                 }
-                if(recipeLogic.getMaxProgress()>20)
-                    textList.add(Component.translatable("gtceu.multiblock.progress", currentProgress,(int)(recipeLogic.getProgress()/20.0F),(int)(recipeLogic.getMaxProgress()/20.0F)));
-                else
-                    textList.add(Component.translatable("gtceu.multiblock.progress", currentProgress, String.format("%.2f",recipeLogic.getProgress()/20.0F).toString(),String.format("%.2f",recipeLogic.getMaxProgress()/20.0F).toString()));
+                textList.add(Component.translatable("gtceu.multiblock.progress", currentProgress, String.format("%.2f",recipeLogic.getProgress()/20.0F).toString(),String.format("%.2f",recipeLogic.getMaxProgress()/20.0F).toString()));
                 
             } else {
                 textList.add(Component.translatable("gtceu.multiblock.idling"));

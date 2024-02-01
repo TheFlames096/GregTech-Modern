@@ -158,7 +158,10 @@ public class FusionReactorMachine extends WorkableElectricMultiblockMachine impl
             // increase the stored heat
             fusionReactorMachine.heat += heatDiff;
             fusionReactorMachine.updatePreHeatSubscription();
-            return RecipeHelper.applyOverclock(new OverclockingLogic(2, 2), recipe, fusionReactorMachine.getMaxVoltage());
+            if(fusionReactorMachine.tier<UHV)
+                return RecipeHelper.applyOverclock(new OverclockingLogic(2, 2), recipe, fusionReactorMachine.getMaxVoltage());
+            else // perform 4/4 overclock on MK4/5
+                return RecipeHelper.applyOverclock(new OverclockingLogic(4, 4), recipe, fusionReactorMachine.getMaxVoltage());
         }
         return null;
     }
@@ -226,22 +229,33 @@ public class FusionReactorMachine extends WorkableElectricMultiblockMachine impl
     //********      MISC       *********//
     //////////////////////////////////////
     public static long calculateEnergyStorageFactor(int tier, int energyInputAmount) {
-        return energyInputAmount * (long) Math.pow(2, tier - LuV) * 10000000L;
+        return energyInputAmount * (long) switch (tier) {
+            case LuV -> 10000000L;
+            case ZPM -> 20000000L;
+            case UV ->  40000000L;
+            case UHV -> 320000000L;
+            default ->  1280000000L;
+        };
     }
 
     public static Block getCasingState(int tier) {
         return switch (tier) {
             case LuV -> FUSION_CASING.get();
             case ZPM -> FUSION_CASING_MK2.get();
-            default -> FUSION_CASING_MK3.get();
+            case UV -> FUSION_CASING_MK3.get();
+            case UHV -> FUSION_CASING_MK4.get();
+            default -> FUSION_CASING_MK5.get();
         };
     }
 
     public static Block getCoilState(int tier) {
-        if (tier == GTValues.LuV)
-            return SUPERCONDUCTING_COIL.get();
-
-        return FUSION_COIL.get();
+        return switch (tier) {
+            case LuV -> SUPERCONDUCTING_COIL.get();
+            case ZPM -> FUSION_COIL.get();
+            case UV -> FUSION_COIL.get();
+            case UHV -> ADVANCED_FUSION_COIL.get();
+            default -> ADVANCED_FUSION_COIL_II.get();
+        };
     }
 
     public static IFusionCasingType getCasingType(int tier) {
@@ -249,7 +263,8 @@ public class FusionReactorMachine extends WorkableElectricMultiblockMachine impl
             case LuV -> FusionCasingBlock.CasingType.FUSION_CASING;
             case ZPM -> FusionCasingBlock.CasingType.FUSION_CASING_MK2;
             case UV -> FusionCasingBlock.CasingType.FUSION_CASING_MK3;
-            default -> FusionCasingBlock.CasingType.FUSION_CASING;
+            case UHV -> FusionCasingBlock.CasingType.FUSION_CASING_MK4;
+            default -> FusionCasingBlock.CasingType.FUSION_CASING_MK5;
         };
     }
 

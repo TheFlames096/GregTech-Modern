@@ -1,0 +1,15 @@
+{
+  "button_texture": {
+    "type": "item",
+    "res": "gtceu:bacterial_vat"
+  },
+  "items": [
+    "gtceu:bacterial_vat"
+  ],
+  "page": "gtceu:multiblock/bacterial_vat",
+  "position": [
+    -250,
+    50
+  ],
+  "section": "gtceu:multiblock"
+}

@@ -24,7 +24,7 @@ public class TieredIOPartMachine extends TieredPartMachine implements IControlla
 
     protected static final ManagedFieldHolder MANAGED_FIELD_HOLDER = new ManagedFieldHolder(TieredIOPartMachine.class, MultiblockPartMachine.MANAGED_FIELD_HOLDER);
 
-    protected final IO io;
+    public final IO io;
 
     /**
      * AUTO IO working?

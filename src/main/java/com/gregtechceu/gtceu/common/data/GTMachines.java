@@ -1182,8 +1182,12 @@ public class GTMachines {
                     .aisle("XXX", "XSX", "XXX")
                     .where('S', Predicates.controller(blocks(definition.getBlock())))
                     .where('X', blocks(CASING_ALUMINIUM_FROSTPROOF.get()).setMinGlobalLimited(14)
-                            .or(Predicates.autoAbilities(definition.getRecipeTypes()))
-                            .or(Predicates.autoAbilities(true, true, false)))
+                                .or(Predicates.abilities(PartAbility.EXPORT_ITEMS))
+                                .or(Predicates.abilities(PartAbility.IMPORT_ITEMS))
+                                .or(Predicates.abilities(PartAbility.INPUT_ENERGY))
+                                .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setExactLimit(1))
+                                .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setExactLimit(1))
+                                .or(Predicates.autoAbilities(true, true, false)))
                     .where('#', Predicates.air())
                     .build())
             .workableCasingRenderer(GTCEu.id("block/casings/solid/machine_casing_frost_proof"),
@@ -1191,7 +1195,27 @@ public class GTMachines {
             .compassSections(GTCompassSections.TIER[HV])
             .compassNodeSelf()
             .register();
-
+public final static MultiblockMachineDefinition BACTERIAL_VAT = REGISTRATE.multiblock("bacterial_vat", BacterialVat::new)
+            .rotationState(RotationState.NON_Y_AXIS)
+            .recipeType(GTRecipeTypes.BACTERIAL_VAT_RECIPES)
+//            .recipeModifier(GTRecipeModifiers.ELECTRIC_OVERCLOCK.apply(OverclockingLogic.NON_PERFECT_OVERCLOCK))
+            .recipeModifier(BacterialVat::recipeModifier,true)
+            .appearanceBlock(CASING_STAINLESS_CLEAN)
+            .pattern(definition -> FactoryBlockPattern.start()
+                    .aisle("XXX", "XXX", "XXX")
+                    .aisle("XXX", "X#X", "XXX")
+                    .aisle("XXX", "XSX", "XXX")
+                    .where('S', Predicates.controller(blocks(definition.getBlock())))
+                    .where('X', blocks(CASING_STAINLESS_CLEAN.get()).setMinGlobalLimited(14)
+                            .or(Predicates.autoAbilities(definition.getRecipeTypes()))
+                            .or(Predicates.autoAbilities(true, true, false)))
+                    .where('#', Predicates.air())
+                    .build())
+            .workableCasingRenderer(GTCEu.id("block/casings/solid/machine_casing_frost_proof"),
+                    GTCEu.id("block/multiblock/vacuum_freezer"), false)
+            .compassSections(GTCompassSections.TIER[EV])
+            .compassNodeSelf()
+            .register();
     public final static MultiblockMachineDefinition ASSEMBLY_LINE = REGISTRATE.multiblock("assembly_line", WorkableElectricMultiblockMachine::new)
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(GTRecipeTypes.ASSEMBLY_LINE_RECIPES)
@@ -1315,7 +1339,7 @@ public class GTMachines {
                                 .aisle("###############", "######OSO######", "###############")
                                 .where('S', controller(blocks(definition.get())))
                                 .where('G', blocks(FUSION_GLASS.get()).or(casing))
-                                .where('E', casing.or(blocks(PartAbility.INPUT_ENERGY.getBlockRange(tier, UV).toArray(Block[]::new))
+                                .where('E', casing.or(blocks(PartAbility.INPUT_ENERGY.getBlockRange(tier, OpV).toArray(Block[]::new))
                                         .setMinGlobalLimited(1).setPreviewCount(16)))
                                 .where('C', casing)
                                 .where('K', blocks(FusionReactorMachine.getCoilState(tier)))
@@ -1372,7 +1396,7 @@ public class GTMachines {
                     .compassSections(GTCompassSections.TIER[LuV])
                     .compassNodeSelf()
                     .register(),
-            LuV, ZPM, UV);
+            LuV, ZPM, UV, UHV, UEV);
 
     public static final MultiblockMachineDefinition[] FLUID_DRILLING_RIG = registerTieredMultis("fluid_drilling_rig", FluidDrillMachine::new, (tier, builder) -> builder
                     .rotationState(RotationState.NON_Y_AXIS)

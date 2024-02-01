@@ -10,6 +10,7 @@ import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.capability.recipe.ItemRecipeCapability;
 import com.gregtechceu.gtceu.api.data.chemical.Element;
 import com.gregtechceu.gtceu.api.gui.GuiTextures;
+import com.gregtechceu.gtceu.api.item.PetriDishItem;
 import com.gregtechceu.gtceu.api.recipe.*;
 import com.gregtechceu.gtceu.api.recipe.content.Content;
 import com.gregtechceu.gtceu.api.recipe.ingredient.FluidIngredient;
@@ -19,6 +20,7 @@ import com.gregtechceu.gtceu.common.recipe.RPMCondition;
 import com.gregtechceu.gtceu.common.recipe.RockBreakerCondition;
 import com.gregtechceu.gtceu.data.recipe.RecipeHelper;
 import com.gregtechceu.gtceu.data.recipe.builder.GTRecipeBuilder;
+import com.gregtechceu.gtceu.data.recipe.misc.BacterialVatLoader;
 import com.gregtechceu.gtceu.integration.kjs.GTRegistryInfo;
 import com.lowdragmc.lowdraglib.gui.widget.SlotWidget;
 import com.lowdragmc.lowdraglib.gui.widget.TankWidget;
@@ -43,6 +45,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static com.gregtechceu.gtceu.common.data.GTItems.*;
 import static com.lowdragmc.lowdraglib.gui.texture.ProgressTexture.FillDirection.*;
 
 /**
@@ -278,7 +281,7 @@ public class GTRecipeTypes {
             .setProgressBar(GuiTextures.PROGRESS_BAR_HAMMER, UP_TO_DOWN)
             .setSteamProgressBar(GuiTextures.PROGRESS_BAR_HAMMER_STEAM, UP_TO_DOWN)
             .setSound(GTSoundEntries.FORGE_HAMMER)
-            .onRecipeBuild((recipeBuilder, provider) -> GTRecipeTypes.ADVANCED_FORGE_HAMMER_RECIPES.copyFrom(recipeBuilder).save(provider));;
+            .onRecipeBuild((recipeBuilder, provider) -> GTRecipeTypes.ADVANCED_FORGE_HAMMER_RECIPES.copyFrom(recipeBuilder).save(provider));
 
 
     public final static GTRecipeType FORMING_PRESS_RECIPES = register("forming_press", ELECTRIC).setMaxIOSize(6, 1, 0, 0).setEUIO(IO.IN)
@@ -551,6 +554,18 @@ public class GTRecipeTypes {
     public final static GTRecipeType ASSEMBLY_LINE_RECIPES = register("assembly_line", MULTIBLOCK).setMaxIOSize(16, 1, 4, 0).setEUIO(IO.IN)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.ASSEMBLER);
+
+    public final static GTRecipeType BACTERIAL_VAT_RECIPES = register("bacterial_vat", MULTIBLOCK).setMaxIOSize(6, 2, 1, 1).setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, LEFT_TO_RIGHT)
+            .addDataInfo(data -> LocalizationUtils.format("gtceu.recipe.petri_dish", data.getString("bacteria")))
+            .addDataInfo(data -> LocalizationUtils.format("gtceu.recipe.min_sievert", data.getInt("min_sievert")))
+            .addDataInfo(data -> LocalizationUtils.format("gtceu.recipe.require_exactle_sievert", String.valueOf(data.getBoolean("is_exact"))))
+            .setSound(GTSoundEntries.CHEMICAL);
+
+    // cultures
+    static {
+        PetriDishItem.initrecipe(BacterialVatLoader.Bacteria.Saccharomyces_escherichia);
+    }
 
     public static final GTRecipeType LARGE_CHEMICAL_RECIPES = register("large_chemical_reactor", MULTIBLOCK).setMaxIOSize(6, 6, 6, 6).setEUIO(IO.IN)
             .prepareBuilder(recipeBuilder -> recipeBuilder.EUt(GTValues.VA[GTValues.LV]))

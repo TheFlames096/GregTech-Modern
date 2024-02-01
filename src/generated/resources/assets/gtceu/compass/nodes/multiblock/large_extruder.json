@@ -8,8 +8,8 @@
   ],
   "page": "gtceu:multiblock/large_extruder",
   "position": [
-    -300,
-    300
+    -100,
+    250
   ],
   "section": "gtceu:multiblock"
 }

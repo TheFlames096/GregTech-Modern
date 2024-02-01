@@ -155,6 +155,7 @@ public class GTElements {
     public static final Element Sh = createAndRegister(500, 250, -1, null, "Shirabon", "Sh"+(char)9191, false);
     public static final Element Or = createAndRegister(120, 180, -1, null, "Orundum", "Or", false);
     public static final Element Runite = createAndRegister(73, 87, -1, null, "Runtie", "Rt*", false);
+    public static final Element Force = createAndRegister(73, 87, -1, null, "Force", "Fc⚙", false);
     public static final Element DragonBlood = createAndRegister(96, 105, -1, null, "DragonBlood", "۞", false);
     public static final Element Rhugnor = createAndRegister(184, 142, -1, null, "Rhugnor", "Fs⚶", false);
     public static final Element Hypogen = createAndRegister(240, 251, -1, null, "Hypogen", "Hy⚶", false);

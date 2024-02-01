@@ -25,9 +25,13 @@ public class FusionCasingBlock extends ActiveBlock {
 
         SUPERCONDUCTING_COIL("superconducting_coil", 2),
         FUSION_COIL("fusion_coil", 2),
+        ADVANCED_FUSION_COIL("advanced_fusion_coil", 3),
+        ADVANCED_FUSION_COIL_II("advanced_fusion_coil_ii", 3),
         FUSION_CASING("fusion_casing", 2),
         FUSION_CASING_MK2("fusion_casing_mk2", 3),
-        FUSION_CASING_MK3("fusion_casing_mk3", 3);
+        FUSION_CASING_MK3("fusion_casing_mk3", 3),
+        FUSION_CASING_MK4("fusion_casing_mk4", 3),
+        FUSION_CASING_MK5("fusion_casing_mk5", 3);
 
         private final String name;
         @Getter
