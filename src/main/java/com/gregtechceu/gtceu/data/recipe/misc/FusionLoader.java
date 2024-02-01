@@ -275,7 +275,7 @@ public class FusionLoader {
                 .fusionStartEU(300_000_000)
                 .save(provider);
 
-        FUSION_RECIPES.recipeBuilder("titansteel_plasma_and_astral_titanium_plasma_to_runite_plasma")
+        FUSION_RECIPES.recipeBuilder("titansteel_and_astral_titanium_plasma_to_runite_plasma")
                 .inputFluids(GTMaterials.Titansteel.getFluid(8))
                 .inputFluids(GTMaterials.AstralTitanium.getFluid(FluidStorageKeys.PLASMA,144))
                 .outputFluids(GTMaterials.Runite.getFluid(FluidStorageKeys.PLASMA,1000))
@@ -311,99 +311,202 @@ public class FusionLoader {
                 .fusionStartEU(480_000_000)
                 .save(provider);
 
-
-
-
-
-
-
-
-                
-
-
-
-
-
-        FUSION_RECIPES.recipeBuilder("americium_and_naquadria_to_neutronium_plasma")
-                .inputFluids(GTMaterials.Americium.getFluid(128))
-                .inputFluids(GTMaterials.Naquadria.getFluid(128))
-                .outputFluids(GTMaterials.Neutronium.getFluid(32))
-                .duration(200)
-                .EUt(98304)
-                .fusionStartEU(600_000_000)
+        FUSION_RECIPES.recipeBuilder("gold_and_arsenic_to_silver_plasma")
+                .inputFluids(GTMaterials.Gold.getFluid(144))
+                .inputFluids(GTMaterials.Arsenic.getFluid(144))
+                .outputFluids(GTMaterials.Silver.getFluid(FluidStorageKeys.PLASMA,144))
+                .duration(16)
+                .EUt(49152)
+                .fusionStartEU(350_000_000)
                 .save(provider);
 
-        FUSION_RECIPES.recipeBuilder("silver_and_copper_to_osmium_plasma")
-                .inputFluids(GTMaterials.Silver.getFluid(16))
-                .inputFluids(GTMaterials.Copper.getFluid(16))
-                .outputFluids(GTMaterials.Osmium.getFluid(16))
-                .duration(64)
-                .EUt(24578)
-                .fusionStartEU(150_000_000)
-                .save(provider);
-
-        
-
-        FUSION_RECIPES.recipeBuilder("xenon_and_zinc_to_plutonium_239_plasma")
-                .inputFluids(GTMaterials.Xenon.getFluid(125))
-                .inputFluids(GTMaterials.Zinc.getFluid(16))
+        FUSION_RECIPES.recipeBuilder("uranium_238_and_helium_to_plutonium_239")
+                .inputFluids(GTMaterials.Uranium238.getFluid(16))
+                .inputFluids(GTMaterials.Helium.getFluid(16))
                 .outputFluids(GTMaterials.Plutonium239.getFluid(16))
                 .duration(128)
                 .EUt(49152)
-                .fusionStartEU(120_000_000)
+                .fusionStartEU(480_000_000)
                 .save(provider);
 
-        FUSION_RECIPES.recipeBuilder("krypton_and_cerium_to_plutonium_241_plasma")
-                .inputFluids(GTMaterials.Krypton.getFluid(125))
-                .inputFluids(GTMaterials.Cerium.getFluid(16))
-                .outputFluids(GTMaterials.Plutonium241.getFluid(16))
-                .duration(128)
+        FUSION_RECIPES.recipeBuilder("plutonium_239_and_beryllium_to_californium_plasma")
+                .inputFluids(GTMaterials.Plutonium239.getFluid(48))
+                .inputFluids(GTMaterials.Beryllium.getFluid(48))
+                .outputFluids(GTMaterials.Californium.getFluid(48))
+                .duration(240)
                 .EUt(49152)
-                .fusionStartEU(240_000_000)
+                .fusionStartEU(480_000_000)
                 .save(provider);
 
-        
-
-
-        
-
-        FUSION_RECIPES.recipeBuilder("gold_and_mercury_to_radon_plasma")
-                .inputFluids(GTMaterials.Gold.getFluid(16))
-                .inputFluids(GTMaterials.Mercury.getFluid(16))
-                .outputFluids(GTMaterials.Radon.getFluid(125))
-                .duration(64)
-                .EUt(VA[LuV])
-                .fusionStartEU(200_000_000)
-                .save(provider);
-
-        
-
-        FUSION_RECIPES.recipeBuilder("enriched_naquadah_and_radon_to_naquadria_plasma")
-                .inputFluids(GTMaterials.NaquadahEnriched.getFluid(16))
-                .inputFluids(GTMaterials.Radon.getFluid(125))
-                .outputFluids(GTMaterials.Naquadria.getFluid(4))
-                .duration(64)
+        FUSION_RECIPES.recipeBuilder("californium_and_ca_to_californium_plasma")
+                .inputFluids(GTMaterials.Californium.getFluid(32))
+                .inputFluids(GTMaterials.Calcium.getFluid(720))
+                .outputFluids(GTMaterials.Oganesson.getFluid(720))
+                .duration(420)
                 .EUt(49152)
-                .fusionStartEU(400_000_000)
+                .fusionStartEU(600_000_000)
                 .save(provider);
 
-        FUSION_RECIPES.recipeBuilder("lantanum_and_silicon_to_lutetium_plasma")
-                .inputFluids(GTMaterials.Lanthanum.getFluid(16))
-                .inputFluids(GTMaterials.Silicon.getFluid(16))
-                .outputFluids(GTMaterials.Lutetium.getFluid(16))
+        FUSION_RECIPES.recipeBuilder("tantalum_and_zinc_plasma_to_runite_plasma")
+                .inputFluids(GTMaterials.Tantalum.getFluid(144))
+                .inputFluids(GTMaterials.Zinc.getFluid(FluidStorageKeys.PLASMA,72))
+                .outputFluids(GTMaterials.Bismuth.getFluid(FluidStorageKeys.PLASMA,144))
                 .duration(16)
-                .EUt(VA[IV])
-                .fusionStartEU(80_000_000)
+                .EUt(98304)
+                .fusionStartEU(350_000_000)
                 .save(provider);
 
-        FUSION_RECIPES.recipeBuilder("arsenic_and_ruthenium_to_darmstadtium_plasma")
-                .inputFluids(GTMaterials.Arsenic.getFluid(32))
-                .inputFluids(GTMaterials.Ruthenium.getFluid(16))
-                .outputFluids(GTMaterials.Darmstadtium.getFluid(16))
+        FUSION_RECIPES.recipeBuilder("iridium_and_fluorine_to_radon_plasma")
+                .inputFluids(GTMaterials.Iridium.getFluid(144))
+                .inputFluids(GTMaterials.Fluorine.getFluid(500))
+                .outputFluids(GTMaterials.Radon.getFluid(FluidStorageKeys.PLASMA,144))
                 .duration(32)
-                .EUt(VA[LuV])
-                .fusionStartEU(200_000_000)
+                .EUt(98304)
+                .fusionStartEU(450_000_000)
                 .save(provider);
 
+        FUSION_RECIPES.recipeBuilder("plutonium_239_and_hydrogen_to_americium_plasma")
+                .inputFluids(GTMaterials.Plutonium239.getFluid(144))
+                .inputFluids(GTMaterials.Hydrogen.getFluid(2000))
+                .outputFluids(GTMaterials.Americium.getFluid(FluidStorageKeys.PLASMA,144))
+                .duration(64)
+                .EUt(98304)
+                .fusionStartEU(500_000_000)
+                .save(provider);
+
+        FUSION_RECIPES.recipeBuilder("plutonium_241_and_helium_to_curium")
+                .inputFluids(GTMaterials.Plutonium241.getFluid(144))
+                .inputFluids(GTMaterials.Helium.getFluid(1000))
+                .outputFluids(GTMaterials.Curium.getFluid(144))
+                .duration(96)
+                .EUt(98304)
+                .fusionStartEU(500_000_000)
+                .save(provider);
+
+        FUSION_RECIPES.recipeBuilder("americium_and_naquadria_to_neutronium_plasma")
+                .inputFluids(GTMaterials.Americium.getFluid(144))
+                .inputFluids(GTMaterials.Naquadria.getFluid(144))
+                .outputFluids(GTMaterials.Neutronium.getFluid(144))
+                .duration(240)
+                .EUt(VA[ZPM])
+                .fusionStartEU(640_000_000)
+                .save(provider);
+
+        FUSION_RECIPES.recipeBuilder("curium_and_americium_plasma_to_xenon_plasma")
+                .inputFluids(GTMaterials.Curium.getFluid(144))
+                .inputFluids(GTMaterials.Americium.getFluid(FluidStorageKeys.PLASMA,144))
+                .outputFluids(GTMaterials.Xenon.getFluid(FluidStorageKeys.PLASMA,144))
+                .duration(16)
+                .EUt(VA[UV])
+                .fusionStartEU(500_000_000)
+                .save(provider);
+
+        FUSION_RECIPES.recipeBuilder("xenon_plasma_and_runtie_plasma_to_advaced_nitinol_plasma")
+                .inputFluids(GTMaterials.Xenon.getFluid(FluidStorageKeys.PLASMA,144))
+                .inputFluids(GTMaterials.Runite.getFluid(FluidStorageKeys.PLASMA,1000))
+                .outputFluids(GTMaterials.AdvancedNitinol.getFluid(FluidStorageKeys.PLASMA,1000))
+                .duration(16)
+                .EUt(VA[UV])
+                .fusionStartEU(500_000_000)
+                .save(provider);
+
+        FUSION_RECIPES.recipeBuilder("xenon_plasma_and_runtie_plasma_to_advaced_nitinol_plasma")
+                .inputFluids(GTMaterials.AdvancedNitinol.getFluid(FluidStorageKeys.PLASMA,144))
+                .inputFluids(GTMaterials.Tartarite.getFluid(2))
+                .outputFluids(GTMaterials.CelestialTungsten.getFluid(FluidStorageKeys.PLASMA,1000))
+                .duration(16)
+                .EUt(VA[UV])
+                .fusionStartEU(500_000_000)
+                .save(provider);
+
+        FUSION_RECIPES.recipeBuilder("curium_and_helium_plasma_to_californium")
+                .inputFluids(GTMaterials.Helium.getFluid(FluidStorageKeys.PLASMA,144))
+                .inputFluids(GTMaterials.Curium.getFluid(144))
+                .outputFluids(GTMaterials.Californium.getFluid(144))
+                .duration(128)
+                .EUt(196608)
+                .fusionStartEU(750_000_000)
+                .save(provider);
+
+        FUSION_RECIPES.recipeBuilder("curium_and_helium_plasma_to_californium")
+                .inputFluids(GTMaterials.Calcium.getFluid(FluidStorageKeys.PLASMA,144))
+                .inputFluids(GTMaterials.Plutonium241.getFluid(144))
+                .outputFluids(GTMaterials.Flerovium.getFluid(144))
+                .duration(160)
+                .EUt(196608)
+                .fusionStartEU(1_000_000_000)
+                .save(provider);
+
+        FUSION_RECIPES.recipeBuilder("quantum_and_infinity_to_rhugnor")
+                .inputFluids(GTMaterials.Quantum.getFluid(288))
+                .inputFluids(GTMaterials.Infinity.getFluid(144))
+                .outputFluids(GTMaterials.Rhugnor.getFluid(144))
+                .duration(512)
+                .EUt(VA[UV])
+                .fusionStartEU(2_000_000_000)
+                .save(provider);
+
+        FUSION_RECIPES.recipeBuilder("enriched_naquadah_alloy_and_oganesson_to_metastable_oganesson")
+                .inputFluids(GTMaterials.EnrichedNaquadahAlloy.getFluid(144))
+                .inputFluids(GTMaterials.Oganesson.getFluid(250))
+                .outputFluids(GTMaterials.MetastableOganesson.getFluid(36))
+                .duration(600)
+                .EUt(VA[UV])
+                .fusionStartEU(1_000_000_000)
+                .save(provider);
+
+        FUSION_RECIPES.recipeBuilder("radon_plasma_and_nitrogen_plasma_to_neptunium_plasma")
+                .inputFluids(GTMaterials.Radon.getFluid(FluidStorageKeys.PLASMA,100))
+                .inputFluids(GTMaterials.Nitrogen.getFluid(FluidStorageKeys.PLASMA,100))
+                .outputFluids(GTMaterials.Neptunium.getFluid(FluidStorageKeys.PLASMA,100))
+                .duration(600)
+                .EUt(VA[UHV])
+                .fusionStartEU(1_000_000_000)
+                .save(provider);
+
+        FUSION_RECIPES.recipeBuilder("americium_plasma_and_boron_plasma_to_fermium_plasma")
+                .inputFluids(GTMaterials.Americium.getFluid(FluidStorageKeys.PLASMA,100))
+                .inputFluids(GTMaterials.Boron.getFluid(FluidStorageKeys.PLASMA,100))
+                .outputFluids(GTMaterials.Fermium.getFluid(FluidStorageKeys.PLASMA,100))
+                .duration(600)
+                .EUt(VA[UHV])
+                .fusionStartEU(1_000_000_000)
+                .save(provider);
+
+        FUSION_RECIPES.recipeBuilder("dragonBlood_and_rhugnor_to_hypogen")
+                .inputFluids(GTMaterials.DragonBlood.getFluid(144))
+                .inputFluids(GTMaterials.Rhugnor.getFluid(288))
+                .outputFluids(GTMaterials.Hypogen.getFluid(36))
+                .duration(8192)
+                .EUt(VA[UHV])
+                .fusionStartEU(1_200_000_000)
+                .save(provider);
+
+        FUSION_RECIPES.recipeBuilder("lutetium_and_vanadium_to_plutonium_241_plasma")
+                .inputFluids(GTMaterials.Lutetium.getFluid(144))
+                .inputFluids(GTMaterials.Vanadium.getFluid(144))
+                .outputFluids(GTMaterials.Plutonium241.getFluid(FluidStorageKeys.PLASMA,144))
+                .duration(8)
+                .EUt(3932160)
+                .fusionStartEU(1_000_000_000)
+                .save(provider);
+
+        FUSION_RECIPES.recipeBuilder("tellurium_and_zinc_to_lead_plasma")
+                .inputFluids(GTMaterials.Tellurium.getFluid(144))
+                .inputFluids(GTMaterials.Zinc.getFluid(144))
+                .outputFluids(GTMaterials.Lead.getFluid(FluidStorageKeys.PLASMA,144))
+                .duration(8)
+                .EUt(3932160)
+                .fusionStartEU(1_000_000_000)
+                .save(provider);
+
+        FUSION_RECIPES.recipeBuilder("osmium_and_silicon_to_thorium_plasma")
+                .inputFluids(GTMaterials.Osmium.getFluid(144))
+                .inputFluids(GTMaterials.Silicon.getFluid(144))
+                .outputFluids(GTMaterials.Thorium.getFluid(FluidStorageKeys.PLASMA,144))
+                .duration(8)
+                .EUt(3932160)
+                .fusionStartEU(1_000_000_000)
+                .save(provider);
     }
 }

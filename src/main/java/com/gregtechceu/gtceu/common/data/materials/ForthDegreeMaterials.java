@@ -94,5 +94,21 @@ public class ForthDegreeMaterials {
                 .flags(GENERATE_PLATE, DECOMPOSITION_BY_CENTRIFUGING)
                 .components(EnergyCrystal, 1, TungstenCarbide, 7, Titanium,3)
                 .buildAndRegister();
+                
+        Quantum = new Material.Builder(GTCEu.id("quantum"))
+                .ingot()
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(10775))
+                .colorAverage().iconSet(METALLIC)
+                .flags(GENERATE_PLATE, DECOMPOSITION_BY_CENTRIFUGING)
+                .components(Stellite100, 3, EnergyCrystal, 1, SiliconCarbide,1,Gallium,1,Americium,1,Palladium,1,Bismuth,1,Germanium,1)
+                .buildAndRegister();
+
+        EnrichedNaquadahAlloy = new Material.Builder(GTCEu.id("quantum"))
+                .ingot()
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(10775))
+                .colorAverage().iconSet(METALLIC)
+                .flags(GENERATE_PLATE, DECOMPOSITION_BY_CENTRIFUGING)
+                .components(NaquadahEnriched, 8, Tritanium, 5, Californium,3,BlackPlutonium,2)
+                .buildAndRegister();
     }
 }

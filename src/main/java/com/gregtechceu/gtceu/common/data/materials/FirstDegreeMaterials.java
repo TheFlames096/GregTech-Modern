@@ -1072,6 +1072,12 @@ public class FirstDegreeMaterials {
                 .blastTemp(3058, GasTier.MID, GTValues.VA[HV], 1500)
                 .buildAndRegister();
 
+        SiliconCarbide = new Material.Builder(GTCEu.id("silicon_carbide"))
+                .dust()
+                .color(0x6b6478).secondaryColor(0x392e44).iconSet(METALLIC)
+                .components(Silicon, 1, Carbon, 1)
+                .buildAndRegister();
+
         CarbonDioxide = new Material.Builder(GTCEu.id("carbon_dioxide"))
                 .gas()
                 .color(0xA9D0F5)

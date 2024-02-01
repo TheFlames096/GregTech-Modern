@@ -122,6 +122,11 @@ public class FantasyElementsMaterials {
                 .flags(GENERATE_PLATE,GENERATE_ROD,GENERATE_LONG_ROD)
                 .buildAndRegister();
 
+        Tartarite = new Material.Builder(GTCEu.id("tartarite"))
+                .ingot().fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(10400))
+                .color(0xcd2626).iconSet(DULL).ore()
+                .blastTemp(10400,  GasTier.LOWEST, VA[UHV], 2300)
+                .buildAndRegister();
         Magic = new Material.Builder(GTCEu.id("magic")).element(GTElements.Ma)
                 .buildAndRegister();
         Space = new Material.Builder(GTCEu.id("space")).element(GTElements.Sp)
@@ -225,7 +230,7 @@ public class FantasyElementsMaterials {
                 .buildAndRegister();
      
         AdvancedNitinol = new Material.Builder(GTCEu.id("advaced_nitinol"))
-        .ingot(4)
+        .ingot(4).plasma()
         .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(8675))
         .color(0xdca0f0).secondaryColor(0xdca0f0).iconSet(RADIOACTIVE)
         .element(GTElements.AdvancedNitinol)
@@ -241,7 +246,7 @@ public class FantasyElementsMaterials {
         .buildAndRegister();
 
         CelestialTungsten = new Material.Builder(GTCEu.id("celestial_tungsten"))
-        .ingot(4)
+        .ingot(4).plasma()
         .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(10470))
         .color(0x323232).secondaryColor(0xffffff).iconSet(METALLIC)
         .element(GTElements.CelestialTungsten)
@@ -250,7 +255,7 @@ public class FantasyElementsMaterials {
         .buildAndRegister();
 
         AstralTitanium = new Material.Builder(GTCEu.id("astral_titanium"))
-        .ingot(4)
+        .ingot(4).plasma()
         .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(9715))
         .color(0xdca0f0).secondaryColor(0xffffff).iconSet(METALLIC)
         .element(GTElements.AstralTitanium)

@@ -95,7 +95,12 @@ public class GTMaterials {
          */
         HigherDegreeMaterials.register();
         CrossModMaterials.register();
+        
+        //Gregicality Multiblocks
+        GCyMMaterials.register();
+
         ForthDegreeMaterials.register();
+
         TieredMaterials.register();
         /*
          * Register info for cyclical references
@@ -122,8 +127,6 @@ public class GTMaterials {
          * - Reserved for CraftTweaker: 32000-32767
          */
 
-        //Gregicality Multiblocks
-        GCyMMaterials.register();
 
         CHEMICAL_DYES = new Material[]{
                 GTMaterials.DyeWhite, GTMaterials.DyeOrange,
@@ -639,6 +642,7 @@ public class GTMaterials {
     public static Material Kyanite;
     public static Material IronMagnetic;
     public static Material TungstenCarbide;
+    public static Material SiliconCarbide;
     public static Material CarbonDioxide;
     public static Material TitaniumTetrachloride;
     public static Material NitrogenDioxide;
@@ -995,9 +999,11 @@ public class GTMaterials {
     public static Material HSSE;
     public static Material HSSS;
     public static Material FluxedElectrum;
+    public static Material Quantum;
     public static Material Titansteel;
     public static Material Mithril;
     public static Material AstralSilver;
+    public static Material EnrichedNaquadahAlloy;
 
     /**
      * GCyM Materials
@@ -1056,6 +1062,7 @@ public class GTMaterials {
     public static Material Bedrockium;
     public static Material Tengam;
     public static Material AttunedTengam;
+    public static Material Tartarite;
     public static Material Magic;
     public static Material Space;
 
