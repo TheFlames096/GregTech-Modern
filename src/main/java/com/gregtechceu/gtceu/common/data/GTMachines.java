@@ -1319,6 +1319,7 @@ public final static MultiblockMachineDefinition BACTERIAL_VAT = REGISTRATE.multi
             .register();
 
         public final static MultiblockMachineDefinition PCB_BIOCHAMBER = REGISTRATE.multiblock("pcb_biochamber", PCBBiochamber::new)
+            .langValue("Biochamber")
             .rotationState(RotationState.NON_Y_AXIS)
             .appearanceBlock(CASING_STAINLESS_CLEAN)
             .recipeType(GTRecipeTypes.DUMMY_RECIPES)
@@ -1339,9 +1340,9 @@ public final static MultiblockMachineDefinition BACTERIAL_VAT = REGISTRATE.multi
                 GTCEu.id("block/multiblock/distillation_tower"), false)
             .register();
 
-            public static final MultiblockMachineDefinition[] PCB_ENHANCER = registerTieredMultis("pcb_enhancer", PCBEnhancer::new, (tier, builder) -> builder
+        public static final MultiblockMachineDefinition[] PCB_ENHANCER = registerTieredMultis("pcb_enhancer", PCBEnhancer::new, (tier, builder) -> builder
             .rotationState(RotationState.NON_Y_AXIS)
-            .langValue("PCB Upgrade T".formatted(tier))
+            .langValue("PCB Upgrade T%d".formatted(tier))
             .recipeType(GTRecipeTypes.DUMMY_RECIPES)
             .appearanceBlock(PCBEnhancer.getCasingType(tier))
             .pattern((definition) -> {
@@ -1364,11 +1365,13 @@ public final static MultiblockMachineDefinition BACTERIAL_VAT = REGISTRATE.multi
                         .where(' ', any())
                         .build();
             })
+            .workableCasingRenderer(GTCEu.id(tier==2?"block/casings/framework/reinforced_photolithographic_framework":"block/casings/framework/radiation_proof_photolithographic_framework"),
+            GTCEu.id("block/multiblock/distillation_tower"))
             .register(),
     2,3);
 
 
-    public static final MultiblockMachineDefinition[] PCB_OVERCLOCKER = registerTieredMultis("pcb_overclocker", PCBOverclocker::new, (tier, builder) -> builder
+        public static final MultiblockMachineDefinition[] PCB_OVERCLOCKER = registerTieredMultis("pcb_overclocker", PCBOverclocker::new, (tier, builder) -> builder
     .rotationState(RotationState.NON_Y_AXIS)
     .langValue(tier==0?"Cooling Tower":"Thermosink")
     .recipeType(GTRecipeTypes.DUMMY_RECIPES)
@@ -1393,7 +1396,8 @@ public final static MultiblockMachineDefinition BACTERIAL_VAT = REGISTRATE.multi
                 .where('#', air())
                 .where(' ', any())
                 .build();
-    })
+    }).workableCasingRenderer(GTCEu.id("block/casings/framework/reinforced_photolithographic_framework"),
+                GTCEu.id("block/multiblock/distillation_tower"))
     .register(),
 0,1);
 

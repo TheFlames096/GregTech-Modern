@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "gtceu:naquadah_alloy_framework_pipe_casing"
+          "name": "gtceu:basic_photolithographic_framework"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "gtceu:blocks/naquadah_alloy_framework_pipe_casing"
+  "random_sequence": "gtceu:blocks/basic_photolithographic_framework"
 }
