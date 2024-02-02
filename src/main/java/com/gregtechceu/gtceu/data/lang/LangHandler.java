@@ -109,6 +109,7 @@ public class LangHandler {
         provider.add("gtceu.tooltip.hold_ctrl", "§7Hold CTRL for more info");
         provider.add("gtceu.tooltip.fluid_pipe_hold_shift", "§7Hold SHIFT to show Fluid Containment Info");
         provider.add("gtceu.tooltip.tool_fluid_hold_shift", "§7Hold SHIFT to show Fluid Containment and Tool Info");
+        provider.add("gtceu.tooltip.coordinate", "Saved Coordinate: §e%d %d %d");
         provider.add("metaitem.generic.fluid_container.tooltip", "%d/%dL %s");
         provider.add("metaitem.generic.electric_item.tooltip", "%d/%d EU - Tier %s");
         provider.add("metaitem.generic.electric_item.stored", "%d/%d EU (%s)");
@@ -680,6 +681,7 @@ public class LangHandler {
         provider.add("metaitem.terminal.tooltip.creative", "§bCreative Mode");
         provider.add("metaitem.terminal.tooltip.hardware", "§aHardware: %d");
         provider.add("gtceu.petri_dish.culture", "Contained Culture : §a%s");
+        provider.add("gtceu.display.coordinate", "Saved Coordinate: %d %d %d");
         provider.add("metaitem.plugin.tooltips.1", "Plugins can be added to the screen for more functionality.");
         provider.add("metaitem.plugin.proxy.tooltips.1", "(Please adjust to proxy mode in the screen)");
         provider.add("metaitem.cover.digital.tooltip", "Connects machines over §fPower Cables§7 to the §fCentral Monitor§7 as §fCover§7.");
@@ -1139,6 +1141,10 @@ public class LangHandler {
         provider.add("gtceu.multiblock.power_substation.time_years", "%s Years");
         provider.add("gtceu.multiblock.power_substation.time_forever", "Forever");
         provider.add("gtceu.multiblock.power_substation.under_one_hour_left", "Less than 1 hour until fully drained!");
+        provider.add("gtceu.multiblock.pcb.attached_to", "Attached to Machine at %s");
+        provider.add("gtceu.multiblock.pcb.insert_stick_success", "The machine's coordinates have been written.");
+        provider.add("gtceu.multiblock.pcb.insert_stick", "Insert a Data Stick to get the machine's coordinates");
+
         provider.add("gtceu.command.usage", "Usage: /gtceu <worldgen/hand/recipecheck>");
         provider.add("gtceu.command.worldgen.usage", "Usage: /gtceu worldgen <reload>");
         provider.add("gtceu.command.worldgen.reload.usage", "Usage: /gtceu worldgen reload");

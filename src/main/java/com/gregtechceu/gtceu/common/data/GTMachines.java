@@ -38,6 +38,7 @@ import com.gregtechceu.gtceu.client.renderer.machine.*;
 import com.gregtechceu.gtceu.common.block.BoilerFireboxType;
 import com.gregtechceu.gtceu.common.machine.electric.*;
 import com.gregtechceu.gtceu.common.machine.multiblock.electric.*;
+import com.gregtechceu.gtceu.common.machine.multiblock.electric.PCBFactory.*;
 import com.gregtechceu.gtceu.common.machine.multiblock.generator.LargeCombustionEngineMachine;
 import com.gregtechceu.gtceu.common.machine.multiblock.generator.LargeTurbineMachine;
 import com.gregtechceu.gtceu.common.machine.multiblock.part.*;
@@ -55,6 +56,7 @@ import com.gregtechceu.gtceu.common.pipelike.fluidpipe.longdistance.LDFluidEndpo
 import com.gregtechceu.gtceu.common.pipelike.item.longdistance.LDItemEndpointMachine;
 import com.gregtechceu.gtceu.config.ConfigHolder;
 import com.gregtechceu.gtceu.data.lang.LangHandler;
+import com.gregtechceu.gtceu.data.recipe.CustomTags;
 import com.gregtechceu.gtceu.integration.ae2.GTAEMachines;
 import com.gregtechceu.gtceu.integration.kjs.GTRegistryInfo;
 import com.gregtechceu.gtceu.utils.FormattingUtil;
@@ -63,6 +65,8 @@ import com.lowdragmc.lowdraglib.Platform;
 import com.lowdragmc.lowdraglib.side.fluid.FluidHelper;
 import com.lowdragmc.lowdraglib.side.fluid.FluidStack;
 import com.lowdragmc.lowdraglib.utils.BlockInfo;
+import com.tterrag.registrate.util.entry.BlockEntry;
+
 import it.unimi.dsi.fastutil.Pair;
 import it.unimi.dsi.fastutil.ints.Int2LongFunction;
 import it.unimi.dsi.fastutil.objects.Object2IntArrayMap;
@@ -97,6 +101,9 @@ import static com.gregtechceu.gtceu.api.pattern.util.RelativeDirection.*;
 import static com.gregtechceu.gtceu.common.registry.GTRegistration.REGISTRATE;
 import static com.gregtechceu.gtceu.common.data.GTBlocks.*;
 import static com.gregtechceu.gtceu.common.data.GTCreativeModeTabs.MACHINE;
+import static com.gregtechceu.gtceu.common.data.GTMachines.PCB_ENHANCER;
+import static com.gregtechceu.gtceu.common.data.GTMaterials.Americium;
+import static com.gregtechceu.gtceu.common.data.GTMaterials.DamascusSteel;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.DrillingFluid;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.DUMMY_RECIPES;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.STEAM_BOILER_RECIPES;
@@ -1182,12 +1189,8 @@ public class GTMachines {
                     .aisle("XXX", "XSX", "XXX")
                     .where('S', Predicates.controller(blocks(definition.getBlock())))
                     .where('X', blocks(CASING_ALUMINIUM_FROSTPROOF.get()).setMinGlobalLimited(14)
-                                .or(Predicates.abilities(PartAbility.EXPORT_ITEMS))
-                                .or(Predicates.abilities(PartAbility.IMPORT_ITEMS))
-                                .or(Predicates.abilities(PartAbility.INPUT_ENERGY))
-                                .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setExactLimit(1))
-                                .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setExactLimit(1))
-                                .or(Predicates.autoAbilities(true, true, false)))
+                        .or(Predicates.autoAbilities(definition.getRecipeTypes()))
+                        .or(Predicates.autoAbilities(true, true, false)))
                     .where('#', Predicates.air())
                     .build())
             .workableCasingRenderer(GTCEu.id("block/casings/solid/machine_casing_frost_proof"),
@@ -1198,21 +1201,27 @@ public class GTMachines {
 public final static MultiblockMachineDefinition BACTERIAL_VAT = REGISTRATE.multiblock("bacterial_vat", BacterialVat::new)
             .rotationState(RotationState.NON_Y_AXIS)
             .recipeType(GTRecipeTypes.BACTERIAL_VAT_RECIPES)
-//            .recipeModifier(GTRecipeModifiers.ELECTRIC_OVERCLOCK.apply(OverclockingLogic.NON_PERFECT_OVERCLOCK))
             .recipeModifier(BacterialVat::recipeModifier,true)
             .appearanceBlock(CASING_STAINLESS_CLEAN)
             .pattern(definition -> FactoryBlockPattern.start()
-                    .aisle("XXX", "XXX", "XXX")
-                    .aisle("XXX", "X#X", "XXX")
-                    .aisle("XXX", "XSX", "XXX")
+                    .aisle("BBBBB","AAAAA","AAAAA","BBBBB")
+                    .aisle("BBBBB","A###A","A###A","BBBBB")
+                    .aisle("BBBBB","A###A","A###A","BBBBB")
+                    .aisle("BBBBB","A###A","A###A","BBBBB")
+                    .aisle("BBSBB","AAAAA","AAAAA","BBBBB")
                     .where('S', Predicates.controller(blocks(definition.getBlock())))
-                    .where('X', blocks(CASING_STAINLESS_CLEAN.get()).setMinGlobalLimited(14)
-                            .or(Predicates.autoAbilities(definition.getRecipeTypes()))
-                            .or(Predicates.autoAbilities(true, true, false)))
+                    .where('A', blocks(CASING_TEMPERED_GLASS.get()))
+                    .where('B', blocks(CASING_STAINLESS_CLEAN.get())
+                        .or(Predicates.abilities(PartAbility.EXPORT_ITEMS))
+                        .or(Predicates.abilities(PartAbility.IMPORT_ITEMS))
+                        .or(Predicates.abilities(PartAbility.INPUT_ENERGY))
+                        .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setExactLimit(1))
+                        .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setExactLimit(1))
+                        .or(Predicates.autoAbilities(true, false, false)))
                     .where('#', Predicates.air())
                     .build())
-            .workableCasingRenderer(GTCEu.id("block/casings/solid/machine_casing_frost_proof"),
-                    GTCEu.id("block/multiblock/vacuum_freezer"), false)
+            .workableCasingRenderer(GTCEu.id("block/casings/solid/machine_casing_clean_stainless_steel"),
+            GTCEu.id("block/multiblock/distillation_tower"), false)
             .compassSections(GTCompassSections.TIER[EV])
             .compassNodeSelf()
             .register();
@@ -1309,7 +1318,86 @@ public final static MultiblockMachineDefinition BACTERIAL_VAT = REGISTRATE.multi
             .compassNodeSelf()
             .register();
 
-    public static final MultiblockMachineDefinition[] FUSION_REACTOR = registerTieredMultis("fusion_reactor", FusionReactorMachine::new, (tier, builder) -> builder
+        public final static MultiblockMachineDefinition PCB_BIOCHAMBER = REGISTRATE.multiblock("pcb_biochamber", PCBBiochamber::new)
+            .rotationState(RotationState.NON_Y_AXIS)
+            .appearanceBlock(CASING_STAINLESS_CLEAN)
+            .recipeType(GTRecipeTypes.DUMMY_RECIPES)
+            .pattern(definition -> FactoryBlockPattern.start()
+                    .aisle("CBBBC CBBBC","CAAAC CAAAC","CAAAC CAAAC","CAAAC CAAAC","C   C C   C","           ","           ")
+                    .aisle("BBBBB BBBBB","A###A A###A","A###A A###A","A###A A###A"," BBB   BBB ","           ","           ")
+                    .aisle("BBBBB BBBBB","A###A A###A","A###A A###A","A###A A###A"," BBB   BBB ","  B     B  ","   BBBBB   ")
+                    .aisle("BBBBB BBBBB","A###A A###A","A###A A###A","A###A A###A"," BBB   BBB ","           ","           ")
+                    .aisle("CBBBCSCBBBC","CAAAC CAAAC","CAAAC CAAAC","CAAAC CAAAC","C   C C   C","           ","           ")
+                    .where('S', Predicates.controller(blocks(definition.getBlock())))
+                    .where('#', Predicates.air())
+                    .where(' ', Predicates.any())
+                    .where('A', blocks(CASING_TEMPERED_GLASS.get()))
+                    .where('B', blocks(CASING_STAINLESS_CLEAN.get()))
+                    .where('C', frames(DamascusSteel))
+                    .build())
+            .workableCasingRenderer(GTCEu.id("block/casings/solid/machine_casing_clean_stainless_steel"),
+                GTCEu.id("block/multiblock/distillation_tower"), false)
+            .register();
+
+            public static final MultiblockMachineDefinition[] PCB_ENHANCER = registerTieredMultis("pcb_enhancer", PCBEnhancer::new, (tier, builder) -> builder
+            .rotationState(RotationState.NON_Y_AXIS)
+            .langValue("PCB Upgrade T".formatted(tier))
+            .recipeType(GTRecipeTypes.DUMMY_RECIPES)
+            .appearanceBlock(PCBEnhancer.getCasingType(tier))
+            .pattern((definition) -> {
+                BlockEntry<Block> casing = PCBEnhancer.getCasingType(tier);
+                return FactoryBlockPattern.start()
+                        .aisle(" BBBBB ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ")
+                        .aisle("BBBBBBB","  BBB  ","  BBB  ","  BBB  ","  BBB  ","  BBB  ","       ","       ","       ","  BBB  ","  BBB  ","  BBB  ","  B B  ","  B B  ","  B B  ","  BBB  ","  BBB  ","  BBB  ","       ","       ","       ","       ")
+                        .aisle("BBBBBBB"," B###B "," B###B "," B###B "," B###B "," B###B ","  AAA  ","  AAA  ","  AAA  "," B###B "," B###B "," B###B "," B#A#B "," B#A#B "," B#A#B "," B###B "," B###B "," B###B ","  AAA  ","  AAA  ","       ","       ")
+                        .aisle("BBBBBBB"," B###B "," B###B "," B###B "," B###B "," B###B ","  A#A  ","  A#A  ","  A#A  ","  A#A  "," B###B "," B###B "," B###B "," B###B "," B###B "," B###B "," B###B "," B###B ","  A#A  ","  ABA  ","   B   ","       ")
+                        .aisle("BBBBBBB"," B###B "," B###B "," B###B "," B###B "," B###B ","  A#A  ","  A#A  ","  A#A  ","  A#A  "," B###B "," B###B "," B###B "," B###B "," B###B "," B###B "," B###B "," B###B ","  A#A  ","  A#A  ","   B   ","   B   ")
+                        .aisle("BBBBBBB"," B###B "," B###B "," B###B "," B###B "," B###B "," B###B "," B###B "," B###B ","  A#A  "," B###B "," B###B ","  A#A  ","  A#A  ","  A#A  ","  A#A  ","  A#A  ","  A#A  ","  A#A  ","  A#A  ","   B   ","   B   ")
+                        .aisle("BBBBBBB"," B###B "," B###B "," B###B "," B###B "," B###B "," B###B "," B###B "," B###B ","  A#A  "," B###B "," B###B ","  A#A  ","  A#A  ","  ABA  ","  ABA  ","   B   ","   B   ","   B   ","   B   ","   B   ","       ")
+                        .aisle("BBBBBBB"," B###B "," B###B "," B###B "," B###B "," B###B "," B###B "," B###B "," B###B "," B###B "," B###B "," B###B ","  AAA  ","  AAA  ","       ","       ","       ","       ","       ","       ","       ","       ")
+                        .aisle("BBBBBBB","  BBB  ","  BBB  ","  BBB  ","  BBB  ","  BBB  ","  BBB  ","  BBB  ","  BBB  ","  BBB  ","  BBB  ","  BBB  ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ")
+                        .aisle(" BBSBB ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ","       ")
+                        .where('S', controller(blocks(definition.get())))
+                        .where('A', blocks(CASING_RADIANT_NAQUADAH_ALLOY_FRAMEWORK.get()))
+                        .where('B', blocks(casing.get()))
+                        .where('#', air())
+                        .where(' ', any())
+                        .build();
+            })
+            .register(),
+    2,3);
+
+
+    public static final MultiblockMachineDefinition[] PCB_OVERCLOCKER = registerTieredMultis("pcb_overclocker", PCBOverclocker::new, (tier, builder) -> builder
+    .rotationState(RotationState.NON_Y_AXIS)
+    .langValue(tier==0?"Cooling Tower":"Thermosink")
+    .recipeType(GTRecipeTypes.DUMMY_RECIPES)
+    .appearanceBlock(CASING_REINFORCED_PHOTOLITHOGRAPHIC_FRAMEWORK)
+    .pattern((definition) -> {
+        BlockEntry<Block> uppercasing = tier==0?CASING_RADIANT_NAQUADAH_ALLOY_FRAMEWORK:CASING_INFINITE_COOLING_FRAMEWORK;
+        return FactoryBlockPattern.start()
+                .aisle("FDDDF","FAAAF","F   F","F   F","FBBBF","F   F","F   F","F   F","F   F","FGGGF")
+                .aisle("DDDDD","ACCCA"," CCC "," CCC ","BCCCB"," CCC "," CCC "," AAA "," GGG ","G   G")
+                .aisle("DDDDD","ACECA"," CEC "," CEC ","BCECB"," CEC "," CEC "," AEA "," GEG ","G   G")
+                .aisle("DDDDD","ACCCA"," CCC "," CCC ","BCCCB"," CCC "," CCC "," AAA "," GGG ","G   G")
+                .aisle("FDSDF","FAAAF","F   F","F   F","FBBBF","F   F","F   F","F   F","F   F","FGGGF")
+                .where('S', controller(blocks(definition.get())))
+                .where('A', blocks(CASING_TUNGSTENSTEEL_PIPE.get()))
+                .where('B', (tier==0?blocks(CASING_EXTREME_ENGINE_INTAKE.get()):any()))
+                .where('C', (tier==0?blocks(CASING_RADIANT_NAQUADAH_ALLOY_FRAMEWORK.get()):blocks(CASING_INFINITE_COOLING_FRAMEWORK.get())))
+                .where('D', blocks(CASING_REINFORCED_PHOTOLITHOGRAPHIC_FRAMEWORK.get())
+                        .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setExactLimit(1)))
+                .where('E', (tier==0?air():blocks(SUPERCONDUCTING_COIL.get())))
+                .where('F', (tier==0?frames(DamascusSteel):frames(Americium)))
+                .where('G', (tier==0?blocks(CASING_RADIANT_NAQUADAH_ALLOY_FRAMEWORK.get()):blocks(CASING_REINFORCED_PHOTOLITHOGRAPHIC_FRAMEWORK.get())))
+                .where('#', air())
+                .where(' ', any())
+                .build();
+    })
+    .register(),
+0,1);
+
+        public static final MultiblockMachineDefinition[] FUSION_REACTOR = registerTieredMultis("fusion_reactor", FusionReactorMachine::new, (tier, builder) -> builder
                     .rotationState(RotationState.NON_Y_AXIS)
                     .langValue("Fusion Reactor Computer MK %s".formatted(toRomanNumeral(tier - 5)))
                     .recipeType(GTRecipeTypes.FUSION_RECIPES)

@@ -24,6 +24,7 @@
     "gtceu:tuff_tin_ore",
     "gtceu:tuff_naquadah_ore",
     "gtceu:tuff_trinium_ore",
+    "gtceu:tuff_tartarite_ore",
     "gtceu:tuff_almandine_ore",
     "gtceu:tuff_asbestos_ore",
     "gtceu:tuff_hematite_ore",
@@ -119,7 +120,7 @@
   "page": "gtceu:generation/tuff",
   "position": [
     -200,
-    50
+    100
   ],
   "pre_nodes": [
     "gtceu:generation/ore"

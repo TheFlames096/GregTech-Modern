@@ -24,6 +24,7 @@
     "gtceu:deepslate_tin_ore",
     "gtceu:deepslate_naquadah_ore",
     "gtceu:deepslate_trinium_ore",
+    "gtceu:deepslate_tartarite_ore",
     "gtceu:deepslate_almandine_ore",
     "gtceu:deepslate_asbestos_ore",
     "gtceu:deepslate_hematite_ore",
@@ -118,7 +119,7 @@
   ],
   "page": "gtceu:generation/deepslate",
   "position": [
-    -50,
+    -100,
     150
   ],
   "pre_nodes": [

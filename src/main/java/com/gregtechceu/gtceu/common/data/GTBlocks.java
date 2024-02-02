@@ -485,6 +485,14 @@ public class GTBlocks {
     public static final BlockEntry<Block> CASING_TITANIUM_PIPE = createCasingBlock("titanium_pipe_casing", GTCEu.id("block/casings/pipe/machine_casing_pipe_titanium"));
     public static final BlockEntry<Block> CASING_TUNGSTENSTEEL_PIPE = createCasingBlock("tungstensteel_pipe_casing", GTCEu.id("block/casings/pipe/machine_casing_pipe_tungstensteel"));
     public static final BlockEntry<Block> CASING_POLYTETRAFLUOROETHYLENE_PIPE = createPipeCasingBlock("ptfe", GTCEu.id("block/casings/pipe/machine_casing_pipe_polytetrafluoroethylene"));
+
+    // Frameworks
+    public static final BlockEntry<Block> CASING_BASIC_PHOTOLITHOGRAPHIC_FRAMEWORK = createPipeCasingBlock("basic_photolithographic_framework", GTCEu.id("block/casings/framework/basic_photolithographic_framework"));
+    public static final BlockEntry<Block> CASING_REINFORCED_PHOTOLITHOGRAPHIC_FRAMEWORK = createPipeCasingBlock("reinforced_photolithographic_framework", GTCEu.id("block/casings/framework/reinforced_photolithographic_framework"));
+    public static final BlockEntry<Block> CASING_RADIATION_PROOF_PHOTOLITHOGRAPHIC_FRAMEWORK = createPipeCasingBlock("radiation_proof_photolithographic_framework", GTCEu.id("block/casings/framework/radiation_proof_photolithographic_framework"));
+    public static final BlockEntry<Block> CASING_RADIANT_NAQUADAH_ALLOY_FRAMEWORK = createPipeCasingBlock("naquadah_alloy_framework", GTCEu.id("block/casings/framework/naquadah_alloy_framework"));
+    public static final BlockEntry<Block> CASING_INFINITE_COOLING_FRAMEWORK = createPipeCasingBlock("infinite_cooling_framework", GTCEu.id("block/casings/framework/infinite_cooling_framework"));
+
     public static final BlockEntry<MinerPipeBlock> MINER_PIPE = REGISTRATE.block("miner_pipe", MinerPipeBlock::new)
             .initialProperties(() -> Blocks.BEDROCK)
             .properties(BlockBehaviour.Properties::noOcclusion)

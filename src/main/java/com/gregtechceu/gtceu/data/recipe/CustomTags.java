@@ -60,17 +60,17 @@ public class CustomTags {
     public static final TagKey<Item> OpV_BATTERIES = TagUtil.createModItemTag("batteries/opv");
     public static final TagKey<Item> MAX_BATTERIES = TagUtil.createModItemTag("batteries/max");
 
-    public static final TagKey<Item> EV_GLASS = TagUtil.createModItemTag("glass/ev");
-    public static final TagKey<Item> IV_GLASS = TagUtil.createModItemTag("glass/iv");
-    public static final TagKey<Item> LuV_GLASS = TagUtil.createModItemTag("glass/luv");
-    public static final TagKey<Item> ZPM_GLASS = TagUtil.createModItemTag("glass/zpm");
-    public static final TagKey<Item> UV_GLASS = TagUtil.createModItemTag("glass/uv");
-    public static final TagKey<Item> UHV_GLASS = TagUtil.createModItemTag("glass/uhv");
-    public static final TagKey<Item> UEV_GLASS = TagUtil.createModItemTag("glass/uev");
-    public static final TagKey<Item> UIV_GLASS = TagUtil.createModItemTag("glass/uiv");
-    public static final TagKey<Item> UXV_GLASS = TagUtil.createModItemTag("glass/uxv");
-    public static final TagKey<Item> OpV_GLASS = TagUtil.createModItemTag("glass/opv");
-    public static final TagKey<Item> MAX_GLASS = TagUtil.createModItemTag("glass/max");
+    public static final TagKey<Item> EV_GLASS = TagUtil.createItemTag("glass/ev");
+    public static final TagKey<Item> IV_GLASS = TagUtil.createItemTag("glass/iv");
+    public static final TagKey<Item> LuV_GLASS = TagUtil.createItemTag("glass/luv");
+    public static final TagKey<Item> ZPM_GLASS = TagUtil.createItemTag("glass/zpm");
+    public static final TagKey<Item> UV_GLASS = TagUtil.createItemTag("glass/uv");
+    public static final TagKey<Item> UHV_GLASS = TagUtil.createItemTag("glass/uhv");
+    public static final TagKey<Item> UEV_GLASS = TagUtil.createItemTag("glass/uev");
+    public static final TagKey<Item> UIV_GLASS = TagUtil.createItemTag("glass/uiv");
+    public static final TagKey<Item> UXV_GLASS = TagUtil.createItemTag("glass/uxv");
+    public static final TagKey<Item> OpV_GLASS = TagUtil.createItemTag("glass/opv");
+    public static final TagKey<Item> MAX_GLASS = TagUtil.createItemTag("glass/max");
 
 
     // Platform-dependent tags

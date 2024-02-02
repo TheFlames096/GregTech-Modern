@@ -24,6 +24,7 @@
     "gtceu:andesite_tin_ore",
     "gtceu:andesite_naquadah_ore",
     "gtceu:andesite_trinium_ore",
+    "gtceu:andesite_tartarite_ore",
     "gtceu:andesite_almandine_ore",
     "gtceu:andesite_asbestos_ore",
     "gtceu:andesite_hematite_ore",
@@ -118,8 +119,8 @@
   ],
   "page": "gtceu:generation/andesite",
   "position": [
-    -100,
-    150
+    -50,
+    50
   ],
   "pre_nodes": [
     "gtceu:generation/ore"

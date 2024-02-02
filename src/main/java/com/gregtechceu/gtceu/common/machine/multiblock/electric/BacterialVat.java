@@ -334,15 +334,4 @@ public class BacterialVat extends WorkableElectricMultiblockMachine implements I
         return widget;
     }
 
-    //////////////////////////////////////
-    //********     Structure    ********//
-    //////////////////////////////////////
-    public static Block getCasingState(int tier) {
-        if (tier <= GTValues.IV) {
-            return GTBlocks.CASING_TUNGSTENSTEEL_ROBUST.get();
-        } else {
-            return GTBlocks.CASING_HSSE_STURDY.get();
-        }
-    }
-
 }

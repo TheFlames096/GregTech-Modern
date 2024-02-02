@@ -23,11 +23,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
-/**
- * @author KilaBash
- * @date 2023/2/22
- * @implNote ComponentItem
- */
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class PetriDishItem extends Item{

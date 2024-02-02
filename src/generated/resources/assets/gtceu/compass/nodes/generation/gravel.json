@@ -24,6 +24,7 @@
     "gtceu:gravel_tin_ore",
     "gtceu:gravel_naquadah_ore",
     "gtceu:gravel_trinium_ore",
+    "gtceu:gravel_tartarite_ore",
     "gtceu:gravel_almandine_ore",
     "gtceu:gravel_asbestos_ore",
     "gtceu:gravel_hematite_ore",
@@ -118,7 +119,7 @@
   ],
   "page": "gtceu:generation/gravel",
   "position": [
-    -200,
+    -50,
     100
   ],
   "pre_nodes": [

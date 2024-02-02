@@ -45,7 +45,7 @@ public class ElementMaterials {
                 .ingot(3).plasma()
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1449))
                 .color(0x287869).iconSet(RADIOACTIVE)
-                .appendFlags(EXT_METAL, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .appendFlags(EXT_METAL, GENERATE_FOIL, GENERATE_FINE_WIRE,GENERATE_FRAME)
                 .element(GTElements.Am)
                 .itemPipeProperties(64, 64)
                 .buildAndRegister();
@@ -111,7 +111,7 @@ public class ElementMaterials {
                 .buildAndRegister();
 
         Boron = new Material.Builder(GTCEu.id("boron"))
-                .dust().plasma()
+                .dust().plasma().fluid()
                 .color(0xd7f7d7).secondaryColor(0x5f6152)
                 .element(GTElements.B)
                 .buildAndRegister();
@@ -128,13 +128,14 @@ public class ElementMaterials {
                 .buildAndRegister();
 
         Calcium = new Material.Builder(GTCEu.id("calcium"))
-                .dust().plasma()
+                .dust().plasma().fluid()
                 .color(0xFFF5DE).secondaryColor(0xa4a4a4).iconSet(METALLIC)
                 .element(GTElements.Ca)
                 .buildAndRegister();
 
         Californium = new Material.Builder(GTCEu.id("californium"))
                 .color(0xA85A12).iconSet(RADIOACTIVE)
+                .fluid()
                 .element(GTElements.Cf)
                 .buildAndRegister();
 
@@ -203,6 +204,7 @@ public class ElementMaterials {
 
         Curium = new Material.Builder(GTCEu.id("curium"))
                 .color(0x7B544E).iconSet(RADIOACTIVE)
+                .fluid()
                 .element(GTElements.Cm)
                 .buildAndRegister();
 
@@ -253,12 +255,12 @@ public class ElementMaterials {
 
         Fermium = new Material.Builder(GTCEu.id("fermium"))
                 .color(0xc99fe7).secondaryColor(0x3e0022).iconSet(METALLIC)
-                .element(GTElements.Fm)
+                .element(GTElements.Fm).fluid()
                 .buildAndRegister();
 
         Flerovium = new Material.Builder(GTCEu.id("flerovium"))
                 .color(0x393d43).secondaryColor(0xd2ff00)
-                .iconSet(RADIOACTIVE)
+                .iconSet(RADIOACTIVE).fluid()
                 .element(GTElements.Fl)
                 .buildAndRegister();
 
@@ -287,7 +289,7 @@ public class ElementMaterials {
 
         Germanium = new Material.Builder(GTCEu.id("germanium"))
                 .color(0xe1e1e1).secondaryColor(0x6a6248).iconSet(SHINY)
-                .element(GTElements.Ge)
+                .element(GTElements.Ge).fluid()
                 .buildAndRegister();
 
         Gold = new Material.Builder(GTCEu.id("gold"))
@@ -494,6 +496,7 @@ public class ElementMaterials {
 
         Neptunium = new Material.Builder(GTCEu.id("neptunium"))
                 .color(0x284D7B).iconSet(RADIOACTIVE)
+                .plasma().fluid()
                 .element(GTElements.Np)
                 .buildAndRegister();
 
@@ -756,7 +759,7 @@ public class ElementMaterials {
 
         Tellurium = new Material.Builder(GTCEu.id("tellurium"))
                 .color(0xd9e8d2).secondaryColor(0x0018ff)
-                .iconSet(RADIOACTIVE)
+                .iconSet(RADIOACTIVE).fluid()
                 .element(GTElements.Te)
                 .buildAndRegister();
 
@@ -857,7 +860,7 @@ public class ElementMaterials {
                 .buildAndRegister();
 
         Xenon = new Material.Builder(GTCEu.id("xenon"))
-                .gas()
+                .gas().plasma()
                 .color(0x00FFFF)
                 .element(GTElements.Xe)
                 .buildAndRegister();

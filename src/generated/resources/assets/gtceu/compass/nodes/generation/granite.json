@@ -24,6 +24,7 @@
     "gtceu:granite_tin_ore",
     "gtceu:granite_naquadah_ore",
     "gtceu:granite_trinium_ore",
+    "gtceu:granite_tartarite_ore",
     "gtceu:granite_almandine_ore",
     "gtceu:granite_asbestos_ore",
     "gtceu:granite_hematite_ore",
@@ -118,8 +119,8 @@
   ],
   "page": "gtceu:generation/granite",
   "position": [
-    -150,
-    100
+    -200,
+    150
   ],
   "pre_nodes": [
     "gtceu:generation/ore"
