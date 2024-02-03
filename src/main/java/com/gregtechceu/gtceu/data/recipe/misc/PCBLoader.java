@@ -60,7 +60,7 @@ public class PCBLoader {
                 double currentUsage=baseEUUsage;
                 for(int i=0;i<8-materialTier;i++)
                 {
-                        var temp=PCB_RECIPES.recipeBuilder("pcb_"+name+"_"+i+"_2")
+                        var temp=PCB_RECIPES.recipeBuilder("pcb_"+name+"_"+i+"_1")
                         .circuitMeta(1)
                         .inputFluids(SulfuricAcid.getFluid(fluid1Amount*inputAmount[i]/16))
                         .inputFluids(Iron3Chloride.getFluid(fluid2Amount*inputAmount[i]/16))
