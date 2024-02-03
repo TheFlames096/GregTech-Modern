@@ -485,5 +485,13 @@ public class SecondDegreeMaterials {
                         EXCLUDE_PLATE_COMPRESSOR_RECIPE, DECOMPOSITION_BY_CENTRIFUGING)
                 .components(Silicon, 1, Pyrite, 5, Ruby, 1, Mercury, 3)
                 .buildAndRegister();
+
+        FiberReinforcedEpoxyResin = new Material.Builder(GTCEu.id("fiber_reinforced_epoxy_resin"))
+                .dust()
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(500))
+                .color(0xca8832).secondaryColor(0x340605).iconSet(ROUGH)
+                .flags(GENERATE_PLATE)
+                .components(Epoxy,1)
+                .buildAndRegister();
     }
 }

@@ -1,7 +1,9 @@
 package com.gregtechceu.gtceu.common.machine.multiblock.electric.PCBFactory;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.annotation.Nullable;
 
@@ -18,6 +20,7 @@ import com.gregtechceu.gtceu.api.machine.feature.multiblock.IDisplayUIMachine;
 import com.gregtechceu.gtceu.api.machine.multiblock.MultiblockControllerMachine;
 import com.gregtechceu.gtceu.api.machine.multiblock.WorkableElectricMultiblockMachine;
 import com.gregtechceu.gtceu.api.machine.trait.NotifiableItemStackHandler;
+import com.gregtechceu.gtceu.common.machine.multiblock.electric.BacterialVat;
 import com.lowdragmc.lowdraglib.gui.widget.SlotWidget;
 import com.lowdragmc.lowdraglib.gui.widget.Widget;
 import com.lowdragmc.lowdraglib.gui.widget.WidgetGroup;
@@ -35,9 +38,8 @@ public class PCBAttachment extends WorkableElectricMultiblockMachine implements 
 
     @Persisted @DescSynced
     public final NotifiableItemStackHandler machineStorage;
-
-    private CompoundTag coordinate = new CompoundTag();
-    protected List<PCBBasePart> attachedMachine = new ArrayList<PCBBasePart>();
+    protected static final ManagedFieldHolder MANAGED_FIELD_HOLDER = new ManagedFieldHolder(PCBAttachment.class, WorkableElectricMultiblockMachine.MANAGED_FIELD_HOLDER);
+    protected Set<PCBBasePart> attachedMachine = new HashSet<PCBBasePart>();
 
     public PCBAttachment(IMachineBlockEntity holder, Object... args) {
         super(holder,args);
@@ -70,9 +72,6 @@ public class PCBAttachment extends WorkableElectricMultiblockMachine implements 
     @Override
     public void onLoad() {
         super.onLoad();
-        coordinate.putInt("x", getPos().getX());
-        coordinate.putInt("y", getPos().getY());
-        coordinate.putInt("z", getPos().getZ());
         if (!isRemote()) {
             machineStorage.addChangedListener(this::onMachineChanged);
         }
@@ -82,6 +81,10 @@ public class PCBAttachment extends WorkableElectricMultiblockMachine implements 
         if (isFormed) {
             if(machineStorage.storage.getStackInSlot(0).getCount()>0)
             {
+                CompoundTag coordinate = new CompoundTag();
+                coordinate.putInt("x", getPos().getX());
+                coordinate.putInt("y", getPos().getY());
+                coordinate.putInt("z", getPos().getZ());
                 machineStorage.storage.getStackInSlot(0).addTagElement("coordinate", coordinate);
             }
         }

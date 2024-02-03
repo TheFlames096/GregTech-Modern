@@ -585,7 +585,7 @@ public class GTRecipeTypes {
             .setSound(GTSoundEntries.ARC)
             .addDataInfo(data -> LocalizationUtils.format("gtceu.recipe.eu_to_start", data.getLong("eu_to_start")));
 
-   public static final GTRecipeType PCB_RECIPES = register("pcb", MULTIBLOCK).setMaxIOSize(0, 0, 2, 1).setEUIO(IO.IN)
+   public static final GTRecipeType PCB_RECIPES = register("pcb", MULTIBLOCK).setMaxIOSize(6, 1, 3, 0).setEUIO(IO.IN)
             .setProgressBar(GuiTextures.PROGRESS_BAR_FUSION, LEFT_TO_RIGHT)
             .setSound(GTSoundEntries.ASSEMBLER)
             .addDataInfo(data -> LocalizationUtils.format("geceu.recipe.require_tier", data.getInt("tier")))

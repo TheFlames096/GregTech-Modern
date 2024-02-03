@@ -41,6 +41,7 @@
     "gtceu:endstone_cooperite_ore",
     "gtceu:endstone_diamond_ore",
     "gtceu:endstone_emerald_ore",
+    "gtceu:endstone_enriched_holmium_ore",
     "gtceu:endstone_galena_ore",
     "gtceu:endstone_garnierite_ore",
     "gtceu:endstone_green_sapphire_ore",
@@ -119,7 +120,7 @@
   ],
   "page": "gtceu:generation/endstone",
   "position": [
-    -50,
+    -150,
     150
   ],
   "pre_nodes": [

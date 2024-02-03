@@ -110,5 +110,26 @@ public class ForthDegreeMaterials {
                 .flags(GENERATE_PLATE, DECOMPOSITION_BY_CENTRIFUGING)
                 .components(NaquadahEnriched, 8, Tritanium, 5, Californium,3,BlackPlutonium,2)
                 .buildAndRegister();
+
+        Tairitsu = new Material.Builder(GTCEu.id("tairitsu"))
+                .ingot()
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(10775))
+                .colorAverage().iconSet(METALLIC)
+                .flags(GENERATE_PLATE, GENERATE_FOIL)
+                .components(Tungsten, 8, Naquadria, 7, Bedrockium,4,Carbon,4,Vanadium,3,BlackPlutonium,1)
+                .buildAndRegister();
+
+        Kevlar = new Material.Builder(GTCEu.id("kevlar"))
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(500))
+                .color(0xFFF8DC).iconSet(METALLIC)
+                .flags(GENERATE_PLATE)
+                .buildAndRegister();
+                
+        RadoxPolymer = new Material.Builder(GTCEu.id("radox_polymer"))
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(6203))
+                .color(0xae9abe).iconSet(METALLIC)
+                .flags(GENERATE_PLATE)
+                .components(Carbon, 14, Osmium, 11, Oxygen,7,Silver,3,Space,1,Water,1)
+                .buildAndRegister();
     }
 }

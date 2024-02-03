@@ -41,6 +41,7 @@
     "gtceu:red_sand_cooperite_ore",
     "gtceu:red_sand_diamond_ore",
     "gtceu:red_sand_emerald_ore",
+    "gtceu:red_sand_enriched_holmium_ore",
     "gtceu:red_sand_galena_ore",
     "gtceu:red_sand_garnierite_ore",
     "gtceu:red_sand_green_sapphire_ore",
@@ -119,7 +120,7 @@
   ],
   "page": "gtceu:generation/red_sand",
   "position": [
-    -150,
+    -100,
     150
   ],
   "pre_nodes": [

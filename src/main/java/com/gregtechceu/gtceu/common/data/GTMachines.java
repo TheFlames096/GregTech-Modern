@@ -1324,15 +1324,16 @@ public final static MultiblockMachineDefinition BACTERIAL_VAT = REGISTRATE.multi
                 .langValue("PCB Factory")
                 .rotationState(RotationState.NON_Y_AXIS)
                 .appearanceBlock(CASING_BASIC_PHOTOLITHOGRAPHIC_FRAMEWORK)
+                .recipeModifier(PCBBasePart::recipeModifier)
                 .recipeType(GTRecipeTypes.PCB_RECIPES)
                 .pattern(definition -> FactoryBlockPattern.start()
-                        .aisle("ECCCCCE","EAAAAAE","EAAAAAE","EAAAAAE","EEEEEEE","       ")
-                        .aisle("CDDDDDC","C#####C","C#####C","C#####C","CAAAAAC","E     E")
-                        .aisle("CDDDDDC","B#FFF#B","B#####B","C#####C","CAAAAAC","E     E")
-                        .aisle("CDDDDDC","B#FFF#B","B#####B","C#####C","CCCCCCC","EEEEEEE")
-                        .aisle("CDDDDDC","B#FFF#B","B#####B","C#####C","CCCCCCC","E     E")
+                        .aisle("ECCCCCE","ECCCCCE","ECCCCCE","ECCCCCE","E     E","       ")
                         .aisle("CDDDDDC","C#####C","C#####C","C#####C","CCCCCCC","E     E")
-                        .aisle("ECCSCCE","ECCCCCE","ECCCCCE","ECCCCCE","E     E","       ")
+                        .aisle("CDDDDDC","B#FFF#B","B#####B","C#####C","CCCCCCC","E     E")
+                        .aisle("CDDDDDC","B#FFF#B","B#####B","C#####C","CCCCCCC","EEEEEEE")
+                        .aisle("CDDDDDC","B#FFF#B","B#####B","C#####C","CAAAAAC","E     E")
+                        .aisle("CDDDDDC","C#####C","C#####C","C#####C","CAAAAAC","E     E")
+                        .aisle("ECCSCCE","EAAAAAE","EAAAAAE","EAAAAAE","EEEEEEE","       ")
                         .where('S', Predicates.controller(blocks(definition.getBlock())))
                         .where('#', Predicates.air())
                         .where(' ', Predicates.any())
@@ -1403,12 +1404,12 @@ public final static MultiblockMachineDefinition BACTERIAL_VAT = REGISTRATE.multi
 
 
         public static final MultiblockMachineDefinition[] PCB_OVERCLOCKER = registerTieredMultis("pcb_overclocker", PCBOverclocker::new, (tier, builder) -> builder
-    .rotationState(RotationState.NON_Y_AXIS)
-    .langValue(tier==0?"Cooling Tower":"Thermosink")
-    .recipeType(GTRecipeTypes.DUMMY_RECIPES)
-    .appearanceBlock(CASING_REINFORCED_PHOTOLITHOGRAPHIC_FRAMEWORK)
-    .pattern((definition) -> {
-        BlockEntry<Block> uppercasing = tier==0?CASING_RADIANT_NAQUADAH_ALLOY_FRAMEWORK:CASING_INFINITE_COOLING_FRAMEWORK;
+        .rotationState(RotationState.NON_Y_AXIS)
+        .langValue(tier==0?"Cooling Tower":"Thermosink")
+        .recipeTypes(GTRecipeTypes.COOLING_RECIPES,GTRecipeTypes.SUPER_COOLING_RECIPES)
+        .recipeModifier(PCBOverclocker::recipeModifier)
+        .appearanceBlock(CASING_REINFORCED_PHOTOLITHOGRAPHIC_FRAMEWORK)
+        .pattern((definition) -> {
         return FactoryBlockPattern.start()
                 .aisle("FDDDF","FAAAF","F   F","F   F","FBBBF","F   F","F   F","F   F","F   F","FGGGF")
                 .aisle("DDDDD","ACCCA"," CCC "," CCC ","BCCCB"," CCC "," CCC "," AAA "," GGG ","G   G")

@@ -52,7 +52,7 @@ public class FantasyElementsMaterials {
                 .ingot(6)
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(100_000))
                 .color(0xFFFFFF).secondaryColor(0x000000)
-                .appendFlags(EXT_METAL, GENERATE_BOLT_SCREW, GENERATE_FRAME)
+                .appendFlags(EXT_METAL, GENERATE_BOLT_SCREW, GENERATE_FRAME,GENERATE_FOIL)
                 .element(GTElements.Nt)
                 .toolStats(ToolProperty.Builder.of(180.0F, 100.0F, 65535, 6)
                         .attackSpeed(0.5F).enchantability(33).magnetic().unbreakable().build())
@@ -242,7 +242,7 @@ public class FantasyElementsMaterials {
         .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(9475))
         .color(0xffffff).secondaryColor(0xffffff).iconSet(SHINY)
         .element(GTElements.ChromaticGlass)
-        .appendFlags(EXT2_METAL,GENERATE_LENS)
+        .appendFlags(EXT2_METAL,GENERATE_LENS,GENERATE_FOIL)
         .buildAndRegister();
 
         CelestialTungsten = new Material.Builder(GTCEu.id("celestial_tungsten"))

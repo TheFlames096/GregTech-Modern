@@ -41,6 +41,7 @@
     "gtceu:basalt_cooperite_ore",
     "gtceu:basalt_diamond_ore",
     "gtceu:basalt_emerald_ore",
+    "gtceu:basalt_enriched_holmium_ore",
     "gtceu:basalt_galena_ore",
     "gtceu:basalt_garnierite_ore",
     "gtceu:basalt_green_sapphire_ore",
@@ -119,8 +120,8 @@
   ],
   "page": "gtceu:generation/basalt",
   "position": [
-    -200,
-    150
+    -150,
+    100
   ],
   "pre_nodes": [
     "gtceu:generation/ore"

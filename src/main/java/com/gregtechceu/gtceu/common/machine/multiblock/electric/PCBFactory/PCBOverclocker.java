@@ -25,47 +25,28 @@ import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
 import com.gregtechceu.gtceu.common.machine.multiblock.part.FluidHatchPartMachine;
 import com.tterrag.registrate.util.entry.BlockEntry;
 
+import lombok.Getter;
 import net.minecraft.world.level.block.Block;
 
 public class PCBOverclocker extends PCBAttachment{
 
-    public PCBOverclocker(IMachineBlockEntity holder,Object... args) {
-        super(holder,args);
+    @Getter
+    public final int tier;
+    public PCBOverclocker(IMachineBlockEntity holder,int tier) {
+        super(holder);
+        this.tier = tier;
     }
 
     @Override
     @Nonnull
     public GTRecipeType[] getRecipeTypes() {
-        return new GTRecipeType[]{GTRecipeTypes.COOLING_RECIPES,GTRecipeTypes.SUPER_COOLING_RECIPES};
+        return new GTRecipeType[]{this.getTier()==0?GTRecipeTypes.COOLING_RECIPES:GTRecipeTypes.SUPER_COOLING_RECIPES};
     }
 
     @NotNull
     @Override
     public GTRecipeType getRecipeType() {
-        return getRecipeTypes()[this.getTier()];
-    }
-
-    @Override
-    public void onWorking() {
-        super.onWorking();
-        long fluid=0;
-        for(IMultiPart part : getParts())
-        {
-            if(part instanceof FluidHatchPartMachine fluidHatch && fluidHatch.io==IO.IN)
-            {
-                for(int i=0;i<fluidHatch.tank.getTanks();i++)
-                {
-                    if((!fluidHatch.tank.getFluidInTank(i).isEmpty()) && fluidHatch.tank.getFluidInTank(i).getRawFluid()==(getTier()==0?GTMaterials.DistilledWater.getFluid():GTMaterials.PCBCoolant.getFluid()))
-                    {
-                        fluid+=fluidHatch.tank.getFluidInTank(i).getAmount();
-                    }
-                }
-            }
-        }
-        if(fluid==0 && recipeLogic.getLastRecipe()!=null)
-        {
-            setWorkingEnabled(false);
-        }
+        return getRecipeTypes()[0];
     }
 
     @Nullable
@@ -73,7 +54,10 @@ public class PCBOverclocker extends PCBAttachment{
     {
         if(machine instanceof PCBOverclocker overclocker)
         {
+            if(overclocker.attachedMachine.isEmpty())
+                return null;
             int parallel=0;
+            overclocker.attachedMachine.removeIf(Objects::isNull);
             for(PCBBasePart PCBmachine : overclocker.attachedMachine)
             {
                 if(PCBmachine.isActive() && PCBmachine.overclocker==overclocker)
@@ -87,6 +71,7 @@ public class PCBOverclocker extends PCBAttachment{
                 machine, original ,parallel, false));
             if(parallel_recipe.getB()<parallel)
             {
+                overclocker.recipeLogic.resetRecipeLogic();
                 overclocker.setWorkingEnabled(false);
                 return null;
             }

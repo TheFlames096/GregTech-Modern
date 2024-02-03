@@ -41,6 +41,7 @@
     "gtceu:granite_cooperite_ore",
     "gtceu:granite_diamond_ore",
     "gtceu:granite_emerald_ore",
+    "gtceu:granite_enriched_holmium_ore",
     "gtceu:granite_galena_ore",
     "gtceu:granite_garnierite_ore",
     "gtceu:granite_green_sapphire_ore",
@@ -119,7 +120,7 @@
   ],
   "page": "gtceu:generation/granite",
   "position": [
-    -150,
+    -50,
     50
   ],
   "pre_nodes": [

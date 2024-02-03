@@ -526,6 +526,7 @@ public class GTMaterials {
     public static Material Diamond;
     public static Material Electrum;
     public static Material Emerald;
+    public static Material EnrichedHolmium;
     public static Material Galena;
     public static Material Garnierite;
     public static Material GreenSapphire;
@@ -970,6 +971,7 @@ public class GTMaterials {
     public static Material SaltWater;
     public static Material Clay;
     public static Material Redstone;
+    public static Material FiberReinforcedEpoxyResin;
 
     /**
      * Third Degree Materials
@@ -1004,7 +1006,10 @@ public class GTMaterials {
     public static Material Mithril;
     public static Material AstralSilver;
     public static Material EnrichedNaquadahAlloy;
-
+    public static Material Tairitsu;
+    
+    public static Material Kevlar;
+    public static Material RadoxPolymer;
     /**
      * GCyM Materials
      */

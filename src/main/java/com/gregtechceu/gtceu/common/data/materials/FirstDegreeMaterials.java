@@ -227,6 +227,13 @@ public class FirstDegreeMaterials {
                 .components(Beryllium, 3, Aluminium, 2, Silicon, 6, Oxygen, 18)
                 .buildAndRegister();
 
+        EnrichedHolmium = new Material.Builder(GTCEu.id("enriched_holmium"))
+                .gem().ore(2, 1)
+                .colorAverage().iconSet(SHINY)
+                .appendFlags(EXT_METAL, GENERATE_FOIL)
+                .components(NaquadahEnriched, 4, Holmium, 1)
+                .buildAndRegister();
+
         Galena = new Material.Builder(GTCEu.id("galena"))
                 .dust(3).ore()
                 .color(0xf3e8fa).secondaryColor(0x331d42).iconSet(METALLIC)

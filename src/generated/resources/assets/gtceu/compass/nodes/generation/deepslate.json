@@ -41,6 +41,7 @@
     "gtceu:deepslate_cooperite_ore",
     "gtceu:deepslate_diamond_ore",
     "gtceu:deepslate_emerald_ore",
+    "gtceu:deepslate_enriched_holmium_ore",
     "gtceu:deepslate_galena_ore",
     "gtceu:deepslate_garnierite_ore",
     "gtceu:deepslate_green_sapphire_ore",
@@ -119,7 +120,7 @@
   ],
   "page": "gtceu:generation/deepslate",
   "position": [
-    -50,
+    -200,
     50
   ],
   "pre_nodes": [

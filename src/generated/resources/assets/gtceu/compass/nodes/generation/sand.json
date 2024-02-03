@@ -41,6 +41,7 @@
     "gtceu:sand_cooperite_ore",
     "gtceu:sand_diamond_ore",
     "gtceu:sand_emerald_ore",
+    "gtceu:sand_enriched_holmium_ore",
     "gtceu:sand_galena_ore",
     "gtceu:sand_garnierite_ore",
     "gtceu:sand_green_sapphire_ore",
@@ -119,8 +120,8 @@
   ],
   "page": "gtceu:generation/sand",
   "position": [
-    -50,
-    100
+    -100,
+    50
   ],
   "pre_nodes": [
     "gtceu:generation/ore"

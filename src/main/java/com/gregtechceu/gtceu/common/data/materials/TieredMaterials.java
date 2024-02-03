@@ -60,7 +60,7 @@ public class TieredMaterials {
         SuperconductorBaseUV =new Material.Builder(GTCEu.id("superconductor_base_uv"))
             .ingot(1).fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(9900))
             .colorAverage().iconSet(SHINY).cableProperties(GTValues.V[UV], 12, 4096)
-            .appendFlags(STD_METAL)
+            .appendFlags(STD_METAL,GENERATE_FOIL)
             .components(Naquadria,4,Osmiridium,3,Europium,1,Samarium,1)
             .blastTemp(9900, GasTier.LOW, GTValues.VA[LuV], 7714)
             .buildAndRegister();

@@ -41,6 +41,7 @@
     "gtceu:netherrack_cooperite_ore",
     "gtceu:netherrack_diamond_ore",
     "gtceu:netherrack_emerald_ore",
+    "gtceu:netherrack_enriched_holmium_ore",
     "gtceu:netherrack_galena_ore",
     "gtceu:netherrack_garnierite_ore",
     "gtceu:netherrack_green_sapphire_ore",
@@ -119,7 +120,7 @@
   ],
   "page": "gtceu:generation/netherrack",
   "position": [
-    -100,
+    -150,
     50
   ],
   "pre_nodes": [

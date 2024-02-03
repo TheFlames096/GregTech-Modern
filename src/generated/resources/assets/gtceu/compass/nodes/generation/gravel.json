@@ -41,6 +41,7 @@
     "gtceu:gravel_cooperite_ore",
     "gtceu:gravel_diamond_ore",
     "gtceu:gravel_emerald_ore",
+    "gtceu:gravel_enriched_holmium_ore",
     "gtceu:gravel_galena_ore",
     "gtceu:gravel_garnierite_ore",
     "gtceu:gravel_green_sapphire_ore",
@@ -119,7 +120,7 @@
   ],
   "page": "gtceu:generation/gravel",
   "position": [
-    -200,
+    -100,
     100
   ],
   "pre_nodes": [

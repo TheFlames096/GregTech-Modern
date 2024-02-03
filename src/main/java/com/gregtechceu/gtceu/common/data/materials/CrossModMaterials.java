@@ -47,7 +47,7 @@ public class CrossModMaterials {
                 .ingot(0)
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1200))
                 .color(0xFF8C00).iconSet(METALLIC)
-                .appendFlags(EXT_METAL, GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW)
+                .appendFlags(EXT_METAL, GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW,GENERATE_FOIL)
                 .components(Gold, 1, ConductiveIron, 1,BlackSteel,1)
                 .blastTemp(2200, GasTier.LOWEST, GTValues.VA[GTValues.MV], 1600)
                 .buildAndRegister();

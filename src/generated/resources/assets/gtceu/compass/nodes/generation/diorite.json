@@ -41,6 +41,7 @@
     "gtceu:diorite_cooperite_ore",
     "gtceu:diorite_diamond_ore",
     "gtceu:diorite_emerald_ore",
+    "gtceu:diorite_enriched_holmium_ore",
     "gtceu:diorite_galena_ore",
     "gtceu:diorite_garnierite_ore",
     "gtceu:diorite_green_sapphire_ore",
@@ -119,8 +120,8 @@
   ],
   "page": "gtceu:generation/diorite",
   "position": [
-    -150,
-    100
+    -200,
+    150
   ],
   "pre_nodes": [
     "gtceu:generation/ore"

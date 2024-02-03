@@ -1264,6 +1264,8 @@ public class GTItems {
     public static ItemEntry<Item> EXTREME_CIRCUIT_BOARD = REGISTRATE.item("fiber_reinforced_printed_circuit_board", Item::new).lang("Fiber-Reinforced Printed Circuit Board").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "circuit_board")).register();
     public static ItemEntry<Item> ELITE_CIRCUIT_BOARD = REGISTRATE.item("multilayer_fiber_reinforced_printed_circuit_board", Item::new).lang("Multi-layer Fiber-Reinforced Printed Circuit Board").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "circuit_board")).register();
     public static ItemEntry<Item> WETWARE_CIRCUIT_BOARD = REGISTRATE.item("wetware_printed_circuit_board", Item::new).lang("Wetware Printed Circuit Board").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "circuit_board")).register();
+    public static ItemEntry<Item> BIO_CIRCUIT_BOARD = REGISTRATE.item("ultra_bio_mutated_circuit_board", Item::new).lang("Ultra Bio Mutated Circuit Board").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "circuit_board")).register();
+    public static ItemEntry<Item> OPTICAL_CIRCUIT_BOARD = REGISTRATE.item("optical_circuit_board", Item::new).lang("Optical Circuit Board").onRegister(compassNodeExist(GTCompassSections.CIRCUITS, "circuit_board")).register();
 
     public static ItemEntry<Item> VACUUM_TUBE = REGISTRATE.item("vacuum_tube", Item::new).lang("Vacuum Tube").tag(CustomTags.ULV_CIRCUITS).onRegister(compassNode(GTCompassSections.CIRCUITS)).register();
     public static ItemEntry<Item> GLASS_TUBE = REGISTRATE.item("glass_tube", Item::new).lang("Glass Tube").onRegister(compassNode(GTCompassSections.CIRCUITS)).register();

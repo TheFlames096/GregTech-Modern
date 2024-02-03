@@ -41,6 +41,7 @@
     "gtceu:andesite_cooperite_ore",
     "gtceu:andesite_diamond_ore",
     "gtceu:andesite_emerald_ore",
+    "gtceu:andesite_enriched_holmium_ore",
     "gtceu:andesite_galena_ore",
     "gtceu:andesite_garnierite_ore",
     "gtceu:andesite_green_sapphire_ore",
@@ -119,8 +120,8 @@
   ],
   "page": "gtceu:generation/andesite",
   "position": [
-    -200,
-    50
+    -50,
+    150
   ],
   "pre_nodes": [
     "gtceu:generation/ore"

@@ -41,6 +41,7 @@
     "gtceu:cooperite_ore",
     "gtceu:diamond_ore",
     "gtceu:emerald_ore",
+    "gtceu:enriched_holmium_ore",
     "gtceu:galena_ore",
     "gtceu:garnierite_ore",
     "gtceu:green_sapphire_ore",
@@ -119,7 +120,7 @@
   ],
   "page": "gtceu:generation/stone",
   "position": [
-    -100,
+    -200,
     100
   ],
   "pre_nodes": [
