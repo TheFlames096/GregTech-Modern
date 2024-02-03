@@ -37,7 +37,7 @@ public class PCBAttachment extends WorkableElectricMultiblockMachine implements 
     public final NotifiableItemStackHandler machineStorage;
 
     private CompoundTag coordinate = new CompoundTag();
-    private List<PCBBasePart> attachedMachine = new ArrayList<PCBBasePart>();
+    protected List<PCBBasePart> attachedMachine = new ArrayList<PCBBasePart>();
 
     public PCBAttachment(IMachineBlockEntity holder, Object... args) {
         super(holder,args);
@@ -104,9 +104,9 @@ public class PCBAttachment extends WorkableElectricMultiblockMachine implements 
         {
             textList.add(Component.translatable("gtceu.multiblock.pcb.attached_to",machine.getPos().toShortString()));
         }
-        if(machineStorage.storage.getStackInSlot(0).getCount()>0)
+        if(machineStorage.storage.getStackInSlot(0).getCount()>0 && isFormed())
             textList.add(Component.translatable("gtceu.multiblock.pcb.insert_stick_success"));
-        else
+        else if(isFormed())
             textList.add(Component.translatable("gtceu.multiblock.pcb.insert_stick"));
     }
 

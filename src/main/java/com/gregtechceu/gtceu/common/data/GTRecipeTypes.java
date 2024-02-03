@@ -585,6 +585,22 @@ public class GTRecipeTypes {
             .setSound(GTSoundEntries.ARC)
             .addDataInfo(data -> LocalizationUtils.format("gtceu.recipe.eu_to_start", data.getLong("eu_to_start")));
 
+   public static final GTRecipeType PCB_RECIPES = register("pcb", MULTIBLOCK).setMaxIOSize(0, 0, 2, 1).setEUIO(IO.IN)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_FUSION, LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.ASSEMBLER)
+            .addDataInfo(data -> LocalizationUtils.format("geceu.recipe.require_tier", data.getInt("tier")))
+            .addDataInfo(data -> LocalizationUtils.format("geceu.recipe.require_bio", String.valueOf( data.getBoolean("require_bio"))));
+
+   public static final GTRecipeType COOLING_RECIPES = register("cooling", MULTIBLOCK).setMaxIOSize(0, 0, 1, 0).setEUIO(IO.NONE)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_FUSION, LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.CHEMICAL)
+            .addDataInfo(data -> LocalizationUtils.format("gtceu.recipe.cooling_cost",data.getString("liquid")));
+
+   public static final GTRecipeType SUPER_COOLING_RECIPES = register("super_cooling", MULTIBLOCK).setMaxIOSize(0, 0, 1, 0).setEUIO(IO.NONE)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_FUSION, LEFT_TO_RIGHT)
+            .setSound(GTSoundEntries.CHEMICAL)
+            .addDataInfo(data -> LocalizationUtils.format("gtceu.recipe.cooling_cost",data.getString("liquid")));
+
     public static final GTRecipeType DUMMY_RECIPES = new GTRecipeType(GTCEu.id("dummy"), DUMMY);
 
 

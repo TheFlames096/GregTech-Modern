@@ -38,6 +38,7 @@ public class DataSaverItem extends Item{
         {
             if(stack.getTag().getCompound("coordinate")!=null)
             tooltipComponents.add(Component.translatable("gtceu.display.coordinate",stack.getTag().getCompound("coordinate").getInt("x"),stack.getTag().getCompound("coordinate").getInt("y"),stack.getTag().getCompound("coordinate").getInt("z")));
+
         }
     }
 }

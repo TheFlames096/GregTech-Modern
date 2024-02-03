@@ -43,7 +43,22 @@ public class CrossModMaterials {
                 .components(RedstoneAlloy, 1, Iron, 1,Silver,1)
                 .blastTemp(1200, GasTier.LOWEST, GTValues.VA[GTValues.MV], 1600)
                 .buildAndRegister();
-
+        EnergeticAlloy = new Material.Builder(GTCEu.id("energetic_alloy"))
+                .ingot(0)
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1200))
+                .color(0xFF8C00).iconSet(METALLIC)
+                .appendFlags(EXT_METAL, GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW)
+                .components(Gold, 1, ConductiveIron, 1,BlackSteel,1)
+                .blastTemp(2200, GasTier.LOWEST, GTValues.VA[GTValues.MV], 1600)
+                .buildAndRegister();
+        VibrantAlloy = new Material.Builder(GTCEu.id("vibrant_alloy"))
+                .ingot(0)
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1200))
+                .color(0x008B00).iconSet(METALLIC)
+                .appendFlags(EXT_METAL, GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW,GENERATE_FRAME)
+                .components(EnergeticAlloy, 1, EnderEye, 1,Chromium,1)
+                .blastTemp(3000, GasTier.LOWEST, GTValues.VA[GTValues.MV], 6000)
+                .buildAndRegister();
         Enderium = new Material.Builder(GTCEu.id("enderium"))
                 .ingot(0)
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1200))

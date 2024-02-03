@@ -102,9 +102,11 @@ import static com.gregtechceu.gtceu.common.registry.GTRegistration.REGISTRATE;
 import static com.gregtechceu.gtceu.common.data.GTBlocks.*;
 import static com.gregtechceu.gtceu.common.data.GTCreativeModeTabs.MACHINE;
 import static com.gregtechceu.gtceu.common.data.GTMachines.PCB_ENHANCER;
+import static com.gregtechceu.gtceu.common.data.GTMachines.PCB_FACTORY;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.Americium;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.DamascusSteel;
 import static com.gregtechceu.gtceu.common.data.GTMaterials.DrillingFluid;
+import static com.gregtechceu.gtceu.common.data.GTMaterials.VibrantAlloy;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.DUMMY_RECIPES;
 import static com.gregtechceu.gtceu.common.data.GTRecipeTypes.STEAM_BOILER_RECIPES;
 import static com.gregtechceu.gtceu.utils.FormattingUtil.toEnglishName;
@@ -1316,6 +1318,35 @@ public final static MultiblockMachineDefinition BACTERIAL_VAT = REGISTRATE.multi
                     GTCEu.id("block/multiblock/steam_oven")))
             .compassSections(GTCompassSections.STEAM)
             .compassNodeSelf()
+            .register();
+
+        public final static MultiblockMachineDefinition PCB_FACTORY = REGISTRATE.multiblock("pcb_factory", PCBBasePart::new)
+                .langValue("PCB Factory")
+                .rotationState(RotationState.NON_Y_AXIS)
+                .appearanceBlock(CASING_BASIC_PHOTOLITHOGRAPHIC_FRAMEWORK)
+                .recipeType(GTRecipeTypes.PCB_RECIPES)
+                .pattern(definition -> FactoryBlockPattern.start()
+                        .aisle("ECCCCCE","EAAAAAE","EAAAAAE","EAAAAAE","EEEEEEE","       ")
+                        .aisle("CDDDDDC","C#####C","C#####C","C#####C","CAAAAAC","E     E")
+                        .aisle("CDDDDDC","B#FFF#B","B#####B","C#####C","CAAAAAC","E     E")
+                        .aisle("CDDDDDC","B#FFF#B","B#####B","C#####C","CCCCCCC","EEEEEEE")
+                        .aisle("CDDDDDC","B#FFF#B","B#####B","C#####C","CCCCCCC","E     E")
+                        .aisle("CDDDDDC","C#####C","C#####C","C#####C","CCCCCCC","E     E")
+                        .aisle("ECCSCCE","ECCCCCE","ECCCCCE","ECCCCCE","E     E","       ")
+                        .where('S', Predicates.controller(blocks(definition.getBlock())))
+                        .where('#', Predicates.air())
+                        .where(' ', Predicates.any())
+                        .where('A', blocks(CASING_TEMPERED_GLASS.get()))
+                        .where('B', blocks(CASING_GRATE.get()))
+                        .where('C', blocks(CASING_BASIC_PHOTOLITHOGRAPHIC_FRAMEWORK.get())
+                                .or(Predicates.autoAbilities(definition.getRecipeTypes()))
+                                .or(Predicates.autoAbilities(true, true, false)))
+                        .where('D', blocks(PLASTCRETE.get()))
+                        .where('E', frames(DamascusSteel))
+                        .where('F', frames(VibrantAlloy))
+                        .build())
+            .workableCasingRenderer(GTCEu.id("block/casings/framework/basic_photolithographic_framework"),
+                GTCEu.id("block/multiblock/distillation_tower"), false)
             .register();
 
         public final static MultiblockMachineDefinition PCB_BIOCHAMBER = REGISTRATE.multiblock("pcb_biochamber", PCBBiochamber::new)

@@ -682,6 +682,7 @@ public class LangHandler {
         provider.add("metaitem.terminal.tooltip.hardware", "§aHardware: %d");
         provider.add("gtceu.petri_dish.culture", "Contained Culture : §a%s");
         provider.add("gtceu.display.coordinate", "Saved Coordinate: %d %d %d");
+        provider.add("gtceu.display.level", "Saved Level ID: %d");
         provider.add("metaitem.plugin.tooltips.1", "Plugins can be added to the screen for more functionality.");
         provider.add("metaitem.plugin.proxy.tooltips.1", "(Please adjust to proxy mode in the screen)");
         provider.add("metaitem.cover.digital.tooltip", "Connects machines over §fPower Cables§7 to the §fCentral Monitor§7 as §fCover§7.");
@@ -927,6 +928,9 @@ public class LangHandler {
         provider.add("gtceu.recipe.petri_dish", "Required Culture : %s");
         provider.add("gtceu.recipe.min_sievert", "Require Minimum Sievert : %d");
         provider.add("gtceu.recipe.require_exactle_sievert", "Is Require Exactly Sievert : %s");
+        provider.add("geceu.recipe.require_tier", "Tier : %d");
+        provider.add("geceu.recipe.require_bio", "Is Biochamber Required : %s");
+        provider.add("gtceu.recipe.cooling_cost", "Use 10mB/s of %s to enable overclock for PCB Factory.");
         provider.add("gtceu.fluid.click_to_fill", "§7Click with a Fluid Container to §bfill §7the tank (Shift-click for a full stack).");
         provider.add("gtceu.fluid.click_combined", "§7Click with a Fluid Container to §cempty §7or §bfill §7the tank (Shift-click for a full stack).");
         provider.add("gtceu.fluid.click_to_empty", "§7Click with a Fluid Container to §cempty §7the tank (Shift-click for a full stack).");
