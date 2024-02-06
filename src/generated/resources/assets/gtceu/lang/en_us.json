@@ -3034,6 +3034,8 @@
   "gtceu.multiblock.central_monitor.tooltip.2": "The default height is 3. You can adjust the screen height in the GUI before the structure is formed.",
   "gtceu.multiblock.central_monitor.tooltip.3": "Energy consumption: %d EU/s for each screen.",
   "gtceu.multiblock.central_monitor.width": "Screen Width: %d",
+  "gtceu.multiblock.chance_fluid_output": "§aOutputting §f%s %smB (%s %%)",
+  "gtceu.multiblock.chance_item_output": "§aOutputting §f%s *%s (%s %%)",
   "gtceu.multiblock.charcoal_pile.description.0": "Converts logs into Brittle Charcoal in a 9x4x9 area beneath it.",
   "gtceu.multiblock.charcoal_pile.description.1": "",
   "gtceu.multiblock.charcoal_pile.description.2": "The floor of the pit must be made from bricks, and any ground-related block can be used for the walls and roof. No air can be inside the pit.",

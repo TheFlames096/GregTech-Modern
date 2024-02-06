@@ -143,6 +143,7 @@ public class ElementMaterials {
                 .dust()
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(4600))
                 .color(0x333030).secondaryColor(0x221c1c)
+                .flags(GENERATE_NANITES)
                 .element(GTElements.C)
                 .buildAndRegister();
 

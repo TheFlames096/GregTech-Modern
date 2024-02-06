@@ -117,10 +117,16 @@ public class WorkableElectricMultiblockMachine extends WorkableMultiblockMachine
                         textList.add(Component.translatable("gtceu.multiblock.eu_usage",a.content.toString()));
                     for(var a : recipeLogic.getLastRecipe().getOutputContents(ItemRecipeCapability.CAP))
                         for(var b : ((Ingredient)a.content).getItems())
-                            textList.add(Component.translatable("gtceu.multiblock.item_output",b.getDisplayName().getString(),b.getCount()));
+                            if(a.chance==1.0F)
+                                textList.add(Component.translatable("gtceu.multiblock.item_output",b.getDisplayName().getString(),b.getCount()));
+                            else
+                                textList.add(Component.translatable("gtceu.multiblock.chance_item_output",b.getDisplayName().getString(),b.getCount(),String.format("%.2f",a.chance*100).toString()));
                     for(var a : recipeLogic.getLastRecipe().getOutputContents(FluidRecipeCapability.CAP))
                         for(var b : ((FluidIngredient)a.content).getStacks())
-                            textList.add(Component.translatable("gtceu.multiblock.fluid_output",b.getDisplayName().getString(),b.getAmount()));
+                            if(a.chance==1.0F)
+                                textList.add(Component.translatable("gtceu.multiblock.fluid_output",b.getDisplayName().getString(),b.getAmount()));
+                            else
+                                textList.add(Component.translatable("gtceu.multiblock.chance_fluid_output",b.getDisplayName().getString(),b.getAmount(),String.format("%.2f",a.chance*100).toString()));
                 }
                 textList.add(Component.translatable("gtceu.multiblock.progress", currentProgress, String.format("%.2f",recipeLogic.getProgress()/20.0F).toString(),String.format("%.2f",recipeLogic.getMaxProgress()/20.0F).toString()));
                 

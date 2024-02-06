@@ -1,7 +1,7 @@
 {
   "button_texture": {
     "type": "item",
-    "res": "gtceu:gold_nanites"
+    "res": "gtceu:carbon_nanites"
   },
   "items": [
     "#forge:nanites"

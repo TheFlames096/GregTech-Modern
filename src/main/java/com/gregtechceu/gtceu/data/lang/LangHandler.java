@@ -1048,7 +1048,9 @@ public class LangHandler {
         provider.add("gtceu.multiblock.progress", "Progress: %s%% (%ss/%ss)");
         provider.add("gtceu.multiblock.eu_usage", "§cCurrent EU Usage: §f%sEU/t");
         provider.add("gtceu.multiblock.item_output", "§aOutputting §f%s *%s");
+        provider.add("gtceu.multiblock.chance_item_output", "§aOutputting §f%s *%s (%s %%)");
         provider.add("gtceu.multiblock.fluid_output", "§aOutputting §f%s %smB");
+        provider.add("gtceu.multiblock.chance_fluid_output", "§aOutputting §f%s %smB (%s %%)");
         provider.add("gtceu.multiblock.invalid_structure", "Invalid structure.");
         provider.add("gtceu.multiblock.invalid_structure.tooltip", "This block is a controller of the multiblock structure. For building help, see structure template in JEI.");
         provider.add("gtceu.multiblock.validation_failed", "Invalid amount of inputs/outputs.");

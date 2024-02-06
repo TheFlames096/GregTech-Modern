@@ -255,22 +255,23 @@ public class BacterialVat extends WorkableElectricMultiblockMachine implements I
     public static GTRecipe recipeModifier(MetaMachine machine, @Nonnull GTRecipe original) {
         if (machine instanceof BacterialVat bacterialvat) {
             var recipe=original.copy();
-            if(recipe.data.getBoolean("is_exact"))
-            {
-                if(recipe.data.getInt("min_sievert")!=bacterialvat.getSievert())
-                {
-                    GTCEu.LOGGER.info("mismatch sievert");
-                    return null;
-                }
-            }
-            else
-            {
-                if(recipe.data.getInt("min_sievert")>bacterialvat.getSievert())
-                {
-                    GTCEu.LOGGER.info("mismatch sievert");
-                    return null;
-                }
-            }
+            // TODO:Sievert
+            // if(recipe.data.getBoolean("is_exact"))
+            // {
+            //     if(recipe.data.getInt("min_sievert")!=bacterialvat.getSievert())
+            //     {
+            //         GTCEu.LOGGER.info("mismatch sievert");
+            //         return null;
+            //     }
+            // }
+            // else
+            // {
+            //     if(recipe.data.getInt("min_sievert")>bacterialvat.getSievert())
+            //     {
+            //         GTCEu.LOGGER.info("mismatch sievert");
+            //         return null;
+            //     }
+            // }
             int contentFluidAmount = 0;
             Fluid fluidtype=((FluidIngredient)(recipe.getInputContents(FluidRecipeCapability.CAP).get(0).getContent())).getStacks()[0].getRawFluid();
             for(IMultiPart part : bacterialvat.getParts())

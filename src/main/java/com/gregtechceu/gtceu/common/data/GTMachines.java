@@ -38,6 +38,7 @@ import com.gregtechceu.gtceu.client.renderer.machine.*;
 import com.gregtechceu.gtceu.common.block.BoilerFireboxType;
 import com.gregtechceu.gtceu.common.machine.electric.*;
 import com.gregtechceu.gtceu.common.machine.multiblock.electric.*;
+import com.gregtechceu.gtceu.common.machine.multiblock.electric.NanoForge.NanoAttachment;
 import com.gregtechceu.gtceu.common.machine.multiblock.electric.PCBFactory.*;
 import com.gregtechceu.gtceu.common.machine.multiblock.generator.LargeCombustionEngineMachine;
 import com.gregtechceu.gtceu.common.machine.multiblock.generator.LargeTurbineMachine;
@@ -1324,7 +1325,7 @@ public final static MultiblockMachineDefinition BACTERIAL_VAT = REGISTRATE.multi
                 .langValue("PCB Factory")
                 .rotationState(RotationState.NON_Y_AXIS)
                 .appearanceBlock(CASING_BASIC_PHOTOLITHOGRAPHIC_FRAMEWORK)
-                .recipeModifier(PCBBasePart::recipeModifier)
+                .recipeModifier(PCBBasePart::recipeModifier,true)
                 .recipeType(GTRecipeTypes.PCB_RECIPES)
                 .pattern(definition -> FactoryBlockPattern.start()
                         .aisle("ECCCCCE","ECCCCCE","ECCCCCE","ECCCCCE","E     E","       ")
@@ -1406,8 +1407,8 @@ public final static MultiblockMachineDefinition BACTERIAL_VAT = REGISTRATE.multi
         public static final MultiblockMachineDefinition[] PCB_OVERCLOCKER = registerTieredMultis("pcb_overclocker", PCBOverclocker::new, (tier, builder) -> builder
         .rotationState(RotationState.NON_Y_AXIS)
         .langValue(tier==0?"Cooling Tower":"Thermosink")
-        .recipeTypes(GTRecipeTypes.COOLING_RECIPES,GTRecipeTypes.SUPER_COOLING_RECIPES)
-        .recipeModifier(PCBOverclocker::recipeModifier)
+        .recipeTypes(GTRecipeTypes.COOLING_RECIPES)
+        .recipeModifier(PCBOverclocker::recipeModifier,true)
         .appearanceBlock(CASING_REINFORCED_PHOTOLITHOGRAPHIC_FRAMEWORK)
         .pattern((definition) -> {
         return FactoryBlockPattern.start()
@@ -1521,6 +1522,34 @@ public final static MultiblockMachineDefinition BACTERIAL_VAT = REGISTRATE.multi
                     .compassNodeSelf()
                     .register(),
             LuV, ZPM, UV, UHV, UEV);
+
+        //     public static final MultiblockMachineDefinition[] NANO_FORGE_ATTACHMENT = registerTieredMultis("nano_forge_attachment", NanoAttachment::new, (tier, builder) -> builder
+        //             .rotationState(RotationState.NON_Y_AXIS)
+        //             .langValue("%s Fluid Drilling Rig %s".formatted(VLVH[tier], VLVT[tier]))
+        //             .recipeType(DUMMY_RECIPES)
+        //             .tooltips(
+        //                     Component.translatable("gtceu.machine.fluid_drilling_rig.description"),
+        //                     Component.translatable("gtceu.machine.fluid_drilling_rig.depletion", FormattingUtil.formatNumbers(100.0 / FluidDrillMachine.getDepletionChance(tier))),
+        //                     Component.translatable("gtceu.universal.tooltip.energy_tier_range", GTValues.VNF[tier], GTValues.VNF[tier + 1]),
+        //                     Component.translatable("gtceu.machine.fluid_drilling_rig.production", FluidDrillMachine.getRigMultiplier(tier), FormattingUtil.formatNumbers(FluidDrillMachine.getRigMultiplier(tier) * 1.5)))
+        //             .appearanceBlock(() -> FluidDrillMachine.getCasingState(tier))
+        //             .pattern((definition) -> FactoryBlockPattern.start()
+        //                     .aisle("XXX", "#F#", "#F#", "#F#", "###", "###", "###")
+        //                     .aisle("XXX", "FCF", "FCF", "FCF", "#F#", "#F#", "#F#")
+        //                     .aisle("XSX", "#F#", "#F#", "#F#", "###", "###", "###")
+        //                     .where('S', controller(blocks(definition.get())))
+        //                     .where('X', blocks(FluidDrillMachine.getCasingState(tier)).setMinGlobalLimited(3)
+        //                             .or(abilities(PartAbility.INPUT_ENERGY).setMinGlobalLimited(1).setMaxGlobalLimited(3))
+        //                             .or(abilities(PartAbility.EXPORT_FLUIDS).setMaxGlobalLimited(1)))
+        //                     .where('C', blocks(FluidDrillMachine.getCasingState(tier)))
+        //                     .where('F', blocks(FluidDrillMachine.getFrameState(tier)))
+        //                     .where('#', any())
+        //                     .build())
+        //             .workableCasingRenderer(FluidDrillMachine.getBaseTexture(tier), GTCEu.id("block/multiblock/fluid_drilling_rig"), false)
+        //             .compassSections(GTCompassSections.TIER[MV])
+        //             .compassNode("fluid_drilling_rig")
+        //             .register(),
+        //     MV, HV, EV);
 
     public static final MultiblockMachineDefinition[] FLUID_DRILLING_RIG = registerTieredMultis("fluid_drilling_rig", FluidDrillMachine::new, (tier, builder) -> builder
                     .rotationState(RotationState.NON_Y_AXIS)

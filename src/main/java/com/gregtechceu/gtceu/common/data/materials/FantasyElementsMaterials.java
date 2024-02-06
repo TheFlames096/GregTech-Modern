@@ -52,7 +52,7 @@ public class FantasyElementsMaterials {
                 .ingot(6)
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(100_000))
                 .color(0xFFFFFF).secondaryColor(0x000000)
-                .appendFlags(EXT_METAL, GENERATE_BOLT_SCREW, GENERATE_FRAME,GENERATE_FOIL)
+                .appendFlags(EXT_METAL, GENERATE_BOLT_SCREW, GENERATE_FRAME,GENERATE_FOIL,GENERATE_NANITES)
                 .element(GTElements.Nt)
                 .toolStats(ToolProperty.Builder.of(180.0F, 100.0F, 65535, 6)
                         .attackSpeed(0.5F).enchantability(33).magnetic().unbreakable().build())
@@ -143,7 +143,7 @@ public class FantasyElementsMaterials {
                 .ingot(7).fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(2500).customStill())
                 .iconSet(SHINY)
                 .fluidPipeProperties(2147483647,733320,true,true,true,true)
-                .appendFlags(EXT2_METAL)
+                .appendFlags(EXT2_METAL,GENERATE_NANITES)
                 .buildAndRegister();
         
         MagnetohydrodynamicallyConstrainedStarMatter= new Material.Builder(GTCEu.id("magnetohydrodynamically_constrained_star_matter"))
