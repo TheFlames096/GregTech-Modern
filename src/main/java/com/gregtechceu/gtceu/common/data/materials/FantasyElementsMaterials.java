@@ -19,7 +19,7 @@ public class FantasyElementsMaterials {
     {
         Naquadah = new Material.Builder(GTCEu.id("naquadah"))
                 .ingot(4)
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().customStill())
+                .liquid(new FluidBuilder().customStill())
                 .ore()
                 .color(0x323232, false).secondaryColor(0x1e251b).iconSet(METALLIC)
                 .appendFlags(EXT_METAL, GENERATE_FOIL, GENERATE_SPRING, GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW)
@@ -32,7 +32,7 @@ public class FantasyElementsMaterials {
 
         NaquadahEnriched = new Material.Builder(GTCEu.id("enriched_naquadah"))
                 .ingot(4)
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().customStill())
+                .liquid(new FluidBuilder().customStill())
                 .color(0x3C3C3C, false).secondaryColor(0x122f06).iconSet(METALLIC)
                 .appendFlags(EXT_METAL, GENERATE_FOIL)
                 .element(GTElements.Nq1)
@@ -41,7 +41,7 @@ public class FantasyElementsMaterials {
 
         Naquadria = new Material.Builder(GTCEu.id("naquadria"))
                 .ingot(3)
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().customStill())
+                .liquid(new FluidBuilder().customStill())
                 .color(0x1E1E1E, false).secondaryColor(0x59b3ff).iconSet(RADIOACTIVE)
                 .appendFlags(EXT_METAL, GENERATE_FOIL, GENERATE_GEAR, GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW)
                 .element(GTElements.Nq2)
@@ -50,7 +50,7 @@ public class FantasyElementsMaterials {
 
         Neutronium = new Material.Builder(GTCEu.id("neutronium"))
                 .ingot(6)
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(100_000))
+                .liquid(new FluidBuilder().temperature(100_000))
                 .color(0xFFFFFF).secondaryColor(0x000000)
                 .appendFlags(EXT_METAL, GENERATE_BOLT_SCREW, GENERATE_FRAME,GENERATE_FOIL,GENERATE_NANITES)
                 .element(GTElements.Nt)
@@ -62,7 +62,7 @@ public class FantasyElementsMaterials {
 
         Tritanium = new Material.Builder(GTCEu.id("tritanium"))
                 .ingot(6)
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(25_000))
+                .liquid(new FluidBuilder().temperature(25_000))
                 .color(0xc35769).secondaryColor(0x210840).iconSet(METALLIC)
                 .appendFlags(EXT2_METAL, GENERATE_FRAME, GENERATE_RING, GENERATE_SMALL_GEAR, GENERATE_ROUND, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_GEAR)
                 .element(GTElements.Tn)
@@ -72,7 +72,7 @@ public class FantasyElementsMaterials {
 
         Duranium = new Material.Builder(GTCEu.id("duranium"))
                 .ingot(5)
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(7500))
+                .liquid(new FluidBuilder().temperature(7500))
                 .color(0xf3e7a9).secondaryColor(0x9c9487).iconSet(BRIGHT)
                 .appendFlags(EXT_METAL, GENERATE_FOIL, GENERATE_GEAR)
                 .element(GTElements.Dr)
@@ -105,13 +105,13 @@ public class FantasyElementsMaterials {
                 .buildAndRegister();
 
         Bedrockium= new Material.Builder(GTCEu.id("bedrockium"))
-                .ingot().fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(2500))
+                .ingot().liquid(new FluidBuilder().temperature(2500))
                 .color(0xffffff).iconSet(SHINY).cableProperties(GTValues.V[UHV], 2, 32)
                 .flags(GENERATE_PLATE,GENERATE_ROD)
                 .buildAndRegister();
         
         Tengam = new Material.Builder(GTCEu.id("tengam"))
-                .ingot().fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(2500))
+                .ingot().liquid(new FluidBuilder().temperature(2500))
                 .color(0x9AFF9A).iconSet(METALLIC)
                 .flags(GENERATE_PLATE,GENERATE_ROD,GENERATE_LONG_ROD)
                 .buildAndRegister();
@@ -123,7 +123,7 @@ public class FantasyElementsMaterials {
                 .buildAndRegister();
 
         Tartarite = new Material.Builder(GTCEu.id("tartarite"))
-                .ingot().fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(10400))
+                .ingot().liquid( new FluidBuilder().temperature(10400))
                 .color(0xcd2626).iconSet(DULL).ore()
                 .blastTemp(10400,  GasTier.LOWEST, VA[UHV], 2300)
                 .buildAndRegister();
@@ -133,26 +133,26 @@ public class FantasyElementsMaterials {
                 .buildAndRegister();
 
         SpaceTime= new Material.Builder(GTCEu.id("spacetime"))
-                .ingot(7).fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(2500).customStill())
+                .ingot(7).liquid(new FluidBuilder().temperature(2500).customStill())
                 .iconSet(Custom.SPACETIME).cableProperties(GTValues.V[MAX], 0, 1000000,true)
                 .fluidPipeProperties(2147483647,833320,true,true,true,true)
                 .appendFlags(EXT2_METAL)
                 .buildAndRegister();
 
         TranscendentMetal= new Material.Builder(GTCEu.id("transcendentmetal"))
-                .ingot(7).fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(2500).customStill())
+                .ingot(7).liquid(new FluidBuilder().temperature(2500).customStill())
                 .iconSet(SHINY)
                 .fluidPipeProperties(2147483647,733320,true,true,true,true)
                 .appendFlags(EXT2_METAL,GENERATE_NANITES)
                 .buildAndRegister();
         
         MagnetohydrodynamicallyConstrainedStarMatter= new Material.Builder(GTCEu.id("magnetohydrodynamically_constrained_star_matter"))
-                .ingot(7).fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1).customStill())
+                .ingot(7).liquid(new FluidBuilder().temperature(1).customStill())
                 .iconSet(SHINY)
                 .appendFlags(EXT2_METAL)
                 .buildAndRegister();
         Eternity= new Material.Builder(GTCEu.id("eternity"))
-                .ingot(7).fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1).customStill())
+                .ingot(7).liquid(new FluidBuilder().temperature(1).customStill())
                 .color(0xffffff).iconSet(SHINY)
                 .appendFlags(EXT2_METAL)
                 .buildAndRegister();
@@ -166,7 +166,7 @@ public class FantasyElementsMaterials {
 
         Shirabon = new Material.Builder(GTCEu.id("shirabon"))
                 .ingot(7)
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(13000))
+                .liquid(new FluidBuilder().temperature(13000))
                 .color( 0xe0156d).secondaryColor(0xe0156d).iconSet(SHINY)
                 .appendFlags(EXT2_METAL, GENERATE_FRAME, GENERATE_RING, GENERATE_SMALL_GEAR, GENERATE_ROUND, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_GEAR)
                 .element(GTElements.Sh)
@@ -176,7 +176,7 @@ public class FantasyElementsMaterials {
 
         MetastableOganesson = new Material.Builder(GTCEu.id("metastable_oganesson"))
                 .ingot(7)
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(11000))
+                .liquid(new FluidBuilder().temperature(11000))
                 .color( 0x14397f).secondaryColor(0x14397f).iconSet(SHINY)
                 .appendFlags(EXT2_METAL, GENERATE_FRAME, GENERATE_RING, GENERATE_SMALL_GEAR, GENERATE_ROUND, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_GEAR)
                 .element(GTElements.Og2)
@@ -187,33 +187,33 @@ public class FantasyElementsMaterials {
         //GT++
         Runite = new Material.Builder(GTCEu.id("runtie"))
                 .plasma()
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(11000))
+                .liquid(new FluidBuilder().temperature(11000))
                 .color( 0x3cc8be).secondaryColor(0x3cc8be).iconSet(FINE)
                 .element(GTElements.Runite)
                 .buildAndRegister();
 
         Force = new Material.Builder(GTCEu.id("force"))
                 .plasma()
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(11000))
+                .liquid(new FluidBuilder().temperature(11000))
                 .color( 0xe4ff00).secondaryColor(0xe4ff00).iconSet(FINE)
                 .element(GTElements.Force)
                 .buildAndRegister();
 
         DragonBlood = new Material.Builder(GTCEu.id("dragonblood"))
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(10000))
+                .liquid(new FluidBuilder().temperature(10000))
                 .color( 0xdc2814).secondaryColor(0xdc2814).iconSet(SHINY)
                 .element(GTElements.DragonBlood)
                 .buildAndRegister();
         
         Rhugnor = new Material.Builder(GTCEu.id("rhugnor"))
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(11000))
+                .liquid(new FluidBuilder().temperature(11000))
                 .color( 0xbe00ff).secondaryColor(0xbe00ff).iconSet(RADIOACTIVE)
                 .element(GTElements.Rhugnor)
                 .buildAndRegister();
 
         Hypogen = new Material.Builder(GTCEu.id("hypogen"))
                 .ingot(5)
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(11530))
+                .liquid(new FluidBuilder().temperature(11530))
                 .color( 0xdc784b).secondaryColor(0xdc784b).iconSet(RADIOACTIVE)
                 .element(GTElements.Hypogen).cableProperties(V[UIV], 8, 0,true)
                 .appendFlags(EXT2_METAL, GENERATE_FRAME, GENERATE_RING, GENERATE_ROUND, GENERATE_FOIL, GENERATE_FINE_WIRE)
@@ -222,7 +222,7 @@ public class FantasyElementsMaterials {
         
         EnergyCrystal = new Material.Builder(GTCEu.id("energy_crystal"))
                 .ingot(4)
-                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(4935))
+                .liquid(new FluidBuilder().temperature(4935))
                 .color(0xe4ff00).secondaryColor(0xe4ff00).iconSet(METALLIC)
                 .element(GTElements.EnergyCrystal)
                 .appendFlags(EXT2_METAL, GENERATE_FRAME, GENERATE_RING, GENERATE_ROUND, GENERATE_FOIL, GENERATE_FINE_WIRE)
@@ -231,7 +231,7 @@ public class FantasyElementsMaterials {
      
         AdvancedNitinol = new Material.Builder(GTCEu.id("advaced_nitinol"))
         .ingot(4).plasma()
-        .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(8675))
+        .liquid(new FluidBuilder().temperature(8675))
         .color(0xdca0f0).secondaryColor(0xdca0f0).iconSet(RADIOACTIVE)
         .element(GTElements.AdvancedNitinol)
         .appendFlags(EXT2_METAL)
@@ -239,7 +239,7 @@ public class FantasyElementsMaterials {
         .buildAndRegister();
 
         ChromaticGlass = new Material.Builder(GTCEu.id("chromatic_glass")).gem()
-        .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(9475))
+        .liquid(new FluidBuilder().temperature(9475))
         .color(0xffffff).secondaryColor(0xffffff).iconSet(SHINY)
         .element(GTElements.ChromaticGlass)
         .appendFlags(EXT2_METAL,GENERATE_LENS,GENERATE_FOIL)
@@ -247,7 +247,7 @@ public class FantasyElementsMaterials {
 
         CelestialTungsten = new Material.Builder(GTCEu.id("celestial_tungsten"))
         .ingot(4).plasma()
-        .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(10470))
+        .liquid(new FluidBuilder().temperature(10470))
         .color(0x323232).secondaryColor(0xffffff).iconSet(METALLIC)
         .element(GTElements.CelestialTungsten)
         .appendFlags(EXT2_METAL)
@@ -256,7 +256,7 @@ public class FantasyElementsMaterials {
 
         AstralTitanium = new Material.Builder(GTCEu.id("astral_titanium"))
         .ingot(4).plasma()
-        .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(9715))
+        .liquid(new FluidBuilder().temperature(9715))
         .color(0xdca0f0).secondaryColor(0xffffff).iconSet(METALLIC)
         .element(GTElements.AstralTitanium)
         .appendFlags(EXT2_METAL)
