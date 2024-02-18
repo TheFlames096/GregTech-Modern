@@ -417,6 +417,8 @@ public class LangHandler {
         replace(provider, GTMaterials.HSSG.getUnlocalizedName(), "HSS-G");
         replace(provider, GTMaterials.HSSE.getUnlocalizedName(), "HSS-E");
         replace(provider, GTMaterials.HSSS.getUnlocalizedName(), "HSS-S");
+        replace(provider, GTMaterials.RTMAlloy.getUnlocalizedName(), "RTM Alloy");
+
         replace(provider, GTMaterials.UUMatter.getUnlocalizedName(), "UU-Matter");
         replace(provider, GTMaterials.PCBCoolant.getUnlocalizedName(), "PCB Coolant");
         replace(provider, GTMaterials.TungstenSteel.getUnlocalizedName(), "Tungstensteel");
@@ -777,10 +779,10 @@ public class LangHandler {
         provider.add("gtceu.machine.ev_fluid_drilling_rig.tooltip", "Well Drainer");
         provider.add("gtceu.machine.cleanroom.tooltip", "Keeping those pesky particles out");
         provider.add("gtceu.machine.charcoal_pile.tooltip", "Underground fuel bakery");
-        provider.add("gtceu.machine.available_recipe_map_1.tooltip", "Available Recipe Maps: %s");
-        provider.add("gtceu.machine.available_recipe_map_2.tooltip", "Available Recipe Maps: %s, %s");
-        provider.add("gtceu.machine.available_recipe_map_3.tooltip", "Available Recipe Maps: %s, %s, %s");
-        provider.add("gtceu.machine.available_recipe_map_4.tooltip", "Available Recipe Maps: %s, %s, %s, %s");
+        provider.add("gtceu.machine.available_recipe_map_1.tooltip", "Available Recipe Types: %s");
+        provider.add("gtceu.machine.available_recipe_map_2.tooltip", "Available Recipe Types: %s, %s");
+        provider.add("gtceu.machine.available_recipe_map_3.tooltip", "Available Recipe Types: %s, %s, %s");
+        provider.add("gtceu.machine.available_recipe_map_4.tooltip", "Available Recipe Types: %s, %s, %s, %s");
 
         multiLang(provider, "gtceu.machine.power_substation.tooltip",
                 "The heart of a centralized power grid",
@@ -910,6 +912,7 @@ public class LangHandler {
         provider.add("gtceu.universal.tooltip.produces_fluid", "§eProduces: §f%d L/t");
         provider.add("gtceu.universal.tooltip.terrain_resist", "This Machine will not explode when exposed to the Elements");
         provider.add("gtceu.universal.tooltip.requires_redstone", "§4Requires Redstone power");
+        provider.add("gtceu.universal.tooltip.deprecated", "§5WARNING: DEPRECATED. WILL BE REMOVED IN A FUTURE VERSION.§r");
         provider.add("gtceu.recipe.total", "Total: %,d EU");
         provider.add("gtceu.recipe.eu", "Usage: %,d EU/t (%s§r)");
         provider.add("gtceu.recipe.eu_inverted", "Generation: %,d EU/t");
@@ -963,6 +966,8 @@ public class LangHandler {
         provider.add("gtceu.fluid.state_liquid", "§aState: Liquid");
         provider.add("gtceu.fluid.state_plasma", "§aState: Plasma");
         provider.add("gtceu.fluid.type_acid.tooltip", "§6Acidic! Handle with care!");
+        provider.add("gtceu.gui.title_bar.back", "Back");
+        provider.add("gtceu.gui.title_bar.page_switcher", "Pages");
         provider.add("gtceu.gui.fuel_amount", "Fuel Amount:");
         provider.add("gtceu.gui.fluid_amount", "Fluid Amount:");
         provider.add("gtceu.gui.toggle_view.disabled", "Toggle View (Fluids)");
@@ -1242,6 +1247,7 @@ public class LangHandler {
         provider.add("gtceu.gui.overclock.range", "Available Tiers [%s, %s]");
 
         provider.add("gtceu.gui.machinemode.title", "Active Machine Mode");
+        provider.add("gtceu.gui.machinemode", "Active Machine Mode: %s");
 
         provider.add("gtceu.gui.content.chance_0", "§cNot Consumed§r");
         provider.add("gtceu.gui.content.chance_0_short", "§cNC§r");

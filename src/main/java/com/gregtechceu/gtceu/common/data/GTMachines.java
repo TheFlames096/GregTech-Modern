@@ -13,7 +13,6 @@ import com.gregtechceu.gtceu.api.capability.recipe.FluidRecipeCapability;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.capability.recipe.ItemRecipeCapability;
 import com.gregtechceu.gtceu.api.data.RotationState;
-import com.gregtechceu.gtceu.api.data.chemical.Element;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import com.gregtechceu.gtceu.api.data.chemical.material.properties.PropertyKey;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
@@ -253,12 +252,21 @@ public class GTMachines {
             })
             .recipeModifier(GTRecipeModifiers.ELECTRIC_OVERCLOCK.apply(OverclockingLogic.NON_PERFECT_OVERCLOCK))
             .workableTieredHullRenderer(GTCEu.id("block/machines/macerator"))
-            .tooltips(explosion())
             .tooltips(workableTiered(tier, GTValues.V[tier], GTValues.V[tier] * 64, GTRecipeTypes.MACERATOR_RECIPES, defaultTankSizeFunction.apply(tier), true))
             .compassNode("macerator")
             .register(), ELECTRIC_TIERS);
     public final static MachineDefinition[] GAS_COLLECTOR = registerSimpleMachines("gas_collector", GTRecipeTypes.GAS_COLLECTOR_RECIPES, largeTankSizeFunction);
-    public final static MachineDefinition[] ROCK_CRUSHER = registerSimpleMachines("rock_crusher", GTRecipeTypes.ROCK_BREAKER_RECIPES);
+    public final static MachineDefinition[] ROCK_CRUSHER = registerTieredMachines("rock_crusher", RockCrusherMachine::new, (tier, builder) -> builder
+        .langValue("%s Rock Crusher %s".formatted(VLVH[tier], VLVT[tier]))
+        .editableUI(SimpleTieredMachine.EDITABLE_UI_CREATOR.apply(GTCEu.id("rock_crusher"), GTRecipeTypes.ROCK_BREAKER_RECIPES))
+        .rotationState(RotationState.NON_Y_AXIS)
+        .recipeType(GTRecipeTypes.ROCK_BREAKER_RECIPES)
+        .recipeModifier(GTRecipeModifiers.ELECTRIC_OVERCLOCK.apply(OverclockingLogic.NON_PERFECT_OVERCLOCK))
+        .workableTieredHullRenderer(GTCEu.id("block/machines/rock_crusher"))
+        .tooltips(workableTiered(tier, GTValues.V[tier], GTValues.V[tier] * 64, GTRecipeTypes.ROCK_BREAKER_RECIPES, defaultTankSizeFunction.apply(tier), true))
+        .tooltips(explosion())
+        .compassNode("rock_crusher")
+        .register(), ELECTRIC_TIERS);
 
     //////////////////////////////////////
     //****     Simple Generator     ****//
@@ -387,16 +395,52 @@ public class GTMachines {
                     .register(),
             LV, MV, HV);
 
+    public static final MachineDefinition[] WORLD_ACCELERATOR = registerTieredMachines("world_accelerator", WorldAcceleratorMachine::new,
+        (tier, builder) -> builder
+            .rotationState(RotationState.NONE)
+            .langValue("%s World Accelerator %s".formatted(VLVH[tier], VLVT[tier]))
+            .recipeType(DUMMY_RECIPES)
+            .renderer(() -> new WorldAcceleratorRenderer(tier, GTCEu.id("block/machines/world_accelerator_te"),GTCEu.id("block/machines/world_accelerator")))
+            .tooltipBuilder((stack, tooltip) -> {
+                int randTickWorkingArea = 3+(tier-1)*2;
+                tooltip.add(Component.translatable("gtceu.machine.world_accelerator.description"));
+
+                tooltip.add(Component.translatable("gtceu.universal.tooltip.voltage_in", GTValues.V[tier], GTValues.VNF[tier]));
+                tooltip.add(Component.translatable("gtceu.universal.tooltip.energy_storage_capacity", GTValues.V[tier] * 64L));
+
+                tooltip.add(Component.translatable("gtceu.machine.world_accelerator.working_area"));
+                tooltip.add(Component.translatable("gtceu.machine.world_accelerator.working_area_tile"));
+                tooltip.add(Component.translatable("gtceu.machine.world_accelerator.working_area_random",randTickWorkingArea,randTickWorkingArea));
+            })
+            .compassNode("world_accelerator")
+            .register(),
+        LV, MV, HV, EV, IV, LuV, ZPM, UV);
+
     //////////////////////////////////////
     //*********     Storage    *********//
     //////////////////////////////////////
-    public final static MachineDefinition CREATIVE_ENERGY = REGISTRATE.machine("infinite_energy", CreativeEnergyContainerMachine::new)
-            .rotationState(RotationState.NONE)
-            .tooltips(Component.translatable("gtceu.creative_tooltip.1"),
-                    Component.translatable("gtceu.creative_tooltip.2").withStyle(style -> style.withColor(TooltipHelper.RAINBOW_SLOW.getCurrent())),
-                    Component.translatable("gtceu.creative_tooltip.3"))
-            .compassNodeSelf()
-            .register();
+    public final static MachineDefinition CREATIVE_ENERGY = REGISTRATE.machine("creative_energy", CreativeEnergyContainerMachine::new)
+        .rotationState(RotationState.NONE)
+        .tooltips(Component.translatable("gtceu.creative_tooltip.1"),
+            Component.translatable("gtceu.creative_tooltip.2").withStyle(style -> style.withColor(TooltipHelper.RAINBOW_SLOW.getCurrent())),
+            Component.translatable("gtceu.creative_tooltip.3"))
+        .compassNodeSelf()
+        .register();
+    public final static MachineDefinition CREATIVE_FLUID = REGISTRATE.machine("creative_tank", CreativeTankMachine::new)
+        .rotationState(RotationState.ALL)
+        .tooltips(Component.translatable("gtceu.creative_tooltip.1"),
+            Component.translatable("gtceu.creative_tooltip.2").withStyle(style -> style.withColor(TooltipHelper.RAINBOW_SLOW.getCurrent())),
+            Component.translatable("gtceu.creative_tooltip.3"))
+        .compassNodeSelf()
+        .register();
+    public final static MachineDefinition CREATIVE_ITEM = REGISTRATE.machine("creative_chest", CreativeChestMachine::new)
+        .rotationState(RotationState.ALL)
+        .tooltips(Component.translatable("gtceu.creative_tooltip.1"),
+            Component.translatable("gtceu.creative_tooltip.2").withStyle(style -> style.withColor(TooltipHelper.RAINBOW_SLOW.getCurrent())),
+            Component.translatable("gtceu.creative_tooltip.3"))
+        .compassNodeSelf()
+        .register();
+
 
     public static BiConsumer<ItemStack, List<Component>> CHEST_TOOLTIPS = (stack, list) -> {
         if (stack.hasTag()) {
@@ -903,9 +947,9 @@ public class GTMachines {
             .recoveryItems(() -> new ItemLike[]{GTItems.MATERIAL_ITEMS.get(TagPrefix.dustTiny, GTMaterials.Ash).get()})
             .workableCasingRenderer(GTCEu.id("block/casings/solid/machine_casing_heatproof"),
                     GTCEu.id("block/multiblock/electric_blast_furnace"), false)
-            .tooltips(Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.1",
+            .tooltips(Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.1"),
                     Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.2"),
-                    Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.3")))
+                    Component.translatable("gtceu.machine.electric_blast_furnace.tooltip.3"))
             .additionalDisplay((controller, components) -> {
                 if (controller instanceof CoilWorkableElectricMultiblockMachine coilMachine && controller.isFormed()) {
                     components.add(Component.translatable("gtceu.multiblock.blast_furnace.max_temperature",
@@ -1735,24 +1779,24 @@ public final static MultiblockMachineDefinition BACTERIAL_VAT = REGISTRATE.multi
                             .aisle("XXX", "C#C", "XXX")
                             .aisle("XSX", "CCC", "XXX")
                             .where('S', Predicates.controller(blocks(definition.getBlock())))
-                            .where('X', blocks(ProcessingArrayMachine.getCasingState(tier)).setMinGlobalLimited(4)
-                                    .or(Predicates.abilities(PartAbility.IMPORT_ITEMS))
-                                    .or(Predicates.abilities(PartAbility.EXPORT_ITEMS))
-                                    .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS))
-                                    .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS))
-                                    .or(Predicates.abilities(PartAbility.INPUT_ENERGY))
-                                    .or(Predicates.abilities(PartAbility.OUTPUT_ENERGY))
+                            .where('X', blocks(ProcessingArrayMachine.getCasingState(tier))
+                                    .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setPreviewCount(1))
+                                    .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setPreviewCount(1))
+                                    .or(Predicates.abilities(PartAbility.IMPORT_FLUIDS).setPreviewCount(1))
+                                    .or(Predicates.abilities(PartAbility.EXPORT_FLUIDS).setPreviewCount(1))
+                                    .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMinGlobalLimited(1).setMaxGlobalLimited(4).setPreviewCount(1))
                                     .or(Predicates.autoAbilities(true, false, false)))
                             .where('C', blocks(CLEANROOM_GLASS.get()))
                             .where('#', Predicates.air())
                             .build())
                     .tooltips(Component.translatable("gtceu.universal.tooltip.parallel", ProcessingArrayMachine.getMachineLimit(tier)))
-                    .renderer(() -> new ProcessingArrayMachineRenderer(tier == IV ?
+                    .workableCasingRenderer(tier == IV ?
                             GTCEu.id("block/casings/solid/machine_casing_robust_tungstensteel") :
                             GTCEu.id("block/casings/solid/machine_casing_sturdy_hsse"),
-                            GTCEu.id("block/multiblock/processing_array")))
+                            GTCEu.id("block/multiblock/processing_array"))
                     .compassSections(GTCompassSections.TIER[IV])
                     .compassNode("processing_array")
+                    .tooltips(Component.translatable("gtceu.universal.tooltip.deprecated"))
                     .register(),
             IV, LuV) : null;
 
@@ -1876,7 +1920,7 @@ public final static MultiblockMachineDefinition BACTERIAL_VAT = REGISTRATE.multi
                             .overlayTieredHullRenderer(model)
                             .abilities(abilities)
                             .compassNode("fluid_hatch")
-                            .tooltips(Component.translatable("gtceu.machine.fluid_hatch.import.tooltip"));
+                            .tooltips(Component.translatable("gtceu.machine." + model + ".tooltip"));
 
                     if (slots == 1) {
                         builder.tooltips(Component.translatable("gtceu.universal.tooltip.fluid_storage_capacity", FluidHatchPartMachine.getTankCapacity(initialCapacity, tier)));
@@ -1896,7 +1940,6 @@ public final static MultiblockMachineDefinition BACTERIAL_VAT = REGISTRATE.multi
                         .itemColor((itemStack, index) -> index == 2 ? GTValues.VC[tier + 1] : index == 3 ? GTValues.VC[tier] : index == 1 ? Long.decode(ConfigHolder.INSTANCE.client.defaultPaintingColor).intValue() : -1)
                         .renderer(() -> new TransformerRenderer(tier, baseAmp))
                         .langValue("%s %sTransformer".formatted(VOLTAGE_NAMES[tier], langName))
-                        .tooltips(explosion())
                         .tooltips(Component.translatable("gtceu.machine.transformer.description"),
                                 Component.translatable("gtceu.machine.transformer.tooltip_tool_usage"),
                                 Component.translatable("gtceu.machine.transformer.tooltip_transform_down", baseAmp, GTValues.V[tier + 1], GTValues.VNF[tier + 1], baseAmp * 4, GTValues.V[tier], GTValues.VNF[tier]),
@@ -1918,7 +1961,6 @@ public final static MultiblockMachineDefinition BACTERIAL_VAT = REGISTRATE.multi
                 .recipeType(recipeType)
                 .recipeModifier(GTRecipeModifiers.ELECTRIC_OVERCLOCK.apply(OverclockingLogic.NON_PERFECT_OVERCLOCK))
                 .workableTieredHullRenderer(GTCEu.id("block/machines/" + name))
-                .tooltips(explosion())
                 .tooltips(workableTiered(tier, GTValues.V[tier], GTValues.V[tier] * 64, recipeType, tankScalingFunction.apply(tier), true))
                 .compassNode(name)
                 .register(), tiers);
@@ -1945,7 +1987,6 @@ public final static MultiblockMachineDefinition BACTERIAL_VAT = REGISTRATE.multi
                 .addOutputLimit(ItemRecipeCapability.CAP, 0)
                 .addOutputLimit(FluidRecipeCapability.CAP, 0)
                 .renderer(() -> new SimpleGeneratorMachineRenderer(tier, GTCEu.id("block/generators/" + name)))
-                .tooltips(explosion())
                 .tooltips(workableTiered(tier, GTValues.V[tier], GTValues.V[tier] * 64, recipeType, tankScalingFunction.apply(tier), false))
                 .compassNode(name)
                 .register(), tiers);
@@ -1967,7 +2008,6 @@ public final static MultiblockMachineDefinition BACTERIAL_VAT = REGISTRATE.multi
                         .rotationState(RotationState.ALL)
                         .renderer(() -> new BatteryBufferRenderer(tier, batterySlotSize))
                         .langValue("%s %s%s".formatted(VOLTAGE_NAMES[tier], batterySlotSize, "x Battery Buffer"))
-                        .tooltips(explosion())
                         .tooltips(Component.translatable("gtceu.universal.tooltip.item_storage_capacity", batterySlotSize),
                                 Component.translatable("gtceu.universal.tooltip.voltage_in_out", GTValues.V[tier], GTValues.VNF[tier]),
                                 Component.translatable("gtceu.universal.tooltip.amperage_in_till", batterySlotSize * BatteryBufferMachine.AMPS_PER_BATTERY),
@@ -1984,7 +2024,6 @@ public final static MultiblockMachineDefinition BACTERIAL_VAT = REGISTRATE.multi
                         .rotationState(RotationState.NON_Y_AXIS)
                         .renderer(() -> new ChargerRenderer(tier))
                         .langValue("%s %s%s".formatted(VOLTAGE_NAMES[tier], itemSlotSize, "x Turbo Charger"))
-                        .tooltips(explosion())
                         .tooltips(Component.translatable("gtceu.universal.tooltip.item_storage_capacity", itemSlotSize),
                                 Component.translatable("gtceu.universal.tooltip.voltage_in_out", GTValues.V[tier], GTValues.VNF[tier]),
                                 Component.translatable("gtceu.universal.tooltip.amperage_in_till", itemSlotSize * ChargerMachine.AMPS_PER_ITEM))

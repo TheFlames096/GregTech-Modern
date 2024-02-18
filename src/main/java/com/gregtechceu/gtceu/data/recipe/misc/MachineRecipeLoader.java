@@ -545,7 +545,7 @@ public class MachineRecipeLoader {
         ASSEMBLER_RECIPES.recipeBuilder("coil_cupronickel").EUt(VA[LV]).inputItems(wireGtDouble, Cupronickel, 8).inputItems(foil, Bronze, 8).inputFluids(TinAlloy.getFluid(GTValues.L)).outputItems(GTBlocks.COIL_CUPRONICKEL.asStack()).duration(200).save(provider);
         ASSEMBLER_RECIPES.recipeBuilder("coil_kanthal").EUt(VA[MV]).inputItems(wireGtDouble, Kanthal, 8).inputItems(foil, Aluminium, 8).inputFluids(Copper.getFluid(GTValues.L)).outputItems(GTBlocks.COIL_KANTHAL.asStack()).duration(300).save(provider);
         ASSEMBLER_RECIPES.recipeBuilder("coil_nichrome").EUt(VA[HV]).inputItems(wireGtDouble, Nichrome, 8).inputItems(foil, StainlessSteel, 8).inputFluids(Aluminium.getFluid(GTValues.L)).outputItems(GTBlocks.COIL_NICHROME.asStack()).duration(400).save(provider);
-        ASSEMBLER_RECIPES.recipeBuilder("coil_tungstensteel").EUt(VA[EV]).inputItems(wireGtDouble, TungstenSteel, 8).inputItems(foil, VanadiumSteel, 8).inputFluids(Nichrome.getFluid(GTValues.L)).outputItems(GTBlocks.COIL_TUNGSTENSTEEL.asStack()).duration(500).save(provider);
+        ASSEMBLER_RECIPES.recipeBuilder("coil_rtm_alloy").EUt(VA[EV]).inputItems(wireGtDouble, RTMAlloy, 8).inputItems(foil, VanadiumSteel, 8).inputFluids(Nichrome.getFluid(GTValues.L)).outputItems(GTBlocks.COIL_RTMALLOY.asStack()).duration(500).save(provider);
         ASSEMBLER_RECIPES.recipeBuilder("coil_hssg").EUt(VA[IV]).inputItems(wireGtDouble, HSSG, 8).inputItems(foil, TungstenCarbide, 8).inputFluids(Tungsten.getFluid(GTValues.L)).outputItems(GTBlocks.COIL_HSSG.asStack()).duration(600).save(provider);
         ASSEMBLER_RECIPES.recipeBuilder("coil_naquadah").EUt(VA[LuV]).inputItems(wireGtDouble, Naquadah, 8).inputItems(foil, Osmium, 8).inputFluids(TungstenSteel.getFluid(GTValues.L)).outputItems(GTBlocks.COIL_NAQUADAH.asStack()).duration(700).save(provider);
         ASSEMBLER_RECIPES.recipeBuilder("coil_trinium").EUt(VA[ZPM]).inputItems(wireGtDouble, Trinium, 8).inputItems(foil, NaquadahEnriched, 8).inputFluids(Naquadah.getFluid(GTValues.L)).outputItems(GTBlocks.COIL_TRINIUM.asStack()).duration(800).save(provider);
@@ -1081,11 +1081,12 @@ public class MachineRecipeLoader {
         VanillaRecipeHelper.addShapedRecipe(provider, "steam_bus_input_to_output", STEAM_IMPORT_BUS.asStack(),
                 "d", "B", 'B', STEAM_EXPORT_BUS.asStack());
 
-        if (GTCEu.isAE2Loaded()) {
-            VanillaRecipeHelper.addShapedRecipe(provider, "me_fluid_hatch_output_to_input", GTAEMachines.FLUID_IMPORT_HATCH.asStack(), "d", "B", 'B', GTAEMachines.FLUID_EXPORT_HATCH.asStack());
-            VanillaRecipeHelper.addShapedRecipe(provider, "me_fluid_hatch_input_to_output", GTAEMachines.FLUID_EXPORT_HATCH.asStack(), "d", "B", 'B', GTAEMachines.FLUID_IMPORT_HATCH.asStack());
-            VanillaRecipeHelper.addShapedRecipe(provider, "me_item_bus_output_to_input", GTAEMachines.ITEM_IMPORT_BUS.asStack(), "d", "B", 'B', GTAEMachines.ITEM_EXPORT_BUS.asStack());
-            VanillaRecipeHelper.addShapedRecipe(provider, "me_item_bus_input_to_output", GTAEMachines.ITEM_EXPORT_BUS.asStack(), "d", "B", 'B', GTAEMachines.ITEM_IMPORT_BUS.asStack());
-        }
+        // TODO fix the ME buses/hatches
+//        if (GTCEu.isAE2Loaded()) {
+//            VanillaRecipeHelper.addShapedRecipe(provider, "me_fluid_hatch_output_to_input", GTAEMachines.FLUID_IMPORT_HATCH.asStack(), "d", "B", 'B', GTAEMachines.FLUID_EXPORT_HATCH.asStack());
+//            VanillaRecipeHelper.addShapedRecipe(provider, "me_fluid_hatch_input_to_output", GTAEMachines.FLUID_EXPORT_HATCH.asStack(), "d", "B", 'B', GTAEMachines.FLUID_IMPORT_HATCH.asStack());
+//            VanillaRecipeHelper.addShapedRecipe(provider, "me_item_bus_output_to_input", GTAEMachines.ITEM_IMPORT_BUS.asStack(), "d", "B", 'B', GTAEMachines.ITEM_EXPORT_BUS.asStack());
+//            VanillaRecipeHelper.addShapedRecipe(provider, "me_item_bus_input_to_output", GTAEMachines.ITEM_EXPORT_BUS.asStack(), "d", "B", 'B', GTAEMachines.ITEM_IMPORT_BUS.asStack());
+//        }
     }
 }

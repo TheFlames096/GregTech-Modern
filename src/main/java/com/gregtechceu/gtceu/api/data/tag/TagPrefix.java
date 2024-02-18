@@ -95,7 +95,7 @@ public class TagPrefix {
 
     public static final TagPrefix oreDeepslate = oreTagPrefix("deepslate", BlockTags.MINEABLE_WITH_PICKAXE)
             .langValue("Deepslate %s Ore")
-            .registerOre(Blocks.DEEPSLATE::defaultBlockState, () -> GTMaterials.Deepslate, BlockBehaviour.Properties.of().mapColor(MapColor.DEEPSLATE).requiresCorrectToolForDrops().strength(4.5F, 3.0F), new ResourceLocation("block/deepslate"));
+            .registerOre(Blocks.DEEPSLATE::defaultBlockState, () -> GTMaterials.Deepslate, BlockBehaviour.Properties.of().mapColor(MapColor.DEEPSLATE).requiresCorrectToolForDrops().strength(4.5F, 3.0F), new ResourceLocation("block/deepslate"), false, false, true);
 
     public static final TagPrefix oreTuff = oreTagPrefix("tuff", BlockTags.MINEABLE_WITH_PICKAXE)
             .langValue("Tuff %s Ore")
@@ -103,11 +103,11 @@ public class TagPrefix {
 
     public static final TagPrefix oreSand = oreTagPrefix("sand", BlockTags.MINEABLE_WITH_SHOVEL)
             .langValue("Sand %s Ore")
-            .registerOre(Blocks.SAND::defaultBlockState, () -> GTMaterials.QuartzSand, BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.SNARE).strength(0.5F).sound(SoundType.SAND), new ResourceLocation("block/sand"), false, true, false);
+            .registerOre(Blocks.SAND::defaultBlockState, () -> GTMaterials.SiliconDioxide, BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.SNARE).strength(0.5F).sound(SoundType.SAND), new ResourceLocation("block/sand"), false, true, false);
 
     public static final TagPrefix oreRedSand = oreTagPrefix("redSand", BlockTags.MINEABLE_WITH_SHOVEL)
             .langValue("Red Sand %s Ore")
-            .registerOre(Blocks.RED_SAND::defaultBlockState, () -> GTMaterials.QuartzSand, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).instrument(NoteBlockInstrument.SNARE).strength(0.5F).sound(SoundType.SAND), new ResourceLocation("block/red_sand"), false, true, false);
+            .registerOre(Blocks.RED_SAND::defaultBlockState, () -> GTMaterials.SiliconDioxide, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).instrument(NoteBlockInstrument.SNARE).strength(0.5F).sound(SoundType.SAND), new ResourceLocation("block/red_sand"), false, true, false);
 
     public static final TagPrefix oreGravel = oreTagPrefix("gravel", BlockTags.MINEABLE_WITH_SHOVEL)
             .langValue("Gravel %s Ore")
@@ -546,7 +546,7 @@ public class TagPrefix {
             .materialIconType(MaterialIconType.toolHeadBuzzSaw)
             .unificationEnabled(true)
             .generateItem(true)
-            .generationCondition(hasNoCraftingToolProperty.and(mat -> mat.hasFlag(MaterialFlags.GENERATE_PLATE)));
+            .generationCondition(hasNoCraftingToolProperty.and(mat -> mat.hasFlag(MaterialFlags.GENERATE_PLATE)).and(mat -> mat.getProperty(PropertyKey.TOOL).hasType(GTToolType.BUZZSAW)));
 
     // made of 1 Ingots.
     public static final TagPrefix toolHeadScrewdriver = new TagPrefix("screwdriverTip")
@@ -557,7 +557,7 @@ public class TagPrefix {
             .materialIconType(MaterialIconType.toolHeadScrewdriver)
             .unificationEnabled(true)
             .generateItem(true)
-            .generationCondition(hasNoCraftingToolProperty.and(mat -> mat.hasFlag(MaterialFlags.GENERATE_LONG_ROD)));
+            .generationCondition(hasNoCraftingToolProperty.and(mat -> mat.hasFlag(MaterialFlags.GENERATE_LONG_ROD)).and(mat -> mat.getProperty(PropertyKey.TOOL).hasType(GTToolType.SCREWDRIVER_LV)));
 
     // made of 4 Ingots.
     public static final TagPrefix toolHeadDrill = new TagPrefix("drillHead")
@@ -568,7 +568,7 @@ public class TagPrefix {
             .materialIconType(MaterialIconType.toolHeadDrill)
             .unificationEnabled(true)
             .generateItem(true)
-            .generationCondition(hasToolProperty.and(mat -> mat.hasFlag(MaterialFlags.GENERATE_PLATE)));
+            .generationCondition(hasToolProperty.and(mat -> mat.hasFlag(MaterialFlags.GENERATE_PLATE)).and(mat -> mat.getProperty(PropertyKey.TOOL).hasType(GTToolType.DRILL_LV)));
 
     // made of 2 Ingots.
     public static final TagPrefix toolHeadChainsaw = new TagPrefix("chainsawHead")
@@ -579,7 +579,7 @@ public class TagPrefix {
             .materialIconType(MaterialIconType.toolHeadChainsaw)
             .unificationEnabled(true)
             .generateItem(true)
-            .generationCondition(hasNoCraftingToolProperty.and(mat -> mat.hasFlag(MaterialFlags.GENERATE_PLATE)));
+            .generationCondition(hasNoCraftingToolProperty.and(mat -> mat.hasFlag(MaterialFlags.GENERATE_PLATE)).and(mat -> mat.getProperty(PropertyKey.TOOL).hasType(GTToolType.CHAINSAW_LV)));
 
     // made of 4 Ingots.
     public static final TagPrefix toolHeadWrench = new TagPrefix("wrenchTip")
@@ -590,7 +590,7 @@ public class TagPrefix {
             .materialIconType(MaterialIconType.toolHeadWrench)
             .unificationEnabled(true)
             .generateItem(true)
-            .generationCondition(hasNoCraftingToolProperty.and(mat -> mat.hasFlag(MaterialFlags.GENERATE_PLATE)));
+            .generationCondition(hasNoCraftingToolProperty.and(mat -> mat.hasFlag(MaterialFlags.GENERATE_PLATE)).and(mat -> mat.getProperty(PropertyKey.TOOL).hasType(GTToolType.WRENCH_LV)));
 
     // made of 5 Ingots.
     public static final TagPrefix turbineBlade = new TagPrefix("turbineBlade")
@@ -614,9 +614,8 @@ public class TagPrefix {
             .generationCondition(material -> material.hasProperty(PropertyKey.INGOT) || material.hasProperty(PropertyKey.GEM) || material.hasFlag(MaterialFlags.FORCE_GENERATE_BLOCK))
             .unificationEnabled(true);
 
-    public static final TagPrefix plank = new TagPrefix("plank")
-        .defaultTagPath("planks/%s")
-        .unformattedTagPath("planks");
+    public static final TagPrefix planks = new TagPrefix("planks")
+        .unformattedTagPath("planks", true);
 
     // Prefix to determine which kind of Rock this is.
     // Also has a base tag path of only the material, for things like obsidian etc.
@@ -754,7 +753,6 @@ public class TagPrefix {
 
     public static TagPrefix oreTagPrefix(String name, TagKey<Block> miningToolTag) {
         return new TagPrefix(name)
-            .prefixTagPath("ores/%s/%s")
             .defaultTagPath("ores/%s")
             .prefixOnlyTagPath("ores_in_ground/%s")
             .unformattedTagPath("ores")
@@ -805,7 +803,11 @@ public class TagPrefix {
     }
 
     public TagPrefix unformattedTagPath(String path) {
-        this.tags.add(TagType.withNoFormatter(path));
+        return unformattedTagPath(path, false);
+    }
+
+    public TagPrefix unformattedTagPath(String path, boolean isVanilla) {
+        this.tags.add(TagType.withNoFormatter(path, isVanilla));
         return this;
     }
 

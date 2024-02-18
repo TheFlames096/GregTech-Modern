@@ -269,6 +269,25 @@ public class ConfigHolder {
         @Configurable
         @Configurable.Comment({"Whether to enable the Maintenance Hatch, required for Multiblocks.", "Default: true"})
         public boolean enableMaintenance = true;
+
+
+        @Configurable
+        @Configurable.Comment({
+            "Whether to enable World Accelerators, which accelerate ticks for surrounding Tile Entities, Crops, etc.",
+            "Default: true" })
+        public boolean enableWorldAccelerators = true;
+
+        @Configurable
+        @Configurable.Comment({ "List of TileEntities that the World Accelerator should not accelerate.",
+            "GregTech TileEntities are always blocked.",
+            "Entries must be in a fully qualified format. For example: appeng.tile.networking.TileController",
+            "Default: none" })
+        public String[] worldAcceleratorBlacklist = new String[0];
+
+        @Configurable
+        @Configurable.Comment({ "Whether to use GT6-style pipe and cable connections, meaning they will not auto-connect " +
+            "unless placed directly onto another pipe or cable.", "Default: true" })
+        public boolean gt6StylePipesCables = true;
         @Configurable
         @Configurable.Comment({"Whether the machine's circuit slot need to be inserted a real circuit."})
         public boolean ghostCircuit = true;
@@ -326,15 +345,31 @@ public class ConfigHolder {
         @Configurable.Comment({ "Whether or not sounds should be played when crafting with tools.", "Default: true" })
         public boolean toolCraftingSounds = true;
         @Configurable
-        @Configurable.Comment({"The default color to overlay onto machines.", "#FFFFFF is no coloring (default).",
-                "#D2DCFF is the classic blue from GT5."})
+        @Configurable.Comment({ "The default color to overlay onto machines.",
+            "#FFFFFF is no coloring (default).",
+            "#D2DCFF is the classic blue from GT5." })
         @Configurable.StringPattern(value = "#[0-9a-fA-F]{1,6}")
         @Configurable.Gui.ColorValue
         public String defaultPaintingColor = "#FFFFFF";
         @Configurable
+        @Configurable.Comment({ "The default color to overlay onto Machine (and other) UIs.",
+            "16777215 (#FFFFFF) is no coloring (like GTCE).",
+            "13819135 (#D2DCFF in decimal) is the classic blue from GT5 (default)." })
+        @Configurable.StringPattern(value = "#[0-9a-fA-F]{1,6}")
+        @Configurable.Gui.ColorValue
+        public String defaultUIColor = "#FFFFFF";
+        @Configurable
         @Configurable.Comment({"Use VBO cache for multiblock preview.", "Disable it if you have issues with rendering multiblocks.", "Default: true"})
         @Configurable.Gui.ColorValue
         public boolean useVBO = true;
+        @Configurable
+        @Configurable.Comment({"Duration of the multiblock in-world preview (s)", "Default: 10"})
+        @Configurable.Range(min = 1, max = 999)
+        public int inWorldPreviewDuration = 10;
+        @Configurable
+        @Configurable.Comment({"Duration of UI animations in ms", "Default: 300"})
+        @Configurable.Range(min = 1)
+        public int animationTime = 300;
     }
 
     public static class DeveloperConfigs {
