@@ -25,7 +25,16 @@ public class CrossModMaterials {
                 .components(Iron, 1, Magic,1)
                 .buildAndRegister();
         // EnderIO
-        RedstoneAlloy = new Material.Builder(GTCEu.id("redstone_alloy"))
+        CopperAlloy = new Material.Builder(GTCEu.id("redstone_alloy"))
+                .ingot(0)
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1200))
+                .color(0xb53333).iconSet(METALLIC)
+                .appendFlags(EXT_METAL, GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW)
+                .components(Copper, 1, Silicon, 1)
+                .cableProperties(GTValues.V[2], 2, 1)
+                .buildAndRegister();
+
+        RedstoneAlloy = new Material.Builder(GTCEu.id("copper_alloy"))
                 .ingot(0)
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1200))
                 .color(0xb53333).iconSet(METALLIC)
@@ -68,7 +77,36 @@ public class CrossModMaterials {
                 .components(Tin, 4,Silver,2,Platinum,2,Thaumium,1,EnderPearl,1)
                 .blastTemp(1200, GasTier.LOWEST, GTValues.VA[GTValues.MV], 1600)
                 .buildAndRegister();
-
+        DarkSteel = new Material.Builder(GTCEu.id("dark_steel"))
+                .ingot(0)
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1200))
+                .color(0x008B00).iconSet(METALLIC)
+                .components(CopperAlloy, 1, Steel, 1, Coal,1)
+                .blastTemp(1800, GasTier.LOWEST, GTValues.VA[GTValues.MV], 2000)
+                .buildAndRegister();
+        EndSteel = new Material.Builder(GTCEu.id("end_steel"))
+                .ingot(3)
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1200))
+                .color(0x008B00).iconSet(METALLIC)
+                .components(DarkSteel, 1, Tungsten, 1, Endstone,1)
+                .blastTemp(4500, GasTier.LOW, GTValues.VA[GTValues.EV], 1200)
+                .buildAndRegister();
+        MelodicAlloy = new Material.Builder(GTCEu.id("melodic_alloy"))
+                .ingot(0)
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1200))
+                .color(0x008B00).iconSet(METALLIC)
+                .appendFlags(EXT_METAL, GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW,GENERATE_FRAME)
+                .components(EndSteel, 1, EnderEye, 1,Chromium,1)
+                .blastTemp(5400, GasTier.LOW, GTValues.VA[GTValues.EV], 3000)
+                .buildAndRegister();
+        StellarAlloy = new Material.Builder(GTCEu.id("stellar_alloy"))
+                .ingot(0)
+                .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1200))
+                .color(0x008B00).iconSet(METALLIC)
+                .appendFlags(EXT_METAL, GENERATE_FINE_WIRE, GENERATE_BOLT_SCREW,GENERATE_FRAME)
+                .components(MelodicAlloy, 1, NetherStar, 1,Naquadah,1)
+                .blastTemp(7200, GasTier.LOW, GTValues.VA[GTValues.LuV], 3600)
+                .buildAndRegister();
 
 
         //Twilight Forest

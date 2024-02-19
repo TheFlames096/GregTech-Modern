@@ -2,6 +2,7 @@ package com.gregtechceu.gtceu.api.machine.fancyconfigurator;
 
 import com.gregtechceu.gtceu.api.machine.feature.IOverclockMachine;
 import com.gregtechceu.gtceu.common.machine.multiblock.electric.PCBFactory.PCBBasePart;
+
 import com.lowdragmc.lowdraglib.gui.editor.Icons;
 import com.lowdragmc.lowdraglib.gui.texture.GuiTextureGroup;
 import com.lowdragmc.lowdraglib.gui.texture.IGuiTexture;
@@ -14,6 +15,7 @@ import com.lowdragmc.lowdraglib.gui.widget.Widget;
 import com.lowdragmc.lowdraglib.gui.widget.WidgetGroup;
 
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.chat.Component;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,8 +35,8 @@ public class PCBAccuracyConfigurator implements IFancyConfigurator {
     }
 
     @Override
-    public String getTitle() {
-        return "gtceu.gui.pcbacc.title";
+    public Component getTitle() {
+        return Component.translatable("gtceu.gui.pcbacc.title");
     }
 
     @Override

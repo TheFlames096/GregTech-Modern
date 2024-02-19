@@ -20,6 +20,7 @@ import com.gregtechceu.gtceu.common.recipe.RockBreakerCondition;
 import com.gregtechceu.gtceu.data.recipe.RecipeHelper;
 import com.gregtechceu.gtceu.data.recipe.builder.GTRecipeBuilder;
 import com.gregtechceu.gtceu.data.recipe.misc.BacterialVatLoader;
+import com.gregtechceu.gtceu.integration.jei.recipe.GTRecipeTypeCategory;
 import com.gregtechceu.gtceu.integration.kjs.GTRegistryInfo;
 import com.lowdragmc.lowdraglib.gui.widget.SlotWidget;
 import com.lowdragmc.lowdraglib.gui.widget.TankWidget;
@@ -563,7 +564,7 @@ public class GTRecipeTypes {
 
     // cultures
     static {
-        PetriDishItem.initrecipe(BacterialVatLoader.Bacteria.Saccharomyces_escherichia);
+        PetriDishItem.initrecipe(BacterialVatLoader.Bacteria.generalPurposeFermentingBacteria);
     }
 
     public static final GTRecipeType LARGE_CHEMICAL_RECIPES = register("large_chemical_reactor", MULTIBLOCK).setMaxIOSize(6, 6, 6, 6).setEUIO(IO.IN)

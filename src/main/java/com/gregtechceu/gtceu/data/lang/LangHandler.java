@@ -972,6 +972,7 @@ public class LangHandler {
         provider.add("gtceu.gui.fluid_amount", "Fluid Amount:");
         provider.add("gtceu.gui.toggle_view.disabled", "Toggle View (Fluids)");
         provider.add("gtceu.gui.toggle_view.enabled", "Toggle View (Items)");
+        provider.add("gtceu.gui.pcbacc.title", "Accuracy");
         multilineLang(provider, "gtceu.gui.overclock.enabled", "Overclocking Enabled.\nClick to Disable");
         multilineLang(provider, "gtceu.gui.overclock.disabled", "Overclocking Disabled.\nClick to Enable");
         multilineLang(provider, "gtceu.gui.overclock.description", "Overclock Button\n§7Recipes can overclock up to the set tier");
