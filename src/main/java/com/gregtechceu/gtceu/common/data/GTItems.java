@@ -446,6 +446,11 @@ public class GTItems {
     public static ItemEntry<Item> TOOL_LIGHTER_INVAR;
     public static ItemEntry<Item> TOOL_LIGHTER_PLATINUM;
 
+    public static ItemEntry<ComponentItem> SUGAR_CHARCOAL = REGISTRATE.item("sugar_charcoal", ComponentItem::create).lang("Sugar Charcoal").onRegister(burnTime(400)).register();
+    public static ItemEntry<ComponentItem> SUGAR_COKE = REGISTRATE.item("sugar_coke", ComponentItem::create).lang("Sugar Coke").onRegister(burnTime(800)).register();
+    public static ItemEntry<ComponentItem> CACTUS_CHARCOAL = REGISTRATE.item("cactus_charcoal", ComponentItem::create).lang("Cactus Charcoal").onRegister(burnTime(400)).register();
+    public static ItemEntry<ComponentItem> CACTUS_COKE = REGISTRATE.item("cactus_coke", ComponentItem::create).lang("Cactus Coke").onRegister(burnTime(800)).register();
+
     public static ItemEntry<Item> CARBON_FIBERS = REGISTRATE.item("carbon_fibers", Item::new).onRegister(compassNodeExist(GTCompassSections.MISC, "raw_carbon_fibers")).lang("Raw Carbon Fibers").register();
     public static ItemEntry<Item> CARBON_MESH = REGISTRATE.item("carbon_fiber_mesh", Item::new).onRegister(compassNodeExist(GTCompassSections.MISC, "carbon_fiber_mesh")).lang("Carbon Fiber Mesh").register();
     public static ItemEntry<Item> CARBON_FIBER_PLATE = REGISTRATE.item("carbon_fiber_plate", Item::new).onRegister(compassNodeExist(GTCompassSections.MISC, "carbon_fiber_plate")).lang("Carbon Fiber Plate").register();

@@ -197,7 +197,7 @@ public class ElementMaterials {
                 .liquid(new FluidBuilder().temperature(1358))
                 .ore()
                 .color(0xe77c56).secondaryColor(0xe4673e).iconSet(BRIGHT)
-                .appendFlags(EXT_METAL, MORTAR_GRINDABLE, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FINE_WIRE)
+                .appendFlags(EXT2_METAL, MORTAR_GRINDABLE, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FINE_WIRE, GENERATE_RING)
                 .element(GTElements.Cu)
                 .cableProperties(GTValues.V[2], 1, 2)
                 .fluidPipeProperties(1696, 6, true)
