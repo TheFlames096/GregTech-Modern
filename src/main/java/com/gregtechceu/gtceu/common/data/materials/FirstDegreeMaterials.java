@@ -26,7 +26,11 @@ public class FirstDegreeMaterials {
                 .color(0xa21717).secondaryColor(0x4b1e0c)
                 .components(Aluminium, 2, Iron, 3, Silicon, 3, Oxygen, 12)
                 .buildAndRegister();
-
+        Alumina = new Material.Builder(GTCEu.id("alumina"))
+                .dust()
+                .color(0xd4ecf9).secondaryColor(0xa6b9b6)
+                .components(Aluminium, 2, Oxygen, 3)
+                .buildAndRegister();
         Andradite = new Material.Builder(GTCEu.id("andradite"))
                 .gem(1)
                 .color(0xffce26).secondaryColor(0x647d59).iconSet(RUBY)
@@ -155,6 +159,13 @@ public class FirstDegreeMaterials {
                 .color(0xff335f).secondaryColor(0x3f0110).iconSet(EMERALD)
                 .flags(CRYSTALLIZABLE, DECOMPOSITION_BY_CENTRIFUGING)
                 .components(Mercury, 1, Sulfur, 1)
+                .buildAndRegister();
+
+        Cryolite = new Material.Builder(GTCEu.id("cryolite"))
+                .dust().ore()
+                .color(0xdbfeff).secondaryColor(0xa0c4d7).iconSet(DULL)
+                .flags(DECOMPOSITION_BY_ELECTROLYZING)
+                .components(Sodium,3,Aluminium,1,Fluorine,6)
                 .buildAndRegister();
 
         Water = new Material.Builder(GTCEu.id("water"))

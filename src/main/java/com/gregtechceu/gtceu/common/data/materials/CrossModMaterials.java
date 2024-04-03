@@ -25,7 +25,7 @@ public class CrossModMaterials {
                 .components(Iron, 1, Magic,1)
                 .buildAndRegister();
         // EnderIO
-        CopperAlloy = new Material.Builder(GTCEu.id("redstone_alloy"))
+        CopperAlloy = new Material.Builder(GTCEu.id("copper_alloy"))
                 .ingot(0)
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1200))
                 .color(0xb53333).iconSet(METALLIC)
@@ -34,7 +34,7 @@ public class CrossModMaterials {
                 .cableProperties(GTValues.V[2], 2, 1)
                 .buildAndRegister();
 
-        RedstoneAlloy = new Material.Builder(GTCEu.id("copper_alloy"))
+        RedstoneAlloy = new Material.Builder(GTCEu.id("redstone_alloy"))
                 .ingot(0)
                 .fluid(FluidStorageKeys.LIQUID, new FluidBuilder().temperature(1200))
                 .color(0xb53333).iconSet(METALLIC)

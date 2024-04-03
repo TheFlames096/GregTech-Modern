@@ -23,6 +23,9 @@ public class MaterialFlagAddition {
         oreProp.setOreByProducts(Cobalt, Gold, Nickel, Gold);
         oreProp.setWashedIn(Mercury);
 
+        oreProp = Cryolite.getProperty(PropertyKey.ORE);
+        oreProp.setOreByProducts(Alumina, Sodium);
+
         oreProp = Gold.getProperty(PropertyKey.ORE);
         oreProp.setOreByProducts(Copper, Nickel, Silver);
         oreProp.setWashedIn(Mercury);

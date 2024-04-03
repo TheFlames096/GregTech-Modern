@@ -476,6 +476,7 @@ public class GTMaterials {
      * First Degree Compounds
      */
     public static Material Almandine;
+    public static Material Alumina;
     public static Material Andradite;
     public static Material AnnealedCopper;
     public static Material Asbestos;
@@ -494,6 +495,7 @@ public class GTMaterials {
     public static Material Charcoal;
     public static Material Chromite;
     public static Material Cinnabar;
+    public static Material Cryolite;
     public static Material Water;
     public static Material Coal;
     public static Material Cobaltite;
